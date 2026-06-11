@@ -1,34 +1,34 @@
 {
   "topic": "ECB 금리 인상",
   "card1": {
-    "title": "유럽 발\n금리 쇼크",
-    "sub": "3년 만에 인상!",
-    "query": "European Central Bank building",
-    "bg": "https://images.pexels.com/photos/9170378/pexels-photo-9170378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "유럽발 쇼크?\n금리 급등!",
+    "sub": "3년 만에 첫 인상, 왜?",
+    "query": "ECB building, interest rate graph",
+    "bg": "https://images.pexels.com/photos/29950191/pexels-photo-29950191.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "인상 배경\n왜 지금?",
+    "subtitle": "3년 만에\n금리 인상",
     "lines": [
-      "<b>ECB</b>, 3년 만에",
-      "<b>금리</b> 전격 인상.",
-      "<b>0.25%p</b> 올렸죠.",
-      "중동 불안에 물가",
-      "급등이 원인입니다."
+      "<b>유럽중앙은행</b>(ECB)",
+      "기준금리 0.25%p 인상",
+      "예금금리는 0.25%p↑",
+      "<b>3년 만의</b> 첫 긴축",
+      "<b>중동 사태</b> 이후 영향"
     ],
-    "query": "Inflation chart Europe",
-    "bg": "https://images.pexels.com/photos/6289051/pexels-photo-6289051.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "European Central Bank, money increase",
+    "bg": "https://images.pexels.com/photos/12915479/pexels-photo-12915479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "세계 경제\n파급 효과",
+    "subtitle": "향후 시장\n어떻게 될까?",
     "lines": [
-      "<b>유럽</b> 물가 안정",
-      "기대감 커졌어요.",
-      "하지만 <b>투자</b> 위축",
-      "경기 둔화 우려도.",
-      "<b>환율</b> 변동성 주목!"
+      "인플레 압력 대응",
+      "추가 인상 <b>가능성</b>",
+      "글로벌 <b>긴축</b> 흐름",
+      "유럽 경제 <b>둔화</b> 우려",
+      "투자 전략 재정비!"
     ],
-    "query": "Global economy impact",
-    "bg": "https://images.pexels.com/photos/4386344/pexels-photo-4386344.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "global economy, investment strategy",
+    "bg": "https://images.pexels.com/photos/35501997/pexels-photo-35501997.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "안녕 GLEND 친구들! 🙋‍♀️\n오늘 가장 뜨거운 경제 뉴스🔥\n바로 <b>유럽중앙은행(ECB)</b>의\n전격적인 금리 인상 소식입니다!\n3년 만에 단행된 이번 인상,\n중동 불안으로 인한 물가 압박이\n주요 배경이라고 해요. 📈\n유럽의 긴축 행보가 과연\n세계 경제에 어떤 영향을 줄지,\n우리 삶에는 어떤 변화를 가져올지\n함께 주목해봐야겠죠? 👀\n오늘도 GLEND와 함께 현명한\n경제 정보 얻어가세요! ✨\n#ECB #금리인상 #유럽경제 #글로벌경제 #인플레이션"
+  "caption": "🚨유럽중앙은행(ECB)이 3년 만에 금리를 인상했습니다.\n중동 사태로 인한 물가 압박에 대응하기 위한 조치인데요.\n이번 인상으로 예금금리가 0.25%p 오르고, 주요국 중 처음으로 긴축에 나선 사례입니다.\n앞으로 유럽 경제는 물론, 글로벌 시장에 어떤 영향을 미칠지 관심이 집중됩니다.\n투자를 고민 중이라면, 유럽 발 경제 소식에 더욱 주목해야겠죠?\n#ECB #금리인상 #유럽경제 #글렌드 #경제뉴스"
 }
