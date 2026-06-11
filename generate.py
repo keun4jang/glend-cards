@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 from google import genai
 
 load_dotenv()
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-PEXELS_KEY = os.getenv("PEXELS_API_KEY")
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip())
+PEXELS_KEY = os.getenv("PEXELS_API_KEY", "").strip()
 
 # 1) 최신 경제 뉴스 수집
 QUERY = "경제 OR 금리 OR 증시 OR 부동산 when:1d"
@@ -108,3 +108,4 @@ except Exception as e:
     print("[JSON 변환 실패]", e)
     print("받은 원본:")
     print(raw)
+

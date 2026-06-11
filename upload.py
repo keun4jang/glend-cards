@@ -7,8 +7,8 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
-TOKEN = os.getenv("IG_TOKEN")
-USER_ID = os.getenv("IG_USER_ID")
+TOKEN = os.getenv("IG_TOKEN", "").strip()
+USER_ID = os.getenv("IG_USER_ID", "").strip()
 
 GITHUB_USER = "trussvideo1"
 GITHUB_REPO = "glend-cards"
@@ -115,3 +115,4 @@ if published:
 else:
     print("\n[실패] 여러 번 시도했지만 인스타가 아직 준비가 안 됐어요.")
     print("   1~2분 뒤에 'python upload.py go' 다시 시도해보세요.")
+
