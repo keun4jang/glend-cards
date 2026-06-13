@@ -1,34 +1,30 @@
 {
-  "topic": "ECB 금리 인상",
+  "topic": "스페이스X IPO와 국내 증시",
   "card1": {
-    "title": "유럽발 쇼크?\n금리 급등!",
-    "sub": "3년 만에 첫 인상, 왜?",
-    "query": "ECB building, interest rate graph",
-    "bg": "https://images.pexels.com/photos/29950191/pexels-photo-29950191.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "스페이스X\n상장 폭풍",
+    "sub": "국내 증시도 휘청?",
+    "query": "SpaceX launch rocket",
+    "bg": "https://images.pexels.com/photos/23775/rocket-launch-space-discovery.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "3년 만에\n금리 인상",
+    "subtitle": "모두의 관심\n스페이스X",
     "lines": [
-      "<b>유럽중앙은행</b>(ECB)",
-      "기준금리 0.25%p 인상",
-      "예금금리는 0.25%p↑",
-      "<b>3년 만의</b> 첫 긴축",
-      "<b>중동 사태</b> 이후 영향"
+      "<b>스페이스X</b> 나스닥 상장은 전 세계",
+      "<b>투자자</b>의 이목을 집중시켰지만",
+      "국내 증시는 <b>변동성</b>만 커졌어요."
     ],
-    "query": "European Central Bank, money increase",
-    "bg": "https://images.pexels.com/photos/12915479/pexels-photo-12915479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Stock market volatility chart",
+    "bg": "https://images.pexels.com/photos/10628030/pexels-photo-10628030.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "향후 시장\n어떻게 될까?",
+    "subtitle": "내 투자\n어떻게?",
     "lines": [
-      "인플레 압력 대응",
-      "추가 인상 <b>가능성</b>",
-      "글로벌 <b>긴축</b> 흐름",
-      "유럽 경제 <b>둔화</b> 우려",
-      "투자 전략 재정비!"
+      "스페이스X발 <b>시장 변동성</b> 속",
+      "섣부른 <b>추격 매수</b>는 위험합니다.",
+      "<b>장기적인 안목</b>으로 투자하세요."
     ],
-    "query": "global economy, investment strategy",
-    "bg": "https://images.pexels.com/photos/35501997/pexels-photo-35501997.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Investment strategy discussion",
+    "bg": "https://images.pexels.com/photos/5816300/pexels-photo-5816300.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "🚨유럽중앙은행(ECB)이 3년 만에 금리를 인상했습니다.\n중동 사태로 인한 물가 압박에 대응하기 위한 조치인데요.\n이번 인상으로 예금금리가 0.25%p 오르고, 주요국 중 처음으로 긴축에 나선 사례입니다.\n앞으로 유럽 경제는 물론, 글로벌 시장에 어떤 영향을 미칠지 관심이 집중됩니다.\n투자를 고민 중이라면, 유럽 발 경제 소식에 더욱 주목해야겠죠?\n#ECB #금리인상 #유럽경제 #글렌드 #경제뉴스"
+  "caption": "스페이스X 상장 소식, 뜨거운 관심만큼 국내 증시에도 영향을 미치고 있어요.\n모두가 기다린 대형 IPO, 왜 국내 투자자들은 소외되었을까요?\n그리고 이로 인해 내 투자 포트폴리오는 안전할까요?\nGLEND와 함께 스페이스X 상장의 숨겨진 이야기와 현명한 투자 전략을 알아봐요.\n변동성 큰 시장 속에서 균형 잡힌 시각으로 현명한 투자를 하시길 응원합니다!\n#스페이스X #IPO #국내증시 #주식투자 #GLEND"
 }
