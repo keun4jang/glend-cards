@@ -65,7 +65,7 @@ async def render():
                 document.querySelectorAll('.line').forEach(el => {
                     let size = parseFloat(getComputedStyle(el).fontSize);
                     let guard = 0;
-                    while (el.scrollWidth > maxW && size > 28 && guard < 40) {
+                    while (el.scrollWidth > maxW && size > 40 && guard < 40) {
                         size -= 2; el.style.fontSize = size + 'px'; guard++;
                     }
                 });
@@ -80,3 +80,4 @@ async def render():
 
 asyncio.run(render())
 print("done! 🎉 뉴스 -> Gemini -> Pexels 배경까지 전부 자동으로 카드 완성!")
+
