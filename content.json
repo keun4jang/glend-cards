@@ -1,30 +1,30 @@
 {
-  "topic": "스페이스X IPO와 국내 증시",
+  "topic": "은행 예금금리 3% 재진입",
   "card1": {
-    "title": "스페이스X\n상장 폭풍",
-    "sub": "국내 증시도 휘청?",
-    "query": "SpaceX launch rocket",
-    "bg": "https://images.pexels.com/photos/23775/rocket-launch-space-discovery.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "예금금리\n다시 3%!",
+    "sub": "내 돈 불릴 기회?",
+    "query": "Piggy bank money growth",
+    "bg": "https://images.pexels.com/photos/6289041/pexels-photo-6289041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "모두의 관심\n스페이스X",
+    "subtitle": "예금금리\n왜 올랐나?",
     "lines": [
-      "<b>스페이스X</b> 나스닥 상장은 전 세계",
-      "<b>투자자</b>의 이목을 집중시켰지만",
-      "국내 증시는 <b>변동성</b>만 커졌어요."
+      "<b>기준금리</b> 인상 기대감에",
+      "시장금리도 덩달아 <b>상승</b> 중",
+      "은행들 고객 유치 경쟁 심화"
     ],
-    "query": "Stock market volatility chart",
-    "bg": "https://images.pexels.com/photos/10628030/pexels-photo-10628030.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "rising interest rate chart",
+    "bg": "https://images.pexels.com/photos/6120172/pexels-photo-6120172.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "내 투자\n어떻게?",
+    "subtitle": "우리에게\n미칠 영향은?",
     "lines": [
-      "스페이스X발 <b>시장 변동성</b> 속",
-      "섣부른 <b>추격 매수</b>는 위험합니다.",
-      "<b>장기적인 안목</b>으로 투자하세요."
+      "안정적인 <b>이자수익</b> 가능성",
+      "기업은 자금 조달에 <b>부담</b>",
+      "<b>머니무브</b> 현상 주목해야"
     ],
-    "query": "Investment strategy discussion",
-    "bg": "https://images.pexels.com/photos/5816300/pexels-photo-5816300.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "financial strategy discussion",
+    "bg": "https://images.pexels.com/photos/7109242/pexels-photo-7109242.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "스페이스X 상장 소식, 뜨거운 관심만큼 국내 증시에도 영향을 미치고 있어요.\n모두가 기다린 대형 IPO, 왜 국내 투자자들은 소외되었을까요?\n그리고 이로 인해 내 투자 포트폴리오는 안전할까요?\nGLEND와 함께 스페이스X 상장의 숨겨진 이야기와 현명한 투자 전략을 알아봐요.\n변동성 큰 시장 속에서 균형 잡힌 시각으로 현명한 투자를 하시길 응원합니다!\n#스페이스X #IPO #국내증시 #주식투자 #GLEND"
+  "caption": "GLEND 독자 여러분! 📢\n\n최근 은행 예금금리가 다시 3%대로 진입했다는 소식, 들으셨나요?\n\n한국은행의 기준금리 인상 가능성과 시장금리 상승이 맞물리면서, 시중은행들이 고객과 기업 자금을 유치하기 위해 예금금리를 올리고 있어요. 💰\n\n이제 예금만으로도 쏠쏠한 이자 수익을 기대할 수 있게 되었지만, 동시에 기업들의 자금 조달에는 부담이 될 수 있죠.\n\n과연 나의 자산 포트폴리오에는 어떤 변화를 줄지, 현명한 금융 전략이 필요한 시점입니다! ✨\n\n자세한 내용은 GLEND 카드뉴스에서 확인하세요! 😉\n\n#GLEND #경제뉴스 #예금금리 #재테크 #금융상식"
 }
