@@ -1,12 +1,7 @@
 ﻿import subprocess
 import sys
-import random
 import time
 import datetime
-
-# 매일 다른 시간에 올리기 위한 랜덤 대기 (0 ~ 5시간 사이)
-# 작업 스케줄러가 아침에 깨우면, 여기서 랜덤하게 더 기다린 뒤 진행
-MAX_DELAY_HOURS = 5
 
 def run(name, args):
     print(f"\n{'='*40}\n[{name}] 실행 중...\n{'='*40}")
@@ -17,13 +12,7 @@ def run(name, args):
 
 print(f"\n자동 발행 시작: {datetime.datetime.now():%Y-%m-%d %H:%M}")
 
-# 1) 랜덤 대기
-delay_sec = random.randint(0, MAX_DELAY_HOURS * 3600)
-wake_at = datetime.datetime.now() + datetime.timedelta(seconds=delay_sec)
-print(f"오늘은 랜덤하게 {delay_sec//60}분 뒤({wake_at:%H:%M})에 올릴게요...")
-time.sleep(delay_sec)
-
-# 2) 뉴스 수집 + 글 작성 + 배경 사진
+# 1) 뉴스 수집 + 글 작성 + 배경 사진
 run("콘텐츠 생성", ["generate.py"])
 
 # 3) 카드 이미지 렌더링

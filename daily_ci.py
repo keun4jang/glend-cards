@@ -1,12 +1,8 @@
 ﻿import subprocess
 import sys
 import os
-import random
 import time
 import datetime
-
-# 깨어난 뒤 0~4시간 사이 랜덤 대기 (매일 다른 시간에 올리기)
-MAX_DELAY_HOURS = 4
 
 def run(name, args):
     print(f"\n{'='*40}\n[{name}] 실행 중...\n{'='*40}", flush=True)
@@ -17,12 +13,7 @@ def run(name, args):
 
 print(f"\n자동 발행 시작: {datetime.datetime.now()}", flush=True)
 
-# 1) 랜덤 대기
-delay_sec = random.randint(0, MAX_DELAY_HOURS * 3600)
-print(f"오늘은 랜덤하게 {delay_sec//60}분 뒤에 올릴게요...", flush=True)
-time.sleep(delay_sec)
-
-# 2) 콘텐츠 생성 (뉴스 + 글 + 배경)
+# 1) 콘텐츠 생성 (뉴스 + 글 + 배경)
 run("콘텐츠 생성", ["generate.py"])
 
 # 3) 카드 렌더링
