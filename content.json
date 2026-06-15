@@ -1,30 +1,30 @@
 {
-  "topic": "은행 예금금리 3% 재진입",
+  "topic": "주담대 금리 상승과 부동산 시장 영향",
   "card1": {
-    "title": "예금금리\n다시 3%!",
-    "sub": "내 돈 불릴 기회?",
-    "query": "Piggy bank money growth",
-    "bg": "https://images.pexels.com/photos/6289041/pexels-photo-6289041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "대출 금리\n또 오른다!",
+    "sub": "내 집 마련 꿈, 괜찮을까?",
+    "query": "rising mortgage rates",
+    "bg": "https://images.pexels.com/photos/8293637/pexels-photo-8293637.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "예금금리\n왜 올랐나?",
+    "subtitle": "코픽스\n두 달째 상승",
     "lines": [
-      "<b>기준금리</b> 인상 기대감에",
-      "시장금리도 덩달아 <b>상승</b> 중",
-      "은행들 고객 유치 경쟁 심화"
+      "5월 <b>코픽스</b> 0.01%p 올라",
+      "주담대 <b>변동금리</b> 연속 상승",
+      "일부 은행은 7.5%까지 높아져"
     ],
-    "query": "rising interest rate chart",
+    "query": "interest rate chart",
     "bg": "https://images.pexels.com/photos/6120172/pexels-photo-6120172.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "우리에게\n미칠 영향은?",
+    "subtitle": "부동산은\n엇갈린 흐름",
     "lines": [
-      "안정적인 <b>이자수익</b> 가능성",
-      "기업은 자금 조달에 <b>부담</b>",
-      "<b>머니무브</b> 현상 주목해야"
+      "서울은 <b>집값</b>, 전세가 동반 상승",
+      "지방은 여전히 <b>거래 절벽</b>으로",
+      "<b>금리 변동</b>에 신중한 전략 필요"
     ],
-    "query": "financial strategy discussion",
-    "bg": "https://images.pexels.com/photos/7109242/pexels-photo-7109242.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "house price trend",
+    "bg": "https://images.pexels.com/photos/10653885/pexels-photo-10653885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "GLEND 독자 여러분! 📢\n\n최근 은행 예금금리가 다시 3%대로 진입했다는 소식, 들으셨나요?\n\n한국은행의 기준금리 인상 가능성과 시장금리 상승이 맞물리면서, 시중은행들이 고객과 기업 자금을 유치하기 위해 예금금리를 올리고 있어요. 💰\n\n이제 예금만으로도 쏠쏠한 이자 수익을 기대할 수 있게 되었지만, 동시에 기업들의 자금 조달에는 부담이 될 수 있죠.\n\n과연 나의 자산 포트폴리오에는 어떤 변화를 줄지, 현명한 금융 전략이 필요한 시점입니다! ✨\n\n자세한 내용은 GLEND 카드뉴스에서 확인하세요! 😉\n\n#GLEND #경제뉴스 #예금금리 #재테크 #금융상식"
+  "caption": "주담대 금리가 또 올랐다는 소식에 많은 분들이 걱정하고 계실 텐데요.\n5월 코픽스가 두 달 연속 상승하며 변동금리 대출자들의 부담이 커지고 있습니다.\n일부 지역에서는 주담대 금리가 7.5%까지 치솟아 부동산 시장에도 큰 영향을 미치고 있어요.\n\n서울은 집값과 전세가가 오르는 반면, 지방은 거래 절벽이 이어지는 등 지역별로 엇갈린 흐름을 보입니다.\n이런 시기일수록 대출 상환 계획을 꼼꼼히 점검하고, 금리 변동에 대비한 현명한 재테크 전략이 중요합니다.\nGLEND와 함께 변화하는 경제 흐름을 파악하고 현명하게 대처해 나가요!\n\n#주담대 #금리인상 #부동산시장 #경제뉴스 #GLEND"
 }
