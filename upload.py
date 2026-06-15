@@ -10,7 +10,7 @@ load_dotenv()
 TOKEN = os.getenv("IG_TOKEN", "").strip()
 USER_ID = os.getenv("IG_USER_ID", "").strip()
 
-GITHUB_USER = "trussvideo1"
+GITHUB_USER = "keun4jang"
 GITHUB_REPO = "glend-cards"
 BRANCH = "main"
 IMAGE_BASE = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{BRANCH}/output"
