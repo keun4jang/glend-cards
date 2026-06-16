@@ -1,30 +1,30 @@
 {
-  "topic": "주담대 금리 상승과 부동산 시장 영향",
+  "topic": "일본 기준금리 31년 만의 1% 인상",
   "card1": {
-    "title": "대출 금리\n또 오른다!",
-    "sub": "내 집 마련 꿈, 괜찮을까?",
-    "query": "rising mortgage rates",
-    "bg": "https://images.pexels.com/photos/8293637/pexels-photo-8293637.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "일본 금리\n갑자기 왜?",
+    "sub": "31년 만의 파격 변화!",
+    "query": "Japanese Yen banknote, graph rising",
+    "bg": "https://images.pexels.com/photos/6801635/pexels-photo-6801635.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "코픽스\n두 달째 상승",
+    "subtitle": "BOJ의 선택\n그 배경은?",
     "lines": [
-      "5월 <b>코픽스</b> 0.01%p 올라",
-      "주담대 <b>변동금리</b> 연속 상승",
-      "일부 은행은 7.5%까지 높아져"
+      "일본은행, <b>기준금리</b> 1%로",
+      "0.75%에서 31년 만에",
+      "물가 상승 압력 대응 목적."
     ],
-    "query": "interest rate chart",
-    "bg": "https://images.pexels.com/photos/6120172/pexels-photo-6120172.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Bank of Japan building, inflation graph",
+    "bg": "https://images.pexels.com/photos/33721451/pexels-photo-33721451.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "부동산은\n엇갈린 흐름",
+    "subtitle": "글로벌 시장\n영향은?",
     "lines": [
-      "서울은 <b>집값</b>, 전세가 동반 상승",
-      "지방은 여전히 <b>거래 절벽</b>으로",
-      "<b>금리 변동</b>에 신중한 전략 필요"
+      "<b>엔 캐리 트레이드</b> 청산은",
+      "아직 제한적일 전망이지만,",
+      "타국 <b>금리 인상</b>에 주목!"
     ],
-    "query": "house price trend",
-    "bg": "https://images.pexels.com/photos/10653885/pexels-photo-10653885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "global economy map, currency exchange",
+    "bg": "https://images.pexels.com/photos/4386344/pexels-photo-4386344.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "주담대 금리가 또 올랐다는 소식에 많은 분들이 걱정하고 계실 텐데요.\n5월 코픽스가 두 달 연속 상승하며 변동금리 대출자들의 부담이 커지고 있습니다.\n일부 지역에서는 주담대 금리가 7.5%까지 치솟아 부동산 시장에도 큰 영향을 미치고 있어요.\n\n서울은 집값과 전세가가 오르는 반면, 지방은 거래 절벽이 이어지는 등 지역별로 엇갈린 흐름을 보입니다.\n이런 시기일수록 대출 상환 계획을 꼼꼼히 점검하고, 금리 변동에 대비한 현명한 재테크 전략이 중요합니다.\nGLEND와 함께 변화하는 경제 흐름을 파악하고 현명하게 대처해 나가요!\n\n#주담대 #금리인상 #부동산시장 #경제뉴스 #GLEND"
+  "caption": "🚨 속보! 일본이 31년 만에 기준금리를 인상했습니다. 🚨\n\n그동안 초저금리를 유지해오던 일본은행(BOJ)의 파격적인 행보인데요.\n무려 0.75%에서 1%로 올렸다고 해요.\n\n이는 물가 상승 압력에 대응하려는 강력한 의지로 풀이됩니다.\n과연 이번 인상이 글로벌 경제에 어떤 파장을 불러올까요? 🤔\n\n아직까지는 엔 캐리 트레이드 청산 등 큰 충격은 제한적일 것으로 보이지만,\n다른 중앙은행들의 움직임에도 영향을 줄 수 있어 예의주시해야 할 것 같습니다.\n\nGLEND가 계속해서 최신 경제 소식을 전해드릴게요!\n\n#일본금리인상 #BOJ #기준금리 #글로벌경제 #엔캐리트레이드"
 }
