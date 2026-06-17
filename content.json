@@ -1,30 +1,30 @@
 {
-  "topic": "일본 기준금리 31년 만의 1% 인상",
+  "topic": "FOMC의 금리 결정, 시장의 운명",
   "card1": {
-    "title": "일본 금리\n갑자기 왜?",
-    "sub": "31년 만의 파격 변화!",
-    "query": "Japanese Yen banknote, graph rising",
-    "bg": "https://images.pexels.com/photos/6801635/pexels-photo-6801635.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "금리 슈퍼위크\n코앞으로!",
+    "sub": "FOMC, 이번엔 동결? 인상?",
+    "query": "FOMC meeting room",
+    "bg": "https://images.pexels.com/photos/5103610/pexels-photo-5103610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "BOJ의 선택\n그 배경은?",
+    "subtitle": "美 금리 결정\n왜 중요할까?",
     "lines": [
-      "일본은행, <b>기준금리</b> 1%로",
-      "0.75%에서 31년 만에",
-      "물가 상승 압력 대응 목적."
+      "미국 <b>FOMC</b>는 기준금리를",
+      "결정해 전 세계 경제에 <b>파급력</b>이",
+      "큽니다. 이번엔 <b>동결</b> 여부 주목!"
     ],
-    "query": "Bank of Japan building, inflation graph",
-    "bg": "https://images.pexels.com/photos/33721451/pexels-photo-33721451.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "US dollar interest rate chart",
+    "bg": "https://images.pexels.com/photos/14820427/pexels-photo-14820427.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "글로벌 시장\n영향은?",
+    "subtitle": "내 자산 향방\n어떻게 될까?",
     "lines": [
-      "<b>엔 캐리 트레이드</b> 청산은",
-      "아직 제한적일 전망이지만,",
-      "타국 <b>금리 인상</b>에 주목!"
+      "금리 인상 시 은행, <b>보험주</b>는",
+      "웃지만, <b>증권주</b>는 불리합니다.",
+      "가계 대출과 투자에 <b>전략</b> 필수!"
     ],
-    "query": "global economy map, currency exchange",
-    "bg": "https://images.pexels.com/photos/4386344/pexels-photo-4386344.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "stock market arrows up down",
+    "bg": "https://images.pexels.com/photos/8369831/pexels-photo-8369831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "🚨 속보! 일본이 31년 만에 기준금리를 인상했습니다. 🚨\n\n그동안 초저금리를 유지해오던 일본은행(BOJ)의 파격적인 행보인데요.\n무려 0.75%에서 1%로 올렸다고 해요.\n\n이는 물가 상승 압력에 대응하려는 강력한 의지로 풀이됩니다.\n과연 이번 인상이 글로벌 경제에 어떤 파장을 불러올까요? 🤔\n\n아직까지는 엔 캐리 트레이드 청산 등 큰 충격은 제한적일 것으로 보이지만,\n다른 중앙은행들의 움직임에도 영향을 줄 수 있어 예의주시해야 할 것 같습니다.\n\nGLEND가 계속해서 최신 경제 소식을 전해드릴게요!\n\n#일본금리인상 #BOJ #기준금리 #글로벌경제 #엔캐리트레이드"
+  "caption": "📢 이번 주, 전 세계 경제가 주목하는 미국 FOMC 회의가 열립니다!\n\n미국 중앙은행의 기준금리 결정은 단순히 미국만의 이슈가 아닙니다.\n\n글로벌 경제의 <b>향방</b>을 가늠하는 중요한 지표가 되죠.\n\n특히, 금리 동결 혹은 인상 여부에 따라 국내 증시의 <b>흐름</b>은 물론,\n\n은행주, 보험주, 증권주 등 주요 섹터의 희비가 엇갈릴 수 있습니다.\n\n가계 대출 금리에도 영향을 미치니, 모두의 관심이 집중될 수밖에 없겠죠?\n\n글렌드가 알려드린 이번 FOMC 소식으로 현명한 투자 전략을 세워보세요!\n\n#GLEND #FOMC #금리인상 #금리동결 #경제전망 #주식시장"
 }
