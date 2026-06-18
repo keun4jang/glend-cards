@@ -1,30 +1,30 @@
 {
-  "topic": "FOMC의 금리 결정, 시장의 운명",
+  "topic": "미 연준 금리 동결, 그러나 긴축 시그널: 한국 경제의 향방",
   "card1": {
-    "title": "금리 슈퍼위크\n코앞으로!",
-    "sub": "FOMC, 이번엔 동결? 인상?",
-    "query": "FOMC meeting room",
-    "bg": "https://images.pexels.com/photos/5103610/pexels-photo-5103610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "금리 동결!\n긴축 예고?",
+    "sub": "예상 밖 혼란, 왜?",
+    "query": "paradox economy, confused investor, market uncertainty",
+    "bg": "https://images.pexels.com/photos/8370485/pexels-photo-8370485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "美 금리 결정\n왜 중요할까?",
+    "subtitle": "연준의 선택\n숨겨진 의도",
     "lines": [
-      "미국 <b>FOMC</b>는 기준금리를",
-      "결정해 전 세계 경제에 <b>파급력</b>이",
-      "큽니다. 이번엔 <b>동결</b> 여부 주목!"
+      "미 연준 <b>기준금리</b> 동결 유지 결정했지만",
+      "연내 인상 <b>가능성</b> 시사하며 시장은",
+      "<b>매파적 동결</b> 해석하며 긴장감 고조"
     ],
-    "query": "US dollar interest rate chart",
-    "bg": "https://images.pexels.com/photos/14820427/pexels-photo-14820427.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "federal reserve meeting, central bank decision, interest rate policy",
+    "bg": "https://images.pexels.com/photos/6590633/pexels-photo-6590633.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "내 자산 향방\n어떻게 될까?",
+    "subtitle": "한국 경제\n흔들릴까?",
     "lines": [
-      "금리 인상 시 은행, <b>보험주</b>는",
-      "웃지만, <b>증권주</b>는 불리합니다.",
-      "가계 대출과 투자에 <b>전략</b> 필수!"
+      "글로벌 긴축 속 <b>한은</b> 금리 인상",
+      "부동산, 환율 등 <b>시장 변동성</b> 확대",
+      "투자 전략 <b>신중한 재검토</b> 필요해"
     ],
-    "query": "stock market arrows up down",
+    "query": "korean economy, shaking market, financial risk, falling arrow",
     "bg": "https://images.pexels.com/photos/8369831/pexels-photo-8369831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "📢 이번 주, 전 세계 경제가 주목하는 미국 FOMC 회의가 열립니다!\n\n미국 중앙은행의 기준금리 결정은 단순히 미국만의 이슈가 아닙니다.\n\n글로벌 경제의 <b>향방</b>을 가늠하는 중요한 지표가 되죠.\n\n특히, 금리 동결 혹은 인상 여부에 따라 국내 증시의 <b>흐름</b>은 물론,\n\n은행주, 보험주, 증권주 등 주요 섹터의 희비가 엇갈릴 수 있습니다.\n\n가계 대출 금리에도 영향을 미치니, 모두의 관심이 집중될 수밖에 없겠죠?\n\n글렌드가 알려드린 이번 FOMC 소식으로 현명한 투자 전략을 세워보세요!\n\n#GLEND #FOMC #금리인상 #금리동결 #경제전망 #주식시장"
+  "caption": "안녕하세요 GLEND입니다!\n지난주, 미 연준이 기준금리를 동결했지만\n\"연내 인상 가능성\"을 시사하면서 시장이 출렁였죠.\n겉으론 동결이지만, 속은 <b>매파적</b>이었다는 분석인데요.\n미국뿐 아니라 일본 등 주요국들의 긴축 전환 움직임 속에서\n우리나라 한국은행도 기준금리 인상이 불가피하다는 전망이 커지고 있습니다.\n과연 이러한 글로벌 긴축 흐름이 한국 경제에 어떤 영향을 미칠까요?\n환율, 부동산, 주식 시장의 <b>변동성</b>에 대비하며\n우리의 투자 전략을 다시 점검해봐야 할 시점입니다.\n#GLEND #경제뉴스 #미연준 #기준금리 #한국경제 #부동산 #주식 #환율"
 }
