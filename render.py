@@ -65,12 +65,19 @@ async def render():
                 }
 
                 // 가로폭 넘치는 줄 자동 축소 (안전장치)
-                const maxW = 1080 - 160;
+                const maxW = 880;
                 document.querySelectorAll('.line').forEach(el => {
+                    el.style.display = 'block';
+                    el.style.whiteSpace = 'nowrap';
                     let size = parseFloat(getComputedStyle(el).fontSize);
                     let guard = 0;
-                    while (el.scrollWidth > maxW && size > 40 && guard < 40) {
-                        size -= 2; el.style.fontSize = size + 'px'; guard++;
+                    while (el.scrollWidth > maxW && size > 32 && guard < 60) {
+                        size -= 1; el.style.fontSize = size + 'px'; guard++;
+                    }
+                    // 그래도 넘치면 강제 클립
+                    if (el.scrollWidth > maxW) {
+                        el.style.overflow = 'hidden';
+                        el.style.maxWidth = maxW + 'px';
                     }
                 });
             }""", [c, LOGO])
