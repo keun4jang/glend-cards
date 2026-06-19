@@ -64,22 +64,25 @@ async def render():
                     card.appendChild(cta);
                 }
 
-                // 가로폭 넘치는 줄 자동 축소 (안전장치)
+                // 가로폭 넘치는 줄 자동 축소 (overflow:hidden 안에서도 정확히 측정)
                 const maxW = 880;
+                const ruler = document.createElement('span');
+                ruler.style.cssText = 'position:fixed;top:-9999px;left:-9999px;visibility:hidden;white-space:nowrap;font-family:"Noto Sans KR",sans-serif;';
+                document.body.appendChild(ruler);
                 document.querySelectorAll('.line').forEach(el => {
-                    el.style.display = 'block';
-                    el.style.whiteSpace = 'nowrap';
                     let size = parseFloat(getComputedStyle(el).fontSize);
+                    ruler.style.fontSize = size + 'px';
+                    ruler.style.fontWeight = getComputedStyle(el).fontWeight;
+                    ruler.innerHTML = el.innerHTML;
                     let guard = 0;
-                    while (el.scrollWidth > maxW && size > 32 && guard < 60) {
-                        size -= 1; el.style.fontSize = size + 'px'; guard++;
+                    while (ruler.offsetWidth > maxW && size > 32 && guard < 80) {
+                        size -= 1;
+                        ruler.style.fontSize = size + 'px';
+                        guard++;
                     }
-                    // 그래도 넘치면 강제 클립
-                    if (el.scrollWidth > maxW) {
-                        el.style.overflow = 'hidden';
-                        el.style.maxWidth = maxW + 'px';
-                    }
+                    el.style.fontSize = size + 'px';
                 });
+                document.body.removeChild(ruler);
             }""", [c, LOGO])
             await page.wait_for_timeout(800)
             await page.evaluate("document.fonts.ready")
