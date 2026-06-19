@@ -58,6 +58,10 @@ async def render():
                     img.className = 'brand-logo-full';
                     img.src = logo;
                     card.appendChild(img);
+                    const cta = document.createElement('div');
+                    cta.style.cssText = 'position:absolute;bottom:100px;left:0;right:0;z-index:10;text-align:center;font-family:Noto Sans KR,sans-serif;';
+                    cta.innerHTML = '<div style="font-size:52px;font-weight:900;color:#CFFF04;letter-spacing:-1px;">매일 아침 경제 뉴스 카드</div><div style="margin-top:20px;font-size:44px;font-weight:700;color:#ffffff;">📌 팔로우하고 받아보세요</div>';
+                    card.appendChild(cta);
                 }
 
                 // 가로폭 넘치는 줄 자동 축소 (안전장치)
