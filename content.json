@@ -1,30 +1,30 @@
 {
-  "topic": "김용범 정책실장, 반도체 호황과 부동산 과세 정상화 필요성 강조",
+  "topic": "서울 아파트 가격 상승",
   "card1": {
-    "title": "부동산 폭등?\n세금 손본다!",
-    "sub": "이번엔 진짜 바뀔까?",
-    "query": "Real estate tax",
-    "bg": "https://images.pexels.com/photos/7821551/pexels-photo-7821551.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "서울 아파트\n가격 폭등?",
+    "sub": "끝없는 <b>상승세</b> 속",
+    "query": "Seoul apartment building, rising real estate price",
+    "bg": "https://images.pexels.com/photos/37323647/pexels-photo-37323647.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "호황이 불러온\n불안감은?",
+    "subtitle": "다시 뛰는\n서울 집값",
     "lines": [
-      "<b>반도체</b> 호황으로 쌓인 국부가",
-      "<b>부동산</b> 투기로 유입될 경우",
-      "<b>경제</b> 호황이 짧아질 수 있단"
+      "서울 아파트 <b>실거래가</b>",
+      "지난 1년 새 <b>12.9%</b>",
+      "크게 <b>상승</b>했습니다."
     ],
-    "query": "Economic growth chart",
-    "bg": "https://images.pexels.com/photos/7567445/pexels-photo-7567445.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "real estate graph, price increase chart",
+    "bg": "https://images.pexels.com/photos/9822733/pexels-photo-9822733.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "정부 정책\n대응 전략은?",
+    "subtitle": "하반기 전망\n대처법은?",
     "lines": [
-      "<b>보유세</b>, <b>양도세</b> 등 부동산",
-      "과세 조정을 통해 투기 수요",
-      "억제 목적. <b>지금</b> 자산 점검하세요."
+      "고금리 영향 불구",
+      "집값 <b>하방 경직성</b>이",
+      "유지될 전망입니다."
     ],
-    "query": "Tax policy change",
-    "bg": "https://images.pexels.com/photos/6863189/pexels-photo-6863189.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "family looking for house, house searching app",
+    "bg": "https://images.pexels.com/photos/8962328/pexels-photo-8962328.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "🔥 지금, 부동산 세금 개편이 임박했습니다!\n김용범 정책실장은 <b>반도체</b> 호황으로 유입된 국부가 <b>부동산</b> 불로소득으로 흡수될까 우려했습니다.\n이를 막기 위해 <b>보유세</b>와 <b>양도세</b> 등 부동산 과세의 합리적 조정을 강조했죠.\n투기 수요를 억제하고 <b>경제</b>의 선순환을 유도하겠다는 정부의 의지가 엿보입니다.\n과연 이번 조정이 부동산 시장에 어떤 파장을 가져올지 주목됩니다.\n\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#부동산 #세금개편 #경제뉴스 #김용범 #재테크"
+  "caption": "서울 집값, 다시 뛸 준비 완료? 📈\n지난 1년간 서울 아파트 실거래가가 12.9%나 급등했습니다.\n전세가도 10.5% 오르며 주거비 부담이 커지고 있어요.\n고금리에도 불구하고 집값이 오르는 이유는 무엇일까요?\n하반기에도 <b>상승세</b>는 이어질지, 어떻게 대응해야 할지 GLEND가 분석합니다!\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#서울집값 #아파트값 #부동산투자 #전세가 #내집마련"
 }
