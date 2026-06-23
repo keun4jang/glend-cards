@@ -1,30 +1,30 @@
 {
-  "topic": "서울 아파트 가격 상승",
+  "topic": "증시 폭락과 변동성 확대",
   "card1": {
-    "title": "서울 아파트\n가격 폭등?",
-    "sub": "끝없는 <b>상승세</b> 속",
-    "query": "Seoul apartment building, rising real estate price",
-    "bg": "https://images.pexels.com/photos/37323647/pexels-photo-37323647.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "검은 화요일\n코스피 폭락!",
+    "sub": "순식간에 사라진 910P",
+    "query": "Stock market crash",
+    "bg": "https://images.pexels.com/photos/5561917/pexels-photo-5561917.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "다시 뛰는\n서울 집값",
+    "subtitle": "충격의 증시\n무엇이 문제?",
     "lines": [
-      "서울 아파트 <b>실거래가</b>",
-      "지난 1년 새 <b>12.9%</b>",
-      "크게 <b>상승</b>했습니다."
+      "어제 <b>코스피</b> 6%대 급락,",
+      "910포인트 가까이 <b>증발</b>했어요.",
+      "미 기술주 <b>차익실현</b> 확산이 원인."
     ],
-    "query": "real estate graph, price increase chart",
-    "bg": "https://images.pexels.com/photos/9822733/pexels-photo-9822733.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Stock market down chart",
+    "bg": "https://images.pexels.com/photos/7567223/pexels-photo-7567223.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "하반기 전망\n대처법은?",
+    "subtitle": "앞으로 증시\n어떻게 될까?",
     "lines": [
-      "고금리 영향 불구",
-      "집값 <b>하방 경직성</b>이",
-      "유지될 전망입니다."
+      "금리 인상 전망과 <b>빚투</b> 우려가",
+      "겹치며 <b>변동성</b>이 커질 수 있어요.",
+      "<b>지금</b> 포트폴리오 점검하세요!"
     ],
-    "query": "family looking for house, house searching app",
-    "bg": "https://images.pexels.com/photos/8962328/pexels-photo-8962328.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Financial advisor meeting",
+    "bg": "https://images.pexels.com/photos/5816285/pexels-photo-5816285.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "서울 집값, 다시 뛸 준비 완료? 📈\n지난 1년간 서울 아파트 실거래가가 12.9%나 급등했습니다.\n전세가도 10.5% 오르며 주거비 부담이 커지고 있어요.\n고금리에도 불구하고 집값이 오르는 이유는 무엇일까요?\n하반기에도 <b>상승세</b>는 이어질지, 어떻게 대응해야 할지 GLEND가 분석합니다!\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#서울집값 #아파트값 #부동산투자 #전세가 #내집마련"
+  "caption": "검은 화요일, 내 주식 계좌는 안전한가요?\n어제 코스피 910포인트가 하루만에 증발했습니다.\n미 기술주 차익실현 장세가 아시아 증시 전반에 영향을 미쳤죠.\n금리 인상 전망과 과도한 빚투 우려로 변동성이 더욱 확대될 수 있습니다.\n불확실한 시장에 대비해 철저한 리스크 관리가 필요해요.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#GLEND #글렌드 #주식 #코스피 #증시폭락 #검은화요일 #경제뉴스"
 }
