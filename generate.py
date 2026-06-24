@@ -1,5 +1,7 @@
 ﻿import os
 import json
+import time
+import random
 import urllib.parse
 import requests
 import feedparser
@@ -10,10 +12,16 @@ load_dotenv()
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip())
 PEXELS_KEY = os.getenv("PEXELS_API_KEY", "").strip()
 
-# 1) 최신 경제 뉴스 수집
-QUERY = "경제 OR 금리 OR 증시 OR 부동산 when:1d"
+# 1) 다양한 카테고리 뉴스 수집 (경제 + 사회 자극적 소재)
+QUERIES = [
+    "경제 OR 금리 OR 증시 OR 부동산 when:1d",
+    "사건 OR 사고 OR 논란 OR 충격 when:1d",
+    "트렌드 OR 라이프스타일 OR 소비 OR 직장 when:1d",
+    "AI OR 기술 OR 스타트업 OR 미래 when:1d",
+]
+QUERY = random.choice(QUERIES)
 url = "https://news.google.com/rss/search?q=" + urllib.parse.quote(QUERY) + "&hl=ko&gl=KR&ceid=KR:ko"
-print("최신 경제 뉴스 수집 중...")
+print(f"뉴스 수집 중... (카테고리: {QUERY[:20]})")
 feed = feedparser.parse(url)
 headlines = [e.title for e in feed.entries[:25]]
 print(f"  뉴스 {len(headlines)}개 확보\n")
@@ -22,12 +30,12 @@ news_text = "\n".join(f"- {h}" for h in headlines)
 
 # 2) Gemini에게 주제 선정 + 카드 내용 + 사진 검색어 생성
 PROMPT = f"""
-너는 'GLEND'라는 경제 인스타그램 채널의 전문 카드뉴스 작가야.
+너는 'GLEND'라는 트렌드 인스타그램 채널의 전문 카드뉴스 작가야. 경제, 사회, 라이프스타일, 기술 등 다양한 주제를 다룬다.
 
 아래는 오늘의 최신 경제 뉴스 제목 목록이야:
 {news_text}
 
-이 중에서 일반 대중이 가장 관심 가질 만하고, 카드뉴스로 만들기 좋은 핵심 주제 하나를 직접 골라서, 4장짜리 카드뉴스 내용을 만들어줘.
+이 중에서 일반 대중이 가장 관심 가질 만하고, 자극적이거나 충격적이거나 공감을 유발하는 핵심 주제 하나를 직접 골라서, 4장짜리 카드뉴스 내용을 만들어줘. 단순 경제 수치보다는 사람들이 "이거 진짜야?" "나도 이런 경험 있어" 하고 반응할 소재를 우선해.
 
 규칙:
 - 카드1(후킹): 강렬한 2줄 제목(한 줄 6자 이내) + 호기심 자극 부제(15자 이내)
@@ -55,7 +63,17 @@ PROMPT = f"""
 """
 
 print("Gemini가 주제를 고르고 카드 내용을 만드는 중...\n")
-response = client.models.generate_content(model="models/gemini-2.5-flash", contents=PROMPT)
+for attempt in range(4):
+    try:
+        response = client.models.generate_content(model="models/gemini-2.5-flash", contents=PROMPT)
+        break
+    except Exception as e:
+        if attempt < 3:
+            wait = 30 * (attempt + 1)
+            print(f"  Gemini 오류 ({e.__class__.__name__}), {wait}초 후 재시도... ({attempt+1}/3)")
+            time.sleep(wait)
+        else:
+            raise
 
 raw = response.text.strip()
 if "```" in raw:
