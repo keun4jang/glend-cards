@@ -44,4 +44,7 @@ time.sleep(20)
 # 5) 인스타 발행
 run("인스타 발행", ["upload.py", "go"])
 
+# 6) 스레드 발행
+run("Threads 발행", ["upload_threads.py", "go"])
+
 print(f"\n오늘 자동 발행 완료! {datetime.datetime.now():%Y-%m-%d %H:%M}")
