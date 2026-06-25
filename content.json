@@ -1,31 +1,30 @@
 {
-  "topic": "부동산 공급 위기",
+  "topic": "허위 교통사고 합의금 사기",
   "card1": {
-    "title": "부동산 위기,\n근본 원인?",
-    "sub": "2~3년 전의 후과가?",
-    "query": "Real estate crisis, housing shortage",
-    "bg": "https://images.pexels.com/photos/1571048/pexels-photo-1571048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "교통사고\n조심하세요",
+    "sub": "휴대폰 핑계로\n합의금 뜯는 수법?",
+    "query": "fake accident scam, phone repair, road fraud",
+    "bg": "https://images.pexels.com/photos/7111955/pexels-photo-7111955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "과거 공급,\n현재 영향",
+    "subtitle": "수상한\n합의금",
     "lines": [
-      "2~3년 전 <b>PF 위축</b>으로",
-      "신규 <b>주택 착공</b> 급감해",
-      "현재 <b>공급 부족</b>을 겪는 중."
+      "20대 남성, <b>허위 사고</b>로 돈 챙겨.",
+      "길 가다 폰 떨어트린 척 연기 후,",
+      "달려오는 차에 부딪히며 <b>자해</b> 연출."
     ],
-    "query": "Construction site, real estate market statistics",
-    "bg": "https://images.pexels.com/photos/37520401/pexels-photo-37520401.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "car accident fraud, fake injury, settlement money",
+    "bg": "https://images.pexels.com/photos/7111480/pexels-photo-7111480.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "해법은 결국\n신속한 공급",
+    "subtitle": "피해 예방\n이렇게",
     "lines": [
-      "<b>주택 수급</b> 불균형 심화가",
-      "가격 상승 압력 높여왔어요.",
-      "정부는 <b>공급 확대</b> 필요해요.",
-      "<b>저장</b>하고 다시 보세요!"
+      "<b>블랙박스</b> 기록은 가장 중요해요.",
+      "<b>사고</b> 의심 시 즉시 경찰 신고!",
+      "<b>지금</b> 주변 영상 확보에 노력하세요."
     ],
-    "query": "Building cranes, housing development",
-    "bg": "https://images.pexels.com/photos/8997891/pexels-photo-8997891.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "dashcam security, police report, accident prevention",
+    "bg": "https://images.pexels.com/photos/7715106/pexels-photo-7715106.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "집값 상승의 진짜 원인은 바로 이것?! 🏡\n김용범 전 차관이 밝힌 부동산 위기의 핵심은\n2~3년 전 <b>부동산 PF 위축</b>으로 인한\n<b>주택 공급 부족</b>의 후과라는 점입니다.\n지금이라도 <b>빠른 공급 확대</b>가 중요해요.\n\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#부동산 #집값 #주택공급 #PF대출 #경제뉴스"
+  "caption": "이거 진짜야? 요즘 이런 수법으로 돈 뜯는 사람들이 있다고?\n교묘하게 연출된 허위 교통사고로\n합의금을 요구하는 신종 수법이 발견됐어요.\n20대 남성이 폰 수리비를 빌미로\n1천만원 넘게 챙겼다니 충격적이죠?\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#교통사고 #보험사기 #블랙박스 #합의금 #경제사기"
 }
