@@ -1,30 +1,32 @@
 {
-  "topic": "허위 교통사고 합의금 사기",
+  "topic": "가계 대출 금리 상승",
   "card1": {
-    "title": "교통사고\n조심하세요",
-    "sub": "휴대폰 핑계로\n합의금 뜯는 수법?",
-    "query": "fake accident scam, phone repair, road fraud",
-    "bg": "https://images.pexels.com/photos/7111955/pexels-photo-7111955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "영끌족 쇼크?\n금리 또 뛴다",
+    "sub": "대출이자 부담 비상",
+    "query": "Loan interest rates",
+    "bg": "https://images.pexels.com/photos/8293637/pexels-photo-8293637.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "수상한\n합의금",
+    "subtitle": "주담대\n금리 반등",
     "lines": [
-      "20대 남성, <b>허위 사고</b>로 돈 챙겨.",
-      "길 가다 폰 떨어트린 척 연기 후,",
-      "달려오는 차에 부딪히며 <b>자해</b> 연출."
+      "국내 주요 은행의 <b>주택담보</b>",
+      "변동금리가 한 달 만에",
+      "다시 상승세로 <b>전환</b>했어요."
     ],
-    "query": "car accident fraud, fake injury, settlement money",
-    "bg": "https://images.pexels.com/photos/7111480/pexels-photo-7111480.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Rising loan interest",
+    "bg": "https://images.pexels.com/photos/8293637/pexels-photo-8293637.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "피해 예방\n이렇게",
+    "subtitle": "빚투족\n비상경보",
     "lines": [
-      "<b>블랙박스</b> 기록은 가장 중요해요.",
-      "<b>사고</b> 의심 시 즉시 경찰 신고!",
-      "<b>지금</b> 주변 영상 확보에 노력하세요."
+      "금리 인상 속도는 <b>대출</b>",
+      "부담을 가중시키고 고신용자",
+      "<b>마이너스 통장</b> 금리도 5%",
+      "대를 돌파했어요. <b>지금</b> 상환",
+      "계획을 꼭 점검하세요!"
     ],
-    "query": "dashcam security, police report, accident prevention",
-    "bg": "https://images.pexels.com/photos/7715106/pexels-photo-7715106.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Debt burden, Financial planning",
+    "bg": "https://images.pexels.com/photos/7927389/pexels-photo-7927389.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "이거 진짜야? 요즘 이런 수법으로 돈 뜯는 사람들이 있다고?\n교묘하게 연출된 허위 교통사고로\n합의금을 요구하는 신종 수법이 발견됐어요.\n20대 남성이 폰 수리비를 빌미로\n1천만원 넘게 챙겼다니 충격적이죠?\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#교통사고 #보험사기 #블랙박스 #합의금 #경제사기"
+  "caption": "\"영끌족\"이라면 주목! 주택담보대출 금리가 또 상승했습니다.\n주요 은행의 변동형 주담대 금리가 한 달 만에 반등하며 가계 부담을 가중시키고 있습니다.\n고신용자 마이너스 통장 금리까지 5%를 돌파해 빚투족에게 비상경보가 울리고 있어요.\n현재 대출을 보유하고 있거나 계획 중이라면, 꼼꼼한 재정 점검이 필수적입니다.\n미국의 물가 쇼크와 한국의 금리 인상 기조가 맞물려 당분간 금리 변동성이 클 수 있습니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#금리인상 #주담대 #마이너스통장 #영끌족 #재테크"
 }
