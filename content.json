@@ -1,31 +1,30 @@
 {
-  "topic": "비트코인 사라질 경고",
+  "topic": "직장인 과로사 산재 불인정",
   "card1": {
-    "title": "비트코인\n곧 사라져?",
-    "sub": "닷컴버블 예언자 경고",
-    "query": "Bitcoin crash fear",
-    "bg": "https://images.pexels.com/photos/14911396/pexels-photo-14911396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "과로사?\n아니라고?",
+    "sub": "<b>산재</b> 인정받기 정말 어려울까?",
+    "query": "workplace stress death",
+    "bg": "https://images.pexels.com/photos/8386711/pexels-photo-8386711.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "억만장자\n경고하다",
+    "subtitle": "업무 스트레스\n사망 원인?",
     "lines": [
-      "닷컴버블 붕괴를 예측한",
-      "억만장자 <b>아서 헤이즈</b>는",
-      "비트코인 <b>소멸</b>을 경고."
+      "법원, <b>과로</b>로 사망했지만",
+      "<b>업무상 재해</b> 아냐 판결을",
+      "주변 압박 있었다고 해도"
     ],
-    "query": "Crypto market crash",
-    "bg": "https://images.pexels.com/photos/17977097/pexels-photo-17977097.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "legal verdict stress",
+    "bg": "https://images.pexels.com/photos/6077189/pexels-photo-6077189.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "위험한\n자산인가?",
+    "subtitle": "직장인의\n위험 신호",
     "lines": [
-      "비트코인 등 <b>가상자산</b>은",
-      "높은 변동성으로 여전히",
-      "주의가 필요한 <b>투자처</b>.",
-      "<b>지금</b> 투자 계획 점검하세요."
+      "<b>과로사</b> 인정, 쉽지 않아요.",
+      "정확한 인과관계 증명",
+      "매우 중요합니다. <b>지금</b> 건강 지키세요!"
     ],
-    "query": "Digital asset risk",
-    "bg": "https://images.pexels.com/photos/6770523/pexels-photo-6770523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "workplace burnout symptoms",
+    "bg": "https://images.pexels.com/photos/12912149/pexels-photo-12912149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "비트코인, 정말 닷컴버블처럼 사라질까요? 😱\n억만장자 아서 헤이즈가 비트코인에 대한 충격적인 경고를 내놨습니다.\n닷컴버블 붕괴에 비유하며 그 가치가 결국 소멸할 수 있다고 지적했는데요.\n변동성이 큰 가상자산, 단순히 유행 따라 투자하기보다는 본질을 이해해야 할 때입니다.\n이번 경고가 당신의 투자 방향에 어떤 영향을 줄까요?\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#비트코인 #가상자산 #닷컴버블 #투자경고 #경제뉴스"
+  "caption": "일하다 쓰러져도 '산재 아님' 판결, 남일 같지 않나요?\n업무 스트레스와 과로로 사망했지만, 법원은 <b>업무상 재해</b>로 인정하지 않았습니다.\n이처럼 과로사 인정은 매우 복잡하며, 명확한 <b>인과관계</b> 증명이 필수적이죠.\n직장인의 건강과 안전을 위한 사회적, 법적 제도 보완이 시급한 상황입니다.\n스스로의 건강을 지키는 것이 <b>최우선</b>입니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#과로사 #산재 #직장인 #업무스트레스 #워라밸"
 }
