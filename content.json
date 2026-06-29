@@ -1,30 +1,30 @@
 {
-  "topic": "직장인 과로사 산재 불인정",
+  "topic": "재외국민 사건·사고 급증 (특히 납치·감금)",
   "card1": {
-    "title": "과로사?\n아니라고?",
-    "sub": "<b>산재</b> 인정받기 정말 어려울까?",
-    "query": "workplace stress death",
-    "bg": "https://images.pexels.com/photos/8386711/pexels-photo-8386711.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "낯선 곳\n더 위험해",
+    "sub": "해외 사고 급증 비상",
+    "query": "travel safety warning",
+    "bg": "https://images.pexels.com/photos/5302090/pexels-photo-5302090.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "업무 스트레스\n사망 원인?",
+    "subtitle": "놀라운 증가\n무슨 일이야?",
     "lines": [
-      "법원, <b>과로</b>로 사망했지만",
-      "<b>업무상 재해</b> 아냐 판결을",
-      "주변 압박 있었다고 해도"
+      "5년간 <b>재외국민</b> 사건이",
+      "3배 넘게 늘어났어요.",
+      "<b>납치·감금</b>은 20배 폭증."
     ],
-    "query": "legal verdict stress",
-    "bg": "https://images.pexels.com/photos/6077189/pexels-photo-6077189.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "crime rate abroad statistics",
+    "bg": "https://images.pexels.com/photos/7948058/pexels-photo-7948058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "직장인의\n위험 신호",
+    "subtitle": "안전하게\n여행하려면?",
     "lines": [
-      "<b>과로사</b> 인정, 쉽지 않아요.",
-      "정확한 인과관계 증명",
-      "매우 중요합니다. <b>지금</b> 건강 지키세요!"
+      "불안정한 현지 <b>치안</b>과",
+      "정보 부족이 큰 원인입니다.",
+      "<b>지금</b> 외교부 앱 확인하세요!"
     ],
-    "query": "workplace burnout symptoms",
-    "bg": "https://images.pexels.com/photos/12912149/pexels-photo-12912149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "safe travel tips",
+    "bg": "https://images.pexels.com/photos/8372625/pexels-photo-8372625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "일하다 쓰러져도 '산재 아님' 판결, 남일 같지 않나요?\n업무 스트레스와 과로로 사망했지만, 법원은 <b>업무상 재해</b>로 인정하지 않았습니다.\n이처럼 과로사 인정은 매우 복잡하며, 명확한 <b>인과관계</b> 증명이 필수적이죠.\n직장인의 건강과 안전을 위한 사회적, 법적 제도 보완이 시급한 상황입니다.\n스스로의 건강을 지키는 것이 <b>최우선</b>입니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#과로사 #산재 #직장인 #업무스트레스 #워라밸"
+  "caption": "해외여행? 이제는 더 이상 낭만이 아닙니다!\n최근 5년간 재외국민 사건·사고가 3배, 특히 납치·감금은 무려 20배나 폭증했습니다.\n여행 전 철저한 현지 치안 정보 확인과 비상 연락망 구축이 그 어느 때보다 중요해졌습니다.\n낯선 곳에서의 위험에 대비하는 것은 선택이 아닌 필수입니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#해외여행 #안전여행 #재외국민 #여행주의 #GLEND"
 }
