@@ -1,30 +1,30 @@
 {
-  "topic": "재외국민 사건·사고 급증 (특히 납치·감금)",
+  "topic": "배재고 5.18 비하 및 AI 사과문 논란",
   "card1": {
-    "title": "낯선 곳\n더 위험해",
-    "sub": "해외 사고 급증 비상",
-    "query": "travel safety warning",
-    "bg": "https://images.pexels.com/photos/5302090/pexels-photo-5302090.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "5.18 비하\nAI 사과?",
+    "sub": "학교 사과문, 진정성은?",
+    "query": "Student controversy, AI apology, School scandal",
+    "bg": "https://images.pexels.com/photos/3825309/pexels-photo-3825309.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "놀라운 증가\n무슨 일이야?",
+    "subtitle": "충격 발언\n배재고 논란",
     "lines": [
-      "5년간 <b>재외국민</b> 사건이",
-      "3배 넘게 늘어났어요.",
-      "<b>납치·감금</b>은 20배 폭증."
+      "배재고 학생들 채팅방서 <b>5.18 비하</b>.",
+      "\"탱크 오고 스벅 가자\" 망언 퍼져.",
+      "사과문 <b>AI 작성 의혹</b> 커져 파문."
     ],
-    "query": "crime rate abroad statistics",
-    "bg": "https://images.pexels.com/photos/7948058/pexels-photo-7948058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Student chat scandal, Historical insensitivity, AI generated text",
+    "bg": "https://images.pexels.com/photos/16245252/pexels-photo-16245252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "안전하게\n여행하려면?",
+    "subtitle": "<b>진정성</b> 문제\n미래 교육",
     "lines": [
-      "불안정한 현지 <b>치안</b>과",
-      "정보 부족이 큰 원인입니다.",
-      "<b>지금</b> 외교부 앱 확인하세요!"
+      "논란 속 <b>학교의 역할</b>은 더욱 중요.",
+      "책임 회피 아닌 진심어린 자세 필요.",
+      "<b>진정한 반성</b> 위한 교육 시작하세요."
     ],
-    "query": "safe travel tips",
-    "bg": "https://images.pexels.com/photos/8372625/pexels-photo-8372625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Education ethics, School apology, Authentic reflection",
+    "bg": "https://images.pexels.com/photos/3825291/pexels-photo-3825291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "해외여행? 이제는 더 이상 낭만이 아닙니다!\n최근 5년간 재외국민 사건·사고가 3배, 특히 납치·감금은 무려 20배나 폭증했습니다.\n여행 전 철저한 현지 치안 정보 확인과 비상 연락망 구축이 그 어느 때보다 중요해졌습니다.\n낯선 곳에서의 위험에 대비하는 것은 선택이 아닌 필수입니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#해외여행 #안전여행 #재외국민 #여행주의 #GLEND"
+  "caption": "5.18 비하에 AI 사과문까지? 이 사건, 대체 뭐죠?\n배재고 학생들의 충격 발언에 이어 AI로 작성된 듯한 사과문이 논란입니다.\n진정성 없는 대응은 오히려 더 큰 분노를 자아내고 있죠.\n디지털 시대, 학교와 사회가 지켜야 할 윤리 의식은 무엇일까요?\n이번 사태, 단순한 해프닝으로 넘길 수 없습니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#배재고 #518 #AI사과문 #학교논란 #사회이슈"
 }
