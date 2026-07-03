@@ -1,30 +1,30 @@
 {
-  "topic": "집값 상승 전망과 부동산 정책 신뢰도 급감",
+  "topic": "키움증권 내부통제 문제",
   "card1": {
-    "title": "집값 뛴다?\n정책은 글쎄",
-    "sub": "반토막 난 신뢰",
-    "query": "House price forecast, public opinion survey",
-    "bg": "https://images.pexels.com/photos/7937294/pexels-photo-7937294.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "증권사 불안?\n내 돈 괜찮아?",
+    "sub": "키움증권 내부통제 <b>빨간불</b>",
+    "query": "Financial data security, Stock market anxiety, Broken piggy bank",
+    "bg": "https://images.pexels.com/photos/5562086/pexels-photo-5562086.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "여론조사\n결과는?",
+    "subtitle": "잦은 <b>사고</b>\n흔들리는 <b>신뢰</b>",
     "lines": [
-      "향후 1년 내 집값이 <b>오를 것</b>",
-      "응답자의 55%가 전망했어요.",
-      "정책 <b>잘못</b> 평가는 46%."
+      "최근 키움증권의 <b>전산사고</b>",
+      "불완전 판매 의혹까지 겹쳐",
+      "투자자 불안감이 <b>커집니다</b>."
     ],
-    "query": "Korean survey results, data chart",
-    "bg": "https://images.pexels.com/photos/6592681/pexels-photo-6592681.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Digital error screen, Broken trust, Data breach warning",
+    "bg": "https://images.pexels.com/photos/9121365/pexels-photo-9121365.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "갈 곳 잃은\n국민 심리",
+    "subtitle": "내 자산\n안전한가요?",
     "lines": [
-      "<b>2030</b> 세대 절반 이상은",
-      "정부 정책 부정적 평가.",
-      "<b>내집마련</b> 다시 점검해요!"
+      "<b>증권사</b> 선택 시 신중해야 해요.",
+      "내부통제 시스템 확인이 <b>필수</b>.",
+      "<b>지금</b> 내 계좌 점검해 보세요!"
     ],
-    "query": "Frustrated young adult, housing crisis",
-    "bg": "https://images.pexels.com/photos/6837642/pexels-photo-6837642.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Financial checklist, Secure padlock, Magnifying glass security",
+    "bg": "https://images.pexels.com/photos/38093390/pexels-photo-38093390.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "향후 1년 집값 55% 오른다? 정부 정책 신뢰도는 반토막!\n\n최근 여론조사 결과, <b>집값 상승</b> 전망은 커지고 \n정부 부동산 정책에 대한 <b>신뢰도</b>는 급감했어요.\n특히 <b>2030</b> 세대의 정책 부정 평가는 절반 이상으로 \n불안정한 <b>내집마련</b> 심리를 잘 보여줍니다.\n\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#부동산전망 #집값상승 #부동산정책 #내집마련 #경제이슈"
+  "caption": "내 소중한 주식 자산, 정말 안전한가요?\n최근 키움증권에서 잇따른 전산사고와 불완전 판매 의혹이 불거지며 투자자들의 불안감이 커지고 있어요.\n증권사의 <b>내부통제 시스템</b>은 우리 자산 보호의 핵심입니다.\n단순히 수익률만 볼 게 아니라, 회사의 안정성을 꼼꼼히 따져봐야 할 때입니다.\n나의 투자금은 내가 지켜야 합니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#키움증권 #증권사 #내부통제 #주식투자 #경제뉴스"
 }
