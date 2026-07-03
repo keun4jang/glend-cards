@@ -1,30 +1,30 @@
 {
-  "topic": "한방병원의 '호캉스 영업' 논란",
+  "topic": "집값 상승 전망과 부동산 정책 신뢰도 급감",
   "card1": {
-    "title": "입원하면\n공짜 호캉스?",
-    "sub": "교통사고 병원의 충격 실태",
-    "query": "hospital luxury fraud",
-    "bg": "https://images.pexels.com/photos/5961633/pexels-photo-5961633.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "집값 뛴다?\n정책은 글쎄",
+    "sub": "반토막 난 신뢰",
+    "query": "House price forecast, public opinion survey",
+    "bg": "https://images.pexels.com/photos/7937294/pexels-photo-7937294.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "도 넘은\n환자 유치",
+    "subtitle": "여론조사\n결과는?",
     "lines": [
-      "한방병원들 <b>교통사고</b> 환자에",
-      "고급 숙소, <b>피부관리</b> 등 제공해",
-      "보험금으로 <b>환자 유인</b> 논란 심화"
+      "향후 1년 내 집값이 <b>오를 것</b>",
+      "응답자의 55%가 전망했어요.",
+      "정책 <b>잘못</b> 평가는 46%."
     ],
-    "query": "hospital patient attraction marketing",
-    "bg": "https://images.pexels.com/photos/6303643/pexels-photo-6303643.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Korean survey results, data chart",
+    "bg": "https://images.pexels.com/photos/6592681/pexels-photo-6592681.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "누구 돈이\n나가는 걸까?",
+    "subtitle": "갈 곳 잃은\n국민 심리",
     "lines": [
-      "불필요한 과잉진료는 <b>보험금</b>을",
-      "증가시켜 결국 모두의 <b>보험료</b>를",
-      "<b>지금</b> 우리 사회의 윤리 의식은?"
+      "<b>2030</b> 세대 절반 이상은",
+      "정부 정책 부정적 평가.",
+      "<b>내집마련</b> 다시 점검해요!"
     ],
-    "query": "rising insurance premium",
-    "bg": "https://images.pexels.com/photos/6289038/pexels-photo-6289038.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Frustrated young adult, housing crisis",
+    "bg": "https://images.pexels.com/photos/6837642/pexels-photo-6837642.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "입원만 해도 공짜 호캉스? 이 비상식적인 이야기가 현실이라고요?\n일부 한방병원들이 교통사고 환자를 유치하기 위해\n고급 숙박 시설, 피부 관리 등 ‘호캉스’를 제공하며\n수십 배의 보험금을 청구하는 행태가 드러나 충격을 주고 있습니다.\n결국 이 모든 비용은 우리 모두의 보험료 상승으로 이어집니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#호캉스병원 #의료사기 #보험료인상 #경제뉴스 #GLEND"
+  "caption": "향후 1년 집값 55% 오른다? 정부 정책 신뢰도는 반토막!\n\n최근 여론조사 결과, <b>집값 상승</b> 전망은 커지고 \n정부 부동산 정책에 대한 <b>신뢰도</b>는 급감했어요.\n특히 <b>2030</b> 세대의 정책 부정 평가는 절반 이상으로 \n불안정한 <b>내집마련</b> 심리를 잘 보여줍니다.\n\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#부동산전망 #집값상승 #부동산정책 #내집마련 #경제이슈"
 }
