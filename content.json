@@ -1,30 +1,30 @@
 {
-  "topic": "키움증권 내부통제 문제",
+  "topic": "직장 내 괴롭힘",
   "card1": {
-    "title": "증권사 불안?\n내 돈 괜찮아?",
-    "sub": "키움증권 내부통제 <b>빨간불</b>",
-    "query": "Financial data security, Stock market anxiety, Broken piggy bank",
-    "bg": "https://images.pexels.com/photos/5562086/pexels-photo-5562086.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "진짜냐\n이게?",
+    "sub": "피해자는 당신일수도.",
+    "query": "workplace bullying, office harassment, sad employee",
+    "bg": "https://images.pexels.com/photos/7640808/pexels-photo-7640808.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "잦은 <b>사고</b>\n흔들리는 <b>신뢰</b>",
+    "subtitle": "현실의\n괴롭힘",
     "lines": [
-      "최근 키움증권의 <b>전산사고</b>",
-      "불완전 판매 의혹까지 겹쳐",
-      "투자자 불안감이 <b>커집니다</b>."
+      "숨진 <b>여성 소방관</b> 비하",
+      "공무원들 <b>경찰 수사</b> 착수",
+      "충격적 사회 문제로 부각."
     ],
-    "query": "Digital error screen, Broken trust, Data breach warning",
-    "bg": "https://images.pexels.com/photos/9121365/pexels-photo-9121365.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "office conflict, employee struggle, justice scale",
+    "bg": "https://images.pexels.com/photos/7927261/pexels-photo-7927261.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "내 자산\n안전한가요?",
+    "subtitle": "더는\n참지마",
     "lines": [
-      "<b>증권사</b> 선택 시 신중해야 해요.",
-      "내부통제 시스템 확인이 <b>필수</b>.",
-      "<b>지금</b> 내 계좌 점검해 보세요!"
+      "<b>직장 내 괴롭힘</b> 신고는",
+      "법적 보호 아래 가능합니다.",
+      "<b>지금</b> 나 자신을 지켜내세요!"
     ],
-    "query": "Financial checklist, Secure padlock, Magnifying glass security",
-    "bg": "https://images.pexels.com/photos/38093390/pexels-photo-38093390.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "support group, legal advice, helping hand",
+    "bg": "https://images.pexels.com/photos/6146693/pexels-photo-6146693.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "내 소중한 주식 자산, 정말 안전한가요?\n최근 키움증권에서 잇따른 전산사고와 불완전 판매 의혹이 불거지며 투자자들의 불안감이 커지고 있어요.\n증권사의 <b>내부통제 시스템</b>은 우리 자산 보호의 핵심입니다.\n단순히 수익률만 볼 게 아니라, 회사의 안정성을 꼼꼼히 따져봐야 할 때입니다.\n나의 투자금은 내가 지켜야 합니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#키움증권 #증권사 #내부통제 #주식투자 #경제뉴스"
+  "caption": "당신은 혹시 직장 괴롭힘을 당하고 있나요?\n매일 출근이 지옥 같고, 숨 막히는 압박감에 시달린다면\n더는 혼자 감내하지 마세요.\n법적 보호와 다양한 지원이 있습니다.\n당신의 존엄은 지켜져야 할 소중한 가치입니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#직장괴롭힘 #태움 #직장인 #회사생활 #사회문제"
 }
