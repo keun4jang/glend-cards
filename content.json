@@ -1,30 +1,31 @@
 {
-  "topic": "직장 내 괴롭힘",
+  "topic": "AI 에이전트 전력 소비",
   "card1": {
-    "title": "진짜냐\n이게?",
-    "sub": "피해자는 당신일수도.",
-    "query": "workplace bullying, office harassment, sad employee",
-    "bg": "https://images.pexels.com/photos/7640808/pexels-photo-7640808.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "AI의 역습?\n숨은 전력 폭탄!",
+    "sub": "상상 초월 전기세",
+    "query": "AI electric consumption",
+    "bg": "https://images.pexels.com/photos/18358118/pexels-photo-18358118.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "현실의\n괴롭힘",
+    "subtitle": "스마트 AI\n숨겨진 진실",
     "lines": [
-      "숨진 <b>여성 소방관</b> 비하",
-      "공무원들 <b>경찰 수사</b> 착수",
-      "충격적 사회 문제로 부각."
+      "챗봇 대비 <b>AI 에이전트</b>는",
+      "질문 한 번에 <b>136배</b> 많은",
+      "전력을 소모한다고 밝혀져."
     ],
-    "query": "office conflict, employee struggle, justice scale",
-    "bg": "https://images.pexels.com/photos/7927261/pexels-photo-7927261.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Data center power",
+    "bg": "https://images.pexels.com/photos/5203849/pexels-photo-5203849.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "더는\n참지마",
+    "subtitle": "새로운 숙제\n미래의 선택",
     "lines": [
-      "<b>직장 내 괴롭힘</b> 신고는",
-      "법적 보호 아래 가능합니다.",
-      "<b>지금</b> 나 자신을 지켜내세요!"
+      "AI 대중화 시 미국 전체",
+      "전력의 <b>절반</b>을 소비할",
+      "수 있어 <b>환경 문제</b> 심각.",
+      "<b>지금</b> 에너지 효율을 고민하세요."
     ],
-    "query": "support group, legal advice, helping hand",
-    "bg": "https://images.pexels.com/photos/6146693/pexels-photo-6146693.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Smart energy solutions",
+    "bg": "https://images.pexels.com/photos/38171185/pexels-photo-38171185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "당신은 혹시 직장 괴롭힘을 당하고 있나요?\n매일 출근이 지옥 같고, 숨 막히는 압박감에 시달린다면\n더는 혼자 감내하지 마세요.\n법적 보호와 다양한 지원이 있습니다.\n당신의 존엄은 지켜져야 할 소중한 가치입니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#직장괴롭힘 #태움 #직장인 #회사생활 #사회문제"
+  "caption": "AI 에이전트가 질문 하나에 챗봇의 136배 전력을 쓴다고?😮\n\n똑똑해지는 AI, 과연 좋은 걸까요?\nAI 에이전트의 엄청난 전력 소모는 \n미래 환경에 큰 부담을 줄 수 있어요.\n지금부터 <b>지속가능한 AI</b>에 관심을 가져야 할 때!\n\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#AI #전력소모 #에너지효율 #ESG #미래기술"
 }
