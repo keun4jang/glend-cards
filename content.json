@@ -1,31 +1,33 @@
 {
-  "topic": "AI 에이전트 전력 소비",
+  "topic": "장애인 특공 부정청약 사건",
   "card1": {
-    "title": "AI의 역습?\n숨은 전력 폭탄!",
-    "sub": "상상 초월 전기세",
-    "query": "AI electric consumption",
-    "bg": "https://images.pexels.com/photos/18358118/pexels-photo-18358118.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "불법 청약?\n장애인 <b>특공</b>",
+    "sub": "국민 분노가 <b>폭발</b>",
+    "query": "Fraudulent housing, Special housing benefits",
+    "bg": "https://images.pexels.com/photos/18093637/pexels-photo-18093637.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "스마트 AI\n숨겨진 진실",
+    "subtitle": "<b>국민</b> 분노\n왜 <b>터졌나</b>",
     "lines": [
-      "챗봇 대비 <b>AI 에이전트</b>는",
-      "질문 한 번에 <b>136배</b> 많은",
-      "전력을 소모한다고 밝혀져."
+      "靑, 장애인 <b>특공</b>",
+      "부정청약에 <b>격분</b>",
+      "제도 전반 점검 지시"
     ],
-    "query": "Data center power",
-    "bg": "https://images.pexels.com/photos/5203849/pexels-photo-5203849.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Housing fraud investigation, Government crackdown, Housing policy reform",
+    "bg": "https://images.pexels.com/photos/10481274/pexels-photo-10481274.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "새로운 숙제\n미래의 선택",
+    "subtitle": "<b>제도</b> 허점\n어떻게 <b>막나</b>",
     "lines": [
-      "AI 대중화 시 미국 전체",
-      "전력의 <b>절반</b>을 소비할",
-      "수 있어 <b>환경 문제</b> 심각.",
-      "<b>지금</b> 에너지 효율을 고민하세요."
+      "<b>주택</b> 특공은 본래",
+      "<b>취약층</b> 보호 목적",
+      "<b>부정</b> 사용 시 강력 처벌",
+      "제도 <b>투명성</b> 강화가",
+      "<b>반드시</b> 필요합니다.",
+      "<b>지금</b> 관련 법안 찾아보세요."
     ],
-    "query": "Smart energy solutions",
-    "bg": "https://images.pexels.com/photos/38171185/pexels-photo-38171185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Housing reform, Anti-corruption housing, Ethical real estate",
+    "bg": "https://images.pexels.com/photos/20185458/pexels-photo-20185458.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "AI 에이전트가 질문 하나에 챗봇의 136배 전력을 쓴다고?😮\n\n똑똑해지는 AI, 과연 좋은 걸까요?\nAI 에이전트의 엄청난 전력 소모는 \n미래 환경에 큰 부담을 줄 수 있어요.\n지금부터 <b>지속가능한 AI</b>에 관심을 가져야 할 때!\n\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#AI #전력소모 #에너지효율 #ESG #미래기술"
+  "caption": "국민을 분노케 한 장애인 특공 부정청약의 실체는?\n장애인 특별 공급은 취약 계층의 주거 안정을 돕는 중요한 제도입니다.\n그러나 이를 악용하는 사례가 속출하며 국민적 공분을 사고 있습니다.\n정부는 제도 전반을 점검하고 강력한 처벌을 예고했습니다.\n<b>지금</b>, 투명한 사회를 위한 우리의 관심이 필요할 때입니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#부정청약 #장애인특공 #부동산 #주택정책 #사회문제"
 }
