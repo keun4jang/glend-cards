@@ -1,33 +1,30 @@
 {
-  "topic": "장애인 특공 부정청약 사건",
+  "topic": "노년층 부동산 양극화",
   "card1": {
-    "title": "불법 청약?\n장애인 <b>특공</b>",
-    "sub": "국민 분노가 <b>폭발</b>",
-    "query": "Fraudulent housing, Special housing benefits",
-    "bg": "https://images.pexels.com/photos/18093637/pexels-photo-18093637.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "노년층의\n두 얼굴",
+    "sub": "씁쓸한 현실 마주하다",
+    "query": "elderly wealth gap, senior housing disparity",
+    "bg": "https://images.pexels.com/photos/3831733/pexels-photo-3831733.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "<b>국민</b> 분노\n왜 <b>터졌나</b>",
+    "subtitle": "심해지는\n부동산 격차",
     "lines": [
-      "靑, 장애인 <b>특공</b>",
-      "부정청약에 <b>격분</b>",
-      "제도 전반 점검 지시"
+      "<b>노년층</b> 빈곤율 40% 육박,",
+      "<b>부동산</b> 자산 격차가",
+      "극심한 양극화를 만들죠."
     ],
-    "query": "Housing fraud investigation, Government crackdown, Housing policy reform",
-    "bg": "https://images.pexels.com/photos/10481274/pexels-photo-10481274.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "old people poverty, senior citizen house",
+    "bg": "https://images.pexels.com/photos/33952465/pexels-photo-33952465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "<b>제도</b> 허점\n어떻게 <b>막나</b>",
+    "subtitle": "삶의 질을\n위협한다",
     "lines": [
-      "<b>주택</b> 특공은 본래",
-      "<b>취약층</b> 보호 목적",
-      "<b>부정</b> 사용 시 강력 처벌",
-      "제도 <b>투명성</b> 강화가",
-      "<b>반드시</b> 필요합니다.",
-      "<b>지금</b> 관련 법안 찾아보세요."
+      "주거 양극화는 <b>노년</b>의",
+      "<b>삶의 질</b> 하락을 초래,",
+      "<b>지금</b> 노후 계획 세우세요."
     ],
-    "query": "Housing reform, Anti-corruption housing, Ethical real estate",
-    "bg": "https://images.pexels.com/photos/20185458/pexels-photo-20185458.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "elderly financial struggle, senior future planning",
+    "bg": "https://images.pexels.com/photos/12645002/pexels-photo-12645002.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "국민을 분노케 한 장애인 특공 부정청약의 실체는?\n장애인 특별 공급은 취약 계층의 주거 안정을 돕는 중요한 제도입니다.\n그러나 이를 악용하는 사례가 속출하며 국민적 공분을 사고 있습니다.\n정부는 제도 전반을 점검하고 강력한 처벌을 예고했습니다.\n<b>지금</b>, 투명한 사회를 위한 우리의 관심이 필요할 때입니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#부정청약 #장애인특공 #부동산 #주택정책 #사회문제"
+  "caption": "노년층이 겪는 부동산 양극화, 당신은 어떤 얼굴인가요?\n나이 들어도 재정적으로 자유로울 줄 알았는데, 현실은 노년층의 소득 빈곤율이 역대 최고치를 기록하고 있어요.\n특히 부동산 자산에서 극명하게 갈리는 자산가와 세입자 간의 격차는 우리 사회의 숨겨진 그림자입니다.\n미리 준비하지 않으면 불안한 노후를 맞이할 수도 있습니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#노년층양극화 #부동산양극화 #은퇴준비 #노후대비 #경제뉴스"
 }
