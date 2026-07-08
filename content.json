@@ -1,30 +1,31 @@
 {
-  "topic": "노년층 부동산 양극화",
+  "topic": "직장 내 괴롭힘",
   "card1": {
-    "title": "노년층의\n두 얼굴",
-    "sub": "씁쓸한 현실 마주하다",
-    "query": "elderly wealth gap, senior housing disparity",
-    "bg": "https://images.pexels.com/photos/3831733/pexels-photo-3831733.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "회사에서\n괴롭힘?",
+    "sub": "슬픈 현실이 아니다",
+    "query": "Workplace bullying, person in distress at work",
+    "bg": "https://images.pexels.com/photos/7640729/pexels-photo-7640729.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "심해지는\n부동산 격차",
+    "subtitle": "문화 아닌\n괴롭힘",
     "lines": [
-      "<b>노년층</b> 빈곤율 40% 육박,",
-      "<b>부동산</b> 자산 격차가",
-      "극심한 양극화를 만들죠."
+      "간호학과 교수들은 <b>태움</b> 문화가",
+      "직장 내 괴롭힘이라 명확히 밝혔죠.",
+      "상습적 폭언은 심각한 범죄입니다."
     ],
-    "query": "old people poverty, senior citizen house",
-    "bg": "https://images.pexels.com/photos/33952465/pexels-photo-33952465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Sad office worker, stressed professional, unfair treatment at work",
+    "bg": "https://images.pexels.com/photos/12911207/pexels-photo-12911207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "삶의 질을\n위협한다",
+    "subtitle": "피해자\n속출 중",
     "lines": [
-      "주거 양극화는 <b>노년</b>의",
-      "<b>삶의 질</b> 하락을 초래,",
-      "<b>지금</b> 노후 계획 세우세요."
+      "최근 <b>괴롭힘</b> 호소 후 사망한",
+      "방사선사 사건이 발생했어요.",
+      "<b>법적 보호</b>가 절실합니다.",
+      "<b>지금</b> 우리의 관심을 보여주세요."
     ],
-    "query": "elderly financial struggle, senior future planning",
-    "bg": "https://images.pexels.com/photos/12645002/pexels-photo-12645002.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "People in silhouette, support group, legal protection",
+    "bg": "https://images.pexels.com/photos/7468257/pexels-photo-7468257.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "노년층이 겪는 부동산 양극화, 당신은 어떤 얼굴인가요?\n나이 들어도 재정적으로 자유로울 줄 알았는데, 현실은 노년층의 소득 빈곤율이 역대 최고치를 기록하고 있어요.\n특히 부동산 자산에서 극명하게 갈리는 자산가와 세입자 간의 격차는 우리 사회의 숨겨진 그림자입니다.\n미리 준비하지 않으면 불안한 노후를 맞이할 수도 있습니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#노년층양극화 #부동산양극화 #은퇴준비 #노후대비 #경제뉴스"
+  "caption": "혹시 회사에서 혼자 힘들어하고 있나요?\n'태움'이라 불리던 관행은 이제 명백한 <b>직장 내 괴롭힘</b>입니다.\n피해를 호소하다 안타깝게 세상을 떠난 방사선사 사건은 우리에게 큰 경종을 울립니다.\n더 이상 침묵하지 않고 함께 목소리를 내야 할 때입니다.\n우리의 <b>관심</b>이 변화를 만듭니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#직장내괴롭힘 #태움 #노동인권 #사회문제 #직장생활"
 }
