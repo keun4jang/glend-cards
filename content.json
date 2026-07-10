@@ -1,30 +1,30 @@
 {
-  "topic": "대출 금리 상승과 가계 부담",
+  "topic": "어린 자매 만취운전 사망사고",
   "card1": {
-    "title": "은행 대출금리\n또 오른다?",
-    "sub": "내 이자 부담은?",
-    "query": "rising interest rate, loan worries",
-    "bg": "https://images.pexels.com/photos/7821909/pexels-photo-7821909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "만취 운전 엄마의\n끔찍한 선택",
+    "sub": "어린 두 딸의 비극",
+    "query": "drunk driving tragedy, car accident children",
+    "bg": "https://images.pexels.com/photos/11477795/pexels-photo-11477795.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "은행 이자\n왜 오르나?",
+    "subtitle": "두 딸의\n마지막 밤",
     "lines": [
-      "최근 <b>은행</b> 조달금리가",
-      "급격히 오르고 있어 <b>대출</b>",
-      "이자 부담이 커졌습니다."
+      "비극을 낳은 <b>만취 운전</b> 엄마",
+      "시속 178km <b>과속</b> 만취 운전",
+      "<b>두 딸</b>은 현장에서 숨을 거뒀다"
     ],
-    "query": "bank loan increase, money flow chart",
-    "bg": "https://images.pexels.com/photos/6289041/pexels-photo-6289041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "courtroom scene, car crash aftermath, grieving family",
+    "bg": "https://images.pexels.com/photos/30893737/pexels-photo-30893737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "지금부터\n준비할 것",
+    "subtitle": "솜방망이\n처벌 논란",
     "lines": [
-      "높아지는 <b>금리</b> 환경 속",
-      "자산 현황을 점검하고",
-      "<b>지금</b> 대출을 관리하세요."
+      "징역 12년형, <b>시민</b>들 분노",
+      "<b>음주운전</b> 처벌 강화 목소리",
+      "<b>지금</b> 안전 운전 다짐하세요."
     ],
-    "query": "financial planning, money management, personal finance",
-    "bg": "https://images.pexels.com/photos/5900188/pexels-photo-5900188.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "driving under influence sign, broken car glass, justice symbol",
+    "bg": "https://images.pexels.com/photos/17716230/pexels-photo-17716230.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "내 대출 이자, 또 오를까? 은행들이 대출 금리를 올리고 있어요!\n\n최근 은행 조달 금리가 고공행진하며\n가계 대출 금리도 함께 상승 중입니다.\n변동금리 대출을 가진 분이라면,\n곧 이자 부담이 커질 수 있습니다.\n\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#대출금리 #금리인상 #경제뉴스 #재테크 #가계부채"
+  "caption": "어린 자매를 죽음으로 내몬 만취 운전, 당신이라면 믿겠습니까?\n엄마의 끔찍한 선택이 어린 두 딸의 생명을 앗아갔습니다.\n음주운전 사고는 단순한 실수가 아닌, 살인 행위와 같습니다.\n솜방망이 처벌 논란 속, 우리 사회의 안전 불감증은 어디까지일까요?\n<b>음주운전</b> 근절을 위한 강력한 사회적 변화가 필요합니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#음주운전 #교통사고 #사회문제 #안전운전 #GLEND"
 }
