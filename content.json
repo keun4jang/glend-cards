@@ -1,30 +1,30 @@
 {
-  "topic": "어린 자매 만취운전 사망사고",
+  "topic": "한국은행 기준금리 인상",
   "card1": {
-    "title": "만취 운전 엄마의\n끔찍한 선택",
-    "sub": "어린 두 딸의 비극",
-    "query": "drunk driving tragedy, car accident children",
-    "bg": "https://images.pexels.com/photos/11477795/pexels-photo-11477795.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "금리 인상\n초읽기?",
+    "sub": "3년 반만의 파장",
+    "query": "interest rate hike countdown",
+    "bg": "https://images.pexels.com/photos/5650025/pexels-photo-5650025.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "두 딸의\n마지막 밤",
+    "subtitle": "다가온 변화\n왜 지금?",
     "lines": [
-      "비극을 낳은 <b>만취 운전</b> 엄마",
-      "시속 178km <b>과속</b> 만취 운전",
-      "<b>두 딸</b>은 현장에서 숨을 거뒀다"
+      "<b>한국은행</b>이 3년 반 만에",
+      "<b>기준금리</b> 인상을 앞두고",
+      "다음 주 최종 결정을 내립니다."
     ],
-    "query": "courtroom scene, car crash aftermath, grieving family",
-    "bg": "https://images.pexels.com/photos/30893737/pexels-photo-30893737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "central bank meeting, interest rate chart",
+    "bg": "https://images.pexels.com/photos/5562086/pexels-photo-5562086.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "솜방망이\n처벌 논란",
+    "subtitle": "나에게 미칠\n경제 파장",
     "lines": [
-      "징역 12년형, <b>시민</b>들 분노",
-      "<b>음주운전</b> 처벌 강화 목소리",
-      "<b>지금</b> 안전 운전 다짐하세요."
+      "<b>가계대출</b> 이자 부담이 커집니다.",
+      "<b>부동산 시장</b>에도 영향이 예상돼요.",
+      "<b>지금</b> 나만의 재정 계획 세우세요."
     ],
-    "query": "driving under influence sign, broken car glass, justice symbol",
-    "bg": "https://images.pexels.com/photos/17716230/pexels-photo-17716230.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "household debt, rising interest, financial planning",
+    "bg": "https://images.pexels.com/photos/7821687/pexels-photo-7821687.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "어린 자매를 죽음으로 내몬 만취 운전, 당신이라면 믿겠습니까?\n엄마의 끔찍한 선택이 어린 두 딸의 생명을 앗아갔습니다.\n음주운전 사고는 단순한 실수가 아닌, 살인 행위와 같습니다.\n솜방망이 처벌 논란 속, 우리 사회의 안전 불감증은 어디까지일까요?\n<b>음주운전</b> 근절을 위한 강력한 사회적 변화가 필요합니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#음주운전 #교통사고 #사회문제 #안전운전 #GLEND"
+  "caption": "🚨 3년 6개월 만의 <b>금리 인상</b>, 우리 삶에 어떤 영향을 줄까요?\n\n한국은행이 다음 주 기준금리 인상 여부를 결정합니다.\n이는 가계대출 이자 부담을 늘리고 부동산 시장에도 큰 영향을 미칠 수 있어요.\n개인의 재정 계획 점검이 시급한 시점입니다.\n예상되는 경제 파장을 미리 알고 대비해야 합니다.\n\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#금리인상 #한국은행 #가계부채 #부동산 #경제전망"
 }
