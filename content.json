@@ -1,30 +1,30 @@
 {
-  "topic": "한국은행 기준금리 인상",
+  "topic": "4050세대 '빚투' 심화와 금리인상 압박",
   "card1": {
-    "title": "금리 인상\n초읽기?",
-    "sub": "3년 반만의 파장",
-    "query": "interest rate hike countdown",
-    "bg": "https://images.pexels.com/photos/5650025/pexels-photo-5650025.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "빚으로 투자\n빚투의 늪?",
+    "sub": "4050세대 위험 신호!",
+    "query": "stock market debt, personal debt chart",
+    "bg": "https://images.pexels.com/photos/33539235/pexels-photo-33539235.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "다가온 변화\n왜 지금?",
+    "subtitle": "빚투의 현실\n4050 위기",
     "lines": [
-      "<b>한국은행</b>이 3년 반 만에",
-      "<b>기준금리</b> 인상을 앞두고",
-      "다음 주 최종 결정을 내립니다."
+      "4050세대가 증시 <b>빚투</b>에",
+      "깊숙이 뛰어든 것으로 분석돼요.",
+      "<b>마통</b> 잔액 3분의 2 차지했죠."
     ],
-    "query": "central bank meeting, interest rate chart",
-    "bg": "https://images.pexels.com/photos/5562086/pexels-photo-5562086.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "loan balance, personal finance data",
+    "bg": "https://images.pexels.com/photos/20500268/pexels-photo-20500268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "나에게 미칠\n경제 파장",
+    "subtitle": "긴축 시계\n대비 필요",
     "lines": [
-      "<b>가계대출</b> 이자 부담이 커집니다.",
-      "<b>부동산 시장</b>에도 영향이 예상돼요.",
-      "<b>지금</b> 나만의 재정 계획 세우세요."
+      "기준금리 인상 가능성 <b>고조</b>로",
+      "이자 부담이 크게 늘 전망이죠.",
+      "<b>지금</b> 포트폴리오 점검하세요!"
     ],
-    "query": "household debt, rising interest, financial planning",
-    "bg": "https://images.pexels.com/photos/7821687/pexels-photo-7821687.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "interest rate hike, financial risk management",
+    "bg": "https://images.pexels.com/photos/6120215/pexels-photo-6120215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "🚨 3년 6개월 만의 <b>금리 인상</b>, 우리 삶에 어떤 영향을 줄까요?\n\n한국은행이 다음 주 기준금리 인상 여부를 결정합니다.\n이는 가계대출 이자 부담을 늘리고 부동산 시장에도 큰 영향을 미칠 수 있어요.\n개인의 재정 계획 점검이 시급한 시점입니다.\n예상되는 경제 파장을 미리 알고 대비해야 합니다.\n\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#금리인상 #한국은행 #가계부채 #부동산 #경제전망"
+  "caption": "4050세대, 혹시 '빚투'의 늪에 빠지셨나요?\n현재 4050세대의 빚투가 심각한 수준이에요.\n마이너스 통장 잔액의 3분의 2를 차지할 정도죠.\n기준금리 인상이 유력한 지금, 이자 부담이 커지면서\n자산 시장의 변동성에 철저한 대비가 필요합니다.\n💾 나중에 꺼내볼 수 있게 저장해두세요!\n📌 매일 경제 뉴스 카드 받고 싶다면 @glend_economy 팔로우!\n#빚투 #4050세대 #금리인상 #자산관리 #경제뉴스"
 }
