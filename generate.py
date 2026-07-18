@@ -1,5 +1,6 @@
 import os
 import json
+import sys
 import time
 import random
 import urllib.parse
@@ -12,16 +13,18 @@ load_dotenv()
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip())
 PEXELS_KEY = os.getenv("PEXELS_API_KEY", "").strip()
 
-# 1) 경제·재테크 실전 꿀팁 중심 뉴스 수집
+POST_INDEX = sys.argv[1] if len(sys.argv) > 1 else "1"
+
+# 1) 경제·재테크 실전 꿀팁 중심 뉴스 수집 (게시물 순번마다 다른 카테고리 고정)
 QUERIES = [
     "정부지원금 OR 환급 OR 세금 혜택 OR 신청 마감 when:1d",
     "금리 OR 예금 OR 적금 OR 대출 조건 when:1d",
     "부동산 OR 청약 OR 전세 OR 임대 when:1d",
     "카드혜택 OR 재테크 OR 절약 OR 연말정산 when:1d",
 ]
-QUERY = random.choice(QUERIES)
+QUERY = QUERIES[(int(POST_INDEX) - 1) % len(QUERIES)]
 url = "https://news.google.com/rss/search?q=" + urllib.parse.quote(QUERY) + "&hl=ko&gl=KR&ceid=KR:ko"
-print(f"뉴스 수집 중... (카테고리: {QUERY[:20]})")
+print(f"[{POST_INDEX}번째 게시물] 뉴스 수집 중... (카테고리: {QUERY[:20]})")
 feed = feedparser.parse(url)
 headlines = [e.title for e in feed.entries[:25]]
 print(f"  뉴스 {len(headlines)}개 확보\n")
@@ -125,9 +128,10 @@ try:
     for l in data["card3"]["lines"]: print("   -", l)
     print("\n[캐션]\n" + data["caption"])
 
-    with open("content.json", "w", encoding="utf-8") as f:
+    out_file = f"content_{POST_INDEX}.json"
+    with open(out_file, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    print("\n저장 완료! content.json 생성됨 (배경 사진 포함) 🎉")
+    print(f"\n저장 완료! {out_file} 생성됨 (배경 사진 포함) 🎉")
 except Exception as e:
     print("[JSON 변환 실패]", e)
     print("받은 원본:")

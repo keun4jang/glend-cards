@@ -1,16 +1,19 @@
 import asyncio
 import json
 import re
+import sys
 from pathlib import Path
 from playwright.async_api import async_playwright
 
 BASE = Path(__file__).parent
 TEMPLATE = (BASE / "templates" / "card.html").resolve().as_uri()
 LOGO = (BASE / "assets" / "logo.png").resolve().as_uri()
-OUTPUT = BASE / "output"
-OUTPUT.mkdir(exist_ok=True)
 
-with open("content.json", "r", encoding="utf-8") as f:
+POST_INDEX = sys.argv[1] if len(sys.argv) > 1 else "1"
+OUTPUT = BASE / "output" / f"post{POST_INDEX}"
+OUTPUT.mkdir(parents=True, exist_ok=True)
+
+with open(f"content_{POST_INDEX}.json", "r", encoding="utf-8") as f:
     content = json.load(f)
 
 FALLBACK = "https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg"

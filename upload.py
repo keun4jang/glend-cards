@@ -10,37 +10,40 @@ load_dotenv()
 TOKEN = os.getenv("IG_TOKEN", "").strip()
 USER_ID = os.getenv("IG_USER_ID", "").strip()
 
+POST_INDEX = sys.argv[2] if len(sys.argv) > 2 else "1"
+
 GITHUB_USER = "keun4jang"
 GITHUB_REPO = "glend-cards"
 BRANCH = "main"
-IMAGE_BASE = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{BRANCH}/output"
+IMAGE_BASE = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{BRANCH}/output/post{POST_INDEX}"
 CARD_FILES = ["card1.png", "card2.png", "card3.png", "card4.png"]
 LOG_FILE = "upload_log.txt"
 GRAPH = "https://graph.instagram.com"
 
 DRY_RUN = not (len(sys.argv) > 1 and sys.argv[1] == "go")
 
-def already_posted_today():
+def slot_key():
+    return f"{datetime.date.today().isoformat()} post{POST_INDEX}"
+
+def already_posted_slot():
     if not os.path.exists(LOG_FILE):
         return False
-    today = datetime.date.today().isoformat()
     with open(LOG_FILE, "r", encoding="utf-8") as f:
-        return today in f.read()
+        return slot_key() in f.read()
 
-def mark_posted_today():
-    today = datetime.date.today().isoformat()
+def mark_posted_slot():
     with open(LOG_FILE, "a", encoding="utf-8") as f:
-        f.write(f"{today} posted\n")
+        f.write(f"{slot_key()} posted\n")
 
 print("=" * 40)
-print("모드:", "실제 업로드" if not DRY_RUN else "드라이런(연습, 실제 업로드 안 함)")
+print(f"모드: {'실제 업로드' if not DRY_RUN else '드라이런(연습, 실제 업로드 안 함)'} | 게시물: {POST_INDEX}")
 print("=" * 40)
 
-if already_posted_today():
-    print("오늘 이미 업로드했어요. 하루 1회 제한으로 멈춥니다.")
+if already_posted_slot():
+    print(f"오늘 {POST_INDEX}번째 게시물은 이미 업로드했어요. 중복 방지로 멈춥니다.")
     raise SystemExit
 
-with open("content.json", "r", encoding="utf-8") as f:
+with open(f"content_{POST_INDEX}.json", "r", encoding="utf-8") as f:
     content = json.load(f)
 caption = content.get("caption", "").replace("<b>", "").replace("</b>", "")
 print("\n[캡션 미리보기]")
@@ -110,9 +113,9 @@ for attempt in range(1, 11):
             raise SystemExit
 
 if published:
-    mark_posted_today()
-    print("오늘 업로드 기록 저장 완료 (하루 1회 제한 적용됨)")
+    mark_posted_slot()
+    print(f"{POST_INDEX}번째 게시물 업로드 기록 저장 완료")
 else:
     print("\n[실패] 여러 번 시도했지만 인스타가 아직 준비가 안 됐어요.")
-    print("   1~2분 뒤에 'python upload.py go' 다시 시도해보세요.")
+    print(f"   1~2분 뒤에 'python upload.py go {POST_INDEX}' 다시 시도해보세요.")
 

@@ -9,20 +9,22 @@ load_dotenv()
 TOKEN = os.getenv("THREADS_TOKEN", os.getenv("IG_TOKEN", "")).strip()
 USER_ID = os.getenv("THREADS_USER_ID", os.getenv("IG_USER_ID", "")).strip()
 
+POST_INDEX = sys.argv[2] if len(sys.argv) > 2 else "1"
+
 GITHUB_USER = "keun4jang"
 GITHUB_REPO = "glend-cards"
 BRANCH = "main"
-IMAGE_BASE = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{BRANCH}/output"
+IMAGE_BASE = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{BRANCH}/output/post{POST_INDEX}"
 CARD_FILES = ["card1.png", "card2.png", "card3.png", "card4.png"]
 GRAPH = "https://graph.threads.net/v1.0"
 
 DRY_RUN = not (len(sys.argv) > 1 and sys.argv[1] == "go")
 
 print("=" * 40)
-print("[Threads] 모드:", "실제 업로드" if not DRY_RUN else "드라이런")
+print(f"[Threads] 모드: {'실제 업로드' if not DRY_RUN else '드라이런'} | 게시물: {POST_INDEX}")
 print("=" * 40)
 
-with open("content.json", "r", encoding="utf-8") as f:
+with open(f"content_{POST_INDEX}.json", "r", encoding="utf-8") as f:
     content = json.load(f)
 caption = content.get("caption", "").replace("<b>", "").replace("</b>", "")
 
