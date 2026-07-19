@@ -1,0 +1,30 @@
+{
+  "topic": "수면과 다이어트",
+  "card1": {
+    "title": "적게 먹는데\n살이 찔까?",
+    "sub": "<b>이유는 바로 여기에!</b>",
+    "query": "woman confused looking at scale",
+    "bg": "https://images.pexels.com/photos/8374326/pexels-photo-8374326.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card2": {
+    "subtitle": "잠 못 자면\n더 살찐다",
+    "lines": [
+      "수면 부족은 식욕 촉진 <b>호르몬</b> 변화.",
+      "식욕 늘고 대사 능력 <b>저하</b>됩니다.",
+      "특히 밤늦게 <b>야식</b> 유혹에 빠지죠."
+    ],
+    "query": "tired person eating at night",
+    "bg": "https://images.pexels.com/photos/8467228/pexels-photo-8467228.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card3": {
+    "subtitle": "꿀잠 자고\n살 빼자!",
+    "lines": [
+      "매일 밤 <b>7~8시간</b> 숙면 목표 세우세요.",
+      "자기 전 <b>1시간</b> 스마트폰 멀리하기.",
+      "<b>지금</b> 수면 시간 제대로 확인하세요."
+    ],
+    "query": "person sleeping peacefully bedroom",
+    "bg": "https://images.pexels.com/photos/6940880/pexels-photo-6940880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "caption": "잠만 잘 자도 살 빠진다는 사실, 알고 계셨나요?\n적게 먹는데도 살이 찌는 것 같다고요?\n충분한 수면이 부족하면 식욕 호르몬이 과다 분비돼요.\n이로 인해 식욕이 늘고 지방 축적이 쉬워집니다.\n오늘부터 <b>하루 7~8시간</b> 숙면으로 건강한 다이어트 시작하세요!\n💾 나중에 실천할 수 있게 저장해두세요!\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_economy 팔로우!\n#꿀잠다이어트 #수면다이어트 #다이어트꿀팁 #건강한습관 #글렌드"
+}
