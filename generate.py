@@ -15,19 +15,26 @@ PEXELS_KEY = os.getenv("PEXELS_API_KEY", "").strip()
 
 POST_INDEX = sys.argv[1] if len(sys.argv) > 1 else "1"
 
-# 1) 카테고리 결정 — 3번째 게시물은 무조건 건강 주제 고정, 나머지는 경제·재테크
+# 1) 카테고리 결정 — 1번=경제, 2번=사건사고, 3번=건강 고정
 ECONOMY_QUERIES = [
     "정부지원금 OR 환급 OR 세금 혜택 OR 신청 마감 when:1d",
     "금리 OR 예금 OR 적금 OR 대출 조건 when:1d",
     "부동산 OR 청약 OR 전세 OR 임대 when:1d",
     "카드혜택 OR 재테크 OR 절약 OR 연말정산 when:1d",
 ]
+INCIDENT_QUERY = "사건 OR 사고 OR 논란 OR 충격 when:1d"
 HEALTH_QUERY = "다이어트 OR 영양 OR 수면 OR 건강관리 when:1d"
 
-IS_HEALTH = POST_INDEX == "3"
-QUERY = HEALTH_QUERY if IS_HEALTH else ECONOMY_QUERIES[(int(POST_INDEX) - 1) % len(ECONOMY_QUERIES)]
+CATEGORY = {"1": "economy", "2": "incident", "3": "health"}.get(POST_INDEX, "economy")
+if CATEGORY == "incident":
+    QUERY = INCIDENT_QUERY
+elif CATEGORY == "health":
+    QUERY = HEALTH_QUERY
+else:
+    QUERY = ECONOMY_QUERIES[random.randint(0, len(ECONOMY_QUERIES) - 1)]
+
 url = "https://news.google.com/rss/search?q=" + urllib.parse.quote(QUERY) + "&hl=ko&gl=KR&ceid=KR:ko"
-print(f"[{POST_INDEX}번째 게시물] 뉴스 수집 중... (카테고리: {QUERY[:20]})")
+print(f"[{POST_INDEX}번째 게시물/{CATEGORY}] 뉴스 수집 중... (카테고리: {QUERY[:20]})")
 feed = feedparser.parse(url)
 headlines = [e.title for e in feed.entries[:25]]
 print(f"  뉴스 {len(headlines)}개 확보\n")
@@ -35,7 +42,7 @@ print(f"  뉴스 {len(headlines)}개 확보\n")
 news_text = "\n".join(f"- {h}" for h in headlines)
 
 # 2) Gemini에게 주제 선정 + 카드 내용 + 사진 검색어 생성
-if IS_HEALTH:
+if CATEGORY == "health":
     PERSONA = "너는 'GLEND'라는 건강 실전 꿀팁 인스타그램 채널의 전문 카드뉴스 작가야. 뉴스 요약이 아니라, 독자가 \"지금 당장 내 몸에 도움되는\" 실전 건강 정보(다이어트, 영양, 수면, 정신건강 등)를 얻어가게 만드는 게 목표다."
     TOPIC_DESC = "오늘의 최신 건강 관련 뉴스 제목 목록"
     PICK_DESC = '독자가 "이거 나도 해봐야겠다", "몰랐던 건강 정보네"라고 느낄 만한, 실생활에 바로 적용 가능한 핵심 주제 하나를 직접 골라서, 4장짜리 카드뉴스 내용을 만들어줘. 단순 연구 결과 나열은 피하고, 방법·수치·습관처럼 구체적이고 실용적인 정보를 우선해.'
@@ -44,6 +51,15 @@ if IS_HEALTH:
     FOLLOW_LINE = '"📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_economy 팔로우!"'
     QUERY_EXAMPLE = '건강/운동은 "morning stretching", "healthy meal prep"; 수면은 "sleeping bedroom night"; 정신건강은 "meditation calm person"'
     LAST_LINE_EXAMPLE = '"<b>지금</b> 실천 여부 확인하세요", "<b>저장</b>하고 오늘부터 시작하세요"'
+elif CATEGORY == "incident":
+    PERSONA = "너는 'GLEND'라는 트렌드 인스타그램 채널의 전문 카드뉴스 작가야. 단순 사건 요약이 아니라, 독자가 \"이거 진짜야?\", \"나도 이런 경험 있어\" 하고 반응할 만큼 자극적이거나 공감을 유발하는 사건·사고·논란 소재를 다룬다."
+    TOPIC_DESC = "오늘의 최신 사건·사고·논란 관련 뉴스 제목 목록"
+    PICK_DESC = '일반 대중이 가장 관심 가질 만하고, 자극적이거나 충격적이거나 공감을 유발하는 핵심 주제 하나를 직접 골라서, 4장짜리 카드뉴스 내용을 만들어줘. 단순 사실 나열보다 배경/맥락/파장을 구체적으로 담아.'
+    HOOK_STYLE = '질문형 또는 충격적 사실 제시형 후킹을 우선 고려.'
+    SAVE_LINE = '"💾 나중에 다시 볼 수 있게 저장해두세요!" 또는 "📤 같이 얘기하고 싶은 친구에게 공유해주세요!" 중 하나'
+    FOLLOW_LINE = '"📌 매일 화제의 이슈 카드 받고 싶다면 @glend_economy 팔로우!"'
+    QUERY_EXAMPLE = '사건·사고류는 "car accident night", "police tape scene", "hospital emergency"'
+    LAST_LINE_EXAMPLE = '"<b>지금</b> 어떻게 생각하는지 댓글로", "<b>저장</b>하고 다시 보세요"'
 else:
     PERSONA = "너는 'GLEND'라는 경제·재테크 실전 꿀팁 인스타그램 채널의 전문 카드뉴스 작가야. 뉴스 요약이 아니라, 독자가 \"지금 당장 나한테 이득/손해가 되는\" 실전 정보를 얻어가게 만드는 게 목표다."
     TOPIC_DESC = "오늘의 최신 경제/재테크 관련 뉴스 제목 목록"
