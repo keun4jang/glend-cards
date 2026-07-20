@@ -1,30 +1,30 @@
 {
-  "topic": "모두의카드 600만 달성 이벤트",
+  "topic": "N잡러 부가세 신고",
   "card1": {
-    "title": "최대 <b>300만원</b>\n지금 받자",
-    "sub": "신청 <b>안 하면</b> 후회!",
-    "query": "Cash money prize",
-    "bg": "https://images.pexels.com/photos/30774174/pexels-photo-30774174.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "세금? 내 얘기 아니죠?\nN잡러 착각!",
+    "sub": "가만히 있으면 폭탄!",
+    "query": "money loss calculator",
+    "bg": "https://images.pexels.com/photos/6927336/pexels-photo-6927336.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "신청 조건은?\n어떤 혜택?",
+    "subtitle": "N잡러라면\n필수 확인!",
     "lines": [
-      "<b>모두의카드</b> 이용자라면",
-      "누구나 참여 가능해요",
-      "<b>총 상금 600만원</b>이 걸린"
+      "부가세 신고는 <b>27일 마감</b>입니다.",
+      "연 매출 <b>4,800만원</b> 이상은",
+      "일반과세, 그 이하는 간이과세죠."
     ],
-    "query": "Card user application",
-    "bg": "https://images.pexels.com/photos/8938731/pexels-photo-8938731.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "korean tax document",
+    "bg": "https://images.pexels.com/photos/7821551/pexels-photo-7821551.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "지금 당장\n이렇게 해봐!",
+    "subtitle": "세금 폭탄\n피하는 법!",
     "lines": [
-      "모두의카드 앱/사이트에서",
-      "<b>5월 31일</b>까지 신청하세요",
-      "<b>지금</b> 바로 신청 여부 확인하세요"
+      "홈택스에서 <b>간편 신고</b> 가능",
+      "매출·매입 자료 미리 준비하세요.",
+      "<b>지금</b> 신고 여부 확인하세요!"
     ],
-    "query": "Online application form",
-    "bg": "https://images.pexels.com/photos/7709273/pexels-photo-7709273.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "laptop tax filing",
+    "bg": "https://images.pexels.com/photos/6863246/pexels-photo-6863246.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "최대 <b>300만원</b> 상금, <b>모두의카드</b> 쓰면 누구나 도전 가능!\n'모두의카드' 600만 달성 이벤트로 수기 공모전이 진행됩니다.\n본인의 카드 사용 경험을 제출하고 <b>총 상금 600만원</b>에 도전하세요.\n<b>5월 31일</b>까지 모두의카드 앱/사이트에서 신청할 수 있습니다.\n💾 기한 놓치기 전에 저장해두세요!\n📌 매일 놓치기 쉬운 재테크 정보 받고 싶다면 @glend_economy 팔로우!\n#모두의카드 #카드이벤트 #수기공모전 #재테크꿀팁 #상금"
+  "caption": "N잡러라고 세금 신경 안 쓰면 큰코다칩니다!\n이번 부가세는 <b>27일 마감</b>!\n간이과세자 <b>4,800만</b> 초과 시\n일반과세로 신고해야 해요.\n홈택스에서 지금 바로 확인!\n💾 기한 놓치기 전에 저장해두세요!\n📌 매일 놓치기 쉬운 재테크 정보 받고 싶다면 @glend_economy 팔로우!\n#N잡러 #부가세 #세금 #재테크 #절세"
 }
