@@ -1,30 +1,30 @@
 {
-  "topic": "수면과 다이어트",
+  "topic": "영양 불균형 해소",
   "card1": {
-    "title": "적게 먹는데\n살이 찔까?",
-    "sub": "<b>이유는 바로 여기에!</b>",
-    "query": "woman confused looking at scale",
-    "bg": "https://images.pexels.com/photos/8374326/pexels-photo-8374326.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  },
-  "card2": {
-    "subtitle": "잠 못 자면\n더 살찐다",
-    "lines": [
-      "수면 부족은 식욕 촉진 <b>호르몬</b> 변화.",
-      "식욕 늘고 대사 능력 <b>저하</b>됩니다.",
-      "특히 밤늦게 <b>야식</b> 유혹에 빠지죠."
-    ],
-    "query": "tired person eating at night",
+    "title": "몸속 시한폭탄\n영양 불균형!",
+    "sub": "나도 모르게 병드는 중?",
+    "query": "unhealthy diet, tired person, nutrient deficiency",
     "bg": "https://images.pexels.com/photos/8467228/pexels-photo-8467228.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "card3": {
-    "subtitle": "꿀잠 자고\n살 빼자!",
+  "card2": {
+    "subtitle": "당신도 혹시?\n체크리스트!",
     "lines": [
-      "매일 밤 <b>7~8시간</b> 숙면 목표 세우세요.",
-      "자기 전 <b>1시간</b> 스마트폰 멀리하기.",
-      "<b>지금</b> 수면 시간 제대로 확인하세요."
+      "<b>잦은 피로</b>와 무기력함, 혹시 당신도?",
+      "쉽게 지치고 피부, 머릿결도 <b>푸석</b>해진다면",
+      "면역력 떨어져 <b>잔병치레</b> 잦다면 의심해봐요."
     ],
-    "query": "person sleeping peacefully bedroom",
-    "bg": "https://images.pexels.com/photos/6940880/pexels-photo-6940880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "person feeling tired, sick, dull skin",
+    "bg": "https://images.pexels.com/photos/8213138/pexels-photo-8213138.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "잠만 잘 자도 살 빠진다는 사실, 알고 계셨나요?\n적게 먹는데도 살이 찌는 것 같다고요?\n충분한 수면이 부족하면 식욕 호르몬이 과다 분비돼요.\n이로 인해 식욕이 늘고 지방 축적이 쉬워집니다.\n오늘부터 <b>하루 7~8시간</b> 숙면으로 건강한 다이어트 시작하세요!\n💾 나중에 실천할 수 있게 저장해두세요!\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_economy 팔로우!\n#꿀잠다이어트 #수면다이어트 #다이어트꿀팁 #건강한습관 #글렌드"
+  "card3": {
+    "subtitle": "불균형 해소\n<b>3가지</b> 방법!",
+    "lines": [
+      "<b>오색 채소</b> 과일로 영양소 골고루 채워요.",
+      "정제 탄수화물 대신 <b>통곡물</b>을 챙겨 드세요.",
+      "<b>지금</b> 내 식단 속 영양 균형 확인하세요!"
+    ],
+    "query": "colorful healthy food, meal prep, balanced diet",
+    "bg": "https://images.pexels.com/photos/30635714/pexels-photo-30635714.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "caption": "당신의 몸속 영양 시한폭탄, 혹시 모르고 계셨나요?\n한국인 <b>3명 중 1명</b>이 겪는다는 영양 불균형!\n무기력감, 푸석한 피부, 잦은 잔병치레가 그 신호일 수 있어요.\n지금 바로 내 식단을 점검하고, <b>통곡물</b>과 <b>오색 채소</b>로 균형을 되찾으세요.\n오늘부터 작은 습관 변화가 큰 건강으로 이어집니다!\n💾 나중에 실천할 수 있게 저장해두세요!\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_economy 팔로우!\n#영양불균형 #건강식단 #다이어트식단 #건강관리 #글렌드"
 }
