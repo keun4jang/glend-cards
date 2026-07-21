@@ -77,10 +77,16 @@ for i, scene in enumerate(scenes, start=1):
             if not f.exists():
                 print(f"[중단] {f} 없음. 먼저 render_reel.py 실행 필요.")
                 raise SystemExit(1)
-        zoom = "min(zoom+0.0010,1.10)"
+        # 지터 방지: 큰 해상도로 먼저 확대한 뒤 zoompan(중앙 고정, 흔들림 없음).
+        # 장면마다 줌인/줌아웃 번갈아 (on=출력프레임번호 기반 선형 → 부드럽게).
+        if i % 2 == 1:
+            zexpr = "min(1.0+0.0009*on,1.12)"   # 줌인
+        else:
+            zexpr = "max(1.12-0.0009*on,1.0)"   # 줌아웃
         vf = (
             f"[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,"
-            f"zoompan=z='{zoom}':d={frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
+            f"scale=3240:5760,"
+            f"zoompan=z='{zexpr}':d={frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
             f"s=1080x1920:fps={FPS},setsar=1[z];[z][1:v]overlay=0:0[v]"
         )
         run([

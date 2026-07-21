@@ -14,7 +14,7 @@ import os
 import asyncio
 
 ENGINE = os.getenv("TTS_ENGINE", "edge").strip().lower()
-EDGE_VOICE = os.getenv("EDGE_VOICE", "ko-KR-SunHiNeural")  # 여성. 남성은 ko-KR-InJoonNeural
+EDGE_VOICE = os.getenv("EDGE_VOICE", "ko-KR-InJoonNeural")  # 남성. 여성은 ko-KR-SunHiNeural
 EDGE_RATE = os.getenv("EDGE_RATE", "+22%")   # 말 속도 (+ 빠르게). 예: "+22%", "+35%"
 KOKORO_VOICE = os.getenv("KOKORO_VOICE", "kf_default")
 
