@@ -68,7 +68,7 @@ async def render():
             await page.evaluate("""([logo, sub]) => {
                 document.getElementById('bg').style.display = 'none';
                 document.getElementById('brand-logo').src = logo;
-                document.getElementById('subtitle').innerHTML = sub;
+                document.getElementById('subtitle').innerHTML = `<span class="txt">${sub}</span>`;
             }""", [LOGO, subtitle])
             await page.wait_for_timeout(500)
             await page.evaluate("document.fonts.ready")
