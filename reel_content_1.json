@@ -1,46 +1,46 @@
 {
   "topic": "운전면허 지원금",
-  "title": "운전면허 70만 💸",
+  "title": "면허 따고 70만원? 💰",
   "scenes": [
     {
-      "narration": "70만원 날리기 싫다면, <b>이거</b> 꼭 신청하세요!",
-      "query": "money flying, losing money, urgent alert",
-      "bg": "https://images.pexels.com/photos/5909815/pexels-photo-5909815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "모르면 70만원 <b>손해</b>! 운전면허 지원금, 꼭 챙겨야 해요.",
+      "query": "money flying loss",
+      "bg": "https://images.pexels.com/photos/7163945/pexels-photo-7163945.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "운전면허 따기 전이라면 <b>주목</b>! 정부가 최대 70만원 지원 혜택을 준비 중이래요.",
-      "query": "driving school, driving license test, money support",
-      "bg": "https://images.pexels.com/photos/9035348/pexels-photo-9035348.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "2026년 하반기부터, 운전면허 취득 비용을 <b>지원</b>하는 제도가 생겨요.",
+      "query": "driving school car",
+      "bg": "https://images.pexels.com/photos/31411970/pexels-photo-31411970.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "학원비, 시험 응시료 등 운전면허 취득에 드는 <b>비용</b>을 나라에서 돌려주는 지원금이에요.",
-      "query": "car academy fee, driving lesson, cost savings",
-      "bg": "https://images.pexels.com/photos/9518021/pexels-photo-9518021.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "최대 70만원 상당의 바우처나 현금으로, 학원비 부담을 크게 <b>줄일</b> 수 있대요.",
+      "query": "money saving hand",
+      "bg": "https://images.pexels.com/photos/7680464/pexels-photo-7680464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "2026년 하반기 시행 예정이고, 청년, 저소득층 등 <b>취약계층</b>에 우선 적용될 전망이에요.",
-      "query": "young people, low income family, support program",
-      "bg": "https://images.pexels.com/photos/34455733/pexels-photo-34455733.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "주로 청년층이나 특정 소득 기준을 만족하는 분들이 <b>대상</b>이 될 수 있어요.",
+      "query": "young adult korea",
+      "bg": "https://images.pexels.com/photos/29056567/pexels-photo-29056567.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "고용노동부 국민내일배움카드나 지자체 <b>사업</b>과 연계될 가능성이 높으니 미리 확인하세요.",
-      "query": "job training card, government subsidy application, online form",
-      "bg": "https://images.pexels.com/photos/7821459/pexels-photo-7821459.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "신청은 지자체나 고용센터에서 할 수 있도록 <b>논의</b> 중이니, 관심 가져보세요.",
+      "query": "city hall application",
+      "bg": "https://images.pexels.com/photos/13700143/pexels-photo-13700143.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "미리 준비하려면 내일배움카드 조건 확인하고, 지역별 <b>공고</b>를 놓치지 않는 게 중요해요!",
-      "query": "document preparation, checking notification, calendar alert",
-      "bg": "https://images.pexels.com/photos/8962470/pexels-photo-8962470.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "구체적인 자격 요건과 절차는 아직 <b>미정</b>이에요. 정확한 공고를 기다려야 합니다.",
+      "query": "question mark document",
+      "bg": "https://images.pexels.com/photos/6919773/pexels-photo-6919773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "서민과 청년의 경제적 <b>부담</b>을 줄이고, 안전한 운전 환경을 만들 것으로 기대돼요.",
-      "query": "safe driving, financial relief, happy young people",
-      "bg": "https://images.pexels.com/photos/10400847/pexels-photo-10400847.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "면허 취득 계획이 있다면, 70만원 <b>혜택</b> 놓치지 말고 꼭 받아 가세요!",
+      "query": "happy driver money",
+      "bg": "https://images.pexels.com/photos/5470981/pexels-photo-5470981.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
       "outro": true,
       "narration": "도움이 됐다면 지금 좋아요와 팔로우 눌러주세요!"
     }
   ],
-  "caption": "70만원 날리기 싫다면, 이거 꼭 신청하세요!\n\n🚨2026년 하반기부터 운전면허 학원비, 시험 응시료 등 최대 70만원을 지원받을 수 있는 정부 혜택이 시행될 예정이에요!\n\n✅ 주요 내용:\n- 운전면허 취득 비용(학원비, 응시료 등) 지원\n- 최대 70만원까지 환급 또는 지원 방식\n- 청년, 저소득층 등 취약계층 우선 적용\n\n🔍 준비할 것:\n- 고용노동부 국민내일배움카드 발급 조건 미리 확인\n- 거주 지역 지자체 사업 공고를 꾸준히 확인하세요!\n\n아직은 준비 단계지만, 미리 알아두면 나중에 큰 돈 아낄 수 있어요! 지금 바로 저장하고 친구에게 공유해서 꿀팁 놓치지 마세요!\n\n#운전면허 #지원금 #국민내일배움카드 #재테크 #GLEND"
+  "caption": "모르면 70만원 손해 보는 운전면허 지원금?! 😱\n\n✅ 2026년 하반기부터 운전면허 취득 비용을 지원하는 새로운 제도가 도입될 예정이에요.\n✅ 최대 70만원 상당의 바우처나 현금으로 학원비 부담을 확 줄일 수 있답니다!\n✅ 주로 청년층이나 특정 소득 기준에 맞춰 지원될 것으로 보여요.\n✅ 아직 구체적인 내용은 미정이라, 공고가 나오면 바로 GLEND에서 알려드릴게요!\n✅ 면허 취득 계획 있다면, 70만원 혜택 꼭 챙겨가세요!\n\n#GLEND 팔로우하고, 돈 되는 정보 놓치지 마세요!\n#운전면허 #면허지원금 #재테크 #경제상식 #꿀팁\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0"
 }
