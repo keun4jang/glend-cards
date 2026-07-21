@@ -24,6 +24,10 @@ MAX_CHARS = 16   # 이 글자 수까지 기본 크기 유지
 TITLE_BASE_FONT = 150  # 카드1 제목 기본 폰트 크기(px)
 TITLE_MAX_CHARS = 7    # 이 글자 수까지 기본 크기 유지
 
+def strip_char_count_notes(text):
+    """Gemini가 실수로 남긴 '(16자)' 같은 글자 수 메모 제거"""
+    return re.sub(r'\s*\(\s*\d+\s*자\s*\)\s*$', '', text.strip())
+
 def char_count(line):
     """HTML 태그 제거 후 실제 글자 수"""
     return len(re.sub(r'<[^>]+>', '', line))
@@ -56,15 +60,22 @@ def sized_title(text):
         for l in text.split("\n")
     )
 
+def clean_lines(lines):
+    return [strip_char_count_notes(l) for l in lines]
+
+def clean_multiline(text):
+    return "\n".join(strip_char_count_notes(l) for l in text.split("\n"))
+
 CARDS = [
     {"type": "hook", "bg": content["card1"].get("bg", FALLBACK),
-     "title_html": sized_title(content["card1"]["title"]), "sub": content["card1"]["sub"]},
+     "title_html": sized_title(clean_multiline(content["card1"]["title"])),
+     "sub": strip_char_count_notes(content["card1"]["sub"])},
     {"type": "analysis", "bg": content["card2"].get("bg", FALLBACK),
-     "subtitle": content["card2"]["subtitle"],
-     "lines_html": "".join(sized_lines(content["card2"]["lines"]))},
+     "subtitle": clean_multiline(content["card2"]["subtitle"]),
+     "lines_html": "".join(sized_lines(clean_lines(content["card2"]["lines"])))},
     {"type": "insight", "bg": content["card3"].get("bg", FALLBACK),
-     "title": content["card3"]["subtitle"],
-     "lines_html": "".join(sized_lines(content["card3"]["lines"]))},
+     "title": clean_multiline(content["card3"]["subtitle"]),
+     "lines_html": "".join(sized_lines(clean_lines(content["card3"]["lines"])))},
     {"type": "brand"},
 ]
 
