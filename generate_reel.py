@@ -152,6 +152,10 @@ try:
     data["scenes"].append({"outro": True, "narration": OUTRO_NARRATION})
     print(f"  scene5(아웃트로): 좋아요 유도 나레이션")
 
+    # 배경음악 크레딧(CC BY 4.0) — 캡션에 자동 표기
+    data["caption"] = data.get("caption", "").rstrip() + \
+        "\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0"
+
     print("\n[캡션]\n" + data["caption"])
 
     out_file = f"reel_content_{POST_INDEX}.json"
