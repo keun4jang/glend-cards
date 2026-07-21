@@ -17,6 +17,8 @@ with open(f"reel_content_{POST_INDEX}.json", "r", encoding="utf-8") as f:
     content = json.load(f)
 
 FALLBACK = "https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg"
+# 화면 상단 고정 제목(짧게). title 없으면 topic 사용.
+TITLE = (content.get("title") or content.get("topic") or "").strip()
 
 
 def strip_notes(text):
@@ -92,12 +94,16 @@ async def render():
 
             # 2) 전경(옅은 그라데이션 + 로고 + 자막) — 투명 배경
             await page.goto(TEMPLATE)
-            await page.evaluate("""([logo, sub]) => {
+            await page.evaluate("""([logo, sub, title]) => {
                 for (const id of ['bg','hook','outro'])
                     document.getElementById(id).style.display = 'none';
                 document.getElementById('brand-logo').src = logo;
                 document.getElementById('subtitle').innerHTML = sub;
-            }""", [LOGO, subtitle])
+                if (title) {
+                    document.getElementById('reel-title').style.display = 'flex';
+                    document.getElementById('reel-title-text').textContent = title;
+                }
+            }""", [LOGO, subtitle, TITLE])
             await page.wait_for_timeout(500)
             await page.evaluate("document.fonts.ready")
             await page.wait_for_timeout(300)

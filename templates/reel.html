@@ -42,9 +42,20 @@
   }
   .hook-text b { color: #CFFF04; }
 
+  /* 고정 제목(주제) — 자막 바로 위, 밑줄 강조 헤드라인 */
+  .reel-title {
+    position: absolute; left: 0; right: 0; top: 33%; z-index: 5;
+    display: flex; justify-content: center; padding: 0 90px;
+  }
+  .reel-title span {
+    color: #FFFFFF; font-weight: 900; font-size: 60px; letter-spacing: -1.5px;
+    text-align: center; padding-bottom: 12px; border-bottom: 8px solid #CFFF04;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.9);
+  }
+
   /* 중앙 자막(나레이션) — 박스 없이 글씨만, 강한 그림자로 가독성 */
   .subtitle-wrap {
-    position: absolute; left: 0; right: 0; top: 38%; z-index: 5;
+    position: absolute; left: 0; right: 0; top: 41%; z-index: 5;
     display: flex; justify-content: center; padding: 0 110px;
   }
   .subtitle {
@@ -73,6 +84,9 @@
     <div class="brand-top" id="brand-top">
       <img id="brand-logo" src="">
       <span class="name">GLEND</span>
+    </div>
+    <div class="reel-title" id="reel-title" style="display:none;">
+      <span id="reel-title-text"></span>
     </div>
     <div class="subtitle-wrap" id="subtitle-wrap">
       <div class="subtitle" id="subtitle"></div>
