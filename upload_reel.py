@@ -114,7 +114,11 @@ def post_threads_video():
 
 
 ig_ok = post_instagram_reel()
-th_ok = post_threads_video()
+
+# Threads는 기본 비활성 (REEL_POST_THREADS=true 로 켜기)
+th_ok = False
+if os.getenv("REEL_POST_THREADS", "false").strip().lower() == "true":
+    th_ok = post_threads_video()
 
 if ig_ok or th_ok:
     with open(LOG_FILE, "a", encoding="utf-8") as f:

@@ -9,8 +9,14 @@ import sys
 import datetime
 
 IDX = sys.argv[1] if len(sys.argv) > 1 else "1"
+# "auto" → 날짜 기반 카테고리 로테이션(1=경제 2=사건사고 3=건강). 카드뉴스와 매일 다른 결.
+if IDX == "auto":
+    IDX = str(datetime.date.today().timetuple().tm_yday % 3 + 1)
+
 # PUBLISH=false 면 영상만 만들고(커밋까지) 발행은 건너뜀 — 업로드 전 검토용
 PUBLISH = os.getenv("PUBLISH", "true").strip().lower() != "false"
+# UPLOAD_ONLY=true 면 새로 만들지 않고, 이미 커밋된 영상만 발행 (검토 통과분 발행용)
+UPLOAD_ONLY = os.getenv("UPLOAD_ONLY", "false").strip().lower() == "true"
 
 
 def run(name, args):
@@ -25,6 +31,13 @@ print(f"\n릴스 자동 발행 시작: {datetime.datetime.now()} (릴스 {IDX})"
 
 subprocess.run(["git", "config", "user.name", "github-actions"])
 subprocess.run(["git", "config", "user.email", "actions@github.com"])
+
+# 업로드 전용: 이미 커밋된 영상만 발행하고 종료
+if UPLOAD_ONLY:
+    print("[업로드 전용] 이미 만들어진 영상을 발행합니다.", flush=True)
+    run("릴스 발행", ["upload_reel.py", "go", IDX])
+    print(f"\n릴스 발행 완료! {datetime.datetime.now()}", flush=True)
+    sys.exit(0)
 
 # 1) 대본 + 사진
 run("릴스 대본 생성", ["generate_reel.py", IDX])

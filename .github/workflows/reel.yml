@@ -4,16 +4,19 @@ on:
   workflow_dispatch:
     inputs:
       index:
-        description: "릴스 카테고리 (1=경제 2=사건사고 3=건강)"
+        description: "릴스 카테고리 (auto=날짜별 로테이션, 1=경제 2=사건사고 3=건강)"
         required: false
-        default: "1"
+        default: "auto"
       publish:
         description: "실제 발행 여부 (false면 영상만 만들고 검토)"
         required: false
         default: "true"
-  # 테스트로 수동 실행(workflow_dispatch)해서 확인한 뒤 아래 schedule 주석을 풀어 자동화하세요.
-  # schedule:
-  #   - cron: "0 6 * * *"   # UTC 06:00 = KST 15:00
+      upload_only:
+        description: "true면 새로 안 만들고 이미 커밋된 영상만 발행"
+        required: false
+        default: "false"
+  schedule:
+    - cron: "0 8 * * *"   # 매일 UTC 08:00 = KST 17:00 (인스타 릴스 1개 자동)
 
 permissions:
   contents: write
@@ -49,4 +52,5 @@ jobs:
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
           TTS_ENGINE: ${{ vars.TTS_ENGINE }}
           PUBLISH: ${{ github.event.inputs.publish || 'true' }}
-        run: python daily_reel_ci.py ${{ github.event.inputs.index || '1' }}
+          UPLOAD_ONLY: ${{ github.event.inputs.upload_only || 'false' }}
+        run: python daily_reel_ci.py ${{ github.event.inputs.index || 'auto' }}
