@@ -1,40 +1,45 @@
 {
-  "topic": "청년형 ISA (Youth ISA)",
+  "topic": "지붕 위 태양광으로 전기요금 절약 넘어 수익 창출",
   "scenes": [
     {
-      "narration": "청년이라면 이것 안 하면 <b>세금폭탄</b> 맞아요!",
-      "query": "young person confused",
-      "bg": "https://images.pexels.com/photos/8638716/pexels-photo-8638716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "아직도 태양광 설치 안 했어요? 매년 <b>수십만 원</b> 놓치는 중!",
+      "query": "money burning home roof",
+      "bg": "https://images.pexels.com/photos/4588675/pexels-photo-4588675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "청년형 ISA는 19~34세가 가입해 비과세 혜택받는 <b>종합자산관리계좌</b>예요.",
-      "query": "financial plan youth",
-      "bg": "https://images.pexels.com/photos/11114830/pexels-photo-11114830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "이제 지붕 위 태양광은 단순 전기 절약을 넘어 돈 버는 <b>수익</b> 모델로 진화했습니다.",
+      "query": "solar panel roof house",
+      "bg": "https://images.pexels.com/photos/35726122/pexels-photo-35726122.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "일반 ISA보다 최대 연 400만원까지 <b>비과세</b> 혜택을 받을 수 있어요.",
-      "query": "tax benefit money",
-      "bg": "https://images.pexels.com/photos/8970301/pexels-photo-8970301.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "태양광으로 생산한 전기를 한국전력에 판매, 즉 PPA로 매달 <b>안정적인</b> 현금 흐름을 만들 수 있죠.",
+      "query": "money electric bill graph",
+      "bg": "https://images.pexels.com/photos/5980802/pexels-photo-5980802.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "연 소득 5천만원 이하나 종합소득 3천8백만원 이하 청년만 <b>가입</b> 가능해요.",
-      "query": "income limit document",
-      "bg": "https://images.pexels.com/photos/7821551/pexels-photo-7821551.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "주택 <b>소유자</b>라면 누구나 가능! 특히 설치비 부담 때문에 망설였다면 주목하세요.",
+      "query": "home owner contract signature",
+      "bg": "https://images.pexels.com/photos/8470836/pexels-photo-8470836.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "예금, 펀드, ETF 등 다양한 상품에 <b>투자</b> 가능! 한 계좌로 관리하세요.",
-      "query": "investment portfolio chart",
-      "bg": "https://images.pexels.com/photos/7948072/pexels-photo-7948072.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "정부 지원으로 설치비의 최대 <b>50%</b>까지 보조받고, 잔액은 장기 무이자 할부도 가능해요.",
+      "query": "government subsidy solar panel",
+      "bg": "https://images.pexels.com/photos/6158868/pexels-photo-6158868.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "최대 5년간 의무 가입 후 해지 가능! 미리 가입해서 <b>절세</b> 효과 누리세요.",
-      "query": "saving money young",
-      "bg": "https://images.pexels.com/photos/7680464/pexels-photo-7680464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "지역별 지원 규모와 조건이 다르니, 살고 있는 지역의 <b>지원사업</b>을 반드시 확인해야 합니다.",
+      "query": "korea map money",
+      "bg": "https://images.pexels.com/photos/2678301/pexels-photo-2678301.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "환경 보호는 물론, 장기적으로 연금처럼 <b>꼬박꼬박</b> 들어오는 돈을 지금 바로 시작해보세요!",
+      "query": "piggy bank solar panel",
+      "bg": "https://images.pexels.com/photos/11933676/pexels-photo-11933676.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
       "outro": true,
       "narration": "도움이 됐다면 지금 좋아요와 팔로우 눌러주세요!"
     }
   ],
-  "caption": "청년이라면 이것 안 하면 세금폭탄 맞아요!\n\n✨청년형 ISA는 19~34세 청년만 가입할 수 있는 특별한 계좌예요. 일반 ISA보다 훨씬 큰 비과세 혜택(연 400만원까지!)을 받을 수 있죠.\n\n✔️ 단, 연 소득 5천만원 또는 종합소득 3천8백만원 이하 청년만 가입 가능해요! 예금부터 펀드, ETF까지 한 계좌에서 투자하고 비과세 혜택까지 챙기세요.\n\n⏳ 최대 5년간 의무 가입 기간이 있지만, 미리 가입할수록 더 큰 절세 효과를 누릴 수 있어요. 늦기 전에 서둘러 나만의 재테크 전략을 세워보세요!\n\n친구에게 공유하고, 나중에 찾아보려면 꼭 저장하세요! 💰\n\n#청년형ISA #재테크 #비과세 #돈관리 #사회초년생"
+  "caption": "아직도 태양광 설치 안 했어요? 매년 수십만 원 놓치는 중!\n\n지붕 위 태양광, 이제 단순 전기 절약이 아닌 월세처럼 따박따박 들어오는 💰<b>수익</b> 파이프라인으로 진화했습니다.\n생산한 전기를 한국전력에 판매(PPA)하여 매달 안정적인 현금 흐름을 만들 수 있죠.\n주택 소유자라면 누구나 가능하며, 정부 지원으로 <b>설치비</b> 부담도 절반까지 줄어듭니다.\n지역별 지원 규모와 조건이 다르니, 우리 동네 <b>지원사업</b>을 꼭 확인하고 상담해보세요!\n환경 보호와 함께 장기적인 <b>재정적</b> 자유를 향한 첫걸음이 될 수 있습니다.\n\n이 정보, 나만 알면 손해! 지금 바로 저장하고 친구에게 공유하세요! 더 많은 꿀팁은 @glend_official 팔로우!\n#태양광재테크 #에너지절약 #돈버는방법 #주택태양광 #재테크꿀팁"
 }
