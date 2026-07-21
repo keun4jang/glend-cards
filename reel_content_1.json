@@ -1,45 +1,45 @@
 {
-  "topic": "지붕 위 태양광으로 전기요금 절약 넘어 수익 창출",
+  "topic": "청년 주택드림 청약통장",
   "scenes": [
     {
-      "narration": "아직도 태양광 설치 안 했어요? 매년 <b>수십만 원</b> 놓치는 중!",
-      "query": "money burning home roof",
-      "bg": "https://images.pexels.com/photos/4588675/pexels-photo-4588675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "청년이라면 <b>이것</b> 안 하면 내 집 마련 기회 놓쳐요!",
+      "query": "young person thinking house",
+      "bg": "https://images.pexels.com/photos/7327772/pexels-photo-7327772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "이제 지붕 위 태양광은 단순 전기 절약을 넘어 돈 버는 <b>수익</b> 모델로 진화했습니다.",
-      "query": "solar panel roof house",
-      "bg": "https://images.pexels.com/photos/35726122/pexels-photo-35726122.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "2월 21일 출시된 <b>청년</b> 주택드림 청약통장, 혜택이 파격적으로 늘었어요.",
+      "query": "calendar date new",
+      "bg": "https://images.pexels.com/photos/5982315/pexels-photo-5982315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "태양광으로 생산한 전기를 한국전력에 판매, 즉 PPA로 매달 <b>안정적인</b> 현금 흐름을 만들 수 있죠.",
-      "query": "money electric bill graph",
-      "bg": "https://images.pexels.com/photos/5980802/pexels-photo-5980802.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "최대 4.5% <b>고금리</b>에, 이자소득 500만원까지 비과세 혜택까지!",
+      "query": "money graph up",
+      "bg": "https://images.pexels.com/photos/7567445/pexels-photo-7567445.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "주택 <b>소유자</b>라면 누구나 가능! 특히 설치비 부담 때문에 망설였다면 주목하세요.",
-      "query": "home owner contract signature",
-      "bg": "https://images.pexels.com/photos/8470836/pexels-photo-8470836.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "가장 큰 혜택은 청년 주택드림 대출! <b>최저</b> 2.2% 고정금리로 주택자금을 빌려줘요.",
+      "query": "house loan low interest",
+      "bg": "https://images.pexels.com/photos/6289039/pexels-photo-6289039.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "정부 지원으로 설치비의 최대 <b>50%</b>까지 보조받고, 잔액은 장기 무이자 할부도 가능해요.",
-      "query": "government subsidy solar panel",
-      "bg": "https://images.pexels.com/photos/6158868/pexels-photo-6158868.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "만 19~34세 <b>무주택</b> 청년, 연소득 5천만원 이하면 누구나 가입 가능!",
+      "query": "young adult home",
+      "bg": "https://images.pexels.com/photos/4562326/pexels-photo-4562326.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "지역별 지원 규모와 조건이 다르니, 살고 있는 지역의 <b>지원사업</b>을 반드시 확인해야 합니다.",
-      "query": "korea map money",
-      "bg": "https://images.pexels.com/photos/2678301/pexels-photo-2678301.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "기존 청년우대형은 <b>자동</b> 전환, 일반 통장도 조건 만족 시 은행에서 바꿀 수 있어요.",
+      "query": "bank application form",
+      "bg": "https://images.pexels.com/photos/7821466/pexels-photo-7821466.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "환경 보호는 물론, 장기적으로 연금처럼 <b>꼬박꼬박</b> 들어오는 돈을 지금 바로 시작해보세요!",
-      "query": "piggy bank solar panel",
-      "bg": "https://images.pexels.com/photos/11933676/pexels-photo-11933676.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "내 집 마련의 꿈, 청년 주택드림 통장으로 <b>현실</b>이 됩니다. 지금 바로 확인하세요!",
+      "query": "dream home key",
+      "bg": "https://images.pexels.com/photos/7579206/pexels-photo-7579206.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
       "outro": true,
       "narration": "도움이 됐다면 지금 좋아요와 팔로우 눌러주세요!"
     }
   ],
-  "caption": "아직도 태양광 설치 안 했어요? 매년 수십만 원 놓치는 중!\n\n지붕 위 태양광, 이제 단순 전기 절약이 아닌 월세처럼 따박따박 들어오는 💰<b>수익</b> 파이프라인으로 진화했습니다.\n생산한 전기를 한국전력에 판매(PPA)하여 매달 안정적인 현금 흐름을 만들 수 있죠.\n주택 소유자라면 누구나 가능하며, 정부 지원으로 <b>설치비</b> 부담도 절반까지 줄어듭니다.\n지역별 지원 규모와 조건이 다르니, 우리 동네 <b>지원사업</b>을 꼭 확인하고 상담해보세요!\n환경 보호와 함께 장기적인 <b>재정적</b> 자유를 향한 첫걸음이 될 수 있습니다.\n\n이 정보, 나만 알면 손해! 지금 바로 저장하고 친구에게 공유하세요! 더 많은 꿀팁은 @glend_official 팔로우!\n#태양광재테크 #에너지절약 #돈버는방법 #주택태양광 #재테크꿀팁"
+  "caption": "청년이라면 무조건 알아야 할 '청년 주택드림 청약통장'!\n\n지난 2월 21일 출시된 이 통장은 파격적인 혜택으로 무장했습니다. 연 최대 4.5%의 고금리는 기본, 500만원까지 이자소득이 비과세된다는 사실! 게다가, 이 통장을 통해 '청년 주택드림 대출'을 연계하여 최저 2.2% 고정금리로 주택 구입 자금을 빌릴 수 있어요.\n\n✔️ 만 19~34세 무주택 청년\n✔️ 연소득 5천만원 이하\n\n이 조건만 충족하면 누구나 가입 가능! 기존 청년우대형 통장은 자동 전환되고, 일반 통장 가입자도 조건 충족 시 전환 신청할 수 있습니다. 내 집 마련 꿈, 더 이상 꿈이 아니에요. 지금 바로 확인하고 놓치지 마세요!\n\n이 정보, 나만 알기 아깝다면 지금 바로 '저장'하고 친구에게 '공유'하세요!\n\n#청년주택드림청약통장 #청년정책 #내집마련 #재테크꿀팁 #GLEND"
 }
