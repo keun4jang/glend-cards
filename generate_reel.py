@@ -15,7 +15,7 @@ PEXELS_KEY = os.getenv("PEXELS_API_KEY", "").strip()
 
 POST_INDEX = sys.argv[1] if len(sys.argv) > 1 else "1"
 
-# 1) 카테고리 결정 — 1번=경제, 2번=사건사고, 3번=건강 (카드뉴스와 동일 체계)
+# 1) 카테고리 결정 — 1번=경제, 2번=사건사고, 3번=건강
 ECONOMY_QUERIES = [
     "정부지원금 OR 환급 OR 세금 혜택 OR 신청 마감 when:1d",
     "금리 OR 예금 OR 적금 OR 대출 조건 when:1d",
@@ -43,49 +43,48 @@ news_text = "\n".join(f"- {h}" for h in headlines)
 
 # 2) 카테고리별 페르소나
 if CATEGORY == "health":
-    PERSONA = "너는 'GLEND'라는 건강 실전 꿀팁 인스타그램 릴스 채널의 전문 작가야. 독자가 \"지금 당장 내 몸에 도움되는\" 정보를 15~25초 안에 빠르게 얻어가게 만든다."
+    PERSONA = "너는 'GLEND'라는 건강 실전 꿀팁 인스타그램 릴스 채널의 전문 작가야. 15~22초 안에 빠르게 핵심을 전달한다."
     TOPIC_DESC = "오늘의 최신 건강 관련 뉴스 제목 목록"
-    HOOK_STYLE = '"~하면 몸 망친다" 류의 경각심 자극형'
-    QUERY_EXAMPLE = '"morning stretching", "healthy meal prep", "sleeping bedroom night", "meditation calm person"'
+    HOOK = '"~하면 몸 망친다" 류의 경각심 자극형'
+    QEX = '"morning stretching", "healthy meal prep", "sleeping bedroom night"'
 elif CATEGORY == "incident":
-    PERSONA = "너는 'GLEND'라는 트렌드 인스타그램 릴스 채널의 전문 작가야. 자극적이거나 공감을 유발하는 사건·사고·논란 소재를 15~25초 안에 빠르게 전달한다."
+    PERSONA = "너는 'GLEND'라는 트렌드 인스타그램 릴스 채널의 전문 작가야. 자극적·공감형 사건·사고·논란을 15~22초 안에 빠르게 전한다."
     TOPIC_DESC = "오늘의 최신 사건·사고·논란 관련 뉴스 제목 목록"
-    HOOK_STYLE = '질문형 또는 충격 사실 제시형'
-    QUERY_EXAMPLE = '"car accident night", "police tape scene", "hospital emergency", "crowd protest"'
+    HOOK = '질문형 또는 충격 사실 제시형'
+    QEX = '"car accident night", "police tape scene", "crowd protest"'
 else:
-    PERSONA = "너는 'GLEND'라는 경제·재테크 실전 꿀팁 인스타그램 릴스 채널의 전문 작가야. 독자가 \"지금 당장 나한테 이득/손해가 되는\" 정보를 15~25초 안에 빠르게 얻어가게 만든다."
+    PERSONA = "너는 'GLEND'라는 경제·재테크 실전 꿀팁 인스타그램 릴스 채널의 전문 작가야. 15~22초 안에 이득/손해 정보를 빠르게 전한다."
     TOPIC_DESC = "오늘의 최신 경제/재테크 관련 뉴스 제목 목록"
-    HOOK_STYLE = '"~안 하면 손해" 류의 손실 회피형'
-    QUERY_EXAMPLE = '"money hand korean", "bank application", "apartment korea", "korean won cash"'
+    HOOK = '"~안 하면 손해" 류의 손실 회피형'
+    QEX = '"money hand korean", "bank application", "apartment korea"'
 
-# 3) 릴스 대본 프롬프트 — 5개 장면(후킹→내용3→마무리)
+# 3) 릴스 대본 — 4개 장면(후킹+핵심3). 각 장면 narration = 화면 중앙에 뜰 자막.
 PROMPT = f"""
 {PERSONA}
 
 아래는 {TOPIC_DESC}이야:
 {news_text}
 
-이 중에서 대중이 가장 반응할 핵심 주제 하나를 직접 골라서, 세로 릴스(15~25초) 대본을 만들어줘.
-릴스는 5개 장면(scene)으로 구성돼. 각 장면은 "화면에 크게 뜨는 짧은 텍스트(text)"와 "성우가 읽는 나레이션 문장(narration)", 그리고 "배경으로 쓸 영어 사진 검색어(query)"로 이뤄져.
+이 중에서 대중이 가장 반응할 핵심 주제 하나를 직접 골라서, 세로 릴스 대본을 만들어줘.
+릴스는 4개 장면(scene)으로 구성돼. 각 장면은 성우가 말하는 동시에 화면 중앙에 그대로 뜨는 자막 문장(narration)과 배경 사진 검색어(query)로 이뤄져.
 
 규칙:
-- scene 1 = 후킹. text는 강렬한 2줄(한 줄 6자 이내). {HOOK_STYLE}. narration은 시선을 잡는 첫 문장.
-- scene 2,3,4 = 핵심 내용. text는 화면용 짧은 핵심 문구(한 줄 최대 16자, 최대 2줄). 핵심 단어는 <b>단어</b>로 감싸 강조. narration은 그 내용을 자연스럽게 설명하는 1~2문장(구어체, 빠르고 명확하게).
-- scene 5 = 마무리/행동유도. text는 저장·팔로우를 부르는 짧은 문구. narration도 행동 촉구 한 문장.
-- 각 narration은 너무 길지 않게(장면당 대략 3~5초 분량, 한국어 20~45자). 전체 합쳐 15~25초.
-- text에는 절대 글자수 메모("(16자)" 등)를 쓰지 마. 최종 문구만 순수하게.
-- query는 각 장면 분위기에 맞는 사진 검색어 2~3단어 (예: {QUERY_EXAMPLE}).
+- scene 1 = 후킹. narration은 시선을 확 잡는 짧은 한 문장. {HOOK}
+- scene 2,3,4 = 핵심 내용. narration은 짧고 명확한 구어체 한 문장(빠르게 말하기 좋게). 조건/금액/방법 같은 알맹이를 담아.
+- 각 narration은 화면 자막이므로 반드시 짧게: 한 문장, 공백 포함 대략 12~30자. 너무 길면 자막이 넘쳐. 두 문장으로 나누지 말고 한 문장.
+- 각 narration에서 가장 중요한 핵심 단어 1개를 <b>단어</b>로 감싸 강조(노란색으로 표시됨). 장면당 1개만.
+- 자막에 글자수 메모("(16자)" 등)를 절대 쓰지 마. 최종 문장만.
+- query는 각 장면 분위기에 맞는 영어 사진 검색어 2~3단어 (예: {QEX}).
 - 인스타 캡션: 첫 줄 후킹 + 핵심 3줄 + 저장/팔로우 유도 + 해시태그 5개.
 
 반드시 아래 JSON 형식으로만 답해. 다른 설명 금지.
 {{
   "topic": "네가 고른 주제",
   "scenes": [
-    {{ "text": "1줄\\n2줄", "narration": "나레이션", "query": "영어 사진 검색어" }},
-    {{ "text": "화면문구", "narration": "나레이션", "query": "영어 사진 검색어" }},
-    {{ "text": "화면문구", "narration": "나레이션", "query": "영어 사진 검색어" }},
-    {{ "text": "화면문구", "narration": "나레이션", "query": "영어 사진 검색어" }},
-    {{ "text": "저장·팔로우 유도 문구", "narration": "나레이션", "query": "영어 사진 검색어" }}
+    {{ "narration": "후킹 자막 문장", "query": "영어 사진 검색어" }},
+    {{ "narration": "핵심 자막 문장", "query": "영어 사진 검색어" }},
+    {{ "narration": "핵심 자막 문장", "query": "영어 사진 검색어" }},
+    {{ "narration": "핵심 자막 문장", "query": "영어 사진 검색어" }}
   ],
   "caption": "인스타 캡션 전체 텍스트"
 }}
@@ -129,6 +128,9 @@ def get_photo(query):
     return None
 
 
+# 마지막(아웃트로) 장면 나레이션 — 좋아요/팔로우 유도 (자막 없음)
+OUTRO_NARRATION = "도움이 됐다면 지금 좋아요와 팔로우 눌러주세요!"
+
 try:
     data = json.loads(raw)
     print("=== Gemini가 고른 주제 ===")
@@ -139,11 +141,13 @@ try:
         q = scene.get("query", "background")
         photo = get_photo(q)
         scene["bg"] = photo or "https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg"
-        print(f"  scene{i}: '{q}' -> {'OK' if photo else '실패(기본사진)'}")
-        print(f"     text: {scene['text'].replace(chr(10),' / ')}")
-        print(f"     narration: {scene['narration']}")
-    print()
-    print("[캡션]\n" + data["caption"])
+        print(f"  scene{i}: '{q}' -> {'OK' if photo else '실패(기본사진)'} | 자막: {scene['narration']}")
+
+    # 아웃트로 장면 추가 (검정 배경 + 로고, 자막 없음)
+    data["scenes"].append({"outro": True, "narration": OUTRO_NARRATION})
+    print(f"  scene5(아웃트로): 좋아요 유도 나레이션")
+
+    print("\n[캡션]\n" + data["caption"])
 
     out_file = f"reel_content_{POST_INDEX}.json"
     with open(out_file, "w", encoding="utf-8") as f:

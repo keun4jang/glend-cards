@@ -3,11 +3,14 @@
   generate_reel -> render_reel -> build_reel -> git push(mp4) -> upload_reel go
 기본은 하루 1개 릴스. POST_INDEX(1=경제 2=사건사고 3=건강)를 인자로 받음(기본 1).
 """
+import os
 import subprocess
 import sys
 import datetime
 
 IDX = sys.argv[1] if len(sys.argv) > 1 else "1"
+# PUBLISH=false 면 영상만 만들고(커밋까지) 발행은 건너뜀 — 업로드 전 검토용
+PUBLISH = os.getenv("PUBLISH", "true").strip().lower() != "false"
 
 
 def run(name, args):
@@ -38,6 +41,11 @@ push = subprocess.run(["git", "push"])
 if push.returncode != 0:
     print("[중단] 깃허브 저장 실패.", flush=True)
     sys.exit(1)
+
+if not PUBLISH:
+    print(f"\n[검토 모드] PUBLISH=false → 발행 생략. 영상은 저장소에 커밋됨.", flush=True)
+    print(f"영상 URL: https://raw.githubusercontent.com/keun4jang/glend-cards/main/output/reel{IDX}/reel.mp4", flush=True)
+    sys.exit(0)
 
 # GitHub raw 반영 대기
 print("깃허브 반영 대기 중... (40초)", flush=True)

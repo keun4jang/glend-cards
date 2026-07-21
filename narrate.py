@@ -15,6 +15,7 @@ import asyncio
 
 ENGINE = os.getenv("TTS_ENGINE", "edge").strip().lower()
 EDGE_VOICE = os.getenv("EDGE_VOICE", "ko-KR-SunHiNeural")  # 여성. 남성은 ko-KR-InJoonNeural
+EDGE_RATE = os.getenv("EDGE_RATE", "+22%")   # 말 속도 (+ 빠르게). 예: "+22%", "+35%"
 KOKORO_VOICE = os.getenv("KOKORO_VOICE", "kf_default")
 
 
@@ -22,7 +23,7 @@ def _synth_edge(text, out_path):
     import edge_tts
 
     async def _run():
-        comm = edge_tts.Communicate(text, EDGE_VOICE)
+        comm = edge_tts.Communicate(text, EDGE_VOICE, rate=EDGE_RATE)
         await comm.save(out_path)
 
     asyncio.run(_run())
