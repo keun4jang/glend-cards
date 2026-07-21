@@ -24,20 +24,19 @@ def strip_notes(text):
 
 
 async def render():
+    n = len(content["scenes"])
     async with async_playwright() as p:
         browser = await p.chromium.launch()
         page = await browser.new_page(viewport={"width": 1080, "height": 1920}, device_scale_factor=1)
         for i, scene in enumerate(content["scenes"], start=1):
             is_outro = bool(scene.get("outro"))
+            is_hook = (i == 1) and not is_outro
 
             if is_outro:
-                # 검정 배경 + 로고만
                 await page.goto(TEMPLATE)
                 await page.evaluate("""(logo) => {
-                    document.getElementById('bg').style.display = 'none';
-                    document.getElementById('overlay').style.display = 'none';
-                    document.getElementById('brand-top').style.display = 'none';
-                    document.getElementById('subtitle-wrap').style.display = 'none';
+                    for (const id of ['bg','overlay','brand-top','subtitle-wrap','hook'])
+                        document.getElementById(id).style.display = 'none';
                     const o = document.getElementById('outro');
                     o.style.display = 'flex';
                     document.getElementById('outro-logo').src = logo;
@@ -48,27 +47,49 @@ async def render():
                 print(f"saved: {out} (아웃트로)")
                 continue
 
+            if is_hook:
+                text = strip_notes(scene.get("narration", ""))
+                await page.goto(TEMPLATE)
+                await page.evaluate("""([logo, txt]) => {
+                    for (const id of ['bg','overlay','subtitle-wrap','outro'])
+                        document.getElementById(id).style.display = 'none';
+                    document.getElementById('hook').style.display = 'flex';
+                    document.getElementById('hook-text').innerHTML = txt;
+                    document.getElementById('brand-logo').src = logo;
+                }""", [LOGO, text])
+                await page.wait_for_timeout(500)
+                await page.evaluate("document.fonts.ready")
+                await page.wait_for_timeout(300)
+                out = OUTPUT / f"scene{i}_full.png"
+                await page.screenshot(path=str(out))
+                print(f"saved: {out} (후킹)")
+                continue
+
+            # 콘텐츠 장면
             bg_url = scene.get("bg", FALLBACK)
             subtitle = strip_notes(scene.get("narration", ""))
 
-            # 1) 배경(사진만) — 불투명
+            # 1) 배경(사진 90% = 10% 투명, 검정 위) — 불투명 스크린샷
             await page.goto(TEMPLATE)
             await page.evaluate("""(bg) => {
-                document.getElementById('overlay').style.display = 'none';
-                document.getElementById('brand-top').style.display = 'none';
-                document.getElementById('subtitle-wrap').style.display = 'none';
-                document.getElementById('bg').style.backgroundImage = `url(${bg})`;
+                document.body.style.background = '#000';
+                for (const id of ['overlay','brand-top','subtitle-wrap','hook','outro'])
+                    document.getElementById(id).style.display = 'none';
+                const b = document.getElementById('bg');
+                b.style.backgroundImage = `url(${bg})`;
+                b.style.opacity = '0.9';
             }""", bg_url)
             await page.wait_for_timeout(600)
             bg_png = OUTPUT / f"scene{i}_bg.png"
             await page.screenshot(path=str(bg_png))
 
-            # 2) 전경(그라데이션 + 로고 + 자막) — 투명 배경
+            # 2) 전경(옅은 그라데이션 + 로고 + 자막) — 투명 배경
             await page.goto(TEMPLATE)
             await page.evaluate("""([logo, sub]) => {
-                document.getElementById('bg').style.display = 'none';
+                for (const id of ['bg','hook','outro'])
+                    document.getElementById(id).style.display = 'none';
                 document.getElementById('brand-logo').src = logo;
-                document.getElementById('subtitle').innerHTML = `<span class="txt">${sub}</span>`;
+                document.getElementById('subtitle').innerHTML = sub;
             }""", [LOGO, subtitle])
             await page.wait_for_timeout(500)
             await page.evaluate("document.fonts.ready")

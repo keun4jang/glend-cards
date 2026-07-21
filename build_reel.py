@@ -59,6 +59,8 @@ def audio_duration(path):
 clip_paths = []
 for i, scene in enumerate(scenes, start=1):
     is_outro = bool(scene.get("outro"))
+    is_hook = (i == 1) and not is_outro
+    is_static = is_outro or is_hook   # 후킹/아웃트로는 줌 없이 정지 화면
 
     # 나레이션 생성
     narr = OUT / f"narr{i}.mp3"
@@ -68,7 +70,7 @@ for i, scene in enumerate(scenes, start=1):
     frames = int(math.ceil(dur * FPS))
     clip = OUT / f"clip{i}.mp4"
 
-    if is_outro:
+    if is_static:
         full = OUT / f"scene{i}_full.png"
         run([
             "ffmpeg", "-y", "-loop", "1", "-t", f"{dur:.2f}", "-i", str(full),
