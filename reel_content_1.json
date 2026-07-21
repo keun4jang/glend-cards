@@ -1,46 +1,46 @@
 {
-  "topic": "청년 주택드림 청약통장",
-  "title": "청년 주택드림 🏡✨",
+  "topic": "운전면허 지원금",
+  "title": "운전면허 70만 💸",
   "scenes": [
     {
-      "narration": "청년 주택드림 통장 아직도 없어? <b>큰돈</b> 벌 기회 놓치지 마!",
-      "query": "money falling excited young",
-      "bg": "https://images.pexels.com/photos/5702322/pexels-photo-5702322.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "70만원 날리기 싫다면, <b>이거</b> 꼭 신청하세요!",
+      "query": "money flying, losing money, urgent alert",
+      "bg": "https://images.pexels.com/photos/5909815/pexels-photo-5909815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "기존 청약통장과 차원이 다른, 주택 구입을 꿈꾸는 청년들을 위한 <b>특별</b> 혜택이 나왔어요.",
-      "query": "young couple dream house",
-      "bg": "https://images.pexels.com/photos/8470835/pexels-photo-8470835.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "운전면허 따기 전이라면 <b>주목</b>! 정부가 최대 70만원 지원 혜택을 준비 중이래요.",
+      "query": "driving school, driving license test, money support",
+      "bg": "https://images.pexels.com/photos/9035348/pexels-photo-9035348.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "최대 연 4.3% 금리에, 청약 당첨 시 최저 연 2.2% 주택구입 <b>대출</b>까지 연계됩니다.",
-      "query": "bank building money loan",
-      "bg": "https://images.pexels.com/photos/4968666/pexels-photo-4968666.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "학원비, 시험 응시료 등 운전면허 취득에 드는 <b>비용</b>을 나라에서 돌려주는 지원금이에요.",
+      "query": "car academy fee, driving lesson, cost savings",
+      "bg": "https://images.pexels.com/photos/9518021/pexels-photo-9518021.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "만 19~34세, 무주택 세대주인 <b>청년</b>이라면 소득 5천만 원 이하까지 가입 가능해요.",
-      "query": "young man student",
-      "bg": "https://images.pexels.com/photos/8199138/pexels-photo-8199138.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "2026년 하반기 시행 예정이고, 청년, 저소득층 등 <b>취약계층</b>에 우선 적용될 전망이에요.",
+      "query": "young people, low income family, support program",
+      "bg": "https://images.pexels.com/photos/34455733/pexels-photo-34455733.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "기존 청년우대형 통장은 <b>자동</b> 전환, 일반 통장은 조건 만족 시 은행에서 신청하세요.",
-      "query": "bank application form",
-      "bg": "https://images.pexels.com/photos/7821466/pexels-photo-7821466.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "고용노동부 국민내일배움카드나 지자체 <b>사업</b>과 연계될 가능성이 높으니 미리 확인하세요.",
+      "query": "job training card, government subsidy application, online form",
+      "bg": "https://images.pexels.com/photos/7821459/pexels-photo-7821459.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "비과세 혜택과 소득공제까지! 잊지 말고 꼭 <b>챙겨야</b> 할 필수 통장입니다.",
-      "query": "tax deduction money",
-      "bg": "https://images.pexels.com/photos/6863202/pexels-photo-6863202.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "미리 준비하려면 내일배움카드 조건 확인하고, 지역별 <b>공고</b>를 놓치지 않는 게 중요해요!",
+      "query": "document preparation, checking notification, calendar alert",
+      "bg": "https://images.pexels.com/photos/8962470/pexels-photo-8962470.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "주택 마련의 든든한 <b>첫걸음</b>! 지금 바로 가까운 은행에서 상담받아보세요.",
-      "query": "walking path future",
-      "bg": "https://images.pexels.com/photos/38500428/pexels-photo-38500428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "서민과 청년의 경제적 <b>부담</b>을 줄이고, 안전한 운전 환경을 만들 것으로 기대돼요.",
+      "query": "safe driving, financial relief, happy young people",
+      "bg": "https://images.pexels.com/photos/10400847/pexels-photo-10400847.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
       "outro": true,
       "narration": "도움이 됐다면 지금 좋아요와 팔로우 눌러주세요!"
     }
   ],
-  "caption": "청년 주택드림 통장 아직도 없어? 큰돈 벌 기회 놓치지 마! 😱\n\n청년 주택드림 청약통장은 주택 마련을 꿈꾸는 19~34세 청년들을 위한 역대급 혜택입니다. 연 최대 4.3% 금리는 물론, 청약 당첨 시 최저 연 2.2%의 주택구입 대출까지 연계되죠. 소득 5천만원 이하 무주택 세대주라면 누구나 가입 가능해요. 기존 청년우대형 통장은 자동 전환되고, 일반 통장 가입자는 은행에서 전환 신청할 수 있습니다. 비과세와 소득공제 혜택까지 놓치지 말고 꼭 챙겨서 내 집 마련의 꿈에 한 발짝 다가가세요!\n\n친구 태그해서 이 꿀팁 공유하고, GLEND 팔로우해서 더 많은 재테크 팁 받아보세요!\n#청년주택드림 #청약통장 #내집마련 #재테크 #금융꿀팁"
+  "caption": "70만원 날리기 싫다면, 이거 꼭 신청하세요!\n\n🚨2026년 하반기부터 운전면허 학원비, 시험 응시료 등 최대 70만원을 지원받을 수 있는 정부 혜택이 시행될 예정이에요!\n\n✅ 주요 내용:\n- 운전면허 취득 비용(학원비, 응시료 등) 지원\n- 최대 70만원까지 환급 또는 지원 방식\n- 청년, 저소득층 등 취약계층 우선 적용\n\n🔍 준비할 것:\n- 고용노동부 국민내일배움카드 발급 조건 미리 확인\n- 거주 지역 지자체 사업 공고를 꾸준히 확인하세요!\n\n아직은 준비 단계지만, 미리 알아두면 나중에 큰 돈 아낄 수 있어요! 지금 바로 저장하고 친구에게 공유해서 꿀팁 놓치지 마세요!\n\n#운전면허 #지원금 #국민내일배움카드 #재테크 #GLEND"
 }
