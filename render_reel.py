@@ -69,17 +69,24 @@ async def render():
             bg_url = scene.get("bg", FALLBACK)
             subtitle = strip_notes(scene.get("narration", ""))
 
-            # 1) 배경(사진 90% = 10% 투명, 검정 위) — 불투명 스크린샷
+            # 1) 배경(사진 50% 불투명, 검정 위) — 사진이 완전히 로드된 뒤 캡처
             await page.goto(TEMPLATE)
-            await page.evaluate("""(bg) => {
+            await page.evaluate("""(bg) => new Promise((resolve) => {
                 document.body.style.background = '#000';
                 for (const id of ['overlay','brand-top','subtitle-wrap','hook','outro'])
                     document.getElementById(id).style.display = 'none';
                 const b = document.getElementById('bg');
+                b.style.opacity = '0.5';
                 b.style.backgroundImage = `url(${bg})`;
-                b.style.opacity = '0.9';
-            }""", bg_url)
-            await page.wait_for_timeout(600)
+                const img = new Image();
+                let done = false;
+                const finish = () => { if (!done) { done = true; resolve(); } };
+                img.onload = finish;
+                img.onerror = finish;
+                img.src = bg;
+                setTimeout(finish, 12000);
+            })""", bg_url)
+            await page.wait_for_timeout(400)
             bg_png = OUTPUT / f"scene{i}_bg.png"
             await page.screenshot(path=str(bg_png))
 
