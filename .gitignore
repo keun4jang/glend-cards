@@ -1,3 +1,11 @@
 ﻿.env
 venv/
 __pycache__/
+
+# 릴스 중간 산출물 (reel.mp4만 커밋, 나머지는 제외)
+output/reel*/scene*.png
+output/reel*/clip*.mp4
+output/reel*/narr*.mp3
+output/reel*/joined.mp4
+output/reel*/concat.txt
+narration_test.mp3

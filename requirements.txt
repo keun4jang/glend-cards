@@ -1,5 +1,6 @@
-﻿playwright
+playwright
 google-genai
 requests
 feedparser
 python-dotenv
+edge-tts

@@ -1,0 +1,47 @@
+name: Daily Reel Post
+
+on:
+  workflow_dispatch:
+    inputs:
+      index:
+        description: "릴스 카테고리 (1=경제 2=사건사고 3=건강)"
+        required: false
+        default: "1"
+  # 테스트로 수동 실행(workflow_dispatch)해서 확인한 뒤 아래 schedule 주석을 풀어 자동화하세요.
+  # schedule:
+  #   - cron: "0 6 * * *"   # UTC 06:00 = KST 15:00
+
+permissions:
+  contents: write
+
+jobs:
+  reel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          python -m playwright install chromium
+
+      - name: Run reel pipeline
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          TTS_ENGINE: ${{ vars.TTS_ENGINE }}
+        run: python daily_reel_ci.py ${{ github.event.inputs.index || '1' }}
