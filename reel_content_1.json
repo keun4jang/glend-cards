@@ -1,30 +1,40 @@
 {
-  "topic": "청년 주택드림 청약통장",
+  "topic": "청년형 ISA (Youth ISA)",
   "scenes": [
     {
-      "narration": "청년이라면 <b>이거</b> 안 하면 손해!",
-      "query": "young person surprised",
-      "bg": "https://images.pexels.com/photos/19449043/pexels-photo-19449043.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "청년이라면 이것 안 하면 <b>세금폭탄</b> 맞아요!",
+      "query": "young person confused",
+      "bg": "https://images.pexels.com/photos/8638716/pexels-photo-8638716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "최대 연 4.5% <b>고금리</b> 혜택!",
-      "query": "bank high interest",
-      "bg": "https://images.pexels.com/photos/5562086/pexels-photo-5562086.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "청년형 ISA는 19~34세가 가입해 비과세 혜택받는 <b>종합자산관리계좌</b>예요.",
+      "query": "financial plan youth",
+      "bg": "https://images.pexels.com/photos/11114830/pexels-photo-11114830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "결혼하면 2%대 <b>저금리</b> 대출까지!",
-      "query": "wedding house loan",
-      "bg": "https://images.pexels.com/photos/6289039/pexels-photo-6289039.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "일반 ISA보다 최대 연 400만원까지 <b>비과세</b> 혜택을 받을 수 있어요.",
+      "query": "tax benefit money",
+      "bg": "https://images.pexels.com/photos/8970301/pexels-photo-8970301.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "소득 충족하면 <b>비과세</b> 혜택도!",
-      "query": "tax free money",
-      "bg": "https://images.pexels.com/photos/6863176/pexels-photo-6863176.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "연 소득 5천만원 이하나 종합소득 3천8백만원 이하 청년만 <b>가입</b> 가능해요.",
+      "query": "income limit document",
+      "bg": "https://images.pexels.com/photos/7821551/pexels-photo-7821551.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "예금, 펀드, ETF 등 다양한 상품에 <b>투자</b> 가능! 한 계좌로 관리하세요.",
+      "query": "investment portfolio chart",
+      "bg": "https://images.pexels.com/photos/7948072/pexels-photo-7948072.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "최대 5년간 의무 가입 후 해지 가능! 미리 가입해서 <b>절세</b> 효과 누리세요.",
+      "query": "saving money young",
+      "bg": "https://images.pexels.com/photos/7680464/pexels-photo-7680464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
       "outro": true,
       "narration": "도움이 됐다면 지금 좋아요와 팔로우 눌러주세요!"
     }
   ],
-  "caption": "청년이라면 무조건 알아야 할 꿀팁!\n최대 연 4.5% 고금리 청약통장 혜택은 기본!\n결혼하면 2%대 주택드림 저금리 대출까지 받을 수 있어!\n일정 소득 기준만 맞으면 비과세 혜택까지 누릴 수 있으니, 지금 바로 확인해 봐!\n\n이득 보는 꿀팁은 GLEND에서 저장하고 팔로우!\n#청년주택드림 #청약통장 #재테크 #내집마련 #글렌드"
+  "caption": "청년이라면 이것 안 하면 세금폭탄 맞아요!\n\n✨청년형 ISA는 19~34세 청년만 가입할 수 있는 특별한 계좌예요. 일반 ISA보다 훨씬 큰 비과세 혜택(연 400만원까지!)을 받을 수 있죠.\n\n✔️ 단, 연 소득 5천만원 또는 종합소득 3천8백만원 이하 청년만 가입 가능해요! 예금부터 펀드, ETF까지 한 계좌에서 투자하고 비과세 혜택까지 챙기세요.\n\n⏳ 최대 5년간 의무 가입 기간이 있지만, 미리 가입할수록 더 큰 절세 효과를 누릴 수 있어요. 늦기 전에 서둘러 나만의 재테크 전략을 세워보세요!\n\n친구에게 공유하고, 나중에 찾아보려면 꼭 저장하세요! 💰\n\n#청년형ISA #재테크 #비과세 #돈관리 #사회초년생"
 }
