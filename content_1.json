@@ -1,30 +1,30 @@
 {
-  "topic": "N잡러 부가세 신고",
+  "topic": "청년 주택드림 청약통장",
   "card1": {
-    "title": "세금? 내 얘기 아니죠?\nN잡러 착각!",
-    "sub": "가만히 있으면 폭탄!",
-    "query": "money loss calculator",
-    "bg": "https://images.pexels.com/photos/6927336/pexels-photo-6927336.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "이 통장\n안 만들면",
+    "sub": "<b>최대 연 4.5%</b> 놓친다",
+    "query": "Korean youth finance",
+    "bg": "https://images.pexels.com/photos/18935926/pexels-photo-18935926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "N잡러라면\n필수 확인!",
+    "subtitle": "청년이라면\n<b>무조건!</b>",
     "lines": [
-      "부가세 신고는 <b>27일 마감</b>입니다.",
-      "연 매출 <b>4,800만원</b> 이상은",
-      "일반과세, 그 이하는 간이과세죠."
+      "만 19세~34세 <b>무주택</b> 청년 (16자)",
+      "연 소득 5천만 원 이하 <b>조건</b>. (15자)",
+      "<b>최대 4.5%</b> 금리 혜택 받으세요. (16자)"
     ],
-    "query": "korean tax document",
-    "bg": "https://images.pexels.com/photos/7821551/pexels-photo-7821551.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "Korean bank application",
+    "bg": "https://images.pexels.com/photos/7821466/pexels-photo-7821466.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "세금 폭탄\n피하는 법!",
+    "subtitle": "지금 바로\n<b>신청하세요!</b>",
     "lines": [
-      "홈택스에서 <b>간편 신고</b> 가능",
-      "매출·매입 자료 미리 준비하세요.",
-      "<b>지금</b> 신고 여부 확인하세요!"
+      "기존 청년우대형은 <b>자동 전환</b>. (16자)",
+      "<b>국민, 신한 등</b> 주요 은행 신청. (16자)",
+      "<b>지금</b> 신청 여부 확인하세요. (16자)"
     ],
-    "query": "laptop tax filing",
-    "bg": "https://images.pexels.com/photos/6863246/pexels-photo-6863246.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "bank building korea",
+    "bg": "https://images.pexels.com/photos/22617710/pexels-photo-22617710.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "N잡러라고 세금 신경 안 쓰면 큰코다칩니다!\n이번 부가세는 <b>27일 마감</b>!\n간이과세자 <b>4,800만</b> 초과 시\n일반과세로 신고해야 해요.\n홈택스에서 지금 바로 확인!\n💾 기한 놓치기 전에 저장해두세요!\n📌 매일 놓치기 쉬운 재테크 정보 받고 싶다면 @glend_economy 팔로우!\n#N잡러 #부가세 #세금 #재테크 #절세"
+  "caption": "청년이라면 <b>절대 놓치지 마세요!</b> 주택드림 청약통장!\n만 19세부터 34세 <b>무주택 청년</b>이라면 주목!\n최대 <b>연 4.5%</b> 금리 혜택과 <b>비과세</b>, 그리고 <b>주택 대출</b>까지!\n기존 청년우대형 통장은 <b>자동 전환</b>되니 혜택 놓치지 마세요.\n가까운 은행에서 <b>지금</b> 바로 신청 가능합니다.\n💾 기한 놓치기 전에 저장해두세요!\n📌 매일 놓치기 쉬운 재테크 정보 받고 싶다면 @glend_economy 팔로우!\n#청년주택드림 #청약통장 #재테크꿀팁 #내집마련 #GLEND"
 }
