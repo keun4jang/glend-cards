@@ -1,30 +1,30 @@
 {
-  "topic": "청년 주택드림 청약통장",
+  "topic": "에코마일리지 (Eco-Mileage)",
   "card1": {
-    "title": "이 통장\n안 만들면",
-    "sub": "<b>최대 연 4.5%</b> 놓친다",
-    "query": "Korean youth finance",
-    "bg": "https://images.pexels.com/photos/18935926/pexels-photo-18935926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "전기료 폭탄?\n이거 안 하면 손해!",
+    "sub": "정부가 돈 준다고?",
+    "query": "money hand korea, electricity bill saving",
+    "bg": "https://images.pexels.com/photos/34975698/pexels-photo-34975698.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "청년이라면\n<b>무조건!</b>",
+    "subtitle": "에코마일리지\n뭐야?",
     "lines": [
-      "만 19세~34세 <b>무주택</b> 청년 (16자)",
-      "연 소득 5천만 원 이하 <b>조건</b>. (15자)",
-      "<b>최대 4.5%</b> 금리 혜택 받으세요. (16자)"
+      "전기, 수도, 가스 절약시",
+      "<b>현금</b> 또는 <b>상품권</b>으로",
+      "<b>최대 10만원</b> 지원 받아요!"
     ],
-    "query": "Korean bank application",
-    "bg": "https://images.pexels.com/photos/7821466/pexels-photo-7821466.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "eco friendly house, energy reduction chart",
+    "bg": "https://images.pexels.com/photos/20384992/pexels-photo-20384992.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "지금 바로\n<b>신청하세요!</b>",
+    "subtitle": "신청 방법\n지금 바로!",
     "lines": [
-      "기존 청년우대형은 <b>자동 전환</b>. (16자)",
-      "<b>국민, 신한 등</b> 주요 은행 신청. (16자)",
-      "<b>지금</b> 신청 여부 확인하세요. (16자)"
+      "에코마일리지 <b>홈페이지</b>나",
+      "거주지 <b>주민센터</b> 방문",
+      "<b>지금</b> 신청 여부 확인하세요!"
     ],
-    "query": "bank building korea",
-    "bg": "https://images.pexels.com/photos/22617710/pexels-photo-22617710.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "online application form, government support document",
+    "bg": "https://images.pexels.com/photos/6863385/pexels-photo-6863385.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "청년이라면 <b>절대 놓치지 마세요!</b> 주택드림 청약통장!\n만 19세부터 34세 <b>무주택 청년</b>이라면 주목!\n최대 <b>연 4.5%</b> 금리 혜택과 <b>비과세</b>, 그리고 <b>주택 대출</b>까지!\n기존 청년우대형 통장은 <b>자동 전환</b>되니 혜택 놓치지 마세요.\n가까운 은행에서 <b>지금</b> 바로 신청 가능합니다.\n💾 기한 놓치기 전에 저장해두세요!\n📌 매일 놓치기 쉬운 재테크 정보 받고 싶다면 @glend_economy 팔로우!\n#청년주택드림 #청약통장 #재테크꿀팁 #내집마련 #GLEND"
+  "caption": "월 10만원씩 절약하고 현금으로 돌려받는 방법, 몰랐다면 손해!\n전기, 수도, 가스를 아껴 쓰면 정부가 최대 <b>10만원</b>을 줍니다.\n에코마일리지 프로그램은 절약한 에너지 양에 따라 현금 또는 상품권으로 돌려받을 수 있어요.\n지금 바로 에코마일리지 <b>홈페이지</b>나 거주지 <b>주민센터</b>에서 신청하세요!\n여름철 폭탄 요금 걱정 없이 똑똑하게 절약하고 돈 벌어요!\n💾 기한 놓치기 전에 저장해두세요!\n📌 매일 놓치기 쉬운 재테크 정보 받고 싶다면 @glend_economy 팔로우!\n#에코마일리지 #에너지절약 #생활비절약 #재테크꿀팁 #정부지원금"
 }
