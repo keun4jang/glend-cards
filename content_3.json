@@ -1,30 +1,30 @@
 {
-  "topic": "영양 불균형 해소",
+  "topic": "저녁 6시 이후 금식 (Late-night eating)",
   "card1": {
-    "title": "몸속 시한폭탄\n영양 불균형!",
-    "sub": "나도 모르게 병드는 중?",
-    "query": "unhealthy diet, tired person, nutrient deficiency",
-    "bg": "https://images.pexels.com/photos/8467228/pexels-photo-8467228.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "밤늦게 먹으면?\n당신 몸 망친다!",
+    "sub": "뇌 건강까지 위협하는 습관!",
+    "query": "unhealthy late night eating",
+    "bg": "https://images.pexels.com/photos/33579133/pexels-photo-33579133.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "당신도 혹시?\n체크리스트!",
+    "subtitle": "저녁 늦게\n왜 안될까?",
     "lines": [
-      "<b>잦은 피로</b>와 무기력함, 혹시 당신도?",
-      "쉽게 지치고 피부, 머릿결도 <b>푸석</b>해진다면",
-      "면역력 떨어져 <b>잔병치레</b> 잦다면 의심해봐요."
+      "<b>늦은</b> 식사는 소화를 방해해",
+      "뇌 활동을 자극, <b>수면</b> 질을",
+      "떨어뜨려 <b>뇌혈관</b> 질환 위험!"
     ],
-    "query": "person feeling tired, sick, dull skin",
-    "bg": "https://images.pexels.com/photos/8213138/pexels-photo-8213138.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "sleep deprivation brain health",
+    "bg": "https://images.pexels.com/photos/8410731/pexels-photo-8410731.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "불균형 해소\n<b>3가지</b> 방법!",
+    "subtitle": "6시 금식\n이렇게 해요!",
     "lines": [
-      "<b>오색 채소</b> 과일로 영양소 골고루 채워요.",
-      "정제 탄수화물 대신 <b>통곡물</b>을 챙겨 드세요.",
-      "<b>지금</b> 내 식단 속 영양 균형 확인하세요!"
+      "저녁 <b>6시</b> 전 식사를 마치고",
+      "<b>자기 전 4시간</b> 공복을 유지!",
+      "<b>지금</b> 바로 습관을 바꿔보세요."
     ],
-    "query": "colorful healthy food, meal prep, balanced diet",
-    "bg": "https://images.pexels.com/photos/30635714/pexels-photo-30635714.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "early dinner healthy lifestyle",
+    "bg": "https://images.pexels.com/photos/34337569/pexels-photo-34337569.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "당신의 몸속 영양 시한폭탄, 혹시 모르고 계셨나요?\n한국인 <b>3명 중 1명</b>이 겪는다는 영양 불균형!\n무기력감, 푸석한 피부, 잦은 잔병치레가 그 신호일 수 있어요.\n지금 바로 내 식단을 점검하고, <b>통곡물</b>과 <b>오색 채소</b>로 균형을 되찾으세요.\n오늘부터 작은 습관 변화가 큰 건강으로 이어집니다!\n💾 나중에 실천할 수 있게 저장해두세요!\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_economy 팔로우!\n#영양불균형 #건강식단 #다이어트식단 #건강관리 #글렌드"
+  "caption": "밤늦게 먹는 습관, 뇌를 서서히 죽이고 있나요?\n늦은 시간 식사는 수면의 질을 떨어뜨려 뇌 건강에 치명적입니다.\n특히 저녁 6시 이후 음식 섭취는 소화 기관과 뇌에 과부하를 줍니다.\n뇌혈관 질환 위험을 최대 28%까지 낮춘 연구 결과도 있어요.\n자기 전 4시간 공복을 유지하여 뇌 휴식 시간을 확보해 주세요.\n💾 나중에 실천할 수 있게 저장해두세요!\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_economy 팔로우!\n#야간금식 #저녁식사 #뇌건강 #수면개선 #GLEND"
 }
