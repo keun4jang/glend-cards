@@ -1,30 +1,30 @@
 {
-  "topic": "급격한 다이어트 시 발생하는 피부 처짐 방지 및 탄력 유지법",
+  "topic": "식물성 단백질 영양 결핍 예방 및 단백질 조합법",
   "card1": {
-    "title": "살 급하게\n빼면 망함",
-    "sub": "탄력 망가지기 전에 보세요",
-    "query": "dieting woman portrait",
-    "bg": "https://images.pexels.com/photos/6516039/pexels-photo-6516039.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "두부만 먹다\n근손실 온다",
+    "sub": "식물성 단백질의 치명적 함정",
+    "query": "plant protein meal",
+    "bg": "https://images.pexels.com/photos/6805770/pexels-photo-6805770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "피부 처지는\n진짜 이유",
+    "subtitle": "하나만 먹으면\n아미노산 부족",
     "lines": [
-      "급격히 살 빼면 <b>콜라겐</b> 빠져요",
-      "<b>월 2kg</b> 이상 빼면 처져요",
-      "<b>근육 수분</b> 빠져 탄력 손상돼요"
+      "식물성 단백질은 <b>필수아미노산</b>",
+      "부족해 <b>근손실</b>을 유발합니다",
+      "<b>두부와 콩</b>만 먹으면 위험해요"
     ],
-    "query": "sagging skin face",
-    "bg": "https://images.pexels.com/photos/15286995/pexels-photo-15286995.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "fresh tofu bowl",
+    "bg": "https://images.pexels.com/photos/4828091/pexels-photo-4828091.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "탄력 지키는\n체중 감량",
+    "subtitle": "완벽 조합법\n이렇게 드세요",
     "lines": [
-      "<b>단백질</b> 매일 체중만큼 먹어야",
-      "근력 운동과 <b>수분 2L</b> 마셔요",
+      "<b>쌀밥과 콩</b>을 함께 섭취하세요",
+      "<b>견과류와 통곡물</b>도 꿀조합이죠",
       "<b>저장</b>하고 오늘부터 시작하세요"
     ],
-    "query": "woman drinking water",
-    "bg": "https://images.pexels.com/photos/7402626/pexels-photo-7402626.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "grain rice bowl",
+    "bg": "https://images.pexels.com/photos/8108169/pexels-photo-8108169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "급하게 살 뺐다가 피부 탄력 다 무너지고 늙어 보인 적 없으신가요?😱\n\n단기간 무리한 다이어트는 지방보다 근육과 콜라겐을 먼저 파괴시킵니다.\n월 2kg 이하로 천천히 감량해야 피부 늘어짐을 예방할 수 있습니다.\n매일 체중(kg)당 단백질 1g 섭취와 수분 2L 보충을 꼭 병행하세요!\n주 3회 근력 운동으로 피부 아래 바탕 근육을 단단히 채워줘야 합니다.\n\n💾 나중에 실천할 수 있게 저장해두세요!\n\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_economy 팔로우!\n\n#다이어트꿀팁 #피부탄력 #체중감량 #건강습관 #GLEND"
+  "caption": "식물성 단백질, 하나만 먹으면 영양 결핍 위험하다는 사실 알고 계셨나요?\n\n식물성 단백질은 동물성과 달리 특정 필수 아미노산이 부족합니다.\n콩에는 메티오닌이 부족하고, 쌀에는 리신이 부족해 단독으로 먹으면 체내 합성률이 떨어져요.\n따라서 쌀밥에 콩을 섞어 먹거나, 통곡물에 견과류를 곁들여 서로 부족한 아미노산을 채워줘야 합니다.\n\n💾 나중에 실천할 수 있게 저장해두세요!\n\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_economy 팔로우!\n\n#식물성단백질 #단백질섭취법 #건강꿀팁 #다이어트식단 #영양결핍예방"
 }
