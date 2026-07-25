@@ -1,46 +1,46 @@
 {
-  "topic": "저녁 6시 식사 마감과 뇌혈관 질환 감소",
-  "title": "🌙저녁6시 식사마감",
+  "topic": "식후 바로 마시는 커피가 만드는 혈당 스파이크와 영양 결핍",
+  "title": "식후커피 독된다☕",
   "scenes": [
     {
-      "narration": "밤늦게 무심코 먹다간 <b>뇌혈관</b>이 먼저 터질 수 있어요.",
-      "query": "night late snack",
-      "bg": "https://images.pexels.com/photos/33579133/pexels-photo-33579133.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "밥 먹고 바로 마시는 커피, 매일 마시면 <b>췌장</b>을 망칠 수 있어요.",
+      "query": "drinking iced coffee",
+      "bg": "https://images.pexels.com/photos/12900864/pexels-photo-12900864.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "최근 연구에서 저녁 식사 시간이 수면 질과 심뇌혈관 건강을 <b>결정</b>짓는다고 발표했어요.",
-      "query": "doctor health research",
-      "bg": "https://images.pexels.com/photos/19963124/pexels-photo-19963124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "식사 직후 마시는 커피 습관이, 혈당 불안정과 <b>영양</b> 결핍을 유발한다는 최신 연구가 나왔어요.",
+      "query": "eating food coffee",
+      "bg": "https://images.pexels.com/photos/5711229/pexels-photo-5711229.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "저녁 6시에 식사를 마치면 뇌혈관 질환 위험이 무려 <b>28%</b>나 낮아진대요.",
-      "query": "brain blood vessel",
-      "bg": "https://images.pexels.com/photos/9228397/pexels-photo-9228397.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "카페인이 인슐린 기능을 방해해, 식후 혈당을 최대 <b>50%</b>나 더 높인다고 해요.",
+      "query": "blood sugar test",
+      "bg": "https://images.pexels.com/photos/6823415/pexels-photo-6823415.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "특히 평소 불면증이 있거나 <b>혈당</b> 조절이 필요한 분들에겐 필수 습관이죠.",
-      "query": "sleeping bedroom night",
-      "bg": "https://images.pexels.com/photos/6753354/pexels-photo-6753354.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "특히 평소 <b>당뇨</b> 위험이 있거나, 만성 피로를 자주 느끼는 분들은 꼭 피해야 해요.",
+      "query": "tired woman fatigue",
+      "bg": "https://images.pexels.com/photos/5240047/pexels-photo-5240047.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "잠들기 최소 <b>4시간</b> 전에는 소화를 완전히 끝내야 장기가 푹 쉴 수 있어요.",
-      "query": "clock dinner table",
-      "bg": "https://images.pexels.com/photos/2950325/pexels-photo-2950325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "식후 커피는 소화가 어느 정도 진행된, 최소 <b>30분</b> 뒤에 마시는 것이 안전해요.",
+      "query": "clock 30 minutes",
+      "bg": "https://images.pexels.com/photos/8102178/pexels-photo-8102178.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "밤에 배가 너무 고프다면 위장에 부담 없는 따뜻한 <b>물</b> 한 잔으로 달래보세요.",
-      "query": "drinking warm water",
-      "bg": "https://images.pexels.com/photos/25252255/pexels-photo-25252255.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "입가심이 필요할 땐 커피 대신 따뜻한 <b>보리차</b>나 물을 마시는 습관을 들여보세요.",
+      "query": "drinking warm tea",
+      "bg": "https://images.pexels.com/photos/35018111/pexels-photo-35018111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "오늘부터 저녁 숟가락 일찍 놓으시고 <b>내 몸</b>의 놀라운 변화를 느껴보세요!",
-      "query": "happy healthy lifestyle",
-      "bg": "https://images.pexels.com/photos/8900045/pexels-photo-8900045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "마시는 시간만 살짝 바꿔도, 마법처럼 <b>혈당</b>을 안정적으로 지킬 수 있어요.",
+      "query": "healthy smiling woman",
+      "bg": "https://images.pexels.com/photos/3762405/pexels-photo-3762405.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
       "outro": true,
       "narration": "도움이 됐다면 지금 좋아요와 팔로우 눌러주세요!"
     }
   ],
-  "caption": "🚨 저녁 6시에 숟가락 내려놓아야 하는 이유!\n\n밤늦게 먹는 저녁 식사가 뇌혈관 건강을 위협한다는 사실, 알고 계셨나요?\n\n최근 연구에 따르면 저녁 식사를 6시에 마치면 수면의 질이 획기적으로 올라가고, 뇌혈관 질환 위험도 28%나 감소합니다.\n\n잠들기 최소 4시간 전 식사를 마쳐야 우리 장기도 밤새 휴식을 취할 수 있어요.\n\n오늘부터 저녁 식사 시간을 조금만 당겨보세요! 내 몸이 달라집니다.\n\n건강한 생활 꿀팁이 더 궁금하다면? @GLEND 팔로우 & 저장해두고 매일 챙겨보세요! 💡\n\n#저녁식사시간 #뇌혈관건강 #수면의질 #건강습관 #GLEND건강팁\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0"
+  "caption": "밥 먹고 바로 마시는 아이스 아메리카노, 혹시 여러분의 매일 습관인가요?☕\n\n식사 직후 마시는 커피는 카페인 성분이 인슐린 민감성을 떨어뜨려 식후 혈당을 최대 50%까지 급상승시킵니다.\n게다가 음식을 통해 섭취한 철분과 칼슘의 흡수를 방해해 만성 피로와 영양 결핍을 유발할 수 있어요.\n특히 당뇨 위험이 있거나 빈혈이 있으신 분들은 식후 커피 습관을 반드시 바꿔야 합니다.\n커피는 식사가 소화될 수 있도록 최소 30분에서 1시간 뒤에 마시는 것이 가장 좋습니다.\n오늘부터 식후 입가심은 커피 대신 따뜻한 보리차나 물 한 잔으로 바꿔보세요!\n\n나와 가족의 건강을 위해 이 영상 저장해두고 공유해보세요!❤️\n매일 알찬 건강 실전 팁을 받아보려면 @GLEND 팔로우!\n\n#건강꿀팁 #식후커피 #혈당스파이크 #당뇨예방 #건강습관\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0"
 }
