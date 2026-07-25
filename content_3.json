@@ -1,30 +1,30 @@
 {
-  "topic": "식물성 단백질 영양 결핍 예방 및 단백질 조합법",
+  "topic": "여름철 창문 열고 자는 수면 습관의 위험성과 올바른 숙면 법",
   "card1": {
-    "title": "두부만 먹다\n근손실 온다",
-    "sub": "식물성 단백질의 치명적 함정",
-    "query": "plant protein meal",
-    "bg": "https://images.pexels.com/photos/6805770/pexels-photo-6805770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "창문 열고\n자면 망친다",
+    "sub": "여름철 창문 수면의 충격 진실",
+    "query": "bedroom window night",
+    "bg": "https://images.pexels.com/photos/37316236/pexels-photo-37316236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "하나만 먹으면\n아미노산 부족",
+    "subtitle": "시원해서\n좋은 줄만",
     "lines": [
-      "식물성 단백질은 <b>필수아미노산</b>",
-      "부족해 <b>근손실</b>을 유발합니다",
-      "<b>두부와 콩</b>만 먹으면 위험해요"
+      "<b>야간 소음</b>이 잠을 자주 깨워요",
+      "<b>새벽 찬공기</b>는 면역력을 낮춰요",
+      "야간 <b>미세먼지</b>가 폐로 들어와요"
     ],
-    "query": "fresh tofu bowl",
-    "bg": "https://images.pexels.com/photos/4828091/pexels-photo-4828091.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "restless sleep night",
+    "bg": "https://images.pexels.com/photos/8410925/pexels-photo-8410925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "완벽 조합법\n이렇게 드세요",
+    "subtitle": "창문 닫고\n숙면하는 법",
     "lines": [
-      "<b>쌀밥과 콩</b>을 함께 섭취하세요",
-      "<b>견과류와 통곡물</b>도 꿀조합이죠",
+      "<b>에어컨 예약</b> 기능을 꼭 쓰세요",
+      "<b>실내 온도</b>는 25도가 적당해요",
       "<b>저장</b>하고 오늘부터 시작하세요"
     ],
-    "query": "grain rice bowl",
-    "bg": "https://images.pexels.com/photos/8108169/pexels-photo-8108169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "comfortable sleeping room",
+    "bg": "https://images.pexels.com/photos/7258034/pexels-photo-7258034.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "식물성 단백질, 하나만 먹으면 영양 결핍 위험하다는 사실 알고 계셨나요?\n\n식물성 단백질은 동물성과 달리 특정 필수 아미노산이 부족합니다.\n콩에는 메티오닌이 부족하고, 쌀에는 리신이 부족해 단독으로 먹으면 체내 합성률이 떨어져요.\n따라서 쌀밥에 콩을 섞어 먹거나, 통곡물에 견과류를 곁들여 서로 부족한 아미노산을 채워줘야 합니다.\n\n💾 나중에 실천할 수 있게 저장해두세요!\n\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_economy 팔로우!\n\n#식물성단백질 #단백질섭취법 #건강꿀팁 #다이어트식단 #영양결핍예방"
+  "caption": "여름철 열대야 때문에 창문 열어두고 주무시나요? 😱\n\n창문을 열고 자면 밤새 미세 소음으로 미세 수면 장애가 발생합니다.\n새벽의 급격한 체온 변화는 면역 체계를 교란해 감기 원인이 됩니다.\n창문을 꼭 닫고 에어컨 예약 타이머 2시간을 설정해 보세요.\n수면에 가장 이상적인 실내 적정 온도는 24~26도입니다.\n\n💾 나중에 실천할 수 있게 저장해두세요!\n\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_economy 팔로우!\n\n#수면건강 #숙면팁 #열대야 #건강습관 #수면장애"
 }
