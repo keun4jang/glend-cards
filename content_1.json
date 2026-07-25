@@ -1,30 +1,30 @@
 {
-  "topic": "탄소중립포인트(에너지 절약 현금 환급 제도)",
+  "topic": "지역사랑 휴가지원 여행비 50% 환급",
   "card1": {
-    "title": "안 받으면\n10만원 손해",
-    "sub": "신청 안 하면 못 받는 꽁돈",
-    "query": "korean won cash",
-    "bg": "https://images.pexels.com/photos/20157487/pexels-photo-20157487.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "여행비 반값\n안 받음 손해",
+    "sub": "지역 여행비 50% 환급받기",
+    "query": "travel money discount",
+    "bg": "https://images.pexels.com/photos/5632344/pexels-photo-5632344.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "에너지 아껴\n현금 받는 법",
+    "subtitle": "지원 대상과\n혜택 총정리",
     "lines": [
-      "에너지 절약 시 <b>10만원</b> 환급",
-      "과거 대비 <b>5%만</b> 줄이면 대상",
-      "매년 <b>6월과 12월</b> 현금 지급"
+      "지정된 <b>지방 도시</b> 여행할 때",
+      "여행 비용의 <b>최대 50%</b> 환급",
+      "<b>1인당 최대 10만원</b> 지원함"
     ],
-    "query": "korean bank notes",
-    "bg": "https://images.pexels.com/photos/6465163/pexels-photo-6465163.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "korean tourist trip",
+    "bg": "https://images.pexels.com/photos/34853214/pexels-photo-34853214.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "지금 당장\n신청하는 법",
+    "subtitle": "놓치지 않고\n신청하는 법",
     "lines": [
-      "포털에 <b>탄소중립포인트</b> 검색",
-      "회원가입 후 <b>계좌번호</b> 입력",
-      "<b>지금</b> 신청 여부 확인하세요"
+      "<b>관련 지자체 누리집</b> 사전 신청",
+      "<b>여행 영수증</b> 제출 후 환급받기",
+      "<b>저장</b>하고 기한 놓치지 마세요"
     ],
-    "query": "smartphone application money",
-    "bg": "https://images.pexels.com/photos/6289072/pexels-photo-6289072.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "mobile phone apply",
+    "bg": "https://images.pexels.com/photos/17706936/pexels-photo-17706936.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "전기요금 절약하고 정부에서 현금 10만원 환급받는 법 알려드립니다!\n\n탄소중립포인트(에너지)제도는 전기·가스·수도를 아끼면 현금을 주는 정부 제도입니다.\n과거 2년 평균 사용량 대비 5% 이상 절약하면 연간 최대 10만원 이상을 환급받을 수 있어요.\n한 번 가입해두면 지정한 계좌로 매년 6월과 12월에 알아서 현금이 지급됩니다.\n탄소중립포인트 에너지 공식 누리집에서 3분 만에 신청하고 혜택 챙기세요!\n\n💾 기한 놓치기 전에 저장해두세요!\n📌 매일 놓치기 쉬운 재테크 정보 받고 싶다면 @glend_economy 팔로우!\n\n#탄소중립포인트 #에너지절약 #정부지원금 #재테크꿀팁 #전기세절약"
+  "caption": "여행 비용 절반 돌려주는 정부 지원금 혜택 알고 계셨나요?\n\n지역사랑 휴가지원 사업으로 여행비의 50%를 환급받을 수 있습니다.\n1인당 최대 10만 원까지 현금성 포인트나 지역화폐로 지급됩니다.\n여행 전 지자체 누리집에서 사전 신청 후 영수증만 제출하면 끝!\n\n💾 기한 놓치기 전에 저장해두세요!\n📌 매일 놓치기 쉬운 재테크 정보 받고 싶다면 @glend_economy 팔로우!\n\n#지역사랑휴가지원 #여행비환급 #정부지원금 #재테크꿀팁 #반값여행"
 }
