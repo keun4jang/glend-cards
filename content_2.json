@@ -1,30 +1,30 @@
 {
-  "topic": "포르쉐 사준 아내의 충격 유서 사건",
+  "topic": "인도 및 겸용 도로 내 전동 킥보드 보행자 충돌 사고 위험성",
   "card1": {
-    "title": "포르쉐 사준\n아내의 유서",
-    "sub": "포르쉐 선물 후 숨진 아내",
-    "query": "porsche luxury car",
-    "bg": "https://images.pexels.com/photos/35190020/pexels-photo-35190020.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "인도 위 질주\n나만 무섭나",
+    "sub": "보행자 덮치는 킥보드 공포",
+    "query": "electric scooter sidewalk",
+    "bg": "https://images.pexels.com/photos/15260665/pexels-photo-15260665.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "충격적인\n유서의 내용",
+    "subtitle": "겸용 도로의\n아찔한 실태",
     "lines": [
-      "<b>40대 아내</b>가 차 사주고 숨져",
-      "<b>남녀 3명</b>과 현장서 발견돼",
-      "<b>배신과 유서</b> 남겨 파장 일어"
+      "<b>맞은편 질주</b>하는 킥보드 충돌",
+      "<b>보행자 사고</b> 해마다 늘어난다",
+      "안전 규제 무시가 <b>주된 원인</b>"
     ],
-    "query": "police tape scene",
-    "bg": "https://images.pexels.com/photos/10859264/pexels-photo-10859264.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "scooter crash pedestrian",
+    "bg": "https://images.pexels.com/photos/17723497/pexels-photo-17723497.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "어떻게 대처\n해야 할까",
+    "subtitle": "피하려면 꼭\n알아야 할 점",
     "lines": [
-      "<b>가스라이팅</b> 신호 꼭 확인해",
-      "<b>재산 문제</b> 상담이 필수적임",
+      "<b>보행자 전용</b> 도로를 이용하자",
+      "사고 발생 시 <b>즉시 신고</b>해라",
       "<b>지금</b> 어떻게 생각하는지 댓글로"
     ],
-    "query": "sad woman window",
-    "bg": "https://images.pexels.com/photos/1510149/pexels-photo-1510149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "pedestrian walking street",
+    "bg": "https://images.pexels.com/photos/19168407/pexels-photo-19168407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "포르쉐 선물하고 남녀 3명과 숨진 아내 사건의 충격적 전말...\n\n40대 아내가 남녀 3명과 함께 숨진 채 발견되었습니다.\n현장에는 배신감과 비극적 내용이 담긴 유서가 남겨졌는데요.\n재산과 관계 속 극단적 갈등에 대한 파장이 일고 있습니다.\n\n📤 같이 얘기하고 싶은 친구에게 공유해주세요!\n📌 매일 화제의 이슈 카드 받고 싶다면 @glend_economy 팔로우!\n\n#포르쉐사건 #아내유서 #충격사건 #사건사고 #이슈이슈"
+  "caption": "인도에서 갑자기 덮치는 전동 킥보드, 여러분은 안 무서우신가요?\n\n보행자 겸용 도로에서 킥보드 충돌 사고가 잇따르고 있습니다.\n헬멧 미착용과 과속 운전으로 보행자의 안전이 위협받고 있죠.\n인도 수시 침범과 단속 미비가 피해를 더욱 키우는 상황입니다.\n\n📤 같이 얘기하고 싶은 친구에게 공유해주세요!\n📌 매일 화제의 이슈 카드 받고 싶다면 @glend_economy 팔로우!\n\n#전동킥보드 #킥보드사고 #보행자안전 #도로교통법 #이슈뉴스"
 }
