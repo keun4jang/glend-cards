@@ -1,30 +1,30 @@
 {
-  "topic": "여름철 창문 열고 자는 수면 습관의 위험성과 올바른 숙면 법",
+  "topic": "계란 난각번호 1번과 4번의 영양 차이 진실",
   "card1": {
-    "title": "창문 열고\n자면 망친다",
-    "sub": "여름철 창문 수면의 충격 진실",
-    "query": "bedroom window night",
-    "bg": "https://images.pexels.com/photos/37316236/pexels-photo-37316236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "1번 계란\n속지 마라",
+    "sub": "4번 계란과 영양 차이 없어",
+    "query": "fresh egg shell",
+    "bg": "https://images.pexels.com/photos/28795943/pexels-photo-28795943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "시원해서\n좋은 줄만",
+    "subtitle": "가격 차이\n영양은 동일",
     "lines": [
-      "<b>야간 소음</b>이 잠을 자주 깨워요",
-      "<b>새벽 찬공기</b>는 면역력을 낮춰요",
-      "야간 <b>미세먼지</b>가 폐로 들어와요"
+      "비싼 <b>1번 계란</b>만 고집했나요?",
+      "<b>4번 계란</b>도 영양은 똑같아요.",
+      "<b>단백질</b> 함량은 완전히 같아요."
     ],
-    "query": "restless sleep night",
-    "bg": "https://images.pexels.com/photos/8410925/pexels-photo-8410925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "egg carton supermarket",
+    "bg": "https://images.pexels.com/photos/26956442/pexels-photo-26956442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "창문 닫고\n숙면하는 법",
+    "subtitle": "신선도 체크\n똑똑한 구매",
     "lines": [
-      "<b>에어컨 예약</b> 기능을 꼭 쓰세요",
-      "<b>실내 온도</b>는 25도가 적당해요",
-      "<b>저장</b>하고 오늘부터 시작하세요"
+      "숫자보다 <b>산란일자</b> 확인하세요.",
+      "최근에 생산된 <b>계란</b>이 최고죠.",
+      "<b>저장</b>하고 장볼 때 확인해보세요"
     ],
-    "query": "comfortable sleeping room",
-    "bg": "https://images.pexels.com/photos/7258034/pexels-photo-7258034.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "grocery shopping egg",
+    "bg": "https://images.pexels.com/photos/26956442/pexels-photo-26956442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "여름철 열대야 때문에 창문 열어두고 주무시나요? 😱\n\n창문을 열고 자면 밤새 미세 소음으로 미세 수면 장애가 발생합니다.\n새벽의 급격한 체온 변화는 면역 체계를 교란해 감기 원인이 됩니다.\n창문을 꼭 닫고 에어컨 예약 타이머 2시간을 설정해 보세요.\n수면에 가장 이상적인 실내 적정 온도는 24~26도입니다.\n\n💾 나중에 실천할 수 있게 저장해두세요!\n\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_economy 팔로우!\n\n#수면건강 #숙면팁 #열대야 #건강습관 #수면장애"
+  "caption": "1번 비싼 계란만 고집했다면 주목하세요!\n계란 끝에 적힌 번호(1~4번)는 영양 차이가 아니라 닭의 사육 환경을 뜻합니다.\n비싼 1번이나 저렴한 4번이나 단백질과 핵심 영양 성분은 똑같습니다.\n비싼 번호보다 훨씬 중요한 건 바로 최신 '산란일자'입니다.\n앞으로는 번호보다 산란일자를 확인해서 신선하고 알뜰하게 골라보세요.\n\n💾 나중에 실천할 수 있게 저장해두세요!\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_economy 팔로우!\n\n#계란 #건강꿀팁 #다이어트식단 #장보기팁 #식단관리"
 }
