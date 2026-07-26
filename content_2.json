@@ -1,30 +1,30 @@
 {
-  "topic": "인도 및 겸용 도로 내 전동 킥보드 보행자 충돌 사고 위험성",
+  "topic": "노원역 6중 추돌 사고 및 60대 운전자 급발진 주장 논란",
   "card1": {
-    "title": "인도 위 질주\n나만 무섭나",
-    "sub": "보행자 덮치는 킥보드 공포",
-    "query": "electric scooter sidewalk",
-    "bg": "https://images.pexels.com/photos/15260665/pexels-photo-15260665.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "노원역서\n6중추돌",
+    "sub": "또 급발진 주장? 9명 부상",
+    "query": "car crash accident",
+    "bg": "https://images.pexels.com/photos/10102313/pexels-photo-10102313.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "겸용 도로의\n아찔한 실태",
+    "subtitle": "도심속의\n연쇄추돌",
     "lines": [
-      "<b>맞은편 질주</b>하는 킥보드 충돌",
-      "<b>보행자 사고</b> 해마다 늘어난다",
-      "안전 규제 무시가 <b>주된 원인</b>"
+      "60대 운전자가 <b>급발진</b>을",
+      "주장하며 <b>6중 추돌</b> 사고를",
+      "일으켜 <b>9명</b>이 다쳤습니다"
     ],
-    "query": "scooter crash pedestrian",
-    "bg": "https://images.pexels.com/photos/17723497/pexels-photo-17723497.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "police tape scene",
+    "bg": "https://images.pexels.com/photos/10859264/pexels-photo-10859264.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "피하려면 꼭\n알아야 할 점",
+    "subtitle": "급발진시\n대처방법",
     "lines": [
-      "<b>보행자 전용</b> 도로를 이용하자",
-      "사고 발생 시 <b>즉시 신고</b>해라",
-      "<b>지금</b> 어떻게 생각하는지 댓글로"
+      "페달에서 발을 떼고 <b>양발</b>로",
+      "브레이크를 <b>강하게</b> 밟고",
+      "당신 생각을 <b>댓글</b>로 공유"
     ],
-    "query": "pedestrian walking street",
-    "bg": "https://images.pexels.com/photos/19168407/pexels-photo-19168407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "driver brake pedal",
+    "bg": "https://images.pexels.com/photos/13971747/pexels-photo-13971747.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "인도에서 갑자기 덮치는 전동 킥보드, 여러분은 안 무서우신가요?\n\n보행자 겸용 도로에서 킥보드 충돌 사고가 잇따르고 있습니다.\n헬멧 미착용과 과속 운전으로 보행자의 안전이 위협받고 있죠.\n인도 수시 침범과 단속 미비가 피해를 더욱 키우는 상황입니다.\n\n📤 같이 얘기하고 싶은 친구에게 공유해주세요!\n📌 매일 화제의 이슈 카드 받고 싶다면 @glend_economy 팔로우!\n\n#전동킥보드 #킥보드사고 #보행자안전 #도로교통법 #이슈뉴스"
+  "caption": "노원역 한복판에서 6중 추돌 사고가 발생해 9명이 다쳤습니다.\n\n60대 운전자는 차량 급발진을 강력하게 주장하고 있습니다.\n경찰관을 포함해 9명이 병원으로 이송되는 대형 사고였습니다.\n최근 잇따르는 급발진 주장 사고에 대중의 불안감이 커지고 있습니다.\n\n💾 나중에 다시 볼 수 있게 저장해두세요!\n📌 매일 화제의 이슈 카드 받고 싶다면 @glend_economy 팔로우!\n\n#노원역사고 #급발진논란 #교통사고 #급발진대처 #이슈이슈"
 }
