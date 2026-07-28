@@ -1,46 +1,46 @@
 {
-  "topic": "식후 바로 마시는 커피가 만드는 혈당 스파이크와 영양 결핍",
-  "title": "식후커피 독된다☕",
+  "topic": "밤 운동과 수면의 상관관계 및 올바른 운동 시간대",
+  "title": "🌙밤운동 수면비법",
   "scenes": [
     {
-      "narration": "밥 먹고 바로 마시는 커피, 매일 마시면 <b>췌장</b>을 망칠 수 있어요.",
-      "query": "drinking iced coffee",
-      "bg": "https://images.pexels.com/photos/12900864/pexels-photo-12900864.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "밤에 <b>운동</b>하고 자면 오히려 잠 설치게 된다는 말, 진짜일까요?",
+      "query": "night running dark",
+      "bg": "https://images.pexels.com/photos/14532913/pexels-photo-14532913.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "식사 직후 마시는 커피 습관이, 혈당 불안정과 <b>영양</b> 결핍을 유발한다는 최신 연구가 나왔어요.",
-      "query": "eating food coffee",
-      "bg": "https://images.pexels.com/photos/5711229/pexels-photo-5711229.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "최근 수면 연구에 따르면, 밤 운동이 <b>숙면</b>을 방해한다는 건 잘못된 상식이래요.",
+      "query": "man running night",
+      "bg": "https://images.pexels.com/photos/38693205/pexels-photo-38693205.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "카페인이 인슐린 기능을 방해해, 식후 혈당을 최대 <b>50%</b>나 더 높인다고 해요.",
-      "query": "blood sugar test",
-      "bg": "https://images.pexels.com/photos/6823415/pexels-photo-6823415.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "운동 직후 상승했던 <b>체온</b>이 떨어지는 과정에서, 수면 호르몬 분비가 촉진되기 때문인데요.",
+      "query": "body thermal heat",
+      "bg": "https://images.pexels.com/photos/6667428/pexels-photo-6667428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "특히 평소 <b>당뇨</b> 위험이 있거나, 만성 피로를 자주 느끼는 분들은 꼭 피해야 해요.",
-      "query": "tired woman fatigue",
-      "bg": "https://images.pexels.com/photos/5240047/pexels-photo-5240047.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "여기서 가장 핵심은 시간인데, <b>잠들기</b> 최소 2시간 전에는 모든 운동을 끝내야 해요.",
+      "query": "clock night bedroom",
+      "bg": "https://images.pexels.com/photos/5490735/pexels-photo-5490735.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "식후 커피는 소화가 어느 정도 진행된, 최소 <b>30분</b> 뒤에 마시는 것이 안전해요.",
-      "query": "clock 30 minutes",
-      "bg": "https://images.pexels.com/photos/8102178/pexels-photo-8102178.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "일반 유산소는 취침 2시간 전, 고강도 <b>인터벌</b> 운동은 4시간 전에 마치는 게 안전해요.",
+      "query": "gym workout dumbbell",
+      "bg": "https://images.pexels.com/photos/17959564/pexels-photo-17959564.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "입가심이 필요할 땐 커피 대신 따뜻한 <b>보리차</b>나 물을 마시는 습관을 들여보세요.",
-      "query": "drinking warm tea",
-      "bg": "https://images.pexels.com/photos/35018111/pexels-photo-35018111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "취침 직전 격렬한 운동을 하면, <b>교감신경</b>이 활성화돼 뇌가 각성 상태에 빠지기 때문이죠.",
+      "query": "insomnia awake bed",
+      "bg": "https://images.pexels.com/photos/8410925/pexels-photo-8410925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
-      "narration": "마시는 시간만 살짝 바꿔도, 마법처럼 <b>혈당</b>을 안정적으로 지킬 수 있어요.",
-      "query": "healthy smiling woman",
-      "bg": "https://images.pexels.com/photos/3762405/pexels-photo-3762405.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "narration": "퇴근 후 오운완 하실 때, 골든 <b>타임</b>만 잘 지켜서 꿀잠까지 알차게 챙겨보세요!",
+      "query": "peaceful sleeping man",
+      "bg": "https://images.pexels.com/photos/6603399/pexels-photo-6603399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
     {
       "outro": true,
       "narration": "도움이 됐다면 지금 좋아요와 팔로우 눌러주세요!"
     }
   ],
-  "caption": "밥 먹고 바로 마시는 아이스 아메리카노, 혹시 여러분의 매일 습관인가요?☕\n\n식사 직후 마시는 커피는 카페인 성분이 인슐린 민감성을 떨어뜨려 식후 혈당을 최대 50%까지 급상승시킵니다.\n게다가 음식을 통해 섭취한 철분과 칼슘의 흡수를 방해해 만성 피로와 영양 결핍을 유발할 수 있어요.\n특히 당뇨 위험이 있거나 빈혈이 있으신 분들은 식후 커피 습관을 반드시 바꿔야 합니다.\n커피는 식사가 소화될 수 있도록 최소 30분에서 1시간 뒤에 마시는 것이 가장 좋습니다.\n오늘부터 식후 입가심은 커피 대신 따뜻한 보리차나 물 한 잔으로 바꿔보세요!\n\n나와 가족의 건강을 위해 이 영상 저장해두고 공유해보세요!❤️\n매일 알찬 건강 실전 팁을 받아보려면 @GLEND 팔로우!\n\n#건강꿀팁 #식후커피 #혈당스파이크 #당뇨예방 #건강습관\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0"
+  "caption": "밤에 운동하면 잠 못 잘까 봐 걱정하셨나요? 🌙\n\n최근 연구에 따르면, 밤 운동도 '시간대'만 잘 지키면 오히려 숙면에 큰 도움이 된다고 합니다!\n\n💡 밤 운동 골든타임 정리\n- 일반 유산소 & 근력 운동: 취침 최소 2시간 전 종료\n- 고강도 HIIT & 고중량 운동: 취침 최소 4시간 전 종료\n- 취침 직전: 심한 운동 대신 가벼운 스트레칭 추천\n\n운동 후 내려가는 체온이 멜라토닌 분비를 도와 꿀잠을 유도한다는 사실! 이제 퇴근 후 시간만 잘 계산해서 스마트하게 운동해 보세요. 💪\n\n건강한 수면 루틴을 위해 지금 이 피드를 [저장]해 두고, 같이 밤 운동하는 친구에게 [공유]해 주세요!\n더 많은 실전 건강 팁은 @GLEND_health 팔로우! ❤️\n\n#밤운동 #수면건강 #오운완 #숙면팁 #건강꿀팁\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0"
 }
