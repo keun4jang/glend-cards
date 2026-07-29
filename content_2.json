@@ -1,30 +1,30 @@
 {
-  "topic": "통영 살인사건 용의자 공개수배 및 현상금 1억 원 걸린 걸음걸이 특징",
+  "topic": "덤프트럭 후진 사망 사고 (말다툼 직후 고의성 수사)",
   "card1": {
-    "title": "1억걸린\n걸음걸이",
-    "sub": "발 꺾인 살인범을 찾습니다",
-    "query": "cctv crime suspect",
-    "bg": "https://images.pexels.com/photos/4740157/pexels-photo-4740157.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "말다툼\n끝에 후진",
+    "sub": "덤프트럭에 깔려 숨진 40대",
+    "query": "dump truck accident",
+    "bg": "https://images.pexels.com/photos/29555122/pexels-photo-29555122.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "47일만에\n공개된영상",
+    "subtitle": "사고인가\n살인인가",
     "lines": [
-      "<b>47일</b>만에 영상이 공개됐습니다",
-      "<b>오른발</b>이 특이하게 꺾여 걷는",
-      "현상금 <b>1억 원</b>이 걸렸습니다"
+      "<b>주차 갈등</b> 직후 일어난 비극",
+      "<b>말다툼 끝에</b> 덤프트럭 후진",
+      "경찰은 <b>고의성 여부</b> 집중 수사"
     ],
-    "query": "police tape scene",
+    "query": "police crime scene",
     "bg": "https://images.pexels.com/photos/10859264/pexels-photo-10859264.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "목격했다면\n즉시신고를",
+    "subtitle": "우발적 사고\n혹은 범죄",
     "lines": [
-      "모자와 복면으로 얼굴을 가린",
-      "범인을 보면 <b>112</b> 신고하세요",
-      "<b>지금</b> 주변 사람에게 알려주세요"
+      "순간의 <b>분노</b>가 부른 비극적 결말",
+      "사고일까 <b>고의적 범죄</b>일까",
+      "<b>지금</b> 어떻게 생각하는지 댓글로"
     ],
-    "query": "security camera footprint",
-    "bg": "https://images.pexels.com/photos/8715010/pexels-photo-8715010.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "argument angry people",
+    "bg": "https://images.pexels.com/photos/8560716/pexels-photo-8560716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "오른발이 꺾인 채 걷는 이 남성을 보셨나요?\n\n통영 살인사건 용의자의 CCTV 모습이 47일 만에 전격 공개됐습니다.\n모자와 복면을 쓴 채 오른발을 특이하게 꺾으며 걷는 특징이 있습니다.\n결정적 제보를 제공한 사람에게는 현상금 1억 원이 지급됩니다.\n주변에 유사한 걸음걸이를 가진 사람이 있다면 즉시 112로 신고해주세요.\n\n📤 같이 얘기하고 싶은 친구에게 공유해주세요!\n📌 매일 화제의 이슈 카드 받고 싶다면 @glend_economy 팔로우!\n\n#통영살인사건 #공개수배 #현상금1억 #사건사고 #이슈"
+  "caption": "말다툼 직후 후진한 덤프트럭에 40대 여성이 숨지는 충격적인 사고가 발생했습니다.\n\n사고 직전 피해 여성과 운전자 사이에 주차 갈등으로 인한 말다툼이 있었던 것으로 확인됐습니다.\n경찰은 단순 후진 사고인지, 고의성이 동반된 범죄인지 집중 수사에 나섰습니다.\n사소한 시비가 비극으로 이어진 이번 사건에 대해 대중의 관심이 집중되고 있습니다.\n\n📤 같이 얘기하고 싶은 친구에게 공유해주세요!\n📌 매일 화제의 이슈 카드 받고 싶다면 @glend_economy 팔로우!\n\n#덤프트럭사고 #주차갈등 #사건사고 #이슈뉴스 #글렌드뉴스"
 }
