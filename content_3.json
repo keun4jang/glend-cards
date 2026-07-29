@@ -1,30 +1,30 @@
 {
-  "topic": "밤 운동과 숙면의 관계 (취침 2시간 전 운동)",
+  "topic": "우유 대용 식물성 음료의 함정과 올바른 선택법",
   "card1": {
-    "title": "밤늦게 운동\n수면 망친다?",
-    "sub": "취침 전 운동의 반전 진실",
-    "query": "night workout running",
-    "bg": "https://images.pexels.com/photos/35005203/pexels-photo-35005203.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "우유대신\n먹었다간",
+    "sub": "혈당 폭발하는 식물성 음료",
+    "query": "oat milk glass",
+    "bg": "https://images.pexels.com/photos/4187717/pexels-photo-4187717.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "밤 운동의\n진짜 비밀",
+    "subtitle": "식물성유\n진짜실체",
     "lines": [
-      "<b>취침 2시간 전</b>에 운동 마치기",
-      "<b>고강도 운동</b>은 체온 올리고",
-      "<b>중강도 운동</b>은 숙면을 도와"
+      "오트유는 <b>탄수화물</b> 비율이 높아",
+      "마시는 순간 <b>혈당</b>을 올립니다",
+      "단백질은 <b>우유의 33%</b>뿐입니다"
     ],
-    "query": "night fitness exercise",
-    "bg": "https://images.pexels.com/photos/13327298/pexels-photo-13327298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "blood sugar test",
+    "bg": "https://images.pexels.com/photos/6823415/pexels-photo-6823415.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "오늘 밤부터\n이렇게 하라",
+    "subtitle": "올바른\n마시는법",
     "lines": [
-      "<b>잠들기 2시간 전</b> 운동 마치기",
-      "<b>가벼운 산책</b>이나 스트레칭",
+      "라테는 <b>무당 아몬드유</b>로 변경",
+      "구매 전 <b>당류 1g 미만</b> 체크",
       "<b>저장</b>하고 오늘부터 실천하세요"
     ],
-    "query": "stretching night bedroom",
-    "bg": "https://images.pexels.com/photos/6951524/pexels-photo-6951524.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "unsweetened almond milk",
+    "bg": "https://images.pexels.com/photos/6804192/pexels-photo-6804192.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "밤 운동, 무조건 잠을 설칠까요? 2시간 전만 지키면 됩니다!\n\n퇴근 후 밤 운동이 수면을 방해한다는 말은 반만 맞습니다.\n핵심은 운동 강도와 마치는 시각입니다.\n취침 최소 2시간 전에 중강도 운동이나 스트레칭으로 마무리하면 오히려 숙면에 큰 도움이 됩니다.\n오늘부터 밤 운동 골든타임을 지켜보세요!\n\n💾 나중에 실천할 수 있게 저장해두세요!\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_economy 팔로우!\n\n#밤운동 #숙면꿀팁 #수면질향상 #건강습관 #GLEND건강"
+  "caption": "다이어트할 때 무심코 마시던 오트밀크, 오히려 살찌고 혈당 올리는 주범일 수 있습니다! 🥛⚠️\n\n귀리로 만든 오트밀크는 탄수화물 함량이 높아 혈당을 급격히 올립니다.\n일반 우유에 비해 단백질과 칼슘 함량도 훨씬 부족합니다.\n다이어트 목적이라면 반드시 당류 1g 미만 무당 아몬드유를 선택하세요.\n\n💾 나중에 실천할 수 있게 저장해두세요!\n\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_economy 팔로우!\n\n#다이어트꿀팁 #식물성음료 #오트밀크 #혈당관리 #건강습관"
 }
