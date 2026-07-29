@@ -1,30 +1,30 @@
 {
-  "topic": "서울시 청년 무료 1:1 재무상담 '서울 영테크'",
+  "topic": "2026년 하반기 자영업자 필수 지원사업 및 지원금 신청 방법",
   "card1": {
-    "title": "무료 상담\n안 쓰면 손해",
-    "sub": "서울시 청년 전원 무료 상담",
-    "query": "financial advisor consultation",
-    "bg": "https://images.pexels.com/photos/7735691/pexels-photo-7735691.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "title": "사장님 집중\n안 받으면 손해",
+    "sub": "2026 필수 지원금 신청",
+    "query": "korea small business",
+    "bg": "https://images.pexels.com/photos/16745681/pexels-photo-16745681.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card2": {
-    "subtitle": "서울 청년\n1:1 재무상담",
+    "subtitle": "지원 대상과\n혜택 총정리",
     "lines": [
-      "<b>만19~39세</b> 서울 청년 대상",
-      "전문가가 <b>1:1 맞춤</b> 컨설팅",
-      "저축부터 투자까지 <b>무료 상담</b>"
+      "<b>연 매출 6천만원</b> 이하 사장님",
+      "<b>전기료 20만원</b> 직접 차감해줘",
+      "<b>배달비 30만원</b> 환급 지원해줘"
     ],
-    "query": "youth money savings",
-    "bg": "https://images.pexels.com/photos/11114830/pexels-photo-11114830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "korean electricity bill",
+    "bg": "https://images.pexels.com/photos/16834995/pexels-photo-16834995.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   "card3": {
-    "subtitle": "지금 신청\n받는 방법",
+    "subtitle": "신청 방법과\n기한 필독!",
     "lines": [
-      "<b>청년몽땅정보통</b> 사이트 접속",
-      "<b>영테크</b> 메뉴에서 바로 신청",
-      "<b>지금</b> 신청 여부 확인하세요"
+      "<b>소상공인드림</b> 포털 접속 신청",
+      "<b>예산 소진 전</b> 빠르게 신청하기",
+      "<b>지금</b> 대상자인지 조회하세요"
     ],
-    "query": "mobile phone application",
-    "bg": "https://images.pexels.com/photos/33210885/pexels-photo-33210885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "query": "mobile online application",
+    "bg": "https://images.pexels.com/photos/35176/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "caption": "서울 청년이라면 10만 원 상당 1:1 재무상담을 공짜로 받을 수 있다는 사실, 알고 계셨나요?\n\n서울시에서 운영하는 '서울 영테크'는 청년 맞춤 재무 컨설팅 지원 제도입니다.\n자산관리 전문가가 1:1로 저축, 투자, 내 집 마련 플랜까지 무료로 상담해 줍니다.\n만 19~39세 서울시 청년이라면 누구나 신청할 수 있으니 꼭 혜택 챙기세요!\n\n💾 기한 놓치기 전에 저장해두세요!\n📌 매일 놓치기 쉬운 재테크 정보 받고 싶다면 @glend_economy 팔로우!\n\n#서울영테크 #무료재무상담 #청년재테크 #서울시청년지원 #재무컨설팅"
+  "caption": "자영업 사장님, 정부에서 주는 지원금 안 받으시면 그대로 손해입니다!\n\n연 매출 기준을 충족하는 자영업자라면 전기요금부터 배달비까지 환급받을 수 있습니다.\n전기요금 최대 20만원 감면과 배달·택배비 30만원 지원 혜택이 제공됩니다.\n소상공인드림 누리집에서 사업자등록번호 입력 후 3분 만에 바로 신청 가능합니다.\n예산 소진 시 조기 마감되니 미루지 마시고 지금 즉시 확인해보세요!\n\n💾 기한 놓치기 전에 저장해두세요!\n📌 매일 놓치기 쉬운 재테크 정보 받고 싶다면 @glend_economy 팔로우!\n\n#자영업자지원금 #소상공인혜택 #전기요금지원 #배달비지원 #재테크꿀팁"
 }
