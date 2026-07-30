@@ -4,8 +4,10 @@
 기본은 하루 1개 릴스. POST_INDEX(1=경제 2=사건사고 3=건강)를 인자로 받음(기본 1).
 """
 import os
+import random
 import subprocess
 import sys
+import time
 import datetime
 
 IDX = sys.argv[1] if len(sys.argv) > 1 else "1"
@@ -33,6 +35,12 @@ def run(name, args):
 
 
 print(f"\n릴스 자동 발행 시작: {datetime.datetime.now()} (릴스 {IDX})", flush=True)
+
+# 스케줄 실행일 때만 0~50분 랜덤 대기 — 매일 다른 시간에 올라가게 (수동 실행은 즉시)
+if os.getenv("GITHUB_EVENT_NAME") == "schedule":
+    delay = random.randint(0, 50 * 60)
+    print(f"오늘은 랜덤하게 {delay // 60}분 뒤에 올릴게요...", flush=True)
+    time.sleep(delay)
 
 subprocess.run(["git", "config", "user.name", "github-actions"])
 subprocess.run(["git", "config", "user.email", "actions@github.com"])
