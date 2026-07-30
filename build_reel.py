@@ -30,6 +30,7 @@ MUSIC = BASE / "assets" / "music" / "bg.mp3"
 FPS = 30
 PAD_SEC = 0.5
 MIN_SCENE_SEC = 2.0
+OUTRO_SEC = 3.0   # 로고 아웃트로 길이(나레이션 없이 음악만)
 
 with open(f"reel_content_{POST_INDEX}.json", "r", encoding="utf-8") as f:
     content = json.load(f)
@@ -62,10 +63,15 @@ for i, scene in enumerate(scenes, start=1):
     is_hook = (i == 1) and not is_outro
     is_static = is_outro or is_hook   # 후킹/아웃트로는 줌 없이 정지 화면
 
-    # 나레이션 생성
+    # 나레이션 생성 (아웃트로는 무음 트랙)
     narr = OUT / f"narr{i}.mp3"
-    print(f"[scene{i}] 나레이션 생성... ({narrate.ENGINE})")
-    narrate.synthesize(tts_text(scene["narration"]), str(narr))
+    if scene.get("silent") or not tts_text(scene.get("narration", "")):
+        print(f"[scene{i}] 무음 아웃트로 ({OUTRO_SEC}초)")
+        run(["ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo",
+             "-t", f"{OUTRO_SEC:.2f}", "-c:a", "libmp3lame", str(narr)])
+    else:
+        print(f"[scene{i}] 나레이션 생성... ({narrate.ENGINE})")
+        narrate.synthesize(tts_text(scene["narration"]), str(narr))
     dur = max(MIN_SCENE_SEC, audio_duration(str(narr)) + PAD_SEC)
     frames = int(math.ceil(dur * FPS))
     clip = OUT / f"clip{i}.mp4"
@@ -135,6 +141,9 @@ else:
     os.replace(joined, final)
 
 size_mb = final.stat().st_size / 1024 / 1024
-print(f"\n🎬 완성! {final} ({size_mb:.1f}MB)")
+total_sec = audio_duration(str(final))
+print(f"\n🎬 완성! {final} ({size_mb:.1f}MB, {total_sec:.1f}초)")
+if total_sec > 90:
+    print(f"⚠️ {total_sec:.0f}초 — 90초를 넘으면 릴스 탭 추천 노출에서 제외될 수 있어요.")
 if size_mb > 95:
     print("⚠️ 100MB 근접 — GitHub 푸시 제한 주의.")
