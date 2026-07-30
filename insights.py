@@ -96,6 +96,8 @@ for m in rows:
     print(f"          └ {cap}")
 
 print()
+print("[주의] IG_TOKEN은 발급 후 60일 만료 — 위 데이터가 오류로 비어 있으면 토큰 만료 가능성. 만료 전 재발급해 GitHub Secret 교체 필요.")
+print()
 print("완료 — 발행/변경 없음 (읽기 전용)")
 
 # 리포트 파일 저장 (주간 비교용)
