@@ -7,7 +7,7 @@ import datetime
 
 # 하루 1개 게시물(경제·재테크) — 도달 데이터 기반으로 3→1 축소 (인사이트 2026-07-30)
 POSTS_PER_DAY = 1
-INITIAL_MAX_DELAY_HOURS = 0.75  # 릴스 잡(UTC 03:00)과 media 푸시가 겹치지 않게 45분 이내로
+INITIAL_MAX_DELAY_HOURS = 0.5   # KST 07:30~08:00 사이 발행 (출근 시간대), 릴스 잡과 완전 분리
 GAP_MIN_HOURS = 1                # 게시물 사이 최소 간격
 GAP_MAX_HOURS = 1.5              # 게시물 사이 최대 간격 (GitHub Actions 6시간 제한 여유 확보)
 

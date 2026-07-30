@@ -72,7 +72,7 @@ for fn in CARD_FILES:
     j = res.json()
     if "id" not in j:
         print(f"[실패] {fn} 등록 중 오류:", j)
-        raise SystemExit
+        sys.exit(1)
     item_ids.append(j["id"])
     print(f"  {fn} 등록 OK (id: {j['id']})")
 
@@ -85,7 +85,7 @@ res = requests.post(f"{GRAPH}/{USER_ID}/media", data={
 j = res.json()
 if "id" not in j:
     print("[실패] 캐러셀 만들기 오류:", j)
-    raise SystemExit
+    sys.exit(1)
 container_id = j["id"]
 print(f"\n캐러셀 묶음 생성 OK (id: {container_id})")
 
@@ -110,7 +110,7 @@ for attempt in range(1, 11):
             continue
         else:
             print("[실패] 발행 오류:", j)
-            raise SystemExit
+            sys.exit(1)
 
 if published:
     mark_posted_slot()
@@ -118,4 +118,4 @@ if published:
 else:
     print("\n[실패] 여러 번 시도했지만 인스타가 아직 준비가 안 됐어요.")
     print(f"   1~2분 뒤에 'python upload.py go {POST_INDEX}' 다시 시도해보세요.")
-
+    sys.exit(1)

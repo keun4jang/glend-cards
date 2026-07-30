@@ -124,3 +124,6 @@ if ig_ok or th_ok:
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(f"{slot_key()} posted (ig={ig_ok}, threads={th_ok})\n")
     print("\n기록 저장 완료.")
+else:
+    print("\n[실패] 발행이 하나도 성공하지 못했습니다.")
+    sys.exit(1)

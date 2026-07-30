@@ -8,6 +8,7 @@ import requests
 import feedparser
 from dotenv import load_dotenv
 from google import genai
+from recent_topics import avoid_line
 
 load_dotenv()
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip())
@@ -61,6 +62,8 @@ else:
     QEX = '"korean won bills", "calculator money desk", "seoul apartment buildings"'
 
 # 3) 릴스 대본 — 5개 장면(후킹+핵심4). 짧고 완주 가능한 15~18초 목표.
+AVOID = avoid_line()
+
 PROMPT = f"""
 {PERSONA}
 
@@ -69,6 +72,7 @@ PROMPT = f"""
 
 이 중에서 대중이 가장 반응할 핵심 주제 하나를 직접 골라서, 짧고 밀도 높은 세로 릴스 대본을 만들어줘. 목표는 시청자가 끝까지 보는 것 — 전체 15~18초 안에 끝나야 해.
 릴스는 5개 장면(scene)으로 구성돼. 각 장면은 성우가 말하는 동시에 화면 중앙에 그대로 뜨는 자막 문장(narration)과 배경 사진 검색어(query)로 이뤄져.
+{AVOID}
 
 규칙:
 - scene 1 = 후킹. narration은 시선을 확 잡는 짧고 강한 한 문장. {HOOK}

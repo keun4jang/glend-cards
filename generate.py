@@ -8,6 +8,7 @@ import requests
 import feedparser
 from dotenv import load_dotenv
 from google import genai
+from recent_topics import avoid_line
 
 load_dotenv()
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip())
@@ -72,6 +73,8 @@ else:
     QUERY_EXAMPLE = '정부지원금은 "korean won bills", "calculator money desk"; 부동산은 "apartment korea", "real estate contract"; 금융상품은 "savings account", "korean won cash"'
     LAST_LINE_EXAMPLE = '"<b>지금</b> 신청 여부 확인하세요", "<b>저장</b>하고 기한 놓치지 마세요"'
 
+AVOID = avoid_line()
+
 PROMPT = f"""
 {PERSONA}
 
@@ -79,6 +82,7 @@ PROMPT = f"""
 {news_text}
 
 이 중에서 {PICK_DESC}
+{AVOID}
 
 규칙:
 - 카드1(후킹): 강렬한 2줄 제목(한 줄 6자 이내) + 호기심 자극 부제(15자 이내). {HOOK_STYLE}
