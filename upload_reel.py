@@ -29,7 +29,7 @@ LOG_FILE = "reel_upload_log.txt"
 
 with open(f"reel_content_{POST_INDEX}.json", "r", encoding="utf-8") as f:
     content = json.load(f)
-caption = content.get("caption", "").replace("<b>", "").replace("</b>", "")
+caption = content.get("caption", "").replace("<b>", "").replace("</b>", "").replace("**", "").replace("__", "")
 
 print("=" * 44)
 print(f"[릴스 발행] 모드: {'실제' if not DRY_RUN else '드라이런'} | 릴스: {POST_INDEX}")

@@ -16,10 +16,10 @@ import narrate
 
 
 def tts_text(narration):
-    """나레이션에서 <b> 등 HTML 태그와 글자수 메모 제거 (성우가 태그를 읽지 않도록)"""
+    """나레이션에서 <b> 등 HTML 태그·마크다운·글자수 메모 제거 (성우가 기호를 읽지 않도록)"""
     t = re.sub(r'<[^>]+>', '', narration or '')
     t = re.sub(r'\s*\(\s*\d+\s*자\s*\)\s*', '', t)
-    return t.strip()
+    return t.replace("**", "").replace("__", "").strip()
 
 BASE = Path(__file__).parent
 POST_INDEX = sys.argv[1] if len(sys.argv) > 1 else "1"

@@ -45,7 +45,7 @@ if already_posted_slot():
 
 with open(f"content_{POST_INDEX}.json", "r", encoding="utf-8") as f:
     content = json.load(f)
-caption = content.get("caption", "").replace("<b>", "").replace("</b>", "")
+caption = content.get("caption", "").replace("<b>", "").replace("</b>", "").replace("**", "").replace("__", "")
 print("\n[캡션 미리보기]")
 print(caption[:200], "...\n")
 

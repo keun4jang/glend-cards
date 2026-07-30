@@ -22,7 +22,8 @@ TITLE = (content.get("title") or content.get("topic") or "").strip()
 
 
 def strip_notes(text):
-    return re.sub(r'\s*\(\s*\d+\s*자\s*\)\s*$', '', (text or "").strip())
+    t = re.sub(r'\s*\(\s*\d+\s*자\s*\)\s*$', '', (text or "").strip())
+    return t.replace("**", "").replace("__", "")
 
 
 async def render():
