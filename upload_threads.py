@@ -6,14 +6,19 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
-TOKEN = os.getenv("THREADS_TOKEN", os.getenv("IG_TOKEN", "")).strip()
-USER_ID = os.getenv("THREADS_USER_ID", os.getenv("IG_USER_ID", "")).strip()
+# Threads는 인스타 토큰과 호환되지 않음(검증됨) — 전용 토큰이 없으면 깔끔하게 건너뜀
+TOKEN = os.getenv("THREADS_TOKEN", "").strip()
+USER_ID = os.getenv("THREADS_USER_ID", "").strip()
+
+if not TOKEN or not USER_ID:
+    print("[Threads] THREADS_TOKEN/THREADS_USER_ID 미설정 → 건너뜀 (설정하면 자동 발행됨)")
+    raise SystemExit(0)
 
 POST_INDEX = sys.argv[2] if len(sys.argv) > 2 else "1"
 
 GITHUB_USER = "keun4jang"
 GITHUB_REPO = "glend-cards"
-BRANCH = "main"
+BRANCH = "media"
 IMAGE_BASE = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{BRANCH}/output/post{POST_INDEX}"
 CARD_FILES = ["card1.png", "card2.png", "card3.png", "card4.png"]
 GRAPH = "https://graph.threads.net/v1.0"
@@ -26,7 +31,7 @@ print("=" * 40)
 
 with open(f"content_{POST_INDEX}.json", "r", encoding="utf-8") as f:
     content = json.load(f)
-caption = content.get("caption", "").replace("<b>", "").replace("</b>", "").replace("**", "").replace("__", "")
+caption = content.get("caption", "").replace("<b>", "").replace("</b>", "").replace("**", "").replace("__", "")[:500]
 
 print("\n[캡션 미리보기]")
 print(caption[:200], "...\n")
@@ -68,7 +73,7 @@ res = requests.post(f"{GRAPH}/{USER_ID}/threads", data={
 j = res.json()
 if "id" not in j:
     print("[실패] 캐러셀 생성 오류:", j)
-    raise SystemExit
+    sys.exit(1)
 container_id = j["id"]
 print(f"\n캐러셀 컨테이너 생성 OK (id: {container_id})")
 
@@ -93,7 +98,8 @@ for attempt in range(1, 11):
             continue
         else:
             print("[실패] Threads 발행 오류:", j)
-            raise SystemExit
+            sys.exit(1)
 
 if not published:
     print("[실패] Threads 발행 최종 실패. 나중에 수동으로 시도해보세요.")
+    sys.exit(1)

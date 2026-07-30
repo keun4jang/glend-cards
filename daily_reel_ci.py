@@ -12,7 +12,7 @@ IDX = sys.argv[1] if len(sys.argv) > 1 else "1"
 # "auto" → 시간대 기반: 낮 실행(UTC 6시 이전 = KST 오전~정오)은 경제(1) 고정,
 # 저녁 실행은 사건사고(2)/건강(3)을 날짜별로 번갈아. (경제 중심 + 화제성 보강)
 if IDX == "auto":
-    now = datetime.datetime.utcnow()
+    now = datetime.datetime.now(datetime.timezone.utc)
     if now.hour < 6:
         IDX = "1"
     else:
@@ -51,18 +51,14 @@ run("장면 렌더링", ["render_reel.py", IDX])
 # 3) 나레이션 + 영상 조립
 run("영상 조립", ["build_reel.py", IDX])
 
-# 4) reel.mp4 + json만 커밋 (중간 산출물 제외)
-print(f"\n{'='*44}\n[깃허브에 영상 저장]\n{'='*44}", flush=True)
-subprocess.run(["git", "add", f"output/reel{IDX}/reel.mp4", f"reel_content_{IDX}.json"])
-subprocess.run(["git", "commit", "-m", f"auto reel: {datetime.date.today()} #{IDX}"])
-push = subprocess.run(["git", "push"])
-if push.returncode != 0:
-    print("[중단] 깃허브 저장 실패.", flush=True)
-    sys.exit(1)
+# 4) 영상을 media 브랜치에 저장 (main 히스토리 비대화 방지)
+print(f"\n{'='*44}\n[media 브랜치에 영상 저장]\n{'='*44}", flush=True)
+import media_push
+media_push.push_media()
 
 if not PUBLISH:
-    print(f"\n[검토 모드] PUBLISH=false → 발행 생략. 영상은 저장소에 커밋됨.", flush=True)
-    print(f"영상 URL: https://raw.githubusercontent.com/keun4jang/glend-cards/main/output/reel{IDX}/reel.mp4", flush=True)
+    print(f"\n[검토 모드] PUBLISH=false → 발행 생략. 영상은 media 브랜치에 저장됨.", flush=True)
+    print(f"영상 URL: https://raw.githubusercontent.com/keun4jang/glend-cards/media/output/reel{IDX}/reel.mp4", flush=True)
     sys.exit(0)
 
 # GitHub raw 반영 대기

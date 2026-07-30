@@ -14,7 +14,7 @@ POST_INDEX = sys.argv[2] if len(sys.argv) > 2 else "1"
 
 GITHUB_USER = "keun4jang"
 GITHUB_REPO = "glend-cards"
-BRANCH = "main"
+BRANCH = "media"
 IMAGE_BASE = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{BRANCH}/output/post{POST_INDEX}"
 CARD_FILES = ["card1.png", "card2.png", "card3.png", "card4.png"]
 LOG_FILE = "upload_log.txt"
@@ -45,7 +45,7 @@ if already_posted_slot():
 
 with open(f"content_{POST_INDEX}.json", "r", encoding="utf-8") as f:
     content = json.load(f)
-caption = content.get("caption", "").replace("<b>", "").replace("</b>", "").replace("**", "").replace("__", "")
+caption = content.get("caption", "").replace("<b>", "").replace("</b>", "").replace("**", "").replace("__", "")[:2200]
 print("\n[캡션 미리보기]")
 print(caption[:200], "...\n")
 

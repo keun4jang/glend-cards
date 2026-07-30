@@ -50,8 +50,8 @@ if CATEGORY == "health":
     PICK_DESC = '독자가 "이거 나도 해봐야겠다", "몰랐던 건강 정보네"라고 느낄 만한, 실생활에 바로 적용 가능한 핵심 주제 하나를 직접 골라서, 4장짜리 카드뉴스 내용을 만들어줘. 단순 연구 결과 나열은 피하고, 방법·수치·습관처럼 구체적이고 실용적인 정보를 우선해.'
     HOOK_STYLE = '"~하면 몸 망친다", "~안 하면 큰일 난다" 류의 경각심 자극형 후킹을 우선 고려.'
     SAVE_LINE = '"💾 나중에 실천할 수 있게 저장해두세요!" 또는 "📤 건강 챙기는 친구에게 공유해주세요!" 중 하나'
-    FOLLOW_LINE = '"📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_economy 팔로우!"'
-    QUERY_EXAMPLE = '건강/운동은 "morning stretching", "healthy meal prep"; 수면은 "sleeping bedroom night"; 정신건강은 "meditation calm person"'
+    FOLLOW_LINE = '"📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_kr 팔로우!"'
+    QUERY_EXAMPLE = '건강/운동은 "healthy meal bowl", "running shoes closeup"; 수면은 "sleeping bedroom night"; 정신건강은 "calm candle interior"'
     LAST_LINE_EXAMPLE = '"<b>지금</b> 실천 여부 확인하세요", "<b>저장</b>하고 오늘부터 시작하세요"'
 elif CATEGORY == "incident":
     PERSONA = "너는 'GLEND'라는 트렌드 인스타그램 채널의 전문 카드뉴스 작가야. 단순 사건 요약이 아니라, 독자가 \"이거 진짜야?\", \"나도 이런 경험 있어\" 하고 반응할 만큼 자극적이거나 공감을 유발하는 사건·사고·논란 소재를 다룬다."
@@ -59,8 +59,8 @@ elif CATEGORY == "incident":
     PICK_DESC = '일반 대중이 가장 관심 가질 만하고, 자극적이거나 충격적이거나 공감을 유발하는 핵심 주제 하나를 직접 골라서, 4장짜리 카드뉴스 내용을 만들어줘. 단순 사실 나열보다 배경/맥락/파장을 구체적으로 담아.'
     HOOK_STYLE = '질문형 또는 충격적 사실 제시형 후킹을 우선 고려.'
     SAVE_LINE = '"💾 나중에 다시 볼 수 있게 저장해두세요!" 또는 "📤 같이 얘기하고 싶은 친구에게 공유해주세요!" 중 하나'
-    FOLLOW_LINE = '"📌 매일 화제의 이슈 카드 받고 싶다면 @glend_economy 팔로우!"'
-    QUERY_EXAMPLE = '사건·사고류는 "car accident night", "police tape scene", "hospital emergency"'
+    FOLLOW_LINE = '"📌 매일 화제의 이슈 카드 받고 싶다면 @glend_kr 팔로우!"'
+    QUERY_EXAMPLE = '사건·사고류는 "car accident night", "police line tape", "ambulance lights night"'
     LAST_LINE_EXAMPLE = '"<b>지금</b> 어떻게 생각하는지 댓글로", "<b>저장</b>하고 다시 보세요"'
 else:
     PERSONA = "너는 'GLEND'라는 경제·재테크 실전 꿀팁 인스타그램 채널의 전문 카드뉴스 작가야. 뉴스 요약이 아니라, 독자가 \"지금 당장 나한테 이득/손해가 되는\" 실전 정보를 얻어가게 만드는 게 목표다."
@@ -68,8 +68,8 @@ else:
     PICK_DESC = '독자가 "이거 나도 신청해야겠다", "몰랐으면 손해볼 뻔했다"고 느낄 만한, 실생활에 바로 적용 가능한 핵심 주제 하나를 직접 골라서, 4장짜리 카드뉴스 내용을 만들어줘. 단순 시황 요약이나 추상적 경제 분석은 피하고, 신청 방법·조건·기한·금액처럼 구체적이고 실용적인 정보를 우선해.'
     HOOK_STYLE = '"~하면 손해", "~안 하면 못 받는다" 류의 손실 회피형 후킹을 우선 고려.'
     SAVE_LINE = '"💾 기한 놓치기 전에 저장해두세요!" 또는 "📤 대상자인 친구에게 공유해주세요!" 중 하나'
-    FOLLOW_LINE = '"📌 매일 놓치기 쉬운 재테크 정보 받고 싶다면 @glend_economy 팔로우!"'
-    QUERY_EXAMPLE = '정부지원금은 "money hand korean", "bank application"; 부동산은 "apartment korea", "real estate contract"; 금융상품은 "savings account", "korean won cash"'
+    FOLLOW_LINE = '"📌 매일 놓치기 쉬운 재테크 정보 받고 싶다면 @glend_kr 팔로우!"'
+    QUERY_EXAMPLE = '정부지원금은 "korean won bills", "calculator money desk"; 부동산은 "apartment korea", "real estate contract"; 금융상품은 "savings account", "korean won cash"'
     LAST_LINE_EXAMPLE = '"<b>지금</b> 신청 여부 확인하세요", "<b>저장</b>하고 기한 놓치지 마세요"'
 
 PROMPT = f"""
@@ -92,7 +92,7 @@ PROMPT = f"""
   3) 저장/공유 유도: {SAVE_LINE}
   4) 팔로우 유도: {FOLLOW_LINE}
   5) 주제와 관련된 댓글 유도 질문 한 줄 (예: "여러분이라면 신청하실 건가요? 댓글로 알려주세요 👇")
-  6) 해시태그: 관련 키워드 5개
+  6) 해시태그 5개: 대형 1개(#재테크급 광범위) + 중형 2개(주제 카테고리) + 니치 2개(오늘 주제 구체 키워드)로 섞어서
 - 캡션에 마크다운 문법(**별표**, ## 등)을 절대 쓰지 마 — 인스타는 마크다운을 표시하지 못해 별표가 그대로 노출됨. 강조는 이모지나 줄바꿈으로만.
 - 본문 각 줄은 13~16자로! 너무 짧지 않게, 내용을 충실히. (16자 넘으면 잘림)
 - 카드1,2,3 각각에 어울리는 영어 사진 검색어를 만들어줘. 2~3단어, 추상적이지 않고 사진으로 잘 나오는 단어. 주제의 감정/분위기와 반드시 일치시킬 것 (예: {QUERY_EXAMPLE})
@@ -109,24 +109,57 @@ PROMPT = f"""
 """
 
 print("Gemini가 주제를 고르고 카드 내용을 만드는 중...\n")
-for attempt in range(4):
+
+
+def call_gemini():
+    for attempt in range(4):
+        try:
+            return client.models.generate_content(model=GEMINI_MODEL, contents=PROMPT)
+        except Exception as e:
+            if attempt < 3:
+                wait = 30 * (attempt + 1)
+                print(f"  Gemini 오류 ({e.__class__.__name__}), {wait}초 후 재시도... ({attempt+1}/3)")
+                time.sleep(wait)
+            else:
+                raise
+
+
+def parse_json(raw):
+    raw = raw.strip()
+    if "```" in raw:
+        raw = raw.split("```")[1]
+        if raw.startswith("json"):
+            raw = raw[4:]
+    return json.loads(raw.strip())
+
+
+def validate(d):
+    """구조 검증 — 깨진 응답이 렌더 단계로 흘러가지 않게"""
+    assert isinstance(d.get("caption"), str) and d["caption"].strip(), "caption 누락"
+    c1 = d.get("card1") or {}
+    assert c1.get("title") and c1.get("sub") and c1.get("query"), "card1 필드 누락"
+    for k in ("card2", "card3"):
+        c = d.get(k) or {}
+        assert c.get("subtitle") and c.get("query"), f"{k} 필드 누락"
+        lines = c.get("lines")
+        assert isinstance(lines, list) and len(lines) >= 3 and all(
+            isinstance(l, str) and l.strip() for l in lines), f"{k}.lines 형식 오류"
+
+
+data = None
+for gen_try in range(1, 4):
+    response = call_gemini()
     try:
-        response = client.models.generate_content(model=GEMINI_MODEL, contents=PROMPT)
+        cand = parse_json(response.text or "")
+        validate(cand)
+        data = cand
         break
     except Exception as e:
-        if attempt < 3:
-            wait = 30 * (attempt + 1)
-            print(f"  Gemini 오류 ({e.__class__.__name__}), {wait}초 후 재시도... ({attempt+1}/3)")
-            time.sleep(wait)
-        else:
-            raise
-
-raw = response.text.strip()
-if "```" in raw:
-    raw = raw.split("```")[1]
-    if raw.startswith("json"):
-        raw = raw[4:]
-raw = raw.strip()
+        print(f"  응답 형식 오류({e}) — 재생성 {gen_try}/3")
+        time.sleep(5)
+if data is None:
+    print("[중단] Gemini가 3회 연속 올바른 형식을 주지 않았어요.")
+    sys.exit(1)
 
 # 3) Pexels에서 검색어로 사진 가져오는 함수
 def get_photo(query):
@@ -145,8 +178,7 @@ def get_photo(query):
         print("  (사진 검색 실패:", query, "->", e, ")")
     return None
 
-try:
-    data = json.loads(raw)
+if True:
     print("=== Gemini가 고른 주제 ===")
     print(" ->", data.get("topic", "(주제 표시 없음)"))
     print()
@@ -175,7 +207,3 @@ try:
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"\n저장 완료! {out_file} 생성됨 (배경 사진 포함) 🎉")
-except Exception as e:
-    print("[JSON 변환 실패]", e)
-    print("받은 원본:")
-    print(raw)

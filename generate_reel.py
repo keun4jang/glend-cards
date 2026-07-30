@@ -81,7 +81,7 @@ PROMPT = f"""
 - query 중요 규칙: 한국에서 벌어진 일을 다루므로 배경 사진에 외국인 얼굴이 나오면 어색해. 반드시 **사람 얼굴이 안 나오는 사진**으로 검색해 — 사물(돈, 계산기, 서류, 도구), 풍경(도시, 거리, 건물, 자연), 손·뒷모습 클로즈업 위주. "person", "man", "woman", "people" 같은 단어는 쓰지 마. 꼭 사람이 필요하면 "hands closeup"이나 "silhouette"처럼 얼굴 없는 형태로.
 - scene 4나 5 중 하나의 narration 끝에 "저장해두고 다시 보세요" 같은 저장 유도를 자연스럽게 한 번 넣어. (저장 유도는 전체에서 딱 한 번만)
 - 화면 상단에 영상 내내 고정으로 뜰 짧은 제목(title)도 만들어줘. 주제를 한눈에 보여주는 8자 이내의 간결한 키워드 (예: "운전면허 지원금", "청년 청약통장", "전기요금 절약"). 이모지 1개 붙여도 좋음.
-- 인스타 캡션: 첫 줄 후킹 + 핵심 3~4줄 + 저장/팔로우 유도 + 마지막에 주제와 관련된 댓글 유도 질문 한 줄(예: "여러분이라면 신청하실 건가요? 댓글로 알려주세요 👇") + 해시태그 5개.
+- 인스타 캡션: 첫 줄 후킹 + 핵심 3~4줄 + 저장/팔로우 유도 + 마지막에 주제와 관련된 댓글 유도 질문 한 줄(예: "여러분이라면 신청하실 건가요? 댓글로 알려주세요 👇") + 해시태그 5개(대형 1 + 중형 2 + 니치 2로 믹스).
 - 캡션과 자막 모두에 마크다운 문법(**별표**, ##, - 목록 등)을 절대 쓰지 마. 인스타는 마크다운을 표시하지 못해서 별표가 그대로 노출돼. 강조는 이모지나 줄바꿈으로만.
 
 반드시 아래 JSON 형식으로만 답해. 다른 설명 금지.
@@ -100,24 +100,55 @@ PROMPT = f"""
 """
 
 print("Gemini가 릴스 대본을 만드는 중...\n")
-for attempt in range(4):
+
+
+def call_gemini():
+    for attempt in range(4):
+        try:
+            return client.models.generate_content(model=GEMINI_MODEL, contents=PROMPT)
+        except Exception as e:
+            if attempt < 3:
+                wait = 30 * (attempt + 1)
+                print(f"  Gemini 오류 ({e.__class__.__name__}), {wait}초 후 재시도... ({attempt+1}/3)")
+                time.sleep(wait)
+            else:
+                raise
+
+
+def parse_json(raw):
+    raw = raw.strip()
+    if "```" in raw:
+        raw = raw.split("```")[1]
+        if raw.startswith("json"):
+            raw = raw[4:]
+    return json.loads(raw.strip())
+
+
+def validate(d):
+    """구조 검증 — 깨진 응답이 렌더/조립 단계로 흘러가지 않게"""
+    assert isinstance(d.get("caption"), str) and d["caption"].strip(), "caption 누락"
+    assert isinstance(d.get("title"), str) and d["title"].strip(), "title 누락"
+    scenes = d.get("scenes")
+    assert isinstance(scenes, list) and len(scenes) == 5, f"scenes 개수 오류({len(scenes) if isinstance(scenes, list) else '없음'})"
+    for i, s in enumerate(scenes, 1):
+        assert isinstance(s.get("narration"), str) and s["narration"].strip(), f"scene{i} narration 누락"
+        assert isinstance(s.get("query"), str) and s["query"].strip(), f"scene{i} query 누락"
+
+
+data = None
+for gen_try in range(1, 4):
+    response = call_gemini()
     try:
-        response = client.models.generate_content(model=GEMINI_MODEL, contents=PROMPT)
+        cand = parse_json(response.text or "")
+        validate(cand)
+        data = cand
         break
     except Exception as e:
-        if attempt < 3:
-            wait = 30 * (attempt + 1)
-            print(f"  Gemini 오류 ({e.__class__.__name__}), {wait}초 후 재시도... ({attempt+1}/3)")
-            time.sleep(wait)
-        else:
-            raise
-
-raw = response.text.strip()
-if "```" in raw:
-    raw = raw.split("```")[1]
-    if raw.startswith("json"):
-        raw = raw[4:]
-raw = raw.strip()
+        print(f"  응답 형식 오류({e}) — 재생성 {gen_try}/3")
+        time.sleep(5)
+if data is None:
+    print("[중단] Gemini가 3회 연속 올바른 형식을 주지 않았어요.")
+    sys.exit(1)
 
 
 def get_photo(query):
@@ -140,8 +171,7 @@ def get_photo(query):
 # 마지막(아웃트로) 장면 나레이션 — 좋아요/팔로우 유도 (자막 없음)
 OUTRO_NARRATION = "나중에 또 보려면 지금 저장하고, 매일 돈 되는 정보 받으려면 팔로우해 주세요!"
 
-try:
-    data = json.loads(raw)
+if True:
     print("=== Gemini가 고른 주제 ===")
     print(" ->", data.get("topic", "(주제 표시 없음)"), "\n")
 
@@ -166,7 +196,3 @@ try:
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"\n저장 완료! {out_file} 생성됨 🎬")
-except Exception as e:
-    print("[JSON 변환 실패]", e)
-    print("받은 원본:")
-    print(raw)

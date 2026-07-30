@@ -21,7 +21,7 @@ TH_USER = os.getenv("THREADS_USER_ID", os.getenv("IG_USER_ID", "")).strip()
 POST_INDEX = sys.argv[2] if len(sys.argv) > 2 else "1"
 DRY_RUN = not (len(sys.argv) > 1 and sys.argv[1] == "go")
 
-GITHUB_USER, GITHUB_REPO, BRANCH = "keun4jang", "glend-cards", "main"
+GITHUB_USER, GITHUB_REPO, BRANCH = "keun4jang", "glend-cards", "media"
 VIDEO_URL = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{BRANCH}/output/reel{POST_INDEX}/reel.mp4"
 IG_GRAPH = "https://graph.instagram.com"
 TH_GRAPH = "https://graph.threads.net/v1.0"
@@ -29,7 +29,7 @@ LOG_FILE = "reel_upload_log.txt"
 
 with open(f"reel_content_{POST_INDEX}.json", "r", encoding="utf-8") as f:
     content = json.load(f)
-caption = content.get("caption", "").replace("<b>", "").replace("</b>", "").replace("**", "").replace("__", "")
+caption = content.get("caption", "").replace("<b>", "").replace("</b>", "").replace("**", "").replace("__", "")[:2200]
 
 print("=" * 44)
 print(f"[릴스 발행] 모드: {'실제' if not DRY_RUN else '드라이런'} | 릴스: {POST_INDEX}")

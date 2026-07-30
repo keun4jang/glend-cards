@@ -9,3 +9,10 @@ output/reel*/narr*.mp3
 output/reel*/joined.mp4
 output/reel*/concat.txt
 narration_test.mp3
+
+# 산출물은 media 브랜치로만 (main 히스토리 비대화 방지)
+output/
+content_*.json
+reel_content_*.json
+upload_log.txt
+reel_upload_log.txt

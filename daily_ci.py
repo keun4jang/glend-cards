@@ -7,7 +7,7 @@ import datetime
 
 # 하루 1개 게시물(경제·재테크) — 도달 데이터 기반으로 3→1 축소 (인사이트 2026-07-30)
 POSTS_PER_DAY = 1
-INITIAL_MAX_DELAY_HOURS = 1     # 깨어난 뒤 첫 게시물까지 대기
+INITIAL_MAX_DELAY_HOURS = 0.75  # 릴스 잡(UTC 03:00)과 media 푸시가 겹치지 않게 45분 이내로
 GAP_MIN_HOURS = 1                # 게시물 사이 최소 간격
 GAP_MAX_HOURS = 1.5              # 게시물 사이 최대 간격 (GitHub Actions 6시간 제한 여유 확보)
 
@@ -38,14 +38,10 @@ for i in range(1, POSTS_PER_DAY + 1):
     # 카드 렌더링
     run(f"카드 렌더링 ({idx}번째)", ["render.py", idx])
 
-    # 만든 카드를 깃허브에 커밋 (인스타가 가져갈 수 있게)
-    print(f"\n{'='*40}\n[깃허브에 카드 저장 ({idx}번째)]\n{'='*40}", flush=True)
-    subprocess.run(["git", "add", "output", f"content_{idx}.json"])
-    subprocess.run(["git", "commit", "-m", f"auto cards: {datetime.date.today()} #{idx}"])
-    push = subprocess.run(["git", "push"])
-    if push.returncode != 0:
-        print("[중단] 깃허브 저장 실패.", flush=True)
-        sys.exit(1)
+    # 만든 카드를 media 브랜치에 저장 (인스타가 가져갈 수 있게, main 히스토리 비대화 방지)
+    print(f"\n{'='*40}\n[media 브랜치에 카드 저장 ({idx}번째)]\n{'='*40}", flush=True)
+    import media_push
+    media_push.push_media()
 
     # 깃허브 raw에 반영될 시간 확보
     print("깃허브 반영 대기 중... (30초)", flush=True)
