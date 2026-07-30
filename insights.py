@@ -1,8 +1,9 @@
 """
 계정 성장 진단용 인사이트 수집 스크립트 (읽기 전용 — 아무것도 발행하지 않음).
-GitHub Actions에서 IG_TOKEN/IG_USER_ID로 실행해 로그로 결과 출력.
+GitHub Actions에서 IG_TOKEN/IG_USER_ID로 실행. 로그 출력 + reports/에 마크다운 리포트 저장.
 """
 import os
+import datetime
 import requests
 from dotenv import load_dotenv
 
@@ -10,6 +11,14 @@ load_dotenv()
 TOKEN = os.getenv("IG_TOKEN", "").strip()
 USER_ID = os.getenv("IG_USER_ID", "").strip()
 GRAPH = "https://graph.instagram.com"
+
+_report_lines = []
+
+
+def print(*args, **kwargs):  # noqa: A001 — 로그와 리포트에 동시 기록
+    import builtins
+    builtins.print(*args, **kwargs)
+    _report_lines.append(" ".join(str(a) for a in args))
 
 
 def get(path, **params):
@@ -88,3 +97,14 @@ for m in rows:
 
 print()
 print("완료 — 발행/변경 없음 (읽기 전용)")
+
+# 리포트 파일 저장 (주간 비교용)
+os.makedirs("reports", exist_ok=True)
+today = datetime.date.today().isoformat()
+path = f"reports/insights_{today}.md"
+with open(path, "w", encoding="utf-8") as f:
+    f.write(f"# GLEND 주간 인사이트 리포트 ({today})\n\n```\n")
+    f.write("\n".join(_report_lines))
+    f.write("\n```\n")
+import builtins
+builtins.print(f"리포트 저장: {path}")
