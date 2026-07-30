@@ -11,14 +11,11 @@ import time
 import datetime
 
 IDX = sys.argv[1] if len(sys.argv) > 1 else "1"
-# "auto" → 시간대 기반: 낮 실행(UTC 6시 이전 = KST 오전~정오)은 경제(1) 고정,
-# 저녁 실행은 사건사고(2)/건강(3)을 날짜별로 번갈아. (경제 중심 + 화제성 보강)
+# "auto" → 하루 3개 슬롯이 서로 다른 주제가 되도록 고정 배정
+#   카드뉴스(KST 07:30) = 경제(1)  /  릴스#1(KST 12:00) = 건강(3)  /  릴스#2(KST 18:00) = 사건사고(2)
 if IDX == "auto":
     now = datetime.datetime.now(datetime.timezone.utc)
-    if now.hour < 6:
-        IDX = "1"
-    else:
-        IDX = "2" if now.timetuple().tm_yday % 2 == 0 else "3"
+    IDX = "3" if now.hour < 6 else "2"
 
 # PUBLISH=false 면 영상만 만들고(커밋까지) 발행은 건너뜀 — 업로드 전 검토용
 PUBLISH = os.getenv("PUBLISH", "true").strip().lower() != "false"
