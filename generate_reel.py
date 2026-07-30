@@ -48,17 +48,17 @@ if CATEGORY == "health":
     PERSONA = "너는 'GLEND'라는 건강 실전 꿀팁 인스타그램 릴스 채널의 전문 작가야. 15~22초 안에 빠르게 핵심을 전달한다."
     TOPIC_DESC = "오늘의 최신 건강 관련 뉴스 제목 목록"
     HOOK = '"~하면 몸 망친다" 류의 경각심 자극형'
-    QEX = '"morning stretching", "healthy meal prep", "sleeping bedroom night"'
+    QEX = '"healthy meal bowl", "running shoes closeup", "dark bedroom night"'
 elif CATEGORY == "incident":
     PERSONA = "너는 'GLEND'라는 트렌드 인스타그램 릴스 채널의 전문 작가야. 자극적·공감형 사건·사고·논란을 15~22초 안에 빠르게 전한다."
     TOPIC_DESC = "오늘의 최신 사건·사고·논란 관련 뉴스 제목 목록"
     HOOK = '질문형 또는 충격 사실 제시형'
-    QEX = '"car accident night", "police tape scene", "crowd protest"'
+    QEX = '"car accident night", "police line tape", "ambulance lights night"'
 else:
     PERSONA = "너는 'GLEND'라는 경제·재테크 실전 꿀팁 인스타그램 릴스 채널의 전문 작가야. 15~22초 안에 이득/손해 정보를 빠르게 전한다."
     TOPIC_DESC = "오늘의 최신 경제/재테크 관련 뉴스 제목 목록"
     HOOK = '"~안 하면 손해" 류의 손실 회피형'
-    QEX = '"money hand korean", "bank application", "apartment korea"'
+    QEX = '"korean won bills", "calculator money desk", "seoul apartment buildings"'
 
 # 3) 릴스 대본 — 6개 장면(후킹+핵심5). 각 장면 narration = 화면 중앙에 뜰 자막.
 PROMPT = f"""
@@ -77,6 +77,8 @@ PROMPT = f"""
 - 각 narration에서 가장 중요한 핵심 단어 1개만 <b>단어</b>로 감싸 강조(노란색). 장면당 1개만. (성우는 태그를 읽지 않음)
 - 자막에 글자수 메모("(16자)" 등)를 절대 쓰지 마. 최종 문장만.
 - query는 각 장면 분위기에 맞는 영어 사진 검색어 2~3단어 (예: {QEX}).
+- query 중요 규칙: 한국에서 벌어진 일을 다루므로 배경 사진에 외국인 얼굴이 나오면 어색해. 반드시 **사람 얼굴이 안 나오는 사진**으로 검색해 — 사물(돈, 계산기, 서류, 도구), 풍경(도시, 거리, 건물, 자연), 손·뒷모습 클로즈업 위주. "person", "man", "woman", "people" 같은 단어는 쓰지 마. 꼭 사람이 필요하면 "hands closeup"이나 "silhouette"처럼 얼굴 없는 형태로.
+- scene 5나 6 중 하나의 narration 끝에 "이건 저장해두고 다시 보세요" 같은 저장 유도를 자연스럽게 한 번 넣어. (저장 유도는 전체에서 딱 한 번만)
 - 화면 상단에 영상 내내 고정으로 뜰 짧은 제목(title)도 만들어줘. 주제를 한눈에 보여주는 8자 이내의 간결한 키워드 (예: "운전면허 지원금", "청년 청약통장", "전기요금 절약"). 이모지 1개 붙여도 좋음.
 - 인스타 캡션: 첫 줄 후킹 + 핵심 5~6줄 + 저장/팔로우 유도 + 해시태그 5개.
 
@@ -136,7 +138,7 @@ def get_photo(query):
 
 
 # 마지막(아웃트로) 장면 나레이션 — 좋아요/팔로우 유도 (자막 없음)
-OUTRO_NARRATION = "도움이 됐다면 지금 좋아요와 팔로우 눌러주세요!"
+OUTRO_NARRATION = "나중에 또 보려면 지금 저장하고, 매일 돈 되는 정보 받으려면 팔로우해 주세요!"
 
 try:
     data = json.loads(raw)

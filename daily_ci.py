@@ -5,8 +5,8 @@ import random
 import time
 import datetime
 
-# 하루 3개 게시물, 각기 다른 시간에 올리기 위한 랜덤 대기
-POSTS_PER_DAY = 3
+# 하루 1개 게시물(경제·재테크) — 도달 데이터 기반으로 3→1 축소 (인사이트 2026-07-30)
+POSTS_PER_DAY = 1
 INITIAL_MAX_DELAY_HOURS = 1     # 깨어난 뒤 첫 게시물까지 대기
 GAP_MIN_HOURS = 1                # 게시물 사이 최소 간격
 GAP_MAX_HOURS = 1.5              # 게시물 사이 최대 간격 (GitHub Actions 6시간 제한 여유 확보)

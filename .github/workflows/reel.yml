@@ -16,7 +16,8 @@ on:
         required: false
         default: "false"
   schedule:
-    - cron: "0 8 * * *"   # 매일 UTC 08:00 = KST 17:00 (인스타 릴스 1개 자동)
+    - cron: "0 3 * * *"   # 매일 UTC 03:00 = KST 12:00 (릴스 #1: 경제)
+    - cron: "0 9 * * *"   # 매일 UTC 09:00 = KST 18:00 (릴스 #2: 사건사고/건강 로테이션)
 
 permissions:
   contents: write

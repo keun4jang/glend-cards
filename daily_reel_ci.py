@@ -9,9 +9,14 @@ import sys
 import datetime
 
 IDX = sys.argv[1] if len(sys.argv) > 1 else "1"
-# "auto" → 날짜 기반 카테고리 로테이션(1=경제 2=사건사고 3=건강). 카드뉴스와 매일 다른 결.
+# "auto" → 시간대 기반: 낮 실행(UTC 6시 이전 = KST 오전~정오)은 경제(1) 고정,
+# 저녁 실행은 사건사고(2)/건강(3)을 날짜별로 번갈아. (경제 중심 + 화제성 보강)
 if IDX == "auto":
-    IDX = str(datetime.date.today().timetuple().tm_yday % 3 + 1)
+    now = datetime.datetime.utcnow()
+    if now.hour < 6:
+        IDX = "1"
+    else:
+        IDX = "2" if now.timetuple().tm_yday % 2 == 0 else "3"
 
 # PUBLISH=false 면 영상만 만들고(커밋까지) 발행은 건너뜀 — 업로드 전 검토용
 PUBLISH = os.getenv("PUBLISH", "true").strip().lower() != "false"
