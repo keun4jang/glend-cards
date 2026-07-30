@@ -5,6 +5,7 @@ import time
 import datetime
 import requests
 from dotenv import load_dotenv
+from content_io import load_content, cache_bust
 
 load_dotenv()
 TOKEN = os.getenv("IG_TOKEN", "").strip()
@@ -43,8 +44,7 @@ if already_posted_slot():
     print(f"오늘 {POST_INDEX}번째 게시물은 이미 업로드했어요. 중복 방지로 멈춥니다.")
     raise SystemExit
 
-with open(f"content_{POST_INDEX}.json", "r", encoding="utf-8") as f:
-    content = json.load(f)
+content = load_content(f"content_{POST_INDEX}.json")
 caption = content.get("caption", "").replace("<b>", "").replace("</b>", "").replace("**", "").replace("__", "")[:2200]
 print("\n[캡션 미리보기]")
 print(caption[:200], "...\n")
@@ -63,7 +63,7 @@ print("실제 업로드 시작...\n")
 
 item_ids = []
 for fn in CARD_FILES:
-    img_url = f"{IMAGE_BASE}/{fn}"
+    img_url = cache_bust(f"{IMAGE_BASE}/{fn}")
     res = requests.post(f"{GRAPH}/{USER_ID}/media", data={
         "image_url": img_url,
         "is_carousel_item": "true",

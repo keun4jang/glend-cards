@@ -11,6 +11,7 @@ import time
 import datetime
 import requests
 from dotenv import load_dotenv
+from content_io import load_content
 
 load_dotenv()
 IG_TOKEN = os.getenv("IG_TOKEN", "").strip()
@@ -22,13 +23,13 @@ POST_INDEX = sys.argv[2] if len(sys.argv) > 2 else "1"
 DRY_RUN = not (len(sys.argv) > 1 and sys.argv[1] == "go")
 
 GITHUB_USER, GITHUB_REPO, BRANCH = "keun4jang", "glend-cards", "media"
-VIDEO_URL = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{BRANCH}/output/reel{POST_INDEX}/reel.mp4"
+from content_io import cache_bust
+VIDEO_URL = cache_bust(f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{BRANCH}/output/reel{POST_INDEX}/reel.mp4")
 IG_GRAPH = "https://graph.instagram.com"
 TH_GRAPH = "https://graph.threads.net/v1.0"
 LOG_FILE = "reel_upload_log.txt"
 
-with open(f"reel_content_{POST_INDEX}.json", "r", encoding="utf-8") as f:
-    content = json.load(f)
+content = load_content(f"reel_content_{POST_INDEX}.json")
 caption = content.get("caption", "").replace("<b>", "").replace("</b>", "").replace("**", "").replace("__", "")[:2200]
 
 print("=" * 44)

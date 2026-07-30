@@ -4,6 +4,7 @@ import sys
 import time
 import requests
 from dotenv import load_dotenv
+from content_io import load_content, cache_bust
 
 load_dotenv()
 # Threads는 인스타 토큰과 호환되지 않음(검증됨) — 전용 토큰이 없으면 깔끔하게 건너뜀
@@ -29,8 +30,7 @@ print("=" * 40)
 print(f"[Threads] 모드: {'실제 업로드' if not DRY_RUN else '드라이런'} | 게시물: {POST_INDEX}")
 print("=" * 40)
 
-with open(f"content_{POST_INDEX}.json", "r", encoding="utf-8") as f:
-    content = json.load(f)
+content = load_content(f"content_{POST_INDEX}.json")
 caption = content.get("caption", "").replace("<b>", "").replace("</b>", "").replace("**", "").replace("__", "")[:500]
 
 print("\n[캡션 미리보기]")
@@ -49,7 +49,7 @@ print("Threads 업로드 시작...\n")
 # 1) 각 이미지를 캐러셀 아이템으로 등록
 item_ids = []
 for fn in CARD_FILES:
-    img_url = f"{IMAGE_BASE}/{fn}"
+    img_url = cache_bust(f"{IMAGE_BASE}/{fn}")
     res = requests.post(f"{GRAPH}/{USER_ID}/threads", data={
         "media_type": "IMAGE",
         "image_url": img_url,
