@@ -11,11 +11,13 @@ import time
 import datetime
 
 IDX = sys.argv[1] if len(sys.argv) > 1 else "1"
-# "auto" → 하루 3개 슬롯이 서로 다른 주제가 되도록 고정 배정
-#   카드뉴스(KST 07:30) = 경제(1)  /  릴스#1(KST 12:00) = 건강(3)  /  릴스#2(KST 18:00) = 사건사고(2)
+# "auto" → 하루 3개 슬롯(카드/릴스1/릴스2)에 3개 주제를 하나씩 배정하고 매일 한 칸씩 로테이션
+#   슬롯 1 = 릴스#1(KST 12:00), 슬롯 2 = 릴스#2(KST 18:00)
 if IDX == "auto":
-    now = datetime.datetime.now(datetime.timezone.utc)
-    IDX = "3" if now.hour < 6 else "2"
+    from rotation import describe
+    slot = 1 if datetime.datetime.now(datetime.timezone.utc).hour < 6 else 2
+    IDX, CAT_NAME = describe(slot)
+    print(f"[로테이션] 오늘 이 슬롯의 주제: {CAT_NAME}", flush=True)
 
 # PUBLISH=false 면 영상만 만들고(커밋까지) 발행은 건너뜀 — 업로드 전 검토용
 PUBLISH = os.getenv("PUBLISH", "true").strip().lower() != "false"

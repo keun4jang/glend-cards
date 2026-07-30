@@ -5,7 +5,9 @@ import random
 import time
 import datetime
 
-# 하루 1개 게시물(경제·재테크) — 도달 데이터 기반으로 3→1 축소 (인사이트 2026-07-30)
+from rotation import describe
+
+# 하루 1개 게시물 — 주제는 매일 로테이션(슬롯 0 = 아침 카드뉴스)
 POSTS_PER_DAY = 1
 INITIAL_MAX_DELAY_HOURS = 0.5   # KST 07:30~08:00 사이 발행 (출근 시간대), 릴스 잡과 완전 분리
 GAP_MIN_HOURS = 1                # 게시물 사이 최소 간격
@@ -24,12 +26,12 @@ subprocess.run(["git", "config", "user.name", "github-actions"])
 subprocess.run(["git", "config", "user.email", "actions@github.com"])
 
 for i in range(1, POSTS_PER_DAY + 1):
-    idx = str(i)
+    idx, cat_name = describe(0)   # 슬롯 0 = 아침 카드뉴스 (매일 주제 로테이션)
 
     # 첫 게시물은 짧게, 이후 게시물은 간격을 두고 대기
     delay_sec = random.randint(0, int(INITIAL_MAX_DELAY_HOURS * 3600)) if i == 1 \
         else random.randint(int(GAP_MIN_HOURS * 3600), int(GAP_MAX_HOURS * 3600))
-    print(f"\n[{idx}번째 게시물] {delay_sec//60}분 뒤에 진행할게요...", flush=True)
+    print(f"\n[오늘의 카드뉴스 주제: {cat_name}] {delay_sec//60}분 뒤에 진행할게요...", flush=True)
     time.sleep(delay_sec)
 
     # 콘텐츠 생성 (뉴스 + 글 + 배경)
