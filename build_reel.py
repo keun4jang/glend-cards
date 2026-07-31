@@ -32,8 +32,8 @@ PAD_SEC = 0.5
 MIN_SCENE_SEC = 2.0
 OUTRO_SEC = 3.0   # 로고 아웃트로 길이(나레이션 없이 음악만)
 
-with open(f"reel_content_{POST_INDEX}.json", "r", encoding="utf-8") as f:
-    content = json.load(f)
+from content_io import load_content
+content = load_content(f"reel_content_{POST_INDEX}.json")
 scenes = content["scenes"]
 
 

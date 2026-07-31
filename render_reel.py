@@ -13,8 +13,8 @@ POST_INDEX = sys.argv[1] if len(sys.argv) > 1 else "1"
 OUTPUT = BASE / "output" / f"reel{POST_INDEX}"
 OUTPUT.mkdir(parents=True, exist_ok=True)
 
-with open(f"reel_content_{POST_INDEX}.json", "r", encoding="utf-8") as f:
-    content = json.load(f)
+from content_io import load_content
+content = load_content(f"reel_content_{POST_INDEX}.json")
 
 FALLBACK = "https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg"
 # 화면 상단 고정 제목(짧게). title 없으면 topic 사용.

@@ -5,6 +5,15 @@ on:
     # 매일 UTC 22:30 (한국시간 다음날 07:30, 출근 시간대) — 릴스(KST 12/18시)와 분리해 자기잠식 방지
     - cron: "30 22 * * *"
   workflow_dispatch:   # 버튼으로 수동 실행도 가능
+    inputs:
+      reuse:
+        description: "true면 기존 콘텐츠 재사용(재렌더+재발행)"
+        required: false
+        default: "false"
+      index:
+        description: "재발행할 content 번호 (1=경제 2=사건사고 3=건강)"
+        required: false
+        default: ""
 
 jobs:
   post:
@@ -30,4 +39,6 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          REUSE_CONTENT: ${{ github.event.inputs.reuse || 'false' }}
+          CARD_INDEX: ${{ github.event.inputs.index || '' }}
         run: python daily_ci.py

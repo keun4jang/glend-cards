@@ -28,13 +28,18 @@
   /* 카드1 후킹 */
   .hook-title { margin-top: 280px; font-weight: 900; line-height: 1.15; text-align: left; }
   .hook-title .line { display: block; white-space: nowrap; }
-  .hook-sub { margin-top: 100px; margin-bottom: 120px; text-align: left; font-size: 64px; font-weight: 700; color: #CFFF04; }
+  .hook-sub {
+    margin-top: 100px; margin-bottom: 120px; text-align: left;
+    font-size: 64px; font-weight: 700; color: #CFFF04; line-height: 1.35;
+    max-width: 920px; word-break: keep-all; text-wrap: balance;
+  }
 
   /* 카드2 분석 & 카드3 통찰 - 제목 스타일 통일 */
   .ana-wrap, .ins-wrap { margin-top: auto; margin-bottom: auto; display: flex; flex-direction: column; justify-content: center; width: 100%; }
   .ana-subtitle, .ins-title {
     font-size: 92px; font-weight: 800; line-height: 1.2; text-align: left;
     border-left: 14px solid #CFFF04; padding-left: 34px;
+    word-break: keep-all;
   }
   .ana-body, .ins-body { margin-top: 56px; font-size: 64px; font-weight: 400; line-height: 1.6; text-align: left; }
   .ana-body .line, .ins-body .line { display: block; white-space: nowrap; margin-bottom: 14px; }

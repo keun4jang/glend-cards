@@ -25,17 +25,29 @@ print(f"\n자동 발행 시작: {datetime.datetime.now()}", flush=True)
 subprocess.run(["git", "config", "user.name", "github-actions"])
 subprocess.run(["git", "config", "user.email", "actions@github.com"])
 
+# REUSE_CONTENT=true → 콘텐츠 새로 만들지 않고 media 브랜치의 기존 content로 재렌더+재발행
+REUSE = os.getenv("REUSE_CONTENT", "false").strip().lower() == "true"
+FORCED_IDX = os.getenv("CARD_INDEX", "").strip()
+
 for i in range(1, POSTS_PER_DAY + 1):
-    idx, cat_name = describe(0)   # 슬롯 0 = 아침 카드뉴스 (매일 주제 로테이션)
+    if FORCED_IDX:
+        idx, cat_name = FORCED_IDX, f"수동지정({FORCED_IDX})"
+    else:
+        idx, cat_name = describe(0)   # 슬롯 0 = 아침 카드뉴스 (매일 주제 로테이션)
 
-    # 첫 게시물은 짧게, 이후 게시물은 간격을 두고 대기
-    delay_sec = random.randint(0, int(INITIAL_MAX_DELAY_HOURS * 3600)) if i == 1 \
-        else random.randint(int(GAP_MIN_HOURS * 3600), int(GAP_MAX_HOURS * 3600))
-    print(f"\n[오늘의 카드뉴스 주제: {cat_name}] {delay_sec//60}분 뒤에 진행할게요...", flush=True)
-    time.sleep(delay_sec)
+    # 스케줄 실행일 때만 랜덤 대기 (수동/재발행은 즉시)
+    if os.getenv("GITHUB_EVENT_NAME") == "schedule":
+        delay_sec = random.randint(0, int(INITIAL_MAX_DELAY_HOURS * 3600))
+        print(f"\n[오늘의 카드뉴스 주제: {cat_name}] {delay_sec//60}분 뒤에 진행할게요...", flush=True)
+        time.sleep(delay_sec)
+    else:
+        print(f"\n[카드뉴스 주제: {cat_name}] 바로 진행합니다.", flush=True)
 
-    # 콘텐츠 생성 (뉴스 + 글 + 배경)
-    run(f"콘텐츠 생성 ({idx}번째)", ["generate.py", idx])
+    # 콘텐츠 생성 (뉴스 + 글 + 배경) — 재발행 모드면 건너뜀
+    if REUSE:
+        print("[재발행 모드] 기존 콘텐츠로 렌더링부터 진행", flush=True)
+    else:
+        run(f"콘텐츠 생성 ({idx}번째)", ["generate.py", idx])
 
     # 카드 렌더링
     run(f"카드 렌더링 ({idx}번째)", ["render.py", idx])
