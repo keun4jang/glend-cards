@@ -49,12 +49,27 @@ def title_font_size(line):
         return TITLE_BASE_FONT
     return max(70, int(TITLE_BASE_FONT * TITLE_MAX_CHARS / n))
 
-def sub_font_size(text):
-    """카드1 부제: 길면 폰트를 줄여 한 줄에 담기게 (최소 44px)"""
+def sub_font_size(text, base, maxc, minimum):
+    """부제 줄: 길면 폰트를 줄여 한 줄에 담기게"""
     n = char_count(text)
-    if n <= SUB_MAX_CHARS:
-        return SUB_BASE_FONT
-    return max(44, int(SUB_BASE_FONT * SUB_MAX_CHARS / n))
+    if n <= maxc:
+        return base
+    return max(minimum, int(base * maxc / n))
+
+
+def build_sub_html(card1):
+    """카드1 부제 HTML — sub1(설명) + sub2(강조 마무리), 포인트 단어는 <b>로 연두.
+    구버전(sub 하나)도 호환."""
+    sub1 = strip_char_count_notes(card1.get("sub1") or card1.get("sub") or "")
+    sub2 = strip_char_count_notes(card1.get("sub2") or "")
+    html = ""
+    if sub1:
+        size = sub_font_size(sub1, 72, 16, 52)
+        html += f'<div class="sub1" style="font-size:{size}px">{sub1}</div>'
+    if sub2:
+        size = sub_font_size(sub2, 92, 11, 64)
+        html += f'<div class="sub2" style="font-size:{size}px">{sub2}</div>'
+    return html
 
 def sized_lines(lines):
     """각 줄에 font-size 인라인 스타일 적용"""
@@ -79,8 +94,7 @@ def clean_multiline(text):
 CARDS = [
     {"type": "hook", "bg": content["card1"].get("bg", FALLBACK),
      "title_html": sized_title(clean_multiline(content["card1"]["title"])),
-     "sub": strip_char_count_notes(content["card1"]["sub"]),
-     "sub_size": sub_font_size(strip_char_count_notes(content["card1"]["sub"]))},
+     "sub_html": build_sub_html(content["card1"])},
     {"type": "analysis", "bg": content["card2"].get("bg", FALLBACK),
      "subtitle": clean_multiline(content["card2"]["subtitle"]),
      "lines_html": "".join(sized_lines(clean_lines(content["card2"]["lines"])))},
@@ -105,7 +119,7 @@ async def render():
 
                 if (c.type === 'hook') {
                     bg.style.backgroundImage = `url(${c.bg})`;
-                    area.innerHTML = `<div class="hook-title">${c.title_html}</div><div class="hook-sub" style="font-size:${c.sub_size}px">${c.sub}</div>`;
+                    area.innerHTML = `<div class="hook-title">${c.title_html}</div><div class="hook-sub">${c.sub_html}</div>`;
                 } else if (c.type === 'analysis') {
                     bg.style.backgroundImage = `url(${c.bg})`;
                     area.innerHTML = `<div class="ana-wrap"><div class="ana-subtitle">${c.subtitle.replace(/\\n/g,'<br>')}</div><div class="ana-body">${c.lines_html}</div></div>`;
