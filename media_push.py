@@ -40,6 +40,7 @@ def push_media():
 
     # 최종 산출물만 (중간 파일 scene/clip/narr 등 제외)
     artifacts = sorted(glob.glob("output/post*/card*.png") + glob.glob("output/reel*/reel.mp4")
+                       + glob.glob("output/reel*/cover.png")
                        + glob.glob("content_*.json") + glob.glob("reel_content_*.json"))
     if not artifacts:
         print("[media_push] 추가할 산출물이 없음 — 건너뜀", flush=True)

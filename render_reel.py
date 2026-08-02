@@ -26,11 +26,57 @@ def strip_notes(text):
     return t.replace("**", "").replace("__", "")
 
 
+def cover_title_html(text):
+    """커버 제목: 줄별로 글자 수 비례 폰트 축소 (한 줄 6자 기준 150px)"""
+    spans = []
+    for line in strip_notes(text).split("\n"):
+        n = len(re.sub(r'<[^>]+>', '', line))
+        size = 150 if n <= 7 else max(84, int(150 * 7 / n))
+        spans.append(f'<span class="line" style="font-size:{size}px">{line}</span>')
+    return "".join(spans)
+
+
+async def render_cover(page):
+    """썸네일 커버 — 카드뉴스 1장 스타일. cover 없으면 후킹 문장으로 폴백."""
+    cover = content.get("cover") or {}
+    c_title = cover.get("title") or TITLE
+    c_sub = strip_notes(cover.get("sub") or "")
+    bg = (content["scenes"][0].get("bg") if content.get("scenes") else None) or FALLBACK
+    sub_size = 64 if len(re.sub(r'<[^>]+>', '', c_sub)) <= 16 else 52
+
+    await page.goto(TEMPLATE)
+    await page.evaluate("""([bg, titleHtml, sub, subSize]) => new Promise((resolve) => {
+        document.body.style.background = '#000';
+        for (const id of ['overlay','brand-top','subtitle-wrap','hook','outro'])
+            document.getElementById(id).style.display = 'none';
+        const b = document.getElementById('bg');
+        b.style.opacity = '1';
+        b.style.backgroundImage = `url(${bg})`;
+        const ov = document.createElement('div'); ov.className = 'cover-overlay';
+        document.getElementById('card').appendChild(ov);
+        const c = document.createElement('div'); c.className = 'cover';
+        c.innerHTML = `<div class="cover-title">${titleHtml}</div>` +
+            (sub ? `<div class="cover-sub" style="font-size:${subSize}px">${sub}</div>` : '');
+        document.getElementById('card').appendChild(c);
+        const im = new Image();
+        const fin = () => resolve();
+        im.onload = fin; im.onerror = fin; im.src = bg;
+        setTimeout(fin, 12000);
+    })""", [bg, cover_title_html(c_title), c_sub, sub_size])
+    await page.wait_for_timeout(500)
+    await page.evaluate("document.fonts.ready")
+    await page.wait_for_timeout(300)
+    out = OUTPUT / "cover.png"
+    await page.screenshot(path=str(out))
+    print(f"saved: {out} (커버 썸네일)")
+
+
 async def render():
     n = len(content["scenes"])
     async with async_playwright() as p:
         browser = await p.chromium.launch()
         page = await browser.new_page(viewport={"width": 1080, "height": 1920}, device_scale_factor=1)
+        await render_cover(page)
         for i, scene in enumerate(content["scenes"], start=1):
             is_outro = bool(scene.get("outro"))
             is_hook = (i == 1) and not is_outro

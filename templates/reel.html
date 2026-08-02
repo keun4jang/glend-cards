@@ -76,6 +76,21 @@
   }
   .subtitle b { color: #CFFF04; font-weight: 900; }
 
+  /* 릴스 커버(썸네일) — 카드뉴스 1장 스타일, 그리드 크롭 대비 중앙 배치 */
+  .cover-overlay {
+    position: absolute; inset: 0; z-index: 2;
+    background: linear-gradient(180deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.75) 50%, rgba(0,0,0,0.88) 100%);
+  }
+  .cover {
+    position: absolute; inset: 0; z-index: 5;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 0 90px;
+  }
+  .cover-title { font-weight: 900; line-height: 1.12; letter-spacing: -6px; color: #fff; }
+  .cover-title .line { display: block; white-space: nowrap; }
+  .cover-sub { margin-top: 56px; font-weight: 800; letter-spacing: -2.5px; color: #fff; word-break: keep-all; max-width: 900px; }
+  .cover-sub b { color: #CFFF04; font-weight: inherit; }
+
   /* 아웃트로 — 완전 검정 + 로고 */
   .outro {
     position: absolute; inset: 0; z-index: 10; background: #000000;

@@ -56,13 +56,30 @@ if already_done():
     raise SystemExit
 
 
+COVER_URL = cache_bust(f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{BRANCH}/output/reel{POST_INDEX}/cover.png")
+
+
 def post_instagram_reel():
     print("\n[Instagram] 릴스 컨테이너 생성...")
-    res = requests.post(f"{IG_GRAPH}/{IG_USER}/media", data={
+    payload = {
         "media_type": "REELS", "video_url": VIDEO_URL,
         "caption": caption, "access_token": IG_TOKEN,
-    }, timeout=60)
+    }
+    # 커버 썸네일이 media 브랜치에 있으면 지정
+    try:
+        if requests.head(COVER_URL, timeout=20).status_code == 200:
+            payload["cover_url"] = COVER_URL
+            print("  커버 썸네일 지정:", COVER_URL.split("?")[0])
+    except Exception:
+        pass
+    res = requests.post(f"{IG_GRAPH}/{IG_USER}/media", data=payload, timeout=60)
     j = res.json()
+    if "id" not in j and "cover_url" in payload:
+        # 커버 관련 오류일 수 있으니 커버 없이 1회 재시도
+        print("  (커버 포함 생성 실패 → 커버 없이 재시도)", j.get("error", {}).get("message", "")[:80])
+        payload.pop("cover_url")
+        res = requests.post(f"{IG_GRAPH}/{IG_USER}/media", data=payload, timeout=60)
+        j = res.json()
     if "id" not in j:
         print("[실패] 컨테이너 생성:", j); return False
     cid = j["id"]
