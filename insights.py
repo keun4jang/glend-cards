@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv("IG_TOKEN", "").strip()
 USER_ID = os.getenv("IG_USER_ID", "").strip()
-GRAPH = "https://graph.instagram.com"
+GRAPH = os.getenv("IG_GRAPH_BASE", "https://graph.instagram.com").rstrip("/")
 
 _report_lines = []
 

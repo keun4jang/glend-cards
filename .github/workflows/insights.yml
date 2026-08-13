@@ -21,6 +21,7 @@ jobs:
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_GRAPH_BASE: ${{ vars.IG_GRAPH_BASE }}
         run: python insights.py
       - name: Commit report
         run: |
