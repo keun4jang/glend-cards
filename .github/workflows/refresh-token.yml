@@ -1,0 +1,33 @@
+name: Refresh Instagram Token
+
+# 인스타 장기 토큰(60일)을 주기적으로 갱신해 만료를 방지.
+# 주 2회 실행 → 만료 전까지 약 17번의 재시도 기회 확보.
+on:
+  schedule:
+    - cron: "17 3 * * 1"   # 매주 월요일 UTC 03:17 (KST 12:17)
+    - cron: "17 3 * * 4"   # 매주 목요일 UTC 03:17 (KST 12:17)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "true면 갱신만 확인하고 시크릿은 저장 안 함"
+        required: false
+        default: "false"
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests pynacl
+      - name: Refresh token and update secret
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+        run: python refresh_token.py

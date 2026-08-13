@@ -96,7 +96,22 @@ for m in rows:
     print(f"          └ {cap}")
 
 print()
-print("[주의] IG_TOKEN은 발급 후 60일 만료 — 위 데이터가 오류로 비어 있으면 토큰 만료 가능성. 만료 전 재발급해 GitHub Secret 교체 필요.")
+# 토큰 만료 임박 경고 (자동 갱신이 실패해도 리포트에서 눈에 띄게)
+try:
+    dbg = requests.get(f"{GRAPH}/access_token",
+                       params={"fields": "expires_at", "access_token": TOKEN}, timeout=30).json()
+except Exception:
+    dbg = {}
+exp = dbg.get("expires_at") or dbg.get("data", {}).get("expires_at")
+if exp:
+    import datetime as _dt
+    left = (_dt.datetime.fromtimestamp(int(exp)) - _dt.datetime.now()).days
+    if left < 14:
+        print(f"[🚨 경고] IG_TOKEN 만료까지 {left}일 — 자동 갱신 워크플로우(Refresh Instagram Token)를 확인하세요!")
+    else:
+        print(f"[토큰] 만료까지 약 {left}일 (주 2회 자동 갱신 중)")
+else:
+    print("[토큰] 만료일 확인 불가 — 자동 갱신 워크플로우 실행 이력을 확인하세요.")
 print()
 print("완료 — 발행/변경 없음 (읽기 전용)")
 
