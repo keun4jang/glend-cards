@@ -36,7 +36,13 @@
     display: flex; align-items: center; gap: 20px;
   }
   .brand-top img { width: 84px; height: 84px; border-radius: 50%; }
+  .brand-top .names { display: flex; flex-direction: column; line-height: 1.15; }
   .brand-top .name { font-size: 42px; font-weight: 800; color: #CFFF04; letter-spacing: 1px; }
+  /* 핸들을 영상 내내 노출 — 팔로우하려면 계정 이름이 아니라 핸들을 알아야 한다 */
+  .brand-top .handle {
+    font-size: 27px; font-weight: 700; color: rgba(255,255,255,0.92);
+    letter-spacing: 0.5px; text-shadow: 0 2px 8px rgba(0,0,0,0.85);
+  }
 
   /* 후킹 장면 — 그레이 그라데이션 배경 + 크고 예쁜 글씨(박스 없음) */
   .hook {
@@ -109,7 +115,10 @@
     </div>
     <div class="brand-top" id="brand-top">
       <img id="brand-logo" src="">
-      <span class="name">GLEND</span>
+      <span class="names">
+        <span class="name">GLEND</span>
+        <span class="handle">@glend_kr</span>
+      </span>
     </div>
     <div class="reel-title" id="reel-title" style="display:none;">
       <span id="reel-title-text"></span>
