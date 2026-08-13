@@ -102,3 +102,28 @@ if put.status_code not in (201, 204):
     fail(f"시크릿 저장 실패({put.status_code}): {put.text[:200]}")
 
 print(f"✅ {SECRET_NAME} 시크릿 갱신 완료 — 다음 만료까지 약 {expires_in // 86400}일", flush=True)
+
+# 3) GH_PAT 만료 감시 — 이 PAT가 죽으면 자동 갱신 사슬 전체가 끊긴다.
+#    GitHub은 만료가 설정된 PAT에 한해 응답 헤더로 만료일을 알려준다.
+pat_exp = pk.headers.get("github-authentication-token-expiration", "").strip()
+if not pat_exp:
+    print("[PAT] 만료 없음(무기한) — 사람 개입이 필요한 지점이 없습니다.", flush=True)
+else:
+    import datetime as _dt
+    try:
+        # 예: "2026-12-31 07:00:00 +0000" 또는 ISO 형식
+        txt = pat_exp.replace(" UTC", "").strip()
+        try:
+            exp_dt = _dt.datetime.strptime(txt, "%Y-%m-%d %H:%M:%S %z")
+        except ValueError:
+            exp_dt = _dt.datetime.fromisoformat(txt)
+        if exp_dt.tzinfo is None:
+            exp_dt = exp_dt.replace(tzinfo=_dt.timezone.utc)
+        left = (exp_dt - _dt.datetime.now(_dt.timezone.utc)).days
+        print(f"[PAT] 만료까지 {left}일 ({pat_exp})", flush=True)
+        if left <= 21:
+            fail(f"GH_PAT이 {left}일 뒤 만료됩니다. 만료되면 토큰 자동 갱신이 멈춥니다. "
+                 "GitHub > Settings > Developer settings에서 PAT를 '만료 없음'으로 재발급해 "
+                 "GH_PAT 시크릿을 교체하세요.")
+    except Exception as e:  # 파싱 실패는 치명적이지 않음
+        print(f"[PAT] 만료일 파싱 실패({e}): {pat_exp}", flush=True)

@@ -1,11 +1,11 @@
 name: Refresh Instagram Token
 
-# 인스타 장기 토큰(60일)을 주기적으로 갱신해 만료를 방지.
-# 주 2회 실행 → 만료 전까지 약 17번의 재시도 기회 확보.
+# 인스타 장기 토큰(60일)을 매일 갱신해 만료를 원천 차단.
+# 갱신할 때마다 만료일이 59일 뒤로 리셋되고 횟수 제한이 없으므로,
+# 이 워크플로우가 살아 있는 한 토큰은 만료에 도달하지 못한다.
 on:
   schedule:
-    - cron: "17 3 * * 1"   # 매주 월요일 UTC 03:17 (KST 12:17)
-    - cron: "17 3 * * 4"   # 매주 목요일 UTC 03:17 (KST 12:17)
+    - cron: "17 3 * * *"   # 매일 UTC 03:17 (KST 12:17)
   workflow_dispatch:
     inputs:
       dry_run:
@@ -14,7 +14,7 @@ on:
         default: "false"
 
 permissions:
-  contents: read
+  contents: write   # 저장소 활동 유지용 heartbeat 커밋
 
 jobs:
   refresh:
@@ -31,3 +31,26 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
         run: python refresh_token.py
+
+      # GitHub은 저장소에 60일간 활동이 없으면 예약 워크플로우를 자동 비활성화한다.
+      # 발행이 멈춘 채 방치돼도 갱신은 계속 돌도록 20일 이상 조용하면 커밋을 남긴다.
+      - name: Keep repository active
+        if: github.event_name == 'schedule'
+        run: |
+          set -e
+          LAST=$(git log -1 --format=%ct)
+          NOW=$(date +%s)
+          DAYS=$(( (NOW - LAST) / 86400 ))
+          echo "마지막 커밋으로부터 ${DAYS}일 경과"
+          if [ "$DAYS" -lt 20 ]; then
+            echo "저장소가 충분히 활성 상태 — heartbeat 생략"
+            exit 0
+          fi
+          date -u +"%Y-%m-%dT%H:%M:%SZ" > .keepalive
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add .keepalive
+          git commit -m "chore: keepalive (예약 워크플로우 자동 비활성화 방지)"
+          for i in 1 2 3 4; do
+            git push && break || { echo "push 실패, 재시도 ${i}"; sleep $((2 ** i)); }
+          done
