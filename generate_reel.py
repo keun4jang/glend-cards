@@ -14,7 +14,7 @@ load_dotenv()
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip())
 PEXELS_KEY = os.getenv("PEXELS_API_KEY", "").strip()
 # 모델명 (신규 계정에서 gemini-2.5-flash가 막혀서 최신 별칭 사용). 필요시 GEMINI_MODEL로 교체.
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "models/gemini-flash-latest").strip()
+GEMINI_MODEL = (os.getenv("GEMINI_MODEL") or "models/gemini-flash-latest").strip()
 
 POST_INDEX = sys.argv[1] if len(sys.argv) > 1 else "1"
 

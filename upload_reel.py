@@ -25,7 +25,7 @@ DRY_RUN = not (len(sys.argv) > 1 and sys.argv[1] == "go")
 GITHUB_USER, GITHUB_REPO, BRANCH = "keun4jang", "glend-cards", "media"
 from content_io import cache_bust
 VIDEO_URL = cache_bust(f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{BRANCH}/output/reel{POST_INDEX}/reel.mp4")
-IG_GRAPH = os.getenv("IG_GRAPH_BASE", "https://graph.instagram.com").rstrip("/")
+IG_GRAPH = (os.getenv("IG_GRAPH_BASE") or "https://graph.instagram.com").rstrip("/")
 TH_GRAPH = "https://graph.threads.net/v1.0"
 LOG_FILE = "reel_upload_log.txt"
 

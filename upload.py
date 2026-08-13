@@ -21,7 +21,7 @@ CARD_FILES = ["card1.png", "card2.png", "card3.png", "card4.png"]
 LOG_FILE = "upload_log.txt"
 # API 베이스. 영구토큰(System User) 전환 시 GitHub Variables에서
 # IG_GRAPH_BASE=https://graph.facebook.com/v21.0 로 바꾸면 코드 수정 없이 이전됨.
-GRAPH = os.getenv("IG_GRAPH_BASE", "https://graph.instagram.com").rstrip("/")
+GRAPH = (os.getenv("IG_GRAPH_BASE") or "https://graph.instagram.com").rstrip("/")
 
 DRY_RUN = not (len(sys.argv) > 1 and sys.argv[1] == "go")
 
