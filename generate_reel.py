@@ -161,17 +161,32 @@ PROMPT = f"""
 print("Gemini가 릴스 대본을 만드는 중...\n")
 
 
+# 503 UNAVAILABLE("high demand")·429는 몇 분이면 풀리는 일시적 과부하다.
+# 기존 30/60/90초(총 3분)로는 못 넘겨서, 잠깐의 수요 급증에 그날 발행이 통째로 날아갔다.
+# 무인 운영이므로 사람이 다시 돌려줄 수 없다 → 총 대기 시간을 넉넉히 잡는다.
+# (퍼블릭 저장소 GitHub Actions는 실행 시간이 무료라 대기 비용은 0)
+TRANSIENT = ("503", "unavailable", "429", "resource_exhausted",
+             "high demand", "overloaded", "deadline", "timeout", "internal")
+
+
 def call_gemini():
-    for attempt in range(4):
+    attempts = 7
+    for attempt in range(attempts):
         try:
             return client.models.generate_content(model=GEMINI_MODEL, contents=PROMPT)
         except Exception as e:
-            if attempt < 3:
-                wait = 30 * (attempt + 1)
-                print(f"  Gemini 오류 ({e.__class__.__name__}), {wait}초 후 재시도... ({attempt+1}/3)")
-                time.sleep(wait)
-            else:
+            msg = str(e).lower()
+            transient = any(t in msg for t in TRANSIENT)
+            last = attempt == attempts - 1
+            if last or not transient:
+                if not transient:
+                    print(f"  Gemini 오류가 일시적이지 않아 재시도하지 않습니다: {e}")
                 raise
+            # 30s, 60s, 120s, 240s, 300s, 300s → 총 ~17분
+            wait = min(300, 30 * (2 ** attempt))
+            print(f"  Gemini 일시 오류({e.__class__.__name__}) — {wait}초 후 재시도 "
+                  f"({attempt + 1}/{attempts - 1})", flush=True)
+            time.sleep(wait)
 
 
 def parse_json(raw):
