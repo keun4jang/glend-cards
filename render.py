@@ -139,9 +139,31 @@ async def render():
             await page.wait_for_timeout(800)
             await page.evaluate("document.fonts.ready")
             await page.wait_for_timeout(800)
+
+            # 오버플로 감시: card.html이 overflow:hidden + white-space:nowrap이라
+            # 글자가 넘쳐도 예외 없이 "오른쪽이 잘린 PNG"가 조용히 발행된다.
+            # 사람 검수가 없으니 여기서 재지 않으면 발견 경로가 아예 없다.
+            over = await page.evaluate("""() => {
+                const bad = [];
+                document.querySelectorAll('.line, .ana-subtitle, .ins-title, .sub1, .sub2').forEach(el => {
+                    const r = el.getBoundingClientRect();
+                    if (el.scrollWidth > el.clientWidth + 1 || r.right > 1080 || r.bottom > 1350) {
+                        bad.push({
+                            text: (el.textContent || '').slice(0, 30),
+                            scroll: el.scrollWidth, client: el.clientWidth,
+                            right: Math.round(r.right), bottom: Math.round(r.bottom),
+                        });
+                    }
+                });
+                return bad;
+            }""")
+            for b in over:
+                print(f"  [넘침] card{i} '{b['text']}' "
+                      f"(폭 {b['scroll']}>{b['client']}, right={b['right']}, bottom={b['bottom']})")
+
             out = OUTPUT / f"card{i}.png"
             await page.screenshot(path=str(out))
-            print(f"saved: {out}")
+            print(f"saved: {out}" + (f"  ⚠️ 넘침 {len(over)}건" if over else ""))
         await browser.close()
 
 asyncio.run(render())

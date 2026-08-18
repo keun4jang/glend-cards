@@ -37,9 +37,12 @@ print()
 print("=" * 60)
 print("[2] 계정 인사이트 (최근 30일)")
 print("=" * 60)
-for metric, period in [("reach", "day"), ("profile_views", "day"), ("accounts_engaged", "day"), ("views", "day")]:
-    j = get(f"{USER_ID}/insights", metric=metric, period=period,
-            metric_type="total_value", timeframe="last_30_days" if metric == "views" else None)
+# 주의: timeframe을 빼면 period="day"라서 "하루치"가 온다.
+# 예전엔 views에만 붙어 있어서, 리포트 헤더는 30일인데 reach/profile_views/accounts_engaged는
+# 하루치가 찍혔다(30일 도달 74인데 그 안에 도달 1097 릴스가 있는 모순의 원인).
+for metric in ["reach", "profile_views", "accounts_engaged", "views"]:
+    j = get(f"{USER_ID}/insights", metric=metric, period="day",
+            metric_type="total_value", timeframe="last_30_days")
     if "data" in j and j["data"]:
         for d in j["data"]:
             tv = d.get("total_value", {}).get("value")
@@ -68,7 +71,10 @@ for m in rows:
 
     # 게시물별 인사이트
     if mtype == "REELS":
-        metrics = "reach,saved,shares,likes,comments,views,total_interactions"
+        # 릴스는 비팔로워에게 닿는 유일한 포맷인데 정작 팔로우 퍼널(profile_visits/follows)을
+        # 한 번도 수집하지 않았다. 시청 완주율도 없어서 러닝타임 판단 근거가 없었다.
+        metrics = ("reach,saved,shares,likes,comments,views,total_interactions,"
+                   "profile_visits,follows,ig_reels_avg_watch_time")
     else:
         metrics = "reach,saved,shares,views,total_interactions,profile_visits,follows"
     ins = get(f"{mid}/insights", metric=metrics)

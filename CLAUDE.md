@@ -56,7 +56,7 @@ IG_USER_ID=...      # Instagram business account numeric ID
 - **caption**: Instagram caption text with hashtags (HTML `<b>` tags are stripped before posting)
 
 ### Rendering (`render.py` + `templates/card.html`)
-Playwright opens `templates/card.html` as a local file in a 1080×1350 viewport (device_scale_factor=2 → 2160×2700 actual pixels). Card content is injected via `page.evaluate()`. Card 4 is always the brand card (shows `assets/logo.png` full-bleed). A font-size auto-shrink loop prevents lines from overflowing 920 px wide.
+Playwright opens `templates/card.html` as a local file in a 1080×1350 viewport (device_scale_factor=2 → 2160×2700 actual pixels). Card content is injected via `page.evaluate()`. Card 4 is always the brand card (shows `assets/logo.png` full-bleed). Font size is scaled once, proportionally to character count (not a measure-and-retry loop), so `render.py` also logs any element that still overflows after rendering.
 
 ### Upload flow (`upload.py`)
 Images are served via `https://raw.githubusercontent.com/keun4jang/glend-cards/main/output/card{N}.png`. Each card is registered as a carousel item via the Instagram Graph API, then published as a single carousel post. A retry loop handles Instagram's async image processing (up to 10 × 8s waits). `upload_log.txt` tracks the last post date to enforce one-post-per-day.

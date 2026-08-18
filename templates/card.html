@@ -36,14 +36,15 @@
   }
 
   /* 카드1 후킹 — 흰 제목 2줄 + 부제 2줄(포인트 단어만 연두), 총 4줄 */
-  .hook-title { margin-top: 250px; font-weight: 900; line-height: 1.12; text-align: left; letter-spacing: -5px; }
-  .hook-title .line { display: block; white-space: nowrap; }
+  .hook-title { margin-top: 250px; font-weight: 900; line-height: 1.12; text-align: left; }
+  /* 자간은 각 .line에 — 축소된 실제 폰트 크기 기준으로 계산돼야 함 */
+  .hook-title .line { display: block; white-space: nowrap; letter-spacing: -0.0333em; }
   .hook-sub {
     margin-top: 64px; text-align: left; color: #FFFFFF;
-    max-width: 920px; word-break: keep-all; letter-spacing: -2.5px;
+    max-width: 920px; word-break: keep-all;
   }
-  .hook-sub .sub1 { font-weight: 800; line-height: 1.4; }
-  .hook-sub .sub2 { font-weight: 900; line-height: 1.3; margin-top: 10px; }
+  .hook-sub .sub1 { font-weight: 800; line-height: 1.4; letter-spacing: -0.0347em; }
+  .hook-sub .sub2 { font-weight: 900; line-height: 1.3; margin-top: 10px; letter-spacing: -0.0272em; }
   .hook-sub b { color: #CFFF04; font-weight: inherit; }
 
   /* 카드2 분석 & 카드3 통찰 - 제목 스타일 통일 */
@@ -51,10 +52,10 @@
   .ana-subtitle, .ins-title {
     font-size: 92px; font-weight: 900; line-height: 1.2; text-align: left;
     border-left: 14px solid #CFFF04; padding-left: 34px;
-    word-break: keep-all; letter-spacing: -3px;
+    word-break: keep-all; letter-spacing: -0.0326em;
   }
-  .ana-body, .ins-body { margin-top: 56px; font-size: 64px; font-weight: 700; line-height: 1.6; text-align: left; letter-spacing: -1.5px; }
-  .ana-body .line, .ins-body .line { display: block; white-space: nowrap; margin-bottom: 14px; }
+  .ana-body, .ins-body { margin-top: 56px; font-size: 64px; font-weight: 700; line-height: 1.6; text-align: left; }
+  .ana-body .line, .ins-body .line { display: block; white-space: nowrap; margin-bottom: 14px; letter-spacing: -0.0234em; }
   .ana-body b, .ins-body b { font-weight: 900; color: #CFFF04; }
 
   /* 카드4 브랜딩 */

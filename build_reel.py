@@ -148,7 +148,7 @@ else:
 size_mb = final.stat().st_size / 1024 / 1024
 total_sec = audio_duration(str(final))
 print(f"\n🎬 완성! {final} ({size_mb:.1f}MB, {total_sec:.1f}초)")
-if total_sec > 90:
-    print(f"⚠️ {total_sec:.0f}초 — 90초를 넘으면 릴스 탭 추천 노출에서 제외될 수 있어요.")
+if total_sec < 90:
+    print(f"ℹ️ {total_sec:.0f}초 — 목표(90초 이상)에 못 미칩니다. 나레이션 분량을 확인하세요.")
 if size_mb > 95:
     print("⚠️ 100MB 근접 — GitHub 푸시 제한 주의.")
