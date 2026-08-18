@@ -88,7 +88,7 @@ else:
     SAVE_GOOD = "신청 절차·자격 조건·기한·금액이 명확한 것 (지원금, 환급, 청약, 공제, 신고 방법, 제도 변경)"
     SAVE_BAD = "읽고 나면 할 일이 없는 것 (시황 분석, 전망, 금리 해설, 남 얘기)"
     FOLLOW_LINE = '"📌 매일 놓치기 쉬운 재테크 정보 받고 싶다면 @glend_kr 팔로우!"'
-    QUERY_EXAMPLE = '정부지원금은 "korean won bills", "calculator money desk"; 부동산은 "apartment korea", "real estate contract"; 금융상품은 "savings account", "korean won cash"'
+    QUERY_EXAMPLE = '정부지원금은 "korean won bills", "korean won calculator desk"; 부동산은 "apartment korea", "real estate contract"; 금융상품은 "bankbook desk", "korean won cash"'
     LAST_LINE_EXAMPLE = '"<b>12월 31일</b>까지 신청하세요", "<b>정부24</b>에서 바로 확인하세요"'
 
 AVOID = avoid_line()

@@ -71,7 +71,7 @@ else:
     PERSONA = "너는 'GLEND'라는 경제·재테크 실전 꿀팁 인스타그램 릴스 채널의 전문 작가야. 이득/손해 정보를 조건·금액·절차까지 꽉 채워 전한다."
     TOPIC_DESC = "오늘의 최신 경제/재테크 관련 뉴스 제목 목록"
     HOOK = '"~안 하면 손해" 류의 손실 회피형'
-    QEX = '"korean won bills", "calculator money desk", "seoul apartment buildings"'
+    QEX = '"korean won bills", "korean won calculator desk", "seoul apartment buildings"'
 
 # 3) 릴스 대본 — 길이 A/B.
 #    "90초는 작은 계정에 부담"이라는 통설과 "90초 이상으로" 요청 중 어느 쪽이 맞는지
@@ -141,7 +141,7 @@ PROMPT = f"""
 - 자막에 글자수 메모("(16자)" 등)를 절대 쓰지 마. 최종 문장만.
 - query는 각 장면 분위기에 맞는 영어 사진 검색어 2~3단어 (예: {QEX}).
 - query 중요 규칙: 한국에서 벌어진 일을 다루므로 배경에 외국 요소가 보이면 어색해. 두 가지를 반드시 지켜:
-  (가) 돈이 나오는 장면은 반드시 "korean won"을 넣어 검색해 (예: "korean won bills", "korean won cash desk"). 그냥 "money", "cash", "banknotes"로 검색하면 달러·유로·외국 지폐가 나와서 한국 소식에 안 맞아. 외국 지폐·동전·신용카드 로고가 보이면 안 돼.
+  (가) 돈이 나오는 장면은 반드시 "korean won"을 넣어 검색해 (예: "korean won bills", "korean won cash desk"). 그냥 "money", "cash", "banknotes"로 검색하면 달러·유로·외국 지폐가 나와서 한국 소식에 안 맞아. 외국 지폐·동전·신용카드 로고가 보이면 안 돼. 검색어에 "money"라는 단어 자체를 쓰지 마 — 반드시 "korean won"으로 대체할 것.
   (나) 반드시 **사람 얼굴이 안 나오는 사진**으로 검색해 — 사물(돈, 계산기, 서류, 도구), 풍경(도시, 거리, 건물, 자연), 손·뒷모습 클로즈업 위주. "person", "man", "woman", "people" 같은 단어는 쓰지 마. 꼭 사람이 필요하면 "hands closeup"이나 "silhouette"처럼 얼굴 없는 형태로.
 - scene {SAVE_SCENE} 중 하나의 narration 끝에 "저장해두고 다시 보세요" 같은 저장 유도를 자연스럽게 한 번 넣어. (저장 유도는 전체에서 딱 한 번만)
 - 화면 상단에 영상 내내 고정으로 뜰 짧은 제목(title)도 만들어줘. 주제를 한눈에 보여주는 8자 이내의 간결한 키워드 (예: "운전면허 지원금", "청년 청약통장", "전기요금 절약"). 이모지 1개 붙여도 좋음.
