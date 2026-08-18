@@ -22,3 +22,18 @@ def topic_for_slot(slot):
 def describe(slot):
     idx = topic_for_slot(slot)
     return idx, CATEGORY_NAME[idx]
+
+
+def reel_length_variant(slot):
+    """릴스 러닝타임 A/B — 'long'(90초대) / 'short'(45초대)
+
+    "90초는 작은 계정에 부담" vs "90초 이상으로 해달라"를 근거 없이 어느 한쪽으로
+    정하지 않고, 실제 완주율·팔로우 전환으로 판정하기 위한 배정 함수.
+
+    (doy + slot) % 2 로 나누므로:
+      - 같은 슬롯(시간대)에서 하루씩 번갈아 나간다
+      - 주제 로테이션이 %3이라 6일이면 (주제 x 길이) 6조합이 한 번씩 돈다
+        → 길이 차이가 주제·시간대 차이에 오염되지 않는다
+    """
+    doy = datetime.datetime.now(KST).timetuple().tm_yday
+    return "long" if (doy + slot) % 2 == 0 else "short"

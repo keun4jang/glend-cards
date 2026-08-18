@@ -71,6 +71,22 @@ def build_sub_html(card1):
         html += f'<div class="sub2" style="font-size:{size}px">{sub2}</div>'
     return html
 
+def summary_items_html(items):
+    """요약 카드 3항목 — ① ② ③ 번호 + 본문, 글자수 비례 축소"""
+    nums = ["①", "②", "③", "④", "⑤"]
+    out = []
+    for idx, raw in enumerate(items[:5]):
+        t = strip_char_count_notes(raw)
+        n = char_count(t)
+        size = 46 if n <= 18 else max(34, int(46 * 18 / n))
+        out.append(
+            f'<div class="sum-item">'
+            f'<span class="sum-num">{nums[idx]}</span>'
+            f'<span class="sum-text" style="font-size:{size}px">{t}</span>'
+            f'</div>')
+    return "".join(out)
+
+
 def sized_lines(lines):
     """각 줄에 font-size 인라인 스타일 적용"""
     return [
@@ -101,8 +117,14 @@ CARDS = [
     {"type": "insight", "bg": content["card3"].get("bg", FALLBACK),
      "title": clean_multiline(content["card3"]["subtitle"]),
      "lines_html": "".join(sized_lines(clean_lines(content["card3"]["lines"])))},
+    {"type": "summary",
+     "headline": clean_multiline(content["card4"]["headline"]),
+     "items_html": summary_items_html(content["card4"]["items"]),
+     "closing": strip_char_count_notes(content["card4"]["closing"])}
+    if content.get("card4") else None,
     {"type": "brand"},
 ]
+CARDS = [c for c in CARDS if c]
 
 async def render():
     async with async_playwright() as p:
@@ -126,6 +148,15 @@ async def render():
                 } else if (c.type === 'insight') {
                     bg.style.backgroundImage = `url(${c.bg})`;
                     area.innerHTML = `<div class="ins-wrap"><div class="ins-title">${c.title.replace(/\\n/g,'<br>')}</div><div class="ins-body">${c.lines_html}</div></div>`;
+                } else if (c.type === 'summary') {
+                    bg.style.display = 'none';
+                    overlay.style.display = 'none';
+                    card.style.background = '#CFFF04';
+                    area.innerHTML = `<div class="sum-wrap">
+                        <div class="sum-headline">${c.headline.replace(/\\n/g,'<br>')}</div>
+                        <div class="sum-box">${c.items_html}</div>
+                        <div class="sum-closing">${c.closing}</div>
+                      </div>`;
                 } else if (c.type === 'brand') {
                     bg.style.display = 'none';
                     overlay.style.display = 'none';

@@ -140,7 +140,8 @@ if os.getenv("REEL_POST_THREADS", "false").strip().lower() == "true":
 
 if ig_ok or th_ok:
     with open(LOG_FILE, "a", encoding="utf-8") as f:
-        f.write(f"{slot_key()} posted (ig={ig_ok}, threads={th_ok})\n")
+        variant = content.get("length_variant", "?")
+        f.write(f"{slot_key()} posted (ig={ig_ok}, threads={th_ok}, length={variant})\n")
     print("\n기록 저장 완료.")
 else:
     print("\n[실패] 발행이 하나도 성공하지 못했습니다.")

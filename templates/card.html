@@ -58,7 +58,37 @@
   .ana-body .line, .ins-body .line { display: block; white-space: nowrap; margin-bottom: 14px; letter-spacing: -0.0234em; }
   .ana-body b, .ins-body b { font-weight: 900; color: #CFFF04; }
 
-  /* 카드4 브랜딩 */
+
+  /* 카드4 저장용 요약 — 연두 바탕에 검정 박스. 사진 없이 순수 정보면이라
+     Pexels 사진 품질과 무관하게 항상 또렷하다(저장 직전 마지막 화면). */
+  .sum-wrap {
+    margin-top: auto; margin-bottom: auto; width: 100%;
+    display: flex; flex-direction: column;
+  }
+  .sum-headline {
+    font-size: 76px; font-weight: 900; line-height: 1.15;
+    letter-spacing: -0.0326em; color: #0A0C0D; word-break: keep-all;
+  }
+  .sum-box {
+    margin-top: 52px; padding: 56px 52px; background: #0A0C0D; color: #F5F7F4;
+    clip-path: polygon(30px 0, 100% 0, 100% 100%, 0 100%, 0 30px);
+  }
+  .sum-item {
+    display: grid; grid-template-columns: 76px 1fr; gap: 18px; align-items: start;
+    margin-bottom: 34px; word-break: keep-all;
+  }
+  .sum-item:last-child { margin-bottom: 0; }
+  .sum-num {
+    font-size: 46px; font-weight: 900; color: #CFFF04; line-height: 1.35;
+  }
+  .sum-text { font-weight: 700; line-height: 1.35; letter-spacing: -0.0234em; }
+  .sum-text b { color: #CFFF04; font-weight: 900; }
+  .sum-closing {
+    margin-top: 46px; font-size: 44px; font-weight: 800; line-height: 1.35;
+    letter-spacing: -0.0234em; color: #0A0C0D; word-break: keep-all;
+  }
+
+  /* 카드5 브랜딩 */
   .brand-logo-full { position: absolute; inset: 0; z-index: 3; width: 1080px; height: 1350px; object-fit: cover; }
 </style>
 </head>

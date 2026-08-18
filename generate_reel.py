@@ -46,22 +46,64 @@ news_text = "\n".join(f"- {h}" for h in headlines)
 
 # 2) 카테고리별 페르소나
 if CATEGORY == "health":
-    PERSONA = "너는 'GLEND'라는 건강 실전 꿀팁 인스타그램 릴스 채널의 전문 작가야. 뉴스 한 편을 본 것 같은 밀도로, 90초 분량에 핵심을 꽉 채워 전달한다."
+    PERSONA = "너는 'GLEND'라는 건강 실전 꿀팁 인스타그램 릴스 채널의 전문 작가야. 뉴스 한 편을 본 것 같은 밀도로 핵심을 꽉 채워 전달한다."
     TOPIC_DESC = "오늘의 최신 건강 관련 뉴스 제목 목록"
     HOOK = '"~하면 몸 망친다" 류의 경각심 자극형'
     QEX = '"healthy meal bowl", "running shoes closeup", "dark bedroom night"'
 elif CATEGORY == "incident":
-    PERSONA = "너는 'GLEND'라는 트렌드 인스타그램 릴스 채널의 전문 작가야. 자극적·공감형 사건·사고·논란을 90초 분량에 배경부터 대처법까지 꽉 채워 전한다."
+    PERSONA = "너는 'GLEND'라는 트렌드 인스타그램 릴스 채널의 전문 작가야. 자극적·공감형 사건·사고·논란을 배경부터 대처법까지 꽉 채워 전한다."
     TOPIC_DESC = "오늘의 최신 사건·사고·논란 관련 뉴스 제목 목록"
     HOOK = '질문형 또는 충격 사실 제시형'
     QEX = '"car accident night", "police line tape", "ambulance lights night"'
 else:
-    PERSONA = "너는 'GLEND'라는 경제·재테크 실전 꿀팁 인스타그램 릴스 채널의 전문 작가야. 90초 분량에 이득/손해 정보를 조건·금액·절차까지 꽉 채워 전한다."
+    PERSONA = "너는 'GLEND'라는 경제·재테크 실전 꿀팁 인스타그램 릴스 채널의 전문 작가야. 이득/손해 정보를 조건·금액·절차까지 꽉 채워 전한다."
     TOPIC_DESC = "오늘의 최신 경제/재테크 관련 뉴스 제목 목록"
     HOOK = '"~안 하면 손해" 류의 손실 회피형'
     QEX = '"korean won bills", "calculator money desk", "seoul apartment buildings"'
 
-# 3) 릴스 대본 — 12개 장면(후킹+본문11). 정보 밀도 높은 90~100초 목표.
+# 3) 릴스 대본 — 길이 A/B.
+#    "90초는 작은 계정에 부담"이라는 통설과 "90초 이상으로" 요청 중 어느 쪽이 맞는지
+#    근거 없이 정하지 않고, 같은 주제·시간대 조건에서 번갈아 발행해 실측으로 판정한다.
+#    변형은 REEL_LENGTH 환경변수로 강제할 수 있고(long/short), 없으면 날짜 기반 자동 배정.
+from rotation import reel_length_variant
+
+_slot = os.getenv("REEL_SLOT", "").strip()
+LENGTH_VARIANT = (os.getenv("REEL_LENGTH", "").strip().lower()
+                  or reel_length_variant(int(_slot) if _slot.isdigit() else 1))
+if LENGTH_VARIANT not in ("long", "short"):
+    LENGTH_VARIANT = "long"
+
+if LENGTH_VARIANT == "short":
+    BODY_COUNT = 6            # 후킹 1 + 본문 6 = 7장면
+    DURATION_DESC = "45~55초"
+    CHAR_RANGE = "50~65자"
+    FLOW = ("  (2) 무슨 일인지 배경과 핵심 수치  (3) 누가 대상인지 조건\n"
+            "  (4) 얼마를 받거나 아끼는지 구체적 금액  (5) 신청·실행 방법\n"
+            "  (6) 기한과 놓치기 쉬운 주의점  (7) 정리와 행동 촉구")
+    SCENE_STUBS = ["본문2 배경·핵심 수치", "본문3 대상 조건", "본문4 구체적 금액",
+                   "본문5 신청 방법", "본문6 기한·주의점", "본문7 정리·행동 촉구"]
+    SAVE_SCENE = "6이나 7"
+else:
+    BODY_COUNT = 12           # 후킹 1 + 본문 12 = 13장면
+    DURATION_DESC = "90~100초"
+    CHAR_RANGE = "60~80자"
+    FLOW = ("  (2) 무슨 일인지 배경·맥락  (3) 핵심 내용과 정확한 수치  (4) 왜 이렇게 됐는지 이유\n"
+            "  (5) 누가 대상인지 조건  (6) 얼마를 받거나 아끼는지 구체적 금액  (7) 신청·실행 방법과 절차\n"
+            "  (8) 기한과 놓치기 쉬운 주의점  (9) 사람들이 흔히 하는 실수  (10) 실수를 피하는 구체적 요령\n"
+            "  (11) 함께 챙기면 좋은 관련 제도나 추가 꿀팁  (12) 정리와 행동 촉구")
+    SCENE_STUBS = ["본문2 배경·맥락", "본문3 핵심 수치", "본문4 이유", "본문5 대상 조건",
+                   "본문6 구체적 금액", "본문7 신청 방법", "본문8 기한·주의점",
+                   "본문9 흔한 실수", "본문10 실수 피하는 요령",
+                   "본문11 관련 제도·추가 꿀팁", "본문12 정리·행동 촉구"]
+    SAVE_SCENE = "11이나 12"
+
+TOTAL_SCENES = BODY_COUNT + 1   # 후킹 포함
+SCENE_JSON = ",\n".join(
+    ['    { "narration": "후킹 자막 문장", "query": "영어 사진 검색어" }'] +
+    ['    { "narration": "%s", "query": "영어 사진 검색어" }' % st for st in SCENE_STUBS])
+
+print(f"[길이 변형] {LENGTH_VARIANT} — 목표 {DURATION_DESC}, 장면 {TOTAL_SCENES}개\n")
+
 AVOID = avoid_line()
 
 PROMPT = f"""
@@ -70,27 +112,24 @@ PROMPT = f"""
 아래는 {TOPIC_DESC}이야:
 {news_text}
 
-이 중에서 대중이 가장 반응할 핵심 주제 하나를 직접 골라서, 정보가 꽉 찬 세로 릴스 대본을 만들어줘. 시청자가 이 영상 하나만 보면 그 주제를 완전히 이해하고 바로 행동할 수 있어야 해. 전체 길이는 약 90~100초.
-릴스는 12개 장면(scene)으로 구성돼. 각 장면은 성우가 말하는 동시에 화면 중앙에 그대로 뜨는 자막 문장(narration)과 배경 사진 검색어(query)로 이뤄져.
+이 중에서 대중이 가장 반응할 핵심 주제 하나를 직접 골라서, 정보가 꽉 찬 세로 릴스 대본을 만들어줘. 시청자가 이 영상 하나만 보면 그 주제를 완전히 이해하고 바로 행동할 수 있어야 해. 전체 길이는 약 {DURATION_DESC}.
+릴스는 {TOTAL_SCENES}개 장면(scene)으로 구성돼. 각 장면은 성우가 말하는 동시에 화면 중앙에 그대로 뜨는 자막 문장(narration)과 배경 사진 검색어(query)로 이뤄져.
 {AVOID}
 
 규칙:
 - scene 1 = 후킹. narration은 시선을 확 잡는 짧고 강한 한 문장. {HOOK}
 - 후킹 형식 다양화: "~알고 계셨나요?", "~하셨나요?" 같은 질문형은 매번 반복되면 식상해. 질문형 말고 이런 형식을 우선 써 — 숫자 제시형("300만원, 신청 안 하면 사라집니다"), 명령형("월급 들어오면 이것부터 확인하세요"), 반전형("다들 아는 그 방법, 사실 손해입니다"), 대상 지목형("만 34세 이하라면 지금 멈추세요").
-- scene 2~12 = 본문 11개. 아래 흐름을 따라 각 장면이 서로 다른 알맹이를 담아:
-  (2) 무슨 일인지 배경·맥락  (3) 핵심 내용과 정확한 수치  (4) 왜 이렇게 됐는지 이유
-  (5) 누가 대상인지 조건  (6) 얼마를 받거나 아끼는지 구체적 금액  (7) 신청·실행 방법과 절차
-  (8) 기한과 놓치기 쉬운 주의점  (9) 사람들이 흔히 하는 실수  (10) 실수를 피하는 구체적 요령
-  (11) 함께 챙기면 좋은 관련 제도나 추가 꿀팁  (12) 정리와 행동 촉구
+- scene 2~{TOTAL_SCENES} = 본문 {BODY_COUNT}개. 아래 흐름을 따라 각 장면이 서로 다른 알맹이를 담아:
+{FLOW}
 - 절대 같은 말을 다르게 반복하지 마. 각 장면은 앞에서 안 나온 새로운 정보를 하나씩 추가해야 해. 내용이 부족하면 그 주제를 고르지 말고 정보가 풍부한 다른 주제를 골라.
-- narration은 성우가 소리 내어 읽는 문장이니, 실제 사람이 말하듯 자연스러운 구어체로 써. 친근한 '해요체'를 기본으로 하고(예: "~있어요", "~된대요", "~챙기세요"), 딱딱한 문어체나 어색한 번역투(예: "~을 통해", "~에 의해", "~라 할 수 있다")는 쓰지 마. 각 narration은 공백 포함 60~80자 정도로 충실하게 — 한 문장 또는 짧은 두 문장. 실제 수치·기관명·날짜·조건을 구체적으로 넣어 알맹이를 채워.
+- narration은 성우가 소리 내어 읽는 문장이니, 실제 사람이 말하듯 자연스러운 구어체로 써. 친근한 '해요체'를 기본으로 하고(예: "~있어요", "~된대요", "~챙기세요"), 딱딱한 문어체나 어색한 번역투(예: "~을 통해", "~에 의해", "~라 할 수 있다")는 쓰지 마. 각 narration은 공백 포함 {CHAR_RANGE} 정도로 충실하게 — 한 문장 또는 짧은 두 문장. 실제 수치·기관명·날짜·조건을 구체적으로 넣어 알맹이를 채워.
 - 각 narration에서 가장 중요한 핵심 단어 1개만 <b>단어</b>로 감싸 강조(노란색). 장면당 1개만. (성우는 태그를 읽지 않음)
 - 자막에 글자수 메모("(16자)" 등)를 절대 쓰지 마. 최종 문장만.
 - query는 각 장면 분위기에 맞는 영어 사진 검색어 2~3단어 (예: {QEX}).
 - query 중요 규칙: 한국에서 벌어진 일을 다루므로 배경에 외국 요소가 보이면 어색해. 두 가지를 반드시 지켜:
   (가) 돈이 나오는 장면은 반드시 "korean won"을 넣어 검색해 (예: "korean won bills", "korean won cash desk"). 그냥 "money", "cash", "banknotes"로 검색하면 달러·유로·외국 지폐가 나와서 한국 소식에 안 맞아. 외국 지폐·동전·신용카드 로고가 보이면 안 돼.
   (나) 반드시 **사람 얼굴이 안 나오는 사진**으로 검색해 — 사물(돈, 계산기, 서류, 도구), 풍경(도시, 거리, 건물, 자연), 손·뒷모습 클로즈업 위주. "person", "man", "woman", "people" 같은 단어는 쓰지 마. 꼭 사람이 필요하면 "hands closeup"이나 "silhouette"처럼 얼굴 없는 형태로.
-- scene 11이나 12 중 하나의 narration 끝에 "저장해두고 다시 보세요" 같은 저장 유도를 자연스럽게 한 번 넣어. (저장 유도는 전체에서 딱 한 번만)
+- scene {SAVE_SCENE} 중 하나의 narration 끝에 "저장해두고 다시 보세요" 같은 저장 유도를 자연스럽게 한 번 넣어. (저장 유도는 전체에서 딱 한 번만)
 - 화면 상단에 영상 내내 고정으로 뜰 짧은 제목(title)도 만들어줘. 주제를 한눈에 보여주는 8자 이내의 간결한 키워드 (예: "운전면허 지원금", "청년 청약통장", "전기요금 절약"). 이모지 1개 붙여도 좋음.
 - 썸네일 커버(cover)도 만들어줘 — 피드에서 클릭을 부르는 카드뉴스식 후킹:
   - cover.title = 강렬한 2줄 제목, 한 줄 6자 이내 (예: "살짝 쿵 했는데\n3천만원 탄다"). 이 두 줄만으로 궁금해서 누르게 만들어.
@@ -112,18 +151,7 @@ PROMPT = f"""
   "title": "화면 상단 고정 제목(8자 이내 + 이모지)",
   "cover": {{ "title": "1줄\\n2줄(한 줄 6자 이내, <b>포인트</b> 포함)" }},
   "scenes": [
-    {{ "narration": "후킹 자막 문장", "query": "영어 사진 검색어" }},
-    {{ "narration": "본문2 배경·맥락", "query": "영어 사진 검색어" }},
-    {{ "narration": "본문3 핵심 수치", "query": "영어 사진 검색어" }},
-    {{ "narration": "본문4 이유", "query": "영어 사진 검색어" }},
-    {{ "narration": "본문5 대상 조건", "query": "영어 사진 검색어" }},
-    {{ "narration": "본문6 구체적 금액", "query": "영어 사진 검색어" }},
-    {{ "narration": "본문7 신청 방법", "query": "영어 사진 검색어" }},
-    {{ "narration": "본문8 기한·주의점", "query": "영어 사진 검색어" }},
-    {{ "narration": "본문9 흔한 실수", "query": "영어 사진 검색어" }},
-    {{ "narration": "본문10 실수 피하는 요령", "query": "영어 사진 검색어" }},
-    {{ "narration": "본문11 관련 제도·추가 꿀팁", "query": "영어 사진 검색어" }},
-    {{ "narration": "본문12 정리·행동 촉구", "query": "영어 사진 검색어" }}
+{SCENE_JSON}
   ],
   "follow_cta": "분야 + 앞으로 줄 것 + @glend_kr 팔로우 (<b>포인트</b> 1개 포함)",
   "caption": "인스타 캡션 전체 텍스트"
@@ -160,7 +188,7 @@ def validate(d):
     assert isinstance(d.get("caption"), str) and d["caption"].strip(), "caption 누락"
     assert isinstance(d.get("title"), str) and d["title"].strip(), "title 누락"
     scenes = d.get("scenes")
-    assert isinstance(scenes, list) and len(scenes) == 12, f"scenes 개수 오류({len(scenes) if isinstance(scenes, list) else '없음'})"
+    assert isinstance(scenes, list) and len(scenes) == TOTAL_SCENES, f"scenes 개수 오류({len(scenes) if isinstance(scenes, list) else '없음'} != {TOTAL_SCENES})"
     for i, s in enumerate(scenes, 1):
         assert isinstance(s.get("narration"), str) and s["narration"].strip(), f"scene{i} narration 누락"
         assert isinstance(s.get("query"), str) and s["query"].strip(), f"scene{i} query 누락"
@@ -249,6 +277,7 @@ if True:
 
     print("\n[캡션]\n" + data["caption"])
 
+    data["length_variant"] = LENGTH_VARIANT
     out_file = f"reel_content_{POST_INDEX}.json"
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)

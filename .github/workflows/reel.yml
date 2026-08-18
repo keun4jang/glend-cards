@@ -15,6 +15,10 @@ on:
         description: "true면 새로 안 만들고 이미 커밋된 영상만 발행"
         required: false
         default: "false"
+      length:
+        description: "러닝타임 A/B 강제 (빈칸=날짜별 자동 배정, long=90초대, short=45초대)"
+        required: false
+        default: ""
   schedule:
     - cron: "0 3 * * *"   # 매일 UTC 03:00 = KST 12:00 (릴스 #1: 경제)
     - cron: "0 9 * * *"   # 매일 UTC 09:00 = KST 18:00 (릴스 #2: 사건사고/건강 로테이션)
@@ -55,4 +59,5 @@ jobs:
           TTS_ENGINE: ${{ vars.TTS_ENGINE }}
           PUBLISH: ${{ github.event.inputs.publish || 'true' }}
           UPLOAD_ONLY: ${{ github.event.inputs.upload_only || 'false' }}
+          REEL_LENGTH: ${{ github.event.inputs.length }}
         run: python daily_reel_ci.py ${{ github.event.inputs.index || 'auto' }}

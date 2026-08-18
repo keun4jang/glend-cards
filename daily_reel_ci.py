@@ -13,11 +13,19 @@ import datetime
 IDX = sys.argv[1] if len(sys.argv) > 1 else "1"
 # "auto" → 하루 3개 슬롯(카드/릴스1/릴스2)에 3개 주제를 하나씩 배정하고 매일 한 칸씩 로테이션
 #   슬롯 1 = 릴스#1(KST 12:00), 슬롯 2 = 릴스#2(KST 18:00)
+SLOT = 1 if datetime.datetime.now(datetime.timezone.utc).hour < 6 else 2
 if IDX == "auto":
     from rotation import describe
-    slot = 1 if datetime.datetime.now(datetime.timezone.utc).hour < 6 else 2
-    IDX, CAT_NAME = describe(slot)
+    IDX, CAT_NAME = describe(SLOT)
     print(f"[로테이션] 오늘 이 슬롯의 주제: {CAT_NAME}", flush=True)
+
+# 길이 A/B 배정을 generate_reel/build_reel이 같은 값으로 보게 환경변수로 넘긴다.
+# (수동 실행에서 REEL_LENGTH를 지정했으면 그 값이 우선)
+os.environ["REEL_SLOT"] = str(SLOT)
+if not os.getenv("REEL_LENGTH", "").strip():
+    from rotation import reel_length_variant
+    os.environ["REEL_LENGTH"] = reel_length_variant(SLOT)
+print(f"[길이 A/B] 이번 릴스: {os.environ['REEL_LENGTH']}", flush=True)
 
 # PUBLISH=false 면 영상만 만들고(커밋까지) 발행은 건너뜀 — 업로드 전 검토용
 PUBLISH = os.getenv("PUBLISH", "true").strip().lower() != "false"

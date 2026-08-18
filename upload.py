@@ -17,7 +17,14 @@ GITHUB_USER = "keun4jang"
 GITHUB_REPO = "glend-cards"
 BRANCH = "media"
 IMAGE_BASE = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{BRANCH}/output/post{POST_INDEX}"
-CARD_FILES = ["card1.png", "card2.png", "card3.png", "card4.png"]
+# 1후킹 / 2분석 / 3실행 / 4저장용요약 / 5로고.
+# 구버전 콘텐츠(요약 카드 없음)를 재발행하면 4장뿐이므로, 실제로 렌더된 것만 올린다.
+# 없는 파일을 넣으면 raw URL이 404라 인스타 캐러셀 등록 자체가 실패한다.
+_local_dir = os.path.join("output", f"post{POST_INDEX}")
+CARD_FILES = [f"card{n}.png" for n in range(1, 6)
+              if os.path.exists(os.path.join(_local_dir, f"card{n}.png"))]
+if not CARD_FILES:  # 로컬에 없으면(UPLOAD_ONLY 등) 기존 4장 기준으로 진행
+    CARD_FILES = [f"card{n}.png" for n in range(1, 5)]
 LOG_FILE = "upload_log.txt"
 # API 베이스. 영구토큰(System User) 전환 시 GitHub Variables에서
 # IG_GRAPH_BASE=https://graph.facebook.com/v21.0 로 바꾸면 코드 수정 없이 이전됨.
