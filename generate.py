@@ -13,8 +13,20 @@ from recent_topics import avoid_line
 load_dotenv()
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip())
 PEXELS_KEY = os.getenv("PEXELS_API_KEY", "").strip()
-# 모델명 (신규 계정에서 gemini-2.5-flash가 막혀서 최신 별칭 사용). 필요시 GEMINI_MODEL로 교체.
-GEMINI_MODEL = (os.getenv("GEMINI_MODEL") or "models/gemini-flash-latest").strip()
+# 모델 후보 목록 (앞에서부터 시도).
+# 한 모델이 503("high demand")으로 포화되면 같은 모델을 더 두드려도 소용없어서,
+# 다른 무료 모델로 넘어간다. 전부 AI Studio 무료 티어라 비용은 발생하지 않는다.
+# GEMINI_MODEL(단일) 또는 GEMINI_MODELS(쉼표구분)로 덮어쓸 수 있다.
+_models_env = (os.getenv("GEMINI_MODELS") or "").strip()
+if _models_env:
+    MODEL_CHAIN = [m.strip() for m in _models_env.split(",") if m.strip()]
+else:
+    MODEL_CHAIN = [
+        (os.getenv("GEMINI_MODEL") or "models/gemini-flash-latest").strip(),
+        "models/gemini-flash-lite-latest",
+        "models/gemini-2.0-flash",
+    ]
+GEMINI_MODEL = MODEL_CHAIN[0]
 
 POST_INDEX = sys.argv[1] if len(sys.argv) > 1 else "1"
 
@@ -151,24 +163,41 @@ TRANSIENT = ("503", "unavailable", "429", "resource_exhausted",
              "high demand", "overloaded", "deadline", "timeout", "internal")
 
 
+# 계정에서 아예 못 쓰는 모델(404/not found)은 재시도해도 소용없으니 목록에서 뺀다.
+UNAVAILABLE_MODEL = ("not found", "404", "not supported", "does not exist",
+                     "permission", "not available")
+
+
 def call_gemini():
-    attempts = 7
-    for attempt in range(attempts):
-        try:
-            return client.models.generate_content(model=GEMINI_MODEL, contents=PROMPT)
-        except Exception as e:
-            msg = str(e).lower()
-            transient = any(t in msg for t in TRANSIENT)
-            last = attempt == attempts - 1
-            if last or not transient:
-                if not transient:
-                    print(f"  Gemini 오류가 일시적이지 않아 재시도하지 않습니다: {e}")
-                raise
-            # 30s, 60s, 120s, 240s, 300s, 300s → 총 ~17분
-            wait = min(300, 30 * (2 ** attempt))
-            print(f"  Gemini 일시 오류({e.__class__.__name__}) — {wait}초 후 재시도 "
-                  f"({attempt + 1}/{attempts - 1})", flush=True)
+    """모델 후보를 돌면서 시도하고, 한 바퀴 다 막히면 백오프 후 다시 한 바퀴."""
+    usable = list(MODEL_CHAIN)
+    rounds = 5
+    last_err = None
+    for rnd in range(rounds):
+        for model in list(usable):
+            try:
+                if model != MODEL_CHAIN[0] or rnd > 0:
+                    print(f"  모델 시도: {model}", flush=True)
+                return client.models.generate_content(model=model, contents=PROMPT)
+            except Exception as e:
+                last_err = e
+                msg = str(e).lower()
+                if any(t in msg for t in UNAVAILABLE_MODEL):
+                    print(f"  {model}: 이 계정에서 사용 불가 — 후보에서 제외", flush=True)
+                    usable.remove(model)
+                    continue
+                if not any(t in msg for t in TRANSIENT):
+                    print(f"  일시적 오류가 아니라 재시도하지 않습니다: {e}", flush=True)
+                    raise
+                print(f"  {model}: 일시 과부하({e.__class__.__name__})", flush=True)
+        if not usable:
+            break
+        if rnd < rounds - 1:
+            wait = min(300, 45 * (2 ** rnd))   # 45s, 90s, 180s, 300s → 총 ~10분
+            print(f"  후보 모델이 모두 과부하 — {wait}초 후 다시 시도 "
+                  f"({rnd + 1}/{rounds - 1})", flush=True)
             time.sleep(wait)
+    raise last_err if last_err else RuntimeError("Gemini 호출 실패")
 
 
 def parse_json(raw):
