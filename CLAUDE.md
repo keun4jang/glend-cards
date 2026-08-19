@@ -73,3 +73,17 @@ Images are served via `https://raw.githubusercontent.com/keun4jang/glend-cards/m
 - Gemini prompt enforces strict character limits: card titles ≤6 chars/line, body lines 13–16 chars. Violating these causes visual overflow.
 - Instagram requires images to be publicly accessible URLs before the carousel can be published — hence the GitHub raw CDN approach.
 - The `<b>` tags in `lines` and `caption` are intentional: `render.py` passes them raw to HTML (styled yellow in CSS), while `upload.py` strips them for the plain-text caption.
+
+## 비용 정책 (절대 조건: 전액 무료 유지)
+
+이 채널은 요금이 발생하면 안 된다. 아래를 어기면 즉시 과금된다.
+
+- **Gemini**: 결제 계정이 연결되지 않은 AI Studio 키(개인 Gmail 계정)의 **무료 티어**만 사용한다.
+  - 과거 `trussvideo1@truss.co.kr` 조직 계정에 결제가 붙어 있어 실제로 ₩543이 청구된 적이 있다.
+    그래서 결제 없는 개인 계정 키로 교체했다. 옛 계정 앞으로 오는 안내 메일은 이 프로젝트와 무관하다.
+  - 2026-10-12부터 AI Studio가 후불 → **선불(크레딧 구매)** 로 전환된다.
+    **전환하거나 크레딧을 구매하면 안 된다.** 무료 티어만 쓰는 한 조치가 필요 없다(구글 공지 명시).
+  - 503 "high demand"는 무료 티어의 정상적인 혼잡 신호다. 결제를 붙여 해결하려 하지 말고
+    `MODEL_CHAIN`의 다른 무료 모델로 폴백한다(generate.py / generate_reel.py).
+- **GitHub Actions**: 퍼블릭 저장소라 실행 시간이 무료다. 비공개로 전환하면 과금되므로 유지할 것.
+- **그 외**: Pexels(무료 API), edge-tts(무료), Pretendard(OFL) — 모두 무료 범위 안에서만 사용한다.
