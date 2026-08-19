@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import sys
 import time
@@ -89,18 +90,18 @@ if LENGTH_VARIANT not in ("long", "mid"):
 
 if LENGTH_VARIANT == "mid":
     # 60초 안에 밀도 있게 설명하고 마지막을 '결론'으로 닫는 구성.
-    BODY_COUNT = 8            # 후킹 1 + 본문 8 = 9장면
-    DURATION_DESC = "55~60초 (60초를 절대 넘기지 말 것)"
-    CHAR_RANGE = "50~65자"
+    BODY_COUNT = 9            # 후킹 1 + 본문 9 = 10장면
+    DURATION_DESC = "55~60초 (60초를 절대 넘기면 안 됨)"
+    CHAR_RANGE = "32~38자"
     FLOW = ("  (2) 무슨 일인지 배경·맥락  (3) 핵심 내용과 정확한 수치\n"
             "  (4) 누가 대상인지 조건  (5) 얼마를 받거나 아끼는지 구체적 금액\n"
             "  (6) 신청·실행 방법과 절차  (7) 기한과 놓치기 쉬운 주의점\n"
-            "  (8) 사람들이 흔히 하는 실수 또는 추가 꿀팁\n"
-            "  (9) **결론** — 오늘 내용을 한 문장으로 압축한 결론과 행동 지시")
+            "  (8) 사람들이 흔히 하는 실수  (9) 함께 챙기면 좋은 추가 꿀팁\n"
+            "  (10) **결론** — 오늘 내용을 한 문장으로 압축한 결론과 행동 지시")
     SCENE_STUBS = ["본문2 배경·맥락", "본문3 핵심 수치", "본문4 대상 조건",
                    "본문5 구체적 금액", "본문6 신청 방법", "본문7 기한·주의점",
-                   "본문8 흔한 실수 또는 꿀팁", "본문9 결론"]
-    SAVE_SCENE = "8이나 9"
+                   "본문8 흔한 실수", "본문9 추가 꿀팁", "본문10 결론"]
+    SAVE_SCENE = "9나 10"
 else:
     BODY_COUNT = 12           # 후킹 1 + 본문 12 = 13장면
     DURATION_DESC = "90~100초"
@@ -143,7 +144,7 @@ PROMPT = f"""
 - 마지막 본문 장면(scene {TOTAL_SCENES})은 반드시 **결론**이다. 앞 내용을 요약 나열하지 말고,
   "그래서 결국 뭘 해야 하는가"를 한 문장으로 딱 못 박아라 (예: "조건만 맞으면 5분 신청으로 40만원, 오늘 안에 확인하세요").
 - 절대 같은 말을 다르게 반복하지 마. 각 장면은 앞에서 안 나온 새로운 정보를 하나씩 추가해야 해. 내용이 부족하면 그 주제를 고르지 말고 정보가 풍부한 다른 주제를 골라.
-- narration은 성우가 소리 내어 읽는 문장이니, 실제 사람이 말하듯 자연스러운 구어체로 써. 친근한 '해요체'를 기본으로 하고(예: "~있어요", "~된대요", "~챙기세요"), 딱딱한 문어체나 어색한 번역투(예: "~을 통해", "~에 의해", "~라 할 수 있다")는 쓰지 마. 각 narration은 공백 포함 {CHAR_RANGE} 정도로 충실하게 — 한 문장 또는 짧은 두 문장. 실제 수치·기관명·날짜·조건을 구체적으로 넣어 알맹이를 채워.
+- narration은 성우가 소리 내어 읽는 문장이니, 실제 사람이 말하듯 자연스러운 구어체로 써. 친근한 '해요체'를 기본으로 하고(예: "~있어요", "~된대요", "~챙기세요"), 딱딱한 문어체나 어색한 번역투(예: "~을 통해", "~에 의해", "~라 할 수 있다")는 쓰지 마. 각 narration은 공백 포함 {CHAR_RANGE}로 써 — **최소 글자수를 반드시 지켜라.** 짧게 쓰면 영상이 비어 보인다. 한 문장 또는 짧은 두 문장. 실제 수치·기관명·날짜·조건을 구체적으로 넣어 알맹이를 채워.
 - 각 narration에서 가장 중요한 핵심 단어 1개만 <b>단어</b>로 감싸 강조(노란색). 장면당 1개만. (성우는 태그를 읽지 않음)
   강조는 반드시 **정보를 담은 명사**만 — 금액·기한·대상·제도명·기관명 (예: <b>40만원</b>, <b>12월 31일</b>, <b>서울청년포털</b>).
   동사·부사·서술어는 절대 강조하지 마 (나쁜 예: <b>저장해두고</b>, <b>지금</b>, <b>꼭</b>, <b>바로</b>).
@@ -244,6 +245,12 @@ def validate(d):
     assert isinstance(d.get("title"), str) and d["title"].strip(), "title 누락"
     scenes = d.get("scenes")
     assert isinstance(scenes, list) and len(scenes) == TOTAL_SCENES, f"scenes 개수 오류({len(scenes) if isinstance(scenes, list) else '없음'} != {TOTAL_SCENES})"
+    # 러닝타임 추정 — mid는 '60초 안에'가 요구사항이라, 넘칠 대본은 만들기 전에 걸러 재생성한다.
+    # 실측 회귀: 장면 길이 ≈ 글자수 x 0.124초 + 0.5초(패딩). 로고 장면(팔로우 멘트)은 약 6초.
+    if LENGTH_VARIANT == "mid":
+        est = sum(len(re.sub(r'<[^>]+>', '', s.get("narration", ""))) * 0.124 + 0.5
+                  for s in scenes) + 6.0
+        assert est <= 59.0, f"예상 러닝타임 {est:.0f}초 — 60초 초과. 각 문장을 더 짧게 다시 써야 함"
     for i, s in enumerate(scenes, 1):
         assert isinstance(s.get("narration"), str) and s["narration"].strip(), f"scene{i} narration 누락"
         assert isinstance(s.get("query"), str) and s["query"].strip(), f"scene{i} query 누락"
