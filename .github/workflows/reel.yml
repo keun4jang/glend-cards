@@ -16,7 +16,7 @@ on:
         required: false
         default: "false"
       length:
-        description: "러닝타임 A/B 강제 (빈칸=날짜별 자동 배정, long=90초대, short=45초대)"
+        description: "러닝타임 A/B 강제 (빈칸=날짜별 자동 배정, long=90초대, mid=60초 이내)"
         required: false
         default: ""
   schedule:

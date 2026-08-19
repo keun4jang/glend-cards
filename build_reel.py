@@ -150,9 +150,12 @@ total_sec = audio_duration(str(final))
 print(f"\n🎬 완성! {final} ({size_mb:.1f}MB, {total_sec:.1f}초)")
 _variant = (content.get("length_variant")
             or os.getenv("REEL_LENGTH", "").strip().lower() or "long")
-_target = 45 if _variant == "short" else 90
-if total_sec < _target * 0.85:
-    print(f"ℹ️ {total_sec:.0f}초 — {_variant} 목표({_target}초대)에 못 미칩니다. 나레이션 분량을 확인하세요.")
-print(f"[길이 변형] {_variant} (목표 {_target}초대)")
+_target = 60 if _variant == "mid" else 90
+print(f"[길이 변형] {_variant} (목표 {_target}초)")
+if _variant == "mid" and total_sec > 60:
+    # mid는 '60초 안에'가 요구사항이라 초과는 미달보다 중요한 신호
+    print(f"⚠️ {total_sec:.1f}초 — 60초를 넘었습니다. 나레이션 분량을 줄여야 합니다.")
+elif total_sec < _target * 0.85:
+    print(f"ℹ️ {total_sec:.0f}초 — {_variant} 목표({_target}초)에 못 미칩니다. 나레이션 분량을 확인하세요.")
 if size_mb > 95:
     print("⚠️ 100MB 근접 — GitHub 푸시 제한 주의.")

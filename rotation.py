@@ -25,7 +25,7 @@ def describe(slot):
 
 
 def reel_length_variant(slot):
-    """릴스 러닝타임 A/B — 'long'(90초대) / 'short'(45초대)
+    """릴스 러닝타임 A/B — 'long'(90초대) / 'mid'(60초 이내, 결론으로 마무리)
 
     "90초는 작은 계정에 부담" vs "90초 이상으로 해달라"를 근거 없이 어느 한쪽으로
     정하지 않고, 실제 완주율·팔로우 전환으로 판정하기 위한 배정 함수.
@@ -36,4 +36,4 @@ def reel_length_variant(slot):
         → 길이 차이가 주제·시간대 차이에 오염되지 않는다
     """
     doy = datetime.datetime.now(KST).timetuple().tm_yday
-    return "long" if (doy + slot) % 2 == 0 else "short"
+    return "long" if (doy + slot) % 2 == 0 else "mid"
