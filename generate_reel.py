@@ -198,8 +198,9 @@ UNAVAILABLE_MODEL = ("not found", "404", "not supported", "does not exist",
                      "permission", "not available")
 
 
-def call_gemini():
+def call_gemini(correction=""):
     """모델 후보를 돌면서 시도하고, 한 바퀴 다 막히면 백오프 후 다시 한 바퀴."""
+    prompt = PROMPT + correction
     usable = list(MODEL_CHAIN)
     rounds = 5
     last_err = None
@@ -208,7 +209,7 @@ def call_gemini():
             try:
                 if model != MODEL_CHAIN[0] or rnd > 0:
                     print(f"  모델 시도: {model}", flush=True)
-                return client.models.generate_content(model=model, contents=PROMPT)
+                return client.models.generate_content(model=model, contents=prompt)
             except Exception as e:
                 last_err = e
                 msg = str(e).lower()
@@ -256,20 +257,65 @@ def validate(d):
         assert isinstance(s.get("query"), str) and s["query"].strip(), f"scene{i} query 누락"
 
 
+# 재생성할 때 같은 프롬프트를 그대로 보내면 모델은 왜 거절당했는지 모른다.
+# 실제로 러닝타임 초과로 3연속 실패해 발행이 중단된 적이 있어, 실패 사유를 되먹인다.
+TRIES = 5
 data = None
-for gen_try in range(1, 4):
-    response = call_gemini()
+correction = ""
+for gen_try in range(1, TRIES + 1):
+    response = call_gemini(correction)
     try:
         cand = parse_json(response.text or "")
         validate(cand)
         data = cand
         break
+    except AssertionError as e:
+        msg = str(e)
+        print(f"  검증 실패({msg}) — 재생성 {gen_try}/{TRIES}", flush=True)
+        if "러닝타임" in msg:
+            # 모델이 글자수 지시를 반복적으로 무시한다. 몇 자로 줄여야 하는지 숫자로 지시.
+            budget = int(CHAR_RANGE.split("~")[1].rstrip("자"))
+            budget = max(20, budget - 6 * gen_try)
+            correction = (f"\n\n[매우 중요] 직전 시도가 길이 초과로 거절됐다: {msg}\n"
+                          f"이번에는 각 narration을 **{budget}자 이내**로 훨씬 짧게 써라. "
+                          f"장면 수는 그대로 유지하고 문장만 줄여라.")
+        time.sleep(3)
     except Exception as e:
-        print(f"  응답 형식 오류({e}) — 재생성 {gen_try}/3")
-        time.sleep(5)
+        print(f"  응답 형식 오류({e}) — 재생성 {gen_try}/{TRIES}", flush=True)
+        correction = ("\n\n[매우 중요] 직전 응답이 형식 오류로 거절됐다. "
+                      "지정한 JSON 형식만, 다른 설명 없이 출력해라.")
+        time.sleep(3)
 if data is None:
-    print("[중단] Gemini가 3회 연속 올바른 형식을 주지 않았어요.")
+    print(f"[중단] Gemini가 {TRIES}회 연속 조건을 만족하지 못했어요.")
     sys.exit(1)
+
+
+def est_seconds(scenes):
+    """러닝타임 추정 (실측 회귀: 글자수 x 0.124 + 0.5초 패딩) + 로고 장면 6초"""
+    return sum(len(re.sub(r'<[^>]+>', '', sc.get("narration", ""))) * 0.124 + 0.5
+               for sc in scenes) + 6.0
+
+
+def trim_to_budget(scenes, limit=59.0):
+    """마지막 방어선 — 그래도 길면 중간 장면을 덜어내 60초에 맞춘다.
+
+    후킹(첫 장면)과 결론(마지막 장면)은 구조의 핵심이라 절대 건드리지 않고,
+    뒤쪽 중간 장면부터 덜어낸다. 발행이 통째로 무산되는 것보다 낫다.
+    """
+    scenes = list(scenes)
+    while len(scenes) > 4 and est_seconds(scenes) > limit:
+        drop = len(scenes) - 2          # 결론 바로 앞 장면
+        removed = scenes.pop(drop)
+        print(f"  [길이 조정] 장면 {drop + 1} 제거: {removed.get('narration','')[:24]}...",
+              flush=True)
+    return scenes
+
+
+if LENGTH_VARIANT == "mid" and est_seconds(data["scenes"]) > 59.0:
+    before = est_seconds(data["scenes"])
+    data["scenes"] = trim_to_budget(data["scenes"])
+    print(f"  [길이 조정] {before:.0f}초 -> {est_seconds(data['scenes']):.0f}초 "
+          f"(장면 {len(data['scenes'])}개)", flush=True)
 
 
 def get_photo(query):
