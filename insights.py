@@ -98,7 +98,11 @@ for m in rows:
     views = vals.get("views", vals.get("plays", ""))
     pv = vals.get("profile_visits", "")
     fol = vals.get("follows", "")
-    print(f"  [{ts}] {mtype:<8} 도달={reach} 저장={saved} 공유={shares} 조회={views} 좋아요={likes} 댓글={comments} 프로필방문={pv} 팔로우={fol}")
+    # 시청 완주율 — 릴스 길이 A/B(60초 vs 90초)의 유일한 판정 변수.
+    # 수집만 하고 출력하지 않아서 지금까지 한 번도 눈에 보인 적이 없었다.
+    wt = vals.get("ig_reels_avg_watch_time", "")
+    wt_s = f" 평균시청={int(wt)/1000:.1f}초" if isinstance(wt, (int, float)) and wt else ""
+    print(f"  [{ts}] {mtype:<8} 도달={reach} 저장={saved} 공유={shares} 조회={views} 좋아요={likes} 댓글={comments} 프로필방문={pv} 팔로우={fol}{wt_s}")
     print(f"          └ {cap}")
 
 print()
