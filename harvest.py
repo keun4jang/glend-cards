@@ -130,5 +130,44 @@ def main():
     print(f"\n저장 완료: {OUT} ({len(out_rows)}개)", flush=True)
 
 
+def probe():
+    """어떤 지표가 실제로 되는지 API에 하나씩 물어본다.
+
+    릴스의 profile_visits/follows/ig_reels_avg_watch_time이 전부 빈값으로 와서,
+    '전환 0'인지 '측정 불가'인지 구분이 안 됐다. 지표를 하나씩 단독 요청해
+    성공/실패와 오류 메시지를 그대로 찍는다.
+    """
+    candidates = [
+        "reach", "saved", "shares", "likes", "comments", "views", "plays",
+        "total_interactions", "profile_visits", "follows", "profile_activity",
+        "ig_reels_avg_watch_time", "ig_reels_video_view_total_time",
+        "avg_watch_time", "video_views", "clips_replays_count",
+        "ig_reels_aggregated_all_plays_count", "navigation", "impressions",
+    ]
+    media = fetch_all_media(max_pages=2)
+    samples = {}
+    for m in media:
+        t = "REELS" if m.get("media_product_type") == "REELS" else "FEED"
+        if t not in samples:
+            samples[t] = m
+        if len(samples) == 2:
+            break
+    for t, m in samples.items():
+        print(f"\n=== {t} (id {m['id']}, {m.get('timestamp','')[:10]}) ===", flush=True)
+        for c in candidates:
+            j = get(f"{m['id']}/insights", metric=c)
+            if "data" in j and j["data"]:
+                v = j["data"][0].get("values", [{}])[0].get("value")
+                tv = j["data"][0].get("total_value", {}).get("value")
+                print(f"  ✅ {c:36} = {v if v is not None else tv}", flush=True)
+            else:
+                err = (j.get("error") or {}).get("message", "")[:88]
+                print(f"  ❌ {c:36} {err}", flush=True)
+            time.sleep(0.25)
+
+
 if __name__ == "__main__":
-    main()
+    if "--probe" in sys.argv:
+        probe()
+    else:
+        main()

@@ -9,6 +9,10 @@ on:
         description: "true면 성과 수치 없이 캡션만 빠르게 수집"
         required: false
         default: "false"
+      probe:
+        description: "true면 수집 대신, 어떤 지표가 실제로 되는지 API에 하나씩 물어봄"
+        required: false
+        default: "false"
   schedule:
     - cron: "0 1 * * 1"   # 매주 월요일 UTC 01:00 (KST 10:00) — 인사이트 리포트 직후
 
@@ -30,7 +34,9 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_GRAPH_BASE: ${{ vars.IG_GRAPH_BASE }}
         run: |
-          if [ "${{ github.event.inputs.no_metrics }}" = "true" ]; then
+          if [ "${{ github.event.inputs.probe }}" = "true" ]; then
+            python harvest.py --probe
+          elif [ "${{ github.event.inputs.no_metrics }}" = "true" ]; then
             python harvest.py --no-metrics
           else
             python harvest.py
