@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://keun4jang.github.io/glend-cards/sitemap.xml
