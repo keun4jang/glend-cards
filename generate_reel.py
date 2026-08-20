@@ -74,11 +74,7 @@ else:
     HOOK = '"~안 하면 손해" 류의 손실 회피형'
     QEX = '"korean won bills", "korean won calculator desk", "seoul apartment buildings"'
 
-# 3) 릴스 대본 — 길이 A/B.
-#    "90초는 작은 계정에 부담"이라는 통설과 "90초 이상으로" 요청 중 어느 쪽이 맞는지
-#    근거 없이 정하지 않고, 같은 주제·시간대 조건에서 번갈아 발행해 실측으로 판정한다.
-#    변형은 REEL_LENGTH 환경변수로 강제할 수 있고(long/short), 없으면 날짜 기반 자동 배정.
-
+# 3) 릴스 대본 — 길이는 mid(60초) 고정.
 # 길이 A/B는 폐기했다. 두 가지 이유:
 #  (1) 배정값이 한 번도 저장된 적이 없다 — reel_content_*.json과 로그가 .gitignore에 있고
 #      Actions 러너는 매 실행마다 폐기된다. 검증이 원리적으로 불가능한 실험이었다.
