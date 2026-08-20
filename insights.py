@@ -70,13 +70,14 @@ for m in rows:
     comments = m.get("comments_count", 0)
 
     # 게시물별 인사이트
+    # 릴스는 profile_visits/follows를 API가 지원하지 않는다(탐침으로 확인).
+    # 지원 안 되는 지표를 섞으면 요청 전체가 실패해 최소셋으로 폴백되므로 분리한다.
     if mtype == "REELS":
-        # 릴스는 비팔로워에게 닿는 유일한 포맷인데 정작 팔로우 퍼널(profile_visits/follows)을
-        # 한 번도 수집하지 않았다. 시청 완주율도 없어서 러닝타임 판단 근거가 없었다.
         metrics = ("reach,saved,shares,likes,comments,views,total_interactions,"
-                   "profile_visits,follows,ig_reels_avg_watch_time")
+                   "ig_reels_avg_watch_time,ig_reels_video_view_total_time")
     else:
-        metrics = "reach,saved,shares,views,total_interactions,profile_visits,follows"
+        metrics = ("reach,saved,shares,views,total_interactions,"
+                   "profile_visits,follows,profile_activity")
     ins = get(f"{mid}/insights", metric=metrics)
     vals = {}
     if "data" in ins:

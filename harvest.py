@@ -31,7 +31,8 @@ OUT = BASE / "archive" / "instagram_posts.csv"
 FIELDS = ["id", "timestamp", "media_product_type", "media_type", "permalink",
           "like_count", "comments_count", "caption"]
 METRIC_FIELDS = ["reach", "saved", "shares", "views", "total_interactions",
-                 "profile_visits", "follows", "ig_reels_avg_watch_time"]
+                 "profile_visits", "follows",
+                 "ig_reels_avg_watch_time", "ig_reels_video_view_total_time"]
 
 
 def get(path, **params):
@@ -66,12 +67,19 @@ def fetch_all_media(max_pages=60):
     return rows
 
 
+# 탐침(harvest.py --probe) 결과 확인된 지원 지표:
+#   REELS: reach saved shares likes comments views total_interactions
+#          ig_reels_avg_watch_time ig_reels_video_view_total_time
+#          (profile_visits/follows는 릴스에서 API가 지원하지 않음)
+#   FEED : reach saved shares views total_interactions profile_visits follows profile_activity
+# 지원 안 되는 지표를 하나라도 섞으면 요청 전체가 실패해 최소셋으로 폴백된다.
 def fetch_metrics(media_id, product_type):
     if product_type == "REELS":
         metrics = ("reach,saved,shares,likes,comments,views,total_interactions,"
-                   "profile_visits,follows,ig_reels_avg_watch_time")
+                   "ig_reels_avg_watch_time,ig_reels_video_view_total_time")
     else:
-        metrics = "reach,saved,shares,views,total_interactions,profile_visits,follows"
+        metrics = ("reach,saved,shares,views,total_interactions,"
+                   "profile_visits,follows,profile_activity")
     j = get(f"{media_id}/insights", metric=metrics)
     vals = {}
     for d in j.get("data", []):
