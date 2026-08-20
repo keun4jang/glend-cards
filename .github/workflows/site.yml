@@ -30,6 +30,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - run: pip install requests
       - name: Build
         run: python build_site.py
       - name: Commit docs
@@ -47,3 +48,10 @@ jobs:
             sleep $((2 ** i))
           done
           echo "푸시 최종 실패"; exit 1
+      - name: Notify search engines (IndexNow)
+        # 계정·로그인 없이 Bing/Yandex/네이버에 새 URL을 통보한다. 구글은 미지원.
+        # 키 파일이 배포된 뒤에 보내야 하므로 커밋·푸시 다음에 둔다.
+        continue-on-error: true
+        run: |
+          sleep 45   # Pages 배포 반영 대기 (키 파일이 공개돼야 인증됨)
+          python indexnow.py

@@ -208,6 +208,13 @@ def build():
     (DOCS / ".nojekyll").write_text("", encoding="utf-8")
     copy_verification_files()
 
+    # IndexNow 키 파일 — 사이트에 공개돼야 소유권이 인정된다(비밀 아님)
+    kf = BASE / "indexnow_key.txt"
+    if kf.exists():
+        key = kf.read_text(encoding="utf-8").strip()
+        if key:
+            (DOCS / f"{key}.txt").write_text(key, encoding="utf-8")
+
     for a in arts:
         d = DOCS / a["slug"]
         d.mkdir(parents=True, exist_ok=True)
