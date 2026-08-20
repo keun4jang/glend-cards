@@ -90,8 +90,16 @@ try:
     _c = _json.loads(open(f"reel_content_{IDX}.json", encoding="utf-8").read())
     # 검색용 글로 다시 쓰기 (대본은 870자라 그대로 웹에 올리면 얇은 콘텐츠로 걸린다)
     _art = article.write(_c)
+    # build_reel/upload_reel이 남긴 실측 메타(후킹 실측 길이, 인스타 media id 등)를 함께 보관.
+    # media id가 있어야 archive/instagram_posts.csv와 정확히 조인된다.
+    _meta = {}
+    try:
+        _meta = _json.loads(open(f"output/reel{IDX}/meta.json", encoding="utf-8").read())
+    except Exception:
+        pass
     archive.save("reel", IDX, _c,
-                 extra={"length_variant": _c.get("length_variant"), "article": _art})
+                 extra={"length_variant": _c.get("length_variant"),
+                        "article": _art, "meta": _meta})
     archive.commit_push(f"archive: 릴스{IDX} {datetime.date.today().isoformat()}")
 except Exception as _e:
     print(f"[archive] 건너뜀: {_e}", flush=True)

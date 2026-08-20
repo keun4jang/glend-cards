@@ -104,7 +104,18 @@ def post_instagram_reel():
     pub = requests.post(f"{IG_GRAPH}/{IG_USER}/media_publish",
                         data={"creation_id": cid, "access_token": IG_TOKEN}, timeout=60).json()
     if "id" in pub:
-        print(f"🎉 인스타 릴스 발행 성공! id: {pub['id']}"); return True
+        print(f"🎉 인스타 릴스 발행 성공! id: {pub['id']}")
+        # media id를 남겨야 archive/instagram_posts.csv(id 컬럼)와 정확히 조인된다.
+        # 지금까지는 날짜+인덱스 추정 매칭에 의존했다.
+        try:
+            import json as _json
+            p = os.path.join("output", f"reel{POST_INDEX}", "meta.json")
+            m = _json.loads(open(p, encoding="utf-8").read()) if os.path.exists(p) else {}
+            m["ig_media_id"] = pub["id"]
+            open(p, "w", encoding="utf-8").write(_json.dumps(m, ensure_ascii=False, indent=2))
+        except Exception as e:
+            print(f"  (meta 기록 실패, 발행에는 영향 없음: {e})")
+        return True
     print("[실패] 발행:", pub); return False
 
 

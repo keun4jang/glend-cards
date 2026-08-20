@@ -63,6 +63,7 @@ def audio_duration(path):
 
 
 clip_paths = []
+hook_clip_sec = None
 for i, scene in enumerate(scenes, start=1):
     is_outro = bool(scene.get("outro"))
     is_hook = (i == 1) and not is_outro
@@ -121,6 +122,10 @@ for i, scene in enumerate(scenes, start=1):
         ])
 
     clip_paths.append(clip)
+    if is_hook:
+        # 대조해야 할 변수는 '배정 라벨'이 아니라 실측 길이다.
+        # 후킹이 5초인 줄 알았는데 실제로는 10.4초였던 적이 있어 반드시 실측을 남긴다.
+        hook_clip_sec = dur
     print(f"  clip{i} OK ({dur:.1f}s){' [아웃트로]' if is_outro else ''}")
 
 # 장면 이어붙이기
@@ -159,3 +164,20 @@ elif total_sec < _target * 0.85:
     print(f"ℹ️ {total_sec:.0f}초 — {_variant} 목표({_target}초)에 못 미칩니다. 나레이션 분량을 확인하세요.")
 if size_mb > 95:
     print("⚠️ 100MB 근접 — GitHub 푸시 제한 주의.")
+
+# 사이드카: 아카이브가 나중에 읽어 성과와 대조한다 (reel_content_*.json은 gitignore라 소멸)
+import json as _json
+meta_path = OUT / "meta.json"
+_meta = {}
+if meta_path.exists():
+    try: _meta = _json.loads(meta_path.read_text(encoding="utf-8"))
+    except Exception: _meta = {}
+_meta.update({
+    "hook_clip_sec": round(hook_clip_sec, 2) if hook_clip_sec else None,
+    "total_sec": round(total_sec, 1),
+    "scene_count": len(scenes),
+    "length_variant": _variant,
+    "hook_text": re.sub(r"<[^>]+>", "", (scenes[0].get("narration") or "")) if scenes else "",
+})
+meta_path.write_text(_json.dumps(_meta, ensure_ascii=False, indent=2), encoding="utf-8")
+print(f"[메타] 후킹 {_meta['hook_clip_sec']}초 / 전체 {_meta['total_sec']}초 / 장면 {_meta['scene_count']}개")
