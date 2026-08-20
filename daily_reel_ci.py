@@ -71,9 +71,37 @@ print(f"\n{'='*44}\n[media 브랜치에 영상 저장]\n{'='*44}", flush=True)
 import media_push
 media_push.push_media()
 
+def archive_text(published):
+    """발행 여부와 무관하게 대본·기사를 main에 보관.
+
+    검토 모드에서도 반드시 돌아야 한다. media 브랜치는 다음 실행에 덮어써지므로
+    여기서 안 남기면 만든 대본이 그대로 사라진다(374개가 그렇게 사라졌다).
+    아카이브 실패가 발행이나 파이프라인을 막지 않도록 전부 삼킨다.
+    """
+    try:
+        import archive, article, json as _json
+        _c = _json.loads(open(f"reel_content_{IDX}.json", encoding="utf-8").read())
+        # 검색용 글로 다시 쓰기 (대본은 870자라 그대로 웹에 올리면 얇은 콘텐츠로 걸린다)
+        _art = article.write(_c)
+        # build_reel/upload_reel이 남긴 실측 메타(후킹 실측 길이, 인스타 media id 등)
+        _meta = {}
+        try:
+            _meta = _json.loads(open(f"output/reel{IDX}/meta.json", encoding="utf-8").read())
+        except Exception:
+            pass
+        archive.save("reel", IDX, _c,
+                     extra={"length_variant": _c.get("length_variant"),
+                            "article": _art, "meta": _meta,
+                            "published": published})
+        archive.commit_push(f"archive: 릴스{IDX} {datetime.date.today().isoformat()}")
+    except Exception as _e:
+        print(f"[archive] 건너뜀: {_e}", flush=True)
+
+
 if not PUBLISH:
     print(f"\n[검토 모드] PUBLISH=false → 발행 생략. 영상은 media 브랜치에 저장됨.", flush=True)
     print(f"영상 URL: https://raw.githubusercontent.com/keun4jang/glend-cards/media/output/reel{IDX}/reel.mp4", flush=True)
+    archive_text(published=False)
     sys.exit(0)
 
 # GitHub raw 반영 대기
@@ -85,23 +113,6 @@ time.sleep(40)
 run("릴스 발행", ["upload_reel.py", "go", IDX])
 
 # 6) 발행한 대본·캡션을 main에 영구 보관
-try:
-    import archive, article, json as _json
-    _c = _json.loads(open(f"reel_content_{IDX}.json", encoding="utf-8").read())
-    # 검색용 글로 다시 쓰기 (대본은 870자라 그대로 웹에 올리면 얇은 콘텐츠로 걸린다)
-    _art = article.write(_c)
-    # build_reel/upload_reel이 남긴 실측 메타(후킹 실측 길이, 인스타 media id 등)를 함께 보관.
-    # media id가 있어야 archive/instagram_posts.csv와 정확히 조인된다.
-    _meta = {}
-    try:
-        _meta = _json.loads(open(f"output/reel{IDX}/meta.json", encoding="utf-8").read())
-    except Exception:
-        pass
-    archive.save("reel", IDX, _c,
-                 extra={"length_variant": _c.get("length_variant"),
-                        "article": _art, "meta": _meta})
-    archive.commit_push(f"archive: 릴스{IDX} {datetime.date.today().isoformat()}")
-except Exception as _e:
-    print(f"[archive] 건너뜀: {_e}", flush=True)
+archive_text(published=True)
 
 print(f"\n릴스 자동 발행 완료! {datetime.datetime.now()}", flush=True)
