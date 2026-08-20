@@ -127,8 +127,29 @@ def page(title, desc, body, canonical, extra_head=""):
 </div></body></html>"""
 
 
+# URL에서 빼야 하는 군더더기 — 검색엔진이 보는 핵심 키워드를 앞으로 당긴다
+_SLUG_DROP = ("정리", "방법과", "및", "그리고", "위한", "대한", "하는")
+
+
+def article_slug(title, topic=""):
+    """검색어에 가까운 URL 조각을 만든다.
+
+    파일명(2026-08-20-reel1-...)을 그대로 쓰면 날짜와 내부 인덱스가 앞에 붙어
+    핵심 키워드가 뒤로 밀린다. 기사 제목이 곧 검색 의도이므로 그걸 쓴다.
+    한글 URL은 공유 시 퍼센트 인코딩으로 보이지만, 국내 검색엔진이 정상 처리하고
+    브라우저 주소창에서는 한글로 읽힌다.
+    """
+    t = re.sub(r"<[^>]+>", "", title or topic or "").strip()
+    # %는 URL에서 퍼센트 인코딩 이스케이프라 그대로 두면 주소가 깨진다 ("40%-절세" -> 잘못된 인코딩)
+    t = t.replace("%", "퍼센트")
+    t = re.sub(r"[^\w\s가-힣]", " ", t)
+    words = [w for w in t.split() if w and w not in _SLUG_DROP]
+    slug = "-".join(words)[:60].strip("-")
+    return slug or "article"
+
+
 def load_articles():
-    arts = []
+    arts, used = [], {}
     if not ARCHIVE.exists():
         return arts
     for f in sorted(ARCHIVE.rglob("*.json")):
@@ -139,7 +160,13 @@ def load_articles():
         art = rec.get("article")
         if not art or not art.get("title") or len(art.get("body_markdown", "")) < 600:
             continue
-        slug = f.stem
+        slug = article_slug(art["title"], rec.get("topic", ""))
+        # 제목이 겹치면 URL이 덮어써지므로 번호를 붙인다
+        if slug in used:
+            used[slug] += 1
+            slug = f"{slug}-{used[slug]}"
+        else:
+            used[slug] = 1
         arts.append({
             "slug": slug,
             "title": art["title"],
@@ -153,10 +180,33 @@ def load_articles():
     return arts
 
 
+VERIFY_DIR = BASE / "site_verify"
+
+
+def copy_verification_files():
+    """검색엔진 소유권 확인 파일을 그대로 사이트 루트에 복사.
+
+    구글 서치콘솔·네이버 서치어드바이저는 루트에 확인용 HTML을 요구한다.
+    site_verify/에 받은 파일을 넣어두면 빌드할 때마다 자동으로 docs/에 복사되므로,
+    사이트를 다시 빌드해도 확인이 풀리지 않는다. (docs/는 빌드 산출물이라 수동 배치는 사라진다)
+    """
+    if not VERIFY_DIR.exists():
+        return 0
+    n = 0
+    for f in VERIFY_DIR.iterdir():
+        if f.is_file() and not f.name.startswith(".") and f.name.lower() != "readme.md":
+            (DOCS / f.name).write_bytes(f.read_bytes())
+            n += 1
+    if n:
+        print(f"  소유권 확인 파일 {n}개 복사")
+    return n
+
+
 def build():
     arts = load_articles()
     DOCS.mkdir(exist_ok=True)
     (DOCS / ".nojekyll").write_text("", encoding="utf-8")
+    copy_verification_files()
 
     for a in arts:
         d = DOCS / a["slug"]
@@ -182,7 +232,7 @@ def build():
     items = "".join(
         f'<li><a href="{BASE_URL}/{a["slug"]}/"><strong>{html.escape(a["title"])}</strong>'
         f'<span>{html.escape(a["desc"])}</span></a></li>' for a in arts)
-    index_body = (f"<h1>{SITE_NAME}</h1>"
+    index_body = ("<h1>정부지원금·생활정보, 신청 방법 중심으로</h1>"
                   f'<p class="meta">글 {len(arts)}개</p>'
                   + (f'<ul class="list">{items}</ul>' if arts
                      else "<p>아직 발행된 글이 없습니다.</p>"))
