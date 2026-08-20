@@ -67,4 +67,19 @@ for i in range(1, POSTS_PER_DAY + 1):
     # 스레드 발행
     run(f"Threads 발행 ({idx}번째)", ["upload_threads.py", "go", idx])
 
+    # 발행한 텍스트를 main에 영구 보관 (media 브랜치는 매일 덮어써져 사라진다)
+    try:
+        import archive, json as _json
+        _c = _json.loads(open(f"content_{idx}.json", encoding="utf-8").read())
+        archive.save("card", idx, _c)
+    except Exception as _e:
+        print(f"[archive] 건너뜀: {_e}", flush=True)
+
+# 아카이브는 마지막에 한 번만 커밋·푸시 (게시물마다 푸시하면 충돌만 늘어난다)
+try:
+    import archive
+    archive.commit_push(f"archive: 카드뉴스 {datetime.date.today().isoformat()}")
+except Exception as e:
+    print(f"[archive] 푸시 건너뜀: {e}", flush=True)
+
 print(f"\n오늘 자동 발행 완료! {datetime.datetime.now()}", flush=True)

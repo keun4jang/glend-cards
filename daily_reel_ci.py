@@ -84,4 +84,13 @@ time.sleep(40)
 # 5) 발행
 run("릴스 발행", ["upload_reel.py", "go", IDX])
 
+# 6) 발행한 대본·캡션을 main에 영구 보관
+try:
+    import archive, json as _json
+    _c = _json.loads(open(f"reel_content_{IDX}.json", encoding="utf-8").read())
+    archive.save("reel", IDX, _c, extra={"length_variant": _c.get("length_variant")})
+    archive.commit_push(f"archive: 릴스{IDX} {datetime.date.today().isoformat()}")
+except Exception as _e:
+    print(f"[archive] 건너뜀: {_e}", flush=True)
+
 print(f"\n릴스 자동 발행 완료! {datetime.datetime.now()}", flush=True)

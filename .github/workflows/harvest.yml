@@ -1,0 +1,52 @@
+name: Harvest Instagram Archive
+
+# 인스타에 이미 올라간 게시물의 캡션·성과를 전량 회수해 archive/에 보관.
+# media 브랜치가 매일 덮어써져 대본이 남지 않으므로, 인스타가 사실상 유일한 백업이다.
+on:
+  workflow_dispatch:
+    inputs:
+      no_metrics:
+        description: "true면 성과 수치 없이 캡션만 빠르게 수집"
+        required: false
+        default: "false"
+  schedule:
+    - cron: "0 1 * * 1"   # 매주 월요일 UTC 01:00 (KST 10:00) — 인사이트 리포트 직후
+
+permissions:
+  contents: write
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests python-dotenv
+      - name: Harvest
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_GRAPH_BASE: ${{ vars.IG_GRAPH_BASE }}
+        run: |
+          if [ "${{ github.event.inputs.no_metrics }}" = "true" ]; then
+            python harvest.py --no-metrics
+          else
+            python harvest.py
+          fi
+      - name: Commit archive
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add archive/
+          git diff --cached --quiet && { echo "변경 없음"; exit 0; }
+          git commit -m "archive: 인스타 게시물 회수 $(date +%F)"
+          for i in 1 2 3 4; do
+            git push && exit 0
+            echo "푸시 실패, 리베이스 후 재시도 $i"
+            git fetch origin ${{ github.ref_name }}
+            git rebase origin/${{ github.ref_name }} || git rebase --abort
+            sleep $((2 ** i))
+          done
+          echo "푸시 최종 실패"; exit 1
