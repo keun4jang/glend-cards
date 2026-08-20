@@ -69,9 +69,10 @@ for i in range(1, POSTS_PER_DAY + 1):
 
     # 발행한 텍스트를 main에 영구 보관 (media 브랜치는 매일 덮어써져 사라진다)
     try:
-        import archive, json as _json
+        import archive, article, json as _json
         _c = _json.loads(open(f"content_{idx}.json", encoding="utf-8").read())
-        archive.save("card", idx, _c)
+        _art = article.write(_c)
+        archive.save("card", idx, _c, extra={"article": _art})
     except Exception as _e:
         print(f"[archive] 건너뜀: {_e}", flush=True)
 

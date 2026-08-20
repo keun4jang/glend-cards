@@ -86,9 +86,12 @@ run("릴스 발행", ["upload_reel.py", "go", IDX])
 
 # 6) 발행한 대본·캡션을 main에 영구 보관
 try:
-    import archive, json as _json
+    import archive, article, json as _json
     _c = _json.loads(open(f"reel_content_{IDX}.json", encoding="utf-8").read())
-    archive.save("reel", IDX, _c, extra={"length_variant": _c.get("length_variant")})
+    # 검색용 글로 다시 쓰기 (대본은 870자라 그대로 웹에 올리면 얇은 콘텐츠로 걸린다)
+    _art = article.write(_c)
+    archive.save("reel", IDX, _c,
+                 extra={"length_variant": _c.get("length_variant"), "article": _art})
     archive.commit_push(f"archive: 릴스{IDX} {datetime.date.today().isoformat()}")
 except Exception as _e:
     print(f"[archive] 건너뜀: {_e}", flush=True)

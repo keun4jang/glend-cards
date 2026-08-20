@@ -1,0 +1,43 @@
+name: Build Site
+
+# archive/의 기사를 정적 사이트(docs/)로 빌드해 GitHub Pages로 발행.
+# 인스타는 '팔로우할 이유'가 없어 실패했지만, 검색은 그 이유가 필요 없다 —
+# 질문에 답이 있으면 팔로워 0명이어도 트래픽이 붙는다. 퍼블릭 저장소라 호스팅 무료.
+on:
+  push:
+    branches: [main]
+    paths: ["archive/**", "build_site.py", ".github/workflows/site.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-site
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build
+        run: python build_site.py
+      - name: Commit docs
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add -f docs/
+          git diff --cached --quiet && { echo "변경 없음"; exit 0; }
+          git commit -m "site: 정적 사이트 빌드 $(date +%F)"
+          for i in 1 2 3 4; do
+            git push && exit 0
+            echo "푸시 실패, 리베이스 후 재시도 $i"
+            git fetch origin main
+            git rebase origin/main || git rebase --abort
+            sleep $((2 ** i))
+          done
+          echo "푸시 최종 실패"; exit 1
