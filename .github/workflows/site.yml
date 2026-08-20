@@ -3,10 +3,16 @@ name: Build Site
 # archive/의 기사를 정적 사이트(docs/)로 빌드해 GitHub Pages로 발행.
 # 인스타는 '팔로우할 이유'가 없어 실패했지만, 검색은 그 이유가 필요 없다 —
 # 질문에 답이 있으면 팔로워 0명이어도 트래픽이 붙는다. 퍼블릭 저장소라 호스팅 무료.
+# 주의: 아카이브 커밋은 CI가 기본 GITHUB_TOKEN으로 푸시하는데,
+# GitHub은 그 푸시로 다른 워크플로를 트리거하지 않는다(무한 루프 방지).
+# 따라서 push 트리거만 두면 사이트가 영원히 갱신되지 않는다 — 실제로 그랬다.
+# 사람이 직접 push한 경우를 위해 push 트리거는 남기되, 주 동력은 schedule이다.
 on:
   push:
     branches: [main]
-    paths: ["archive/**", "build_site.py", ".github/workflows/site.yml"]
+    paths: ["build_site.py", ".github/workflows/site.yml"]
+  schedule:
+    - cron: "40 20 * * *"   # 매일 UTC 20:40 (KST 05:40) — 그날 발행분 반영
   workflow_dispatch:
 
 permissions:
