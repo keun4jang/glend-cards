@@ -53,6 +53,16 @@ footer a{color:var(--accent)}
 
 CATEGORY = {"1": "생활경제", "2": "사건사고", "3": "건강"}
 
+# 검색엔진 소유권 확인 메타 태그.
+# docs/는 매일 다시 생성되는 빌드 산출물이라, 여기(빌드 코드)에 넣어야 재빌드에도 살아남는다.
+# 수동으로 docs/index.html에 넣으면 다음 날 사라져 소유권이 풀린다.
+# 지우면 확인이 해제되므로 등록 후에도 계속 유지할 것.
+VERIFY_META = {
+    "google-site-verification": "aP36GhDa7FjuF2yftaHI72n4wUyh7zKJ3yqjeQzUGto",
+    # 네이버 서치어드바이저를 등록하면 여기에 추가:
+    # "naver-site-verification": "...",
+}
+
 
 def md_to_html(md):
     """의존성 없이 쓰는 최소 마크다운 변환 (H2/H3, 불릿, 번호, 표, 굵게)"""
@@ -102,6 +112,9 @@ def inline(t):
 
 
 def page(title, desc, body, canonical, extra_head=""):
+    verify_tags = "\n".join(
+        f'<meta name="{k}" content="{html.escape(v)}">'
+        for k, v in VERIFY_META.items() if v)
     return f"""<!doctype html>
 <html lang="ko">
 <head>
@@ -109,6 +122,7 @@ def page(title, desc, body, canonical, extra_head=""):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">
+{verify_tags}
 <link rel="canonical" href="{canonical}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="{html.escape(title)}">
