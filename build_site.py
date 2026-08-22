@@ -11,6 +11,7 @@ archive/의 기사들을 정적 사이트(docs/)로 빌드 → GitHub Pages 무�
 import html
 import json
 import re
+import urllib.parse
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -62,6 +63,21 @@ VERIFY_META = {
     # 네이버 서치어드바이저를 등록하면 여기에 추가:
     # "naver-site-verification": "...",
 }
+
+
+def enc(url):
+    """URL의 한글·비ASCII 경로를 퍼센트 인코딩.
+
+    사이트맵 규격(sitemaps.org)은 URL을 이스케이프하도록 요구한다.
+    한글 경로를 날것으로 넣으면 구글이 사이트맵을 '가져올 수 없음'으로 처리하고
+    발견된 페이지가 0이 된다(실제로 그랬다). 브라우저는 알아서 인코딩하지만
+    사이트맵·canonical에는 인코딩된 형태로 넣어야 한다.
+    """
+    p = urllib.parse.urlsplit(url)
+    return urllib.parse.urlunsplit((
+        p.scheme, p.netloc,
+        urllib.parse.quote(p.path, safe="/-_.~"),
+        urllib.parse.quote(p.query, safe="=&"), p.fragment))
 
 
 def md_to_html(md):
@@ -246,13 +262,16 @@ def build():
                 + md_to_html(a["body"]) + f'<p style="margin-top:28px">{tags}</p>')
         (d / "index.html").write_text(
             page(f'{a["title"]} | {SITE_NAME}', a["desc"], body,
-                 f'{BASE_URL}/{a["slug"]}/',
+                 enc(f'{BASE_URL}/{a["slug"]}/'),
                  f'<script type="application/ld+json">{ld}</script>'),
             encoding="utf-8")
 
-    items = "".join(
-        f'<li><a href="{BASE_URL}/{a["slug"]}/"><strong>{html.escape(a["title"])}</strong>'
-        f'<span>{html.escape(a["desc"])}</span></a></li>' for a in arts)
+    def _item(a):
+        href = enc(f"{BASE_URL}/{a['slug']}/")
+        return (f'<li><a href="{href}"><strong>{html.escape(a["title"])}</strong>'
+                f'<span>{html.escape(a["desc"])}</span></a></li>')
+
+    items = "".join(_item(a) for a in arts)
     index_body = ("<h1>정부지원금·생활정보, 신청 방법 중심으로</h1>"
                   f'<p class="meta">글 {len(arts)}개</p>'
                   + (f'<ul class="list">{items}</ul>' if arts
@@ -262,7 +281,8 @@ def build():
 
     now = datetime.now(KST).strftime("%Y-%m-%d")
     urls = "".join(
-        f"<url><loc>{BASE_URL}/{a['slug']}/</loc><lastmod>{a['date'] or now}</lastmod></url>"
+        "<url><loc>" + enc(f"{BASE_URL}/{a['slug']}/") + "</loc>"
+        f"<lastmod>{a['date'] or now}</lastmod></url>"
         for a in arts)
     (DOCS / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>'
