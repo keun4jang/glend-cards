@@ -1,0 +1,66 @@
+{
+  "topic": "출입금지 등산 사고 및 과태료 부과",
+  "title": "산행 안전 주의 🚨",
+  "cover": {
+    "title": "출입금지 산행\n<b>과태료 폭탄</b>"
+  },
+  "scenes": [
+    {
+      "narration": "출입금지 구역인데 그냥 올라가시나요?",
+      "query": "mountain trail warning sign",
+      "bg": "https://images.pexels.com/photos/5436336/pexels-photo-5436336.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "최근 비법정탐방로 산행 사고가 급증해 <b>국립공원</b> 단속이 강화됐어요.",
+      "query": "mountain warning fence",
+      "bg": "https://images.pexels.com/photos/27857565/pexels-photo-27857565.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "실제로 안전사고 구조 출동 건수가 지난달보다 무려 <b>30퍼센트</b> 늘었습니다.",
+      "query": "mountain rescue gear",
+      "bg": "https://images.pexels.com/photos/9424560/pexels-photo-9424560.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "정규 탐방로를 벗어난 모든 <b>미개방 구간</b> 산행이 단속 대상이에요.",
+      "query": "hiking map closeup",
+      "bg": "https://images.pexels.com/photos/7634701/pexels-photo-7634701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "적발되면 횟수에 따라 최대 <b>50만원</b>의 과태료가 즉시 부과됩니다.",
+      "query": "korean won cash",
+      "bg": "https://images.pexels.com/photos/20157487/pexels-photo-20157487.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "국립공원공단 누리집이나 <b>탐방로 안내</b> 앱에서 사전 확인이 가능해요.",
+      "query": "smartphone navigation map",
+      "bg": "https://images.pexels.com/photos/2996306/pexels-photo-2996306.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "신청 기한 없이 상시 단속되며 구조 비용은 <b>본인 부담</b>이니 주의하세요.",
+      "query": "emergency tape red",
+      "bg": "https://images.pexels.com/photos/38311089/pexels-photo-38311089.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "지도 앱만 믿고 입산하다 길을 잃는 실수를 가장 많이 하십니다.",
+      "query": "smartphone compass app",
+      "bg": "https://images.pexels.com/photos/7009834/pexels-photo-7009834.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "입산 시간제한도 함께 확인하고 <b>저장해두고</b> 안전 산행하세요.",
+      "query": "watch time closeup",
+      "bg": "https://images.pexels.com/photos/9200228/pexels-photo-9200228.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "정규 등산로만 이용해 오늘 <b>안전사고</b> 예방부터 실천하세요.",
+      "query": "hiking boots trail",
+      "bg": "https://images.pexels.com/photos/35120029/pexels-photo-35120029.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "outro": true,
+      "narration": "놓치기 쉬운 <b>안전사고</b> 예방법, 매일 올려요. 사고 나기 전에 @glend_kr 팔로우하세요!"
+    }
+  ],
+  "follow_cta": "놓치기 쉬운 <b>안전사고</b> 예방법, 매일 올려요. 사고 나기 전에 @glend_kr 팔로우하세요!",
+  "caption": "출입금지 구역 산행, 설마 하고 올라갔다간 큰일 납니다 🚨\n\n최근 비법정탐방로에서 안전사고가 속출하면서 국립공원 단속이 역대급으로 강화됐어요.\n\n정규 등산로를 벗어난 미개방 구간에 들어가다 적발되면 최대 50만원의 과태료가 바로 부과됩니다.\n\n구조비까지 청구될 수 있으니 반드시 정규 탐방로만 이용하셔야 해요.\n\n지인들에게도 이 사실을 공유해서 과태료 폭탄 피하시길 바랍니다 👇\n\n📌 매일 놓치기 쉬운 사건사고·안전정보만 골라 올립니다 → @glend_kr\n\n여러분은 지정 등산로 외에 가보신 적 있으신가요? 댓글로 알려주세요 👇\n\n#산행안전 #등산사고 #국립공원 #안전수칙 #과태료\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "length_variant": "mid"
+}
