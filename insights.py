@@ -33,6 +33,23 @@ print("=" * 60)
 acc = get(USER_ID, fields="username,followers_count,follows_count,media_count")
 print(f"  @{acc.get('username')} | 팔로워 {acc.get('followers_count')} | 팔로잉 {acc.get('follows_count')} | 게시물 {acc.get('media_count')}")
 
+# 프로필 본문은 별도 요청으로 가져온다 — 계정 종류에 따라 지원 안 되는 필드가
+# 섞이면 요청 전체가 실패해서, 위의 기본 정보까지 같이 날아가기 때문이다.
+prof = get(USER_ID, fields="biography,website")
+if "error" not in prof:
+    bio = (prof.get("biography") or "").strip()
+    print(f"  바이오: {bio if bio else '(비어 있음)'}")
+    print(f"  링크: {prof.get('website') or '(없음)'}")
+else:
+    print(f"  (프로필 본문 조회 실패: {prof['error'].get('message','')[:60]})")
+
+# 팔로잉이 팔로워보다 많으면 프로필 방문자에게 '팔로우 품앗이 계정'으로 읽혀
+# 팔로우 전환을 직접 깎는다. 방문자가 가장 먼저 보는 숫자라 영향이 크다.
+_fr = acc.get("followers_count") or 0
+_fg = acc.get("follows_count") or 0
+if _fg > _fr:
+    print(f"  [⚠️ 계정 위생] 팔로잉({_fg}) > 팔로워({_fr}) — 방문자에게 저품질 계정으로 보여 전환을 깎습니다.")
+
 print()
 print("=" * 60)
 print("[2] 계정 인사이트 (최근 30일)")
@@ -60,6 +77,16 @@ media = get(f"{USER_ID}/media",
 rows = media.get("data", [])
 print(f"  (총 {len(rows)}개 조회)")
 print()
+
+# 깔때기 누적 — 게시물별 수치는 원래도 찍혔지만 합산을 안 해서,
+# "프로필까지 온 사람 중 몇 %가 팔로우했는가"를 아무도 본 적이 없었다.
+# 2026-09-14에 CSV로 직접 세어보니 누적 프로필방문 292 → 팔로우 6 (2.1%)였다.
+# 콘텐츠가 아니라 프로필이 병목이라는 신호라, 상시로 보이게 만든다.
+funnel = {"reach": 0, "pv": 0, "follows": 0, "n": 0}
+
+
+def _num(v):
+    return v if isinstance(v, (int, float)) else 0
 
 for m in rows:
     mid = m["id"]
@@ -105,6 +132,35 @@ for m in rows:
     wt_s = f" 평균시청={int(wt)/1000:.1f}초" if isinstance(wt, (int, float)) and wt else ""
     print(f"  [{ts}] {mtype:<8} 도달={reach} 저장={saved} 공유={shares} 조회={views} 좋아요={likes} 댓글={comments} 프로필방문={pv} 팔로우={fol}{wt_s}")
     print(f"          └ {cap}")
+
+    # 릴스는 profile_visits/follows를 API가 아예 안 주므로 깔때기에서 뺀다.
+    # (릴스를 섞으면 분모만 커지고 분자는 0이라 전환율이 가짜로 낮아진다)
+    if mtype != "REELS":
+        funnel["reach"] += _num(reach)
+        funnel["pv"] += _num(pv)
+        funnel["follows"] += _num(fol)
+        funnel["n"] += 1
+
+print()
+print("=" * 60)
+print("[4] 팔로우 깔때기 (카드뉴스 기준 — 릴스는 API가 전환을 측정 못 함)")
+print("=" * 60)
+if funnel["n"] == 0:
+    print("  (이번 25개에 카드뉴스가 없어 측정 불가)")
+else:
+    r, p, f = funnel["reach"], funnel["pv"], funnel["follows"]
+    pv_rate = f"{p / r * 100:.1f}%" if r else "-"
+    fo_rate = f"{f / p * 100:.1f}%" if p else "-"
+    print(f"  카드뉴스 {funnel['n']}개: 도달 {r:.0f} → 프로필방문 {p:.0f} ({pv_rate}) → 팔로우 {f:.0f} ({fo_rate})")
+    # 판정: 방문은 생기는데 팔로우가 안 나오면 콘텐츠가 아니라 프로필이 병목이다.
+    # 건강한 계정은 방문→팔로우가 보통 5~15%.
+    if p >= 20 and f / p < 0.05:
+        print(f"  [⚠️ 프로필 병목] 프로필까지 {p:.0f}명이 왔는데 팔로우는 {f:.0f}명({fo_rate})입니다.")
+        print("     콘텐츠는 사람을 데려오고 있으니, 바이오·고정게시물·하이라이트를 손봐야 합니다.")
+    elif p < 20:
+        print("  (표본이 적어 판정 보류 — 프로필 방문 20 이상 쌓인 뒤 보세요)")
+    else:
+        print("  프로필 전환은 정상 범위입니다. 병목은 도달 쪽입니다.")
 
 print()
 # 토큰 만료 임박 경고 (자동 갱신이 실패해도 리포트에서 눈에 띄게)

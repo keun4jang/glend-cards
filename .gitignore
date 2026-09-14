@@ -1,6 +1,7 @@
 ﻿.env
 venv/
 __pycache__/
+.claude/settings.local.json
 
 # 릴스 중간 산출물 (reel.mp4만 커밋, 나머지는 제외)
 output/reel*/scene*.png
