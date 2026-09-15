@@ -4,13 +4,30 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this project does
 
-**glend-cards** is a fully automated Instagram card news pipeline for the Korean economic news channel "GLEND". Every day it:
-1. Fetches Korean economic headlines from Google News RSS
-2. Asks Gemini to pick a topic and write 3-card content (JSON)
-3. Fetches matching background photos from Pexels
-4. Renders 4 PNG cards (1080×1350 px) via Playwright/Chromium
-5. Commits the PNGs to GitHub (so Instagram can fetch them via raw URL)
-6. Posts a carousel to Instagram via the Graph API
+**glend-cards** is a fully automated content pipeline for the Korean life-info/economy
+Instagram channel "GLEND"(@glend_kr). 사람이 손대지 않고 GitHub Actions로만 돌아가며,
+발행 트랙이 **세 개**다 (이 저장소를 "카드뉴스 전용"으로 오해하기 쉬운데, 발행량은
+릴스가 주 14개로 훨씬 많다).
+
+**1. 카드뉴스 — 주 3회, KST 월·수·금 아침** (`daily.yml` → `daily_ci.py`)
+1. Google News RSS에서 한국 뉴스 수집 (경제/사건사고/건강 로테이션)
+2. Gemini가 주제 선정 + 카드 4장 내용과 캡션을 JSON으로 작성 (`generate.py`)
+3. Pexels에서 장면에 맞는 배경 사진 수집
+4. Playwright/Chromium으로 PNG **5장** 렌더 (1080×1350, device_scale_factor=2)
+5. PNG를 `media` 브랜치에 푸시 (인스타가 공개 URL로 가져가야 하므로)
+6. Graph API로 캐러셀 게시 (`upload.py`)
+
+**2. 릴스 — 매일 2회, KST 12:00 / 18:00** (`reel.yml` → `daily_reel_ci.py`)
+`generate_reel.py`(대본) → edge-tts(내레이션) → `render_reel.py`·`build_reel.py`(영상 합성)
+→ `upload_reel.py`. `REEL_POST_THREADS=true`면 Threads에도 함께 올린다.
+
+**3. 검색 자산(정적 사이트) — 매일 KST 05:40** (`site.yml`)
+`article.py`가 쓴 글을 `build_site.py`가 `docs/`(GitHub Pages)로 빌드하고
+`indexnow.py`로 색인을 요청한다.
+
+**계측**: `insights.yml`(주간 리포트 → `reports/`), `harvest.yml`(전량 성과 회수 →
+`archive/instagram_posts.csv`). 발행 원문은 `archive.py`가 `archive/YYYY-MM/`에 영구 보관한다
+(`media` 브랜치는 매번 덮어써서 대본이 남지 않기 때문).
 
 ## Commands
 
@@ -22,11 +39,22 @@ python -m playwright install chromium
 # Full pipeline (local, with random delay)
 python daily.py
 
-# Individual steps
-python generate.py   # fetch news → Gemini → Pexels → content.json
-python render.py     # content.json → output/card{1-4}.png
-python upload.py     # dry-run preview (no actual post)
-python upload.py go  # actually post to Instagram
+# 카드뉴스 — 개별 단계 (N = 1:경제 / 2:사건사고 / 3:건강)
+# 주의: upload 계열만 인자 순서가 반대다 — (go, 인덱스). 나머지는 (인덱스).
+python generate.py 1   # 뉴스 → Gemini → Pexels → content_1.json
+python render.py 1     # content_1.json → output/post1/card{1-5}.png
+python upload.py       # 드라이런 미리보기 (실제 게시 안 함)
+python upload.py go 1  # 실제 게시
+
+# 릴스
+python generate_reel.py 1   # 대본 → reel_content_1.json
+python build_reel.py 1      # 내레이션 + 영상 합성
+python upload_reel.py go 1  # 실제 게시
+
+# 성과 계측 / 검색 자산
+python insights.py     # 주간 리포트 (reports/ 에 저장)
+python harvest.py      # 전량 성과 회수 → archive/instagram_posts.csv
+python build_site.py   # docs/ 정적 사이트 빌드
 
 # Test individual APIs
 python test_gemini.py
@@ -47,27 +75,45 @@ IG_USER_ID=...      # Instagram business account numeric ID
 ## Architecture
 
 ### Data flow
-`generate.py` → `content.json` → `render.py` → `output/card*.png` → git push → `upload.py`
+`generate.py` → `content_{N}.json` → `render.py N` → `output/post{N}/card{1-5}.png`
+→ `media` 브랜치 push → `upload.py N go`
 
-### Card structure (`content.json`)
-- **card1** (hook): `title` (2 lines, ≤6 chars/line), `sub` (≤15 chars), `bg` (Pexels URL)
-- **card2** (analysis): `subtitle` (2 lines), `lines` (3 lines, 13–16 chars each), `bg`
-- **card3** (insight): `subtitle` (2 lines), `lines` (3 lines, 13–16 chars each), `bg`
-- **caption**: Instagram caption text with hashtags (HTML `<b>` tags are stripped before posting)
+### Card structure (`content_{N}.json`)
+- **card1** (hook): `title` (2줄, 줄당 ≤6자), `sub1` (12~16자), `sub2` (6~10자), `query`, `bg`
+- **card2** (analysis): `subtitle` (2줄), `lines` (3줄, 각 13~16자), `query`, `bg`
+- **card3** (insight): `subtitle` (2줄), `lines` (3줄, 각 13~16자), `query`, `bg`
+- **card4** (저장용 요약): `headline` (≤8자), `items` (4개, "라벨 · 값" 12~20자),
+  `closing` (14~22자). 사진 없이 연두(#CFFF04) 바탕 — 저장을 유발하는 유일한 카드다.
+  `save_value_issues()`가 숫자·라벨 구조를 기계 검증한다 (아래 "진행 중인 실험 B" 참고)
+- **caption**: 해시태그 포함 인스타 캡션 (`<b>` 태그는 게시 전 제거됨)
+
+카드5는 JSON에 없다 — 렌더러가 항상 브랜드 카드(`assets/logo.png`)로 붙인다.
 
 ### Rendering (`render.py` + `templates/card.html`)
-Playwright opens `templates/card.html` as a local file in a 1080×1350 viewport (device_scale_factor=2 → 2160×2700 actual pixels). Card content is injected via `page.evaluate()`. Card 4 is always the brand card (shows `assets/logo.png` full-bleed). Font size is scaled once, proportionally to character count (not a measure-and-retry loop), so `render.py` also logs any element that still overflows after rendering.
+Playwright opens `templates/card.html` as a local file in a 1080×1350 viewport (device_scale_factor=2 → 2160×2700 actual pixels). Card content is injected via `page.evaluate()`. **카드5가 브랜드 카드**다(`assets/logo.png` full-bleed) — 카드4는 저장용 요약 카드다. Font size is scaled once, proportionally to character count (not a measure-and-retry loop), so `render.py` also logs any element that still overflows after rendering (`⚠️ 넘침` 으로 찍힌다 — 프롬프트의 글자수 규칙을 바꿀 땐 이 로그를 반드시 확인할 것).
 
 ### Upload flow (`upload.py`)
-Images are served via `https://raw.githubusercontent.com/keun4jang/glend-cards/main/output/card{N}.png`. Each card is registered as a carousel item via the Instagram Graph API, then published as a single carousel post. A retry loop handles Instagram's async image processing (up to 10 × 8s waits). `upload_log.txt` tracks the last post date to enforce one-post-per-day.
+Images are served via `https://raw.githubusercontent.com/keun4jang/glend-cards/media/output/post{N}/card{M}.png` — **`main`이 아니라 `media` 브랜치다.** (media는 부모 없는 단일 커밋으로 강제 푸시해 저장소 비대화를 막는다 — 47일 만에 446MB가 쌓인 적이 있다. 그 대가로 대본이 매일 사라지므로 텍스트는 `archive.py`가 main에 따로 쌓는다.) Each card is registered as a carousel item via the Instagram Graph API, then published as a single carousel post. A retry loop handles Instagram's async image processing (up to 10 × 8s waits). `upload_log.txt` tracks the last post date to enforce one-post-per-day.
 
 ### CI vs local orchestrator
 - `daily_ci.py` — used by GitHub Actions; sets git identity (`github-actions`) before committing
 - `daily.py` — used locally; assumes git identity already configured
-- Both add a random delay (0–4/5 h) so posts don't always land at the same time
+- 발행 시각이 매번 똑같지 않도록 랜덤 지연을 준다: **카드 0~30분**
+  (`daily_ci.py`의 `INITIAL_MAX_DELAY_HOURS = 0.5`), **릴스 0~50분**(`daily_reel_ci.py`)
 
-### GitHub Actions
-`.github/workflows/daily.yml` triggers at UTC 02:00 (KST 11:00). Secrets required: `GEMINI_API_KEY`, `PEXELS_API_KEY`, `IG_TOKEN`, `IG_USER_ID`.
+### GitHub Actions (크론은 전부 UTC — KST는 +9시간)
+
+| 워크플로 | 크론 | KST | 하는 일 |
+|---|---|---|---|
+| `daily.yml` | `30 22 * * 0,2,4` | **월·수·금 07:30** | 카드뉴스 (주 3회) |
+| `reel.yml` | `0 3 * * *` / `0 9 * * *` | 매일 12:00 / 18:00 | 릴스 2편 |
+| `site.yml` | `40 20 * * *` | 매일 05:40 | 정적 사이트 빌드 |
+| `insights.yml` | `0 0 * * 1` | 월 09:00 | 주간 성과 리포트 |
+| `harvest.yml` | `0 1 * * 1` | 월 10:00 | 전량 성과 회수(CSV) |
+| `refresh-token.yml` | `17 3 * * *` | 매일 12:17 | IG 토큰 자동 갱신 |
+
+Secrets required: `GEMINI_API_KEY`, `PEXELS_API_KEY`, `IG_TOKEN`, `IG_USER_ID`
+(토큰 자동 갱신에는 `GH_PAT`도 필요).
 
 ## Key constraints
 - Gemini prompt enforces strict character limits: card titles ≤6 chars/line, body lines 13–16 chars. Violating these causes visual overflow.
