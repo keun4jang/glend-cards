@@ -1,0 +1,83 @@
+{
+  "kind": "reel",
+  "index": "3",
+  "published_kst": "2026-09-16T00:07:27+09:00",
+  "topic": "더본코리아 연돈카레 당류 표기 위반 적발",
+  "content": {
+    "topic": "더본코리아 연돈카레 당류 표기 위반 적발",
+    "title": "식품 표기 위반 🚨",
+    "cover": {
+      "title": "당류 0g이라더니\n<b>과장 광고</b> 적발"
+    },
+    "scenes": [
+      {
+        "narration": "당류 0g이라더니 거짓이었다니",
+        "query": "korean supermarket shelf",
+        "bg": "https://images.pexels.com/photos/18039942/pexels-photo-18039942.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "더본코리아 연돈카레가 영양성분 표시 위반으로 적발됐어요.",
+        "query": "packaged curry product",
+        "bg": "https://images.pexels.com/photos/27939228/pexels-photo-27939228.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "실제 성분과 달라서 소비자를 속인 셈이에요.",
+        "query": "nutrition label closeup",
+        "bg": "https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg"
+      },
+      {
+        "narration": "다이어트하는 분들이 많이 사 먹던 제품이라 충격이 커요.",
+        "query": "diet food ingredients",
+        "bg": "https://images.pexels.com/photos/3851077/pexels-photo-3851077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "식약처 기준을 위반해 강력한 처분이 내려질 예정이에요.",
+        "query": "official government document",
+        "bg": "https://images.pexels.com/photos/30851143/pexels-photo-30851143.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "구매하신 분들은 고객센터를 통해 확인해 보세요.",
+        "query": "phone customer service",
+        "bg": "https://images.pexels.com/photos/8101355/pexels-photo-8101355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "환불이나 보상 규정은 업체 공지를 꼭 살펴보세요.",
+        "query": "notice announcement board",
+        "bg": "https://images.pexels.com/photos/15261012/pexels-photo-15261012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "영양성분표만 믿고 무작정 샀다가 큰코다쳐요.",
+        "query": "shopping basket grocery",
+        "bg": "https://images.pexels.com/photos/20543793/pexels-photo-20543793.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "구매 내역 저장해두고 주변에도 알려주세요.",
+        "query": "smartphone screen notification",
+        "bg": "https://images.pexels.com/photos/5077054/pexels-photo-5077054.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "식품 살 때는 성분표를 더 꼼꼼히 확인하세요.",
+        "query": "reading food label",
+        "bg": "https://images.pexels.com/photos/8422692/pexels-photo-8422692.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "outro": true,
+        "narration": "이런 <b>식품 안전</b> 정보, 매일 알려드려요. @glend_kr 팔로우하세요!"
+      }
+    ],
+    "follow_cta": "이런 <b>식품 안전</b> 정보, 매일 알려드려요. @glend_kr 팔로우하세요!",
+    "caption": "당류 0g이라며 인기를 끌었던 더본코리아 연돈카레가 영양성분 표기 위반으로 적발되었습니다.\n\n다이어터들을 속인 이번 사건의 전말과 주의해야 할 점을 정리해드렸어요.\n\n구매하신 분들은 반드시 공지를 확인하시고 환불 규정을 살펴보세요.\n\n📌 매일 놓치기 쉬운 건강·식품 이슈만 골라 올립니다 → @glend_kr\n\n여러분은 영양성분표를 믿는 편이신가요? 댓글로 알려주세요 👇\n\n#연돈카레 #더본코리아 #영양성분위반 #식품안전 #다이어트식단\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+    "length_variant": "mid"
+  },
+  "length_variant": "mid",
+  "article": null,
+  "meta": {
+    "hook_clip_sec": 3.5,
+    "total_sec": 44.0,
+    "scene_count": 11,
+    "length_variant": "mid",
+    "hook_text": "당류 0g이라더니 거짓이었다니",
+    "ig_media_id": "18131631868662060"
+  },
+  "published": true
+}
