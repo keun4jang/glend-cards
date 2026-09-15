@@ -103,9 +103,9 @@ Images are served via `https://raw.githubusercontent.com/keun4jang/glend-cards/m
 
 ### GitHub Actions (크론은 전부 UTC — KST는 +9시간)
 
-| 워크플로 | 크론 | KST | 하는 일 |
+| 워크플로 | 크론 | 크론상 KST | 하는 일 |
 |---|---|---|---|
-| `daily.yml` | `30 22 * * 0,2,4` | **월·수·금 07:30** | 카드뉴스 (주 3회) |
+| `daily.yml` | `30 22 * * 0,2,4` | 월·수·금 07:30 | 카드뉴스 (주 3회) |
 | `reel.yml` | `0 3 * * *` / `0 9 * * *` | 매일 12:00 / 18:00 | 릴스 2편 |
 | `site.yml` | `40 20 * * *` | 매일 05:40 | 정적 사이트 빌드 |
 | `insights.yml` | `0 0 * * 1` | 월 09:00 | 주간 성과 리포트 |
@@ -114,6 +114,28 @@ Images are served via `https://raw.githubusercontent.com/keun4jang/glend-cards/m
 
 Secrets required: `GEMINI_API_KEY`, `PEXELS_API_KEY`, `IG_TOKEN`, `IG_USER_ID`
 (토큰 자동 갱신에는 `GH_PAT`도 필요).
+
+#### ⚠️ 크론 시각 ≠ 실제 발행 시각 (2026-09-15 실측)
+
+**GitHub Actions 예약 실행은 크론 시각에 시작하지 않는다.** 무료 러너 혼잡 때문에
+매번 밀리고, 이 저장소에서는 그 지연이 일관되게 크다. 최근 실행 기록으로 잰 값:
+
+| 워크플로 | 크론 | 실제 시작 지연 | **실제 발행(KST)** |
+|---|---|---|---|
+| `daily.yml` (카드) | 22:30 UTC | +1시간 40~50분 (5회 측정) | **약 09:20** (07:30 아님) |
+| `reel.yml` #1 | 03:00 UTC | +5시간 20분 | **약 17:35** (12:00 아님) |
+| `reel.yml` #2 | 09:00 UTC | +5시간 20분 | **약 24:00** (18:00 아님) |
+
+지연은 UTC 03:00·09:00처럼 혼잡한 시간대에 특히 크고, 22:30처럼 한산한 시간대엔 작다.
+여기에 스크립트 자체의 랜덤 지연(카드 0~30분, 릴스 0~50분)과 실행 시간(13~50분)이 더 붙는다.
+
+**주의할 점:**
+- `daily_ci.py`의 "KST 07:30~08:00 발행(출근 시간대)" 주석은 **의도일 뿐 실제와 다르다.**
+  점심 타깃 릴스는 저녁에, 저녁 타깃 릴스는 자정에 나가고 있다.
+- "언제 발행되나"를 계산할 때 크론만 보면 틀린다. 반드시 Actions 실행 기록을 볼 것.
+- 발행 시각을 앞당기려면 크론을 그만큼 앞으로 당겨야 하지만, 지연폭이 4~7시간으로
+  흔들려서 정밀 조준은 어렵다. 시간대를 바꾸기 전에 지연을 다시 측정할 것.
+- 발행 시각이 도달에 영향을 주는지는 **아직 측정한 적 없다.** 바꾸기 전에 근거부터 만들 것.
 
 ## Key constraints
 - Gemini prompt enforces strict character limits: card titles ≤6 chars/line, body lines 13–16 chars. Violating these causes visual overflow.
