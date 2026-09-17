@@ -1,0 +1,95 @@
+{
+  "kind": "reel",
+  "index": "2",
+  "published_kst": "2026-09-17T17:43:18+09:00",
+  "topic": "카카오게임즈 개인정보 유출 사고",
+  "content": {
+    "topic": "카카오게임즈 개인정보 유출 사고",
+    "title": "개인정보 유출 🚨",
+    "cover": {
+      "title": "털린 내 정보\n<b>140명</b> 유출"
+    },
+    "scenes": [
+      {
+        "narration": "내 개인정보가 털렸다",
+        "query": "computer keyboard dark",
+        "bg": "https://images.pexels.com/photos/16321209/pexels-photo-16321209.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "카카오게임즈에서 이용자 정보가 외부로 유출되는 사고가 터졌어요.",
+        "query": "server rack datacenter",
+        "bg": "https://images.pexels.com/photos/5203849/pexels-photo-5203849.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "이번에 유출된 피해자는 총 <b>140명</b>으로 확인되었어요.",
+        "query": "document paper closeup",
+        "bg": "https://images.pexels.com/photos/12899103/pexels-photo-12899103.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "게임 계정과 연동된 이메일과 닉네임이 주요 타겟이 되었어요.",
+        "query": "digital screen code",
+        "bg": "https://images.pexels.com/photos/34804021/pexels-photo-34804021.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "회사 측은 악용될 위험이 낮다고 밝혔지만 안심할 수 없어요.",
+        "query": "warning sign red",
+        "bg": "https://images.pexels.com/photos/13991935/pexels-photo-13991935.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "공식 홈페이지 공지사항에서 본인 계정의 피해 여부를 조회해요.",
+        "query": "laptop computer desk",
+        "bg": "https://images.pexels.com/photos/6968164/pexels-photo-6968164.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "추가 피해를 막기 위해 비밀번호를 즉시 변경해야 안전해요.",
+        "query": "padlock security key",
+        "bg": "https://images.pexels.com/photos/37095097/pexels-photo-37095097.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "비밀번호를 다른 사이트와 똑같이 쓰면 2차 피해로 이어져요.",
+        "query": "question mark sign",
+        "bg": "https://images.pexels.com/photos/5428826/pexels-photo-5428826.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "이런 보안 사고 대비해 2단계 인증을 지금 켜두세요",
+        "query": "smartphone security app",
+        "bg": "https://images.pexels.com/photos/7151031/pexels-photo-7151031.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "보안 점검을 바로 하고 내 정보를 안전하게 지키세요",
+        "query": "shield security icon",
+        "bg": "https://images.pexels.com/photos/30846825/pexels-photo-30846825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "outro": true,
+        "narration": "당하기 전에 알아야 할 <b>대처법</b>, 매일 올려요. @glend_kr 팔로우하세요!"
+      }
+    ],
+    "follow_cta": "이런 보안 사고와 피해 대처법, 매일 알려드려요. @glend_kr 팔로우하세요!",
+    "caption": "카카오게임즈에서 이용자 개인정보가 유출되는 사고가 발생했습니다. 총 140명의 계정 정보가 빠져나갔는데요. 회사 측은 악용 위험이 낮다고 발표했지만 사용자의 선제적인 조치가 필수적입니다. 지금 바로 공식 홈페이지에서 피해 여부를 확인하고 비밀번호를 바꾸세요. 2단계 인증 설정도 잊지 마세요. 📌 매일 꼭 알아야 할 사건·사고 소식만 골라 올립니다 → @glend_kr 여러분은 게임 계정 보안 잘 챙기고 계신가요? 댓글로 알려주세요 👇 #개인정보유출 #카카오게임즈 #보안사고 #사건사고 #정보보호\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+    "length_variant": "mid"
+  },
+  "length_variant": "mid",
+  "article": {
+    "title": "카카오게임즈 개인정보 유출 확인 및 보안 조치 방법",
+    "description": "카카오게임즈 개인정보 유출 사고의 피해 규모를 확인하고 비밀번호 변경 및 2단계 인증 등 추가 피해를 예방하는 방법을 안내합니다.",
+    "keywords": [
+      "카카오게임즈",
+      "개인정보유출",
+      "계정안전",
+      "비밀번호변경",
+      "2단계인증"
+    ],
+    "body_markdown": "카카오게임즈에서 이용자 개인정보가 외부로 유출되는 보안 사고가 발생했습니다. 이번 사고로 총 140명의 계정 정보가 빠져나간 것으로 확인되었으며, 게임 계정과 연동된 이메일과 닉네임 등이 주요 타겟이 되었습니다. 회사 측은 정보가 악용될 위험이 낮다고 밝혔으나, 이용자 스스로 계정을 점검하고 선제적인 보안 조치를 취하는 것이 안전합니다. 지금 바로 공식 홈페이지를 통해 피해 여부를 조회하고 비밀번호 변경과 2단계 인증을 설정해야 합니다.\n\n## 유출된 정보와 피해 범위는 어떻게 되나요?\n\n이번 사고로 확인된 피해 규모와 유출 항목은 다음과 같습니다.\n\n* 피해 인원: 총 140명\n* 주요 유출 항목: 게임 계정과 연동된 이메일 주소, 닉네임 등\n* 위험성: 회사 측에서는 유출된 정보가 악용될 가능성이 낮다고 발표했으나, 이용자 입장에서는 연동된 계정을 통한 2차 피해 가능성을 배제할 수 없습니다.\n\n## 내 계정이 유출되었는지 확인하는 방법\n\n피해 대상에 포함되었는지 확인하기 위해서는 카카오게임즈 공식 홈페이지를 이용해야 합니다.\n\n1. 카카오게임즈 공식 홈페이지에 접속합니다.\n2. 공지사항 또는 보안 관련 안내 페이지를 확인합니다.\n3. 안내된 절차에 따라 본인 계정의 피해 여부를 조회합니다.\n\n공식 홈페이지의 안내를 통해 본인의 계정이 이번 유출 사고에 포함되었는지 정확하게 확인하는 것이 첫 번째 단계입니다.\n\n## 추가 피해를 막기 위한 비밀번호 변경 방법\n\n개인정보 유출 사고가 발생했을 때 가장 먼저 해야 할 일은 비밀번호를 즉시 변경하는 것입니다.\n\n* 비밀번호 변경 시 주의사항:\n  * 타인이 쉽게 추측할 수 있는 생년월일이나 전화번호 조합은 피합니다.\n  * 영문, 숫자, 특수문자를 조합하여 안전한 비밀번호를 설정합니다.\n  * 다른 사이트에서 사용 중인 비밀번호와 동일하게 설정할 경우, 한 곳의 정보가 유출되었을 때 다른 계정까지 연쇄적으로 뚫리는 2차 피해로 이어질 수 있으므로 반드시 고유한 비밀번호를 사용해야 합니다.\n\n## 보안 강화를 위한 2단계 인증 설정하기\n\n비밀번호 변경과 더불어 계정 보안을 철저히 하기 위해서는 2단계 인증 기능을 활성화해야 합니다.\n\n* 2단계 인증의 필요성:\n  * 아이디와 비밀번호만으로는 타인의 접속을 완벽하게 차단하기 어렵습니다.\n  * 2단계 인증을 켜두면 평소와 다른 기기나 환경에서 로그인할 때 추가 인증 절차를 거치므로 무단 접근을 효과적으로 막을 수 있습니다.\n* 설정 방법:\n  * 카카오게임즈 계정 설정 또는 보안 관리 메뉴에 접속하여 2단계 인증 기능을 활성화합니다.\n\n## 자주 묻는 질문\n\nQ. 회사 측에서 악용 위험이 낮다고 했는데 꼭 조치를 취해야 하나요?\nA. 회사 측의 발표와 별개로, 연동된 이메일이나 닉네임은 스팸 메일 발송이나 타 사이트 공격 등에 악용될 여지가 있습니다. 추가 피해를 예방하기 위해 비밀번호 변경과 2단계 인증 설정을 진행하는 것이 안전합니다.\n\nQ. 공식 공지사항을 어디서 찾아야 할지 모르겠어요.\nA. 카카오게임즈 공식 홈페이지 메인 화면이나 고객센터, 공지사항 게시판을 통해 이번 개인정보 유출 관련 안내문을 확인할 수 있습니다.",
+    "chars": 1548
+  },
+  "meta": {
+    "hook_clip_sec": 3.0,
+    "total_sec": 47.5,
+    "scene_count": 11,
+    "length_variant": "mid",
+    "hook_text": "내 개인정보가 털렸다",
+    "ig_media_id": "18155088556509511"
+  },
+  "published": true
+}
