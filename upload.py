@@ -58,7 +58,7 @@ caption = content.get("caption", "").replace("<b>", "").replace("</b>", "").repl
 print("\n[캡션 미리보기]")
 print(caption[:200], "...\n")
 
-print("[올릴 이미지 4장]")
+print(f"[올릴 이미지 {len(CARD_FILES)}장]")
 for fn in CARD_FILES:
     print(f"  {IMAGE_BASE}/{fn}")
 print()
