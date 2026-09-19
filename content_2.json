@@ -1,0 +1,41 @@
+{
+  "topic": "경찰서 음주운전 안내문 논란과 단속 처벌·구제 기준",
+  "card1": {
+    "title": "경찰서\n안내문",
+    "sub1": "적발 시 <b>벌금</b> 최대 2천만원",
+    "sub2": "<b>면허취소</b> 기준 확인",
+    "query": "police breathalyzer device",
+    "bg": "https://images.pexels.com/photos/31154457/pexels-photo-31154457.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card2": {
+    "subtitle": "적발기준\n알아보기",
+    "lines": [
+      "혈중알코올 <b>0.03%</b>부터",
+      "면허 정지와 <b>벌금형</b> 처벌",
+      "<b>0.08%</b> 넘으면 면허 취소"
+    ],
+    "query": "car steering wheel night",
+    "bg": "https://images.pexels.com/photos/9661344/pexels-photo-9661344.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card3": {
+    "subtitle": "구제절차\n필수확인",
+    "lines": [
+      "<b>중앙행정심판위</b> 사이트 접수",
+      "생계형 운전자 <b>소명자료</b> 필수",
+      "<b>처분통지</b> 후 90일내 신청"
+    ],
+    "query": "law books wooden gavel",
+    "bg": "https://images.pexels.com/photos/5668882/pexels-photo-5668882.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card4": {
+    "headline": "단속처벌 핵심요약",
+    "items": [
+      "신청처 · <b>중앙행정심판위원회</b>",
+      "취소기준 · 혈중 <b>0.08%</b> 이상",
+      "서류 · 신분증+<b>생계소명서류</b>",
+      "기한 · 처분일로부터 <b>90일</b>"
+    ],
+    "closing": "억울한 처분 시 이 카드만 꺼내보세요"
+  },
+  "caption": "소주 1잔 마셨을 뿐인데 벌금만 최대 500만원입니다.\n\n최근 한 경찰서에 '가장 비싼 대리기사는 변호사'라는 문구가 붙어 온라인에서 큰 논란이 일었습니다.\n\n윤창호법 이후 혈중알코올농도 0.03%만 나와도 면허 정지에 500만원 이하 벌금이 부과됩니다.\n\n수치가 0.08%를 넘기면 즉시 면허 취소는 물론 1년 이상 2년 이하 징역이나 최대 1000만원 벌금형에 처해집니다.\n\n만약 생계형 운전자로 억울하거나 가혹한 처분을 받았다면 통지서를 받은 날부터 90일 안에 행정심판을 청구해야 감경받을 수 있습니다.\n\n💾 면허 취소 기준과 구제 신청법은 마지막 장에 정리해뒀어요\n\n📌 매일 화제의 이슈 카드 받고 싶다면 @glend_kr 팔로우!\n\n경찰서의 변호사 풍자 안내문, 여러분은 어떻게 생각하시나요? 댓글로 알려주세요 👇\n\n#사회이슈 #음주운전 #교통법규 #면허취소 #행정심판"
+}
