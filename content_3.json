@@ -1,0 +1,41 @@
+{
+  "topic": "과도한 수면이 사망 위험을 높이는 기준과 적정 수면 시간",
+  "card1": {
+    "title": "오래 자면\n죽는다?",
+    "sub1": "<b>수면 시간</b> 길수록 사망 위험 증가",
+    "sub2": "<b>기준</b>을 넘으면 망가진다",
+    "query": "dark bedroom clock night",
+    "bg": "https://images.pexels.com/photos/19306667/pexels-photo-19306667.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card2": {
+    "subtitle": "과다수면\n사망위험",
+    "lines": [
+      "<b>사망 위험</b> 17퍼센트 높아져",
+      "<b>권장 시간</b> 초과하면 독이다",
+      "성인 <b>하루 기준</b> 7시간 안팎"
+    ],
+    "query": "morning sunlight empty bed",
+    "bg": "https://images.pexels.com/photos/17594422/pexels-photo-17594422.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card3": {
+    "subtitle": "적정수면\n체크하기",
+    "lines": [
+      "질병관리청 <b>국가건강포털</b> 접속",
+      "연령별 <b>권장 시간</b> 기준 확인",
+      "<b>7시간</b> 수면 습관 시작하기"
+    ],
+    "query": "modern alarm clock morning",
+    "bg": "https://images.pexels.com/photos/4185554/pexels-photo-4185554.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card4": {
+    "headline": "수면 기준",
+    "items": [
+      "적정시간 · <b>7시간</b> 권장 기준",
+      "주의기준 · <b>9시간</b> 초과시 위험",
+      "확인처 · <b>국가건강포털</b> 사이트",
+      "실천법 · <b>동일한 시간</b> 기상하기"
+    ],
+    "closing": "수면 패턴 바꿀 때 이 카드만 다시 보세요"
+  },
+  "caption": "잠은 무조건 오래 자면 좋다는 생각, 오히려 수명 단축시키는 지름길입니다.\n\n성인 기준 적정 수면 시간은 7시간 안팎이며, 이를 훌쩍 넘겨 오래 잘 경우 사망 위험이 크게 높아집니다.\n\n잠의 양보다 질이 훨씬 중요하며, 매일 일정한 시간에 기상하는 습관을 들여야 합니다.\n\n💾 적정 수면 기준과 확인처는 마지막 장에 정리해뒀어요\n\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_kr 팔로우!\n\n여러분은 평소에 몇 시간 정도 주무시나요? 댓글로 알려주세요 👇\n\n#건강정보 #수면관리 #수면시간 #건강습관 #생활습관"
+}

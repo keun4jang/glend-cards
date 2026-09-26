@@ -1,0 +1,66 @@
+{
+  "topic": "어두운 빛 수면 노출과 심부전 위험",
+  "title": "수면 건강 🛏️",
+  "cover": {
+    "title": "잘 때 이 불 켜두면\n<b>심부전</b> 위험"
+  },
+  "scenes": [
+    {
+      "narration": "불 켜고 자면 심장 망가집니다",
+      "query": "dark bedroom night",
+      "bg": "https://images.pexels.com/photos/6943425/pexels-photo-6943425.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "밤에 켜둔 작은 불빛이 <b>심장</b>을 위협해요",
+      "query": "bedside lamp glowing",
+      "bg": "https://images.pexels.com/photos/4913538/pexels-photo-4913538.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "심부전 발생 위험이 최대 <b>30%</b>까지 뛴대요",
+      "query": "heart monitor screen",
+      "bg": "https://images.pexels.com/photos/9408869/pexels-photo-9408869.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "수면 중 가로등이나 스마트폰 빛에 노출된 분들이 대상이에요",
+      "query": "smartphone screen light",
+      "bg": "https://images.pexels.com/photos/9785585/pexels-photo-9785585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "수면 질이 떨어지면서 <b>혈압</b>이 급격히 상승하게 됩니다",
+      "query": "blood pressure cuff",
+      "bg": "https://images.pexels.com/photos/8088865/pexels-photo-8088865.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "오늘 밤부터 침실 커튼을 단단히 치고 암막을 유지하세요",
+      "query": "blackout curtain window",
+      "bg": "https://images.pexels.com/photos/25985681/pexels-photo-25985681.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "빛 차단은 <b>멜라토닌</b> 분비를 지키는 핵심 조건이에요",
+      "query": "sleeping mask closeup",
+      "bg": "https://images.pexels.com/photos/10912442/pexels-photo-10912442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "스마트폰을 머리맡에 두고 잠드는 실수를 가장 많이 하죠",
+      "query": "phone on nightstand",
+      "bg": "https://images.pexels.com/photos/25396076/pexels-photo-25396076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "저장해두고 오늘 밤부터 꼭 실천해 보세요",
+      "query": "bedroom interior night",
+      "bg": "https://images.pexels.com/photos/25003352/pexels-photo-25003352.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "오늘 밤 완전한 암막으로 <b>심장 건강</b>을 지키세요",
+      "query": "dark room blind",
+      "bg": "https://images.pexels.com/photos/19124867/pexels-photo-19124867.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "outro": true,
+      "narration": "이런 <b>수면 건강</b> 상식, 매일 알려드려요. @glend_kr 팔로우하세요!"
+    }
+  ],
+  "follow_cta": "이런 <b>수면 건강</b> 상식, 매일 알려드려요. @glend_kr 팔로우하세요!",
+  "caption": "밤에 불 켜고 주무시나요? 작은 불빛 하나가 심장에 치명적일 수 있습니다.\n\n수면 중 미세한 빛에만 노출돼도 심부전 위험이 크게 증가한다는 연구 결과가 나왔어요. 멜라토닌 분비가 방해받고 혈압이 유지되지 않기 때문입니다.\n\n오늘 밤부터는 완벽한 암막 커튼과 수면 안대로 불빛을 완전히 차단해 보세요. 작은 습관 하나가 건강을 지킵니다.\n\n📌 매일 놓치기 쉬운 건강 꿀팁만 골라 올립니다 → @glend_kr\n\n여러분은 잘 때 불을 켜두시나요, 끄고 주무시나요? 댓글로 알려주세요 👇\n\n#수면건강 #심부전예방 #수면장애 #건강관리 #생활습관\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "length_variant": "mid"
+}
