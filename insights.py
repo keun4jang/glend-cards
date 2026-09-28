@@ -163,22 +163,18 @@ else:
         print("  프로필 전환은 정상 범위입니다. 병목은 도달 쪽입니다.")
 
 print()
-# 토큰 만료 임박 경고 (자동 갱신이 실패해도 리포트에서 눈에 띄게)
-try:
-    dbg = requests.get(f"{GRAPH}/access_token",
-                       params={"fields": "expires_at", "access_token": TOKEN}, timeout=30).json()
-except Exception:
-    dbg = {}
-exp = dbg.get("expires_at") or dbg.get("data", {}).get("expires_at")
-if exp:
-    import datetime as _dt
-    left = (_dt.datetime.fromtimestamp(int(exp)) - _dt.datetime.now()).days
-    if left < 14:
-        print(f"[🚨 경고] IG_TOKEN 만료까지 {left}일 — 자동 갱신 워크플로우(Refresh Instagram Token)를 확인하세요!")
-    else:
-        print(f"[토큰] 만료까지 약 {left}일 (주 2회 자동 갱신 중)")
+# 토큰 상태 — 이 리포트의 [1] 호출이 성공했는지로 판정한다.
+# 예전엔 `{GRAPH}/access_token?fields=expires_at`로 만료일을 물었는데, 인스타 로그인
+# 토큰에는 그런 조회 엔드포인트가 없어 매주 "확인 불가"만 찍혔다(2026-09-28 확인 —
+# 같은 주 refresh-token.yml 로그는 "갱신 성공, 60일 유효"). 매주 뜨는 경고는
+# 무시하는 습관을 들여, 진짜 문제가 났을 때 못 보게 만든다.
+# 만료 자체는 refresh-token.yml이 매일 갱신하고, 실패하면 exit 1로 워크플로가 빨갛게 뜬다.
+if "error" in acc:
+    msg = acc["error"].get("message", "")[:100]
+    print(f"[🚨 경고] IG_TOKEN으로 API 호출 실패 — 토큰 만료·권한 문제일 수 있습니다: {msg}")
+    print("  → Refresh Instagram Token 워크플로가 최근에 실패했는지 확인하세요.")
 else:
-    print("[토큰] 만료일 확인 불가 — 자동 갱신 워크플로우 실행 이력을 확인하세요.")
+    print("[토큰] 정상 (이 리포트의 API 호출 성공). 만료는 refresh-token.yml이 매일 자동 갱신.")
 print()
 print("완료 — 발행/변경 없음 (읽기 전용)")
 

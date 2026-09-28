@@ -1,4 +1,5 @@
 import os
+import datetime
 import json
 import re
 import sys
@@ -94,8 +95,18 @@ else:
 
 AVOID = avoid_line()
 
+# 오늘 날짜(KST)와 계절 — 프롬프트에 날짜가 없어서 모델이 계절을 짐작으로 썼다.
+# 2026-09-26 릴스가 9월에 "봄철 영농기"라고 쓴 게 실제로 나갔다(수확기가 맞다).
+_KST = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=9)
+_SEASON = {12: "겨울", 1: "겨울", 2: "겨울", 3: "봄", 4: "봄", 5: "봄",
+           6: "여름", 7: "여름", 8: "여름"}.get(_KST.month, "가을")
+TODAY_LINE = (f"오늘은 {_KST.year}년 {_KST.month}월 {_KST.day}일, {_SEASON}이야. "
+              "계절·시기 표현(봄철, 연말 등)은 반드시 오늘 날짜에 맞게 써.")
+
 PROMPT = f"""
 {PERSONA}
+
+{TODAY_LINE}
 
 아래는 {TOPIC_DESC}이야:
 {news_text}
