@@ -263,63 +263,125 @@ def parse_json(raw):
     return json.loads(raw.strip())
 
 
+def _plain_len(s):
+    return len(re.sub(r'<[^>]+>', '', s.get("narration", "")))
+
+
+def est_seconds(scenes):
+    """최종 영상 길이 추정 — 대본 장면만 넣으면 아웃트로(팔로우 멘트)까지 포함한 값.
+
+    2026-09-28 재적합: 8/20~9/27 mid 릴스 69편의 실제 total_sec을 대본 글자수로 회귀하면
+    실제 ≈ 0.0937 x 글자수 + 21.06초 (10장면 기준, 잔차 표준편차 1.5초).
+    예전 식(0.124 x 글자수 + 장면당 0.5 + 6)은 긴 대본을 2초가량 과대추정해서,
+    실제로는 57초짜리를 "60초 초과"로 거절하고 재생성시키고 있었다.
+    """
+    return sum(_plain_len(sc) * 0.0937 + 0.5 for sc in scenes) + 16.06
+
+
+# mid 목표 구간. 상한은 60초 제한에 잔차 여유를 둔 값, 하한은 그 밑이면 "비어 보이는" 길이.
+# 하한이 없던 때는 최근 30편 중 12편이 45초 미만(최저 33초)으로 나갔다 — 길이 초과로
+# 재생성할 때 "32자 이내→26자 이내"로 조이던 되먹임이 반대쪽으로 튄 결과였다.
+MID_MAX_SEC = 58.0
+MID_MIN_SEC = 48.0
+_BODY_LO, _BODY_HI = (int(x) for x in CHAR_RANGE.rstrip("자").split("~"))
+
+
 def validate(d):
     """구조 검증 — 깨진 응답이 렌더/조립 단계로 흘러가지 않게"""
     assert isinstance(d.get("caption"), str) and d["caption"].strip(), "caption 누락"
     assert isinstance(d.get("title"), str) and d["title"].strip(), "title 누락"
     scenes = d.get("scenes")
     assert isinstance(scenes, list) and len(scenes) == TOTAL_SCENES, f"scenes 개수 오류({len(scenes) if isinstance(scenes, list) else '없음'} != {TOTAL_SCENES})"
-    # 러닝타임 추정 — mid는 '60초 안에'가 요구사항이라, 넘칠 대본은 만들기 전에 걸러 재생성한다.
-    # 실측 회귀: 장면 길이 ≈ 글자수 x 0.124초 + 0.5초(패딩). 로고 장면(팔로우 멘트)은 약 6초.
-    if LENGTH_VARIANT == "mid":
-        est = sum(len(re.sub(r'<[^>]+>', '', s.get("narration", ""))) * 0.124 + 0.5
-                  for s in scenes) + 6.0
-        assert est <= 59.0, f"예상 러닝타임 {est:.0f}초 — 60초 초과. 각 문장을 더 짧게 다시 써야 함"
     for i, s in enumerate(scenes, 1):
         assert isinstance(s.get("narration"), str) and s["narration"].strip(), f"scene{i} narration 누락"
         assert isinstance(s.get("query"), str) and s["query"].strip(), f"scene{i} query 누락"
+    # 러닝타임 — mid는 '60초 안에'가 요구사항이라, 넘칠 대본은 만들기 전에 걸러 재생성한다.
+    if LENGTH_VARIANT == "mid":
+        est = est_seconds(scenes)
+        assert est <= MID_MAX_SEC, f"예상 러닝타임 {est:.0f}초 — {MID_MAX_SEC:.0f}초 초과"
+
+
+def length_shortfall(d):
+    """너무 짧은 대본의 사유 — 재생성 사유지만, 끝내 못 채우면 발행은 한다(구조 오류와 다르게)."""
+    if LENGTH_VARIANT != "mid":
+        return ""
+    est = est_seconds(d["scenes"])
+    return f"예상 러닝타임 {est:.0f}초 — {MID_MIN_SEC:.0f}초 미만" if est < MID_MIN_SEC else ""
+
+
+def length_correction(d, msg):
+    """길이 사유를 되먹인다. 몇 자를 써야 하는지 숫자로, 직전 평균과 함께.
+
+    예전엔 초과할 때마다 상한만 6자씩 깎아("26자 이내") 모델이 반대로 너무 짧게 썼다.
+    목표 구간을 양쪽 다 명시하고, 직전 시도가 평균 몇 자였는지 알려 스스로 보정하게 한다.
+    """
+    body = d["scenes"][1:]
+    avg = sum(_plain_len(s) for s in body) / max(1, len(body))
+    if "초과" in msg:
+        lo, hi, verb = _BODY_LO, _BODY_HI - 2, "줄여라"
+    else:
+        lo, hi, verb = _BODY_LO + 2, _BODY_HI, "늘려라 — 수치·조건·기관명을 더 넣어 채워"
+    return (f"\n\n[매우 중요] 직전 시도가 길이 문제로 거절됐다: {msg}\n"
+            f"직전 시도의 scene 2~{TOTAL_SCENES} narration은 평균 {avg:.0f}자였다. "
+            f"이번에는 각각 공백 포함 **{lo}~{hi}자**로 {verb}. "
+            f"{lo}자 미만도, {hi}자 초과도 안 된다. 장면 수는 그대로 유지해라.")
 
 
 # 재생성할 때 같은 프롬프트를 그대로 보내면 모델은 왜 거절당했는지 모른다.
 # 실제로 러닝타임 초과로 3연속 실패해 발행이 중단된 적이 있어, 실패 사유를 되먹인다.
 TRIES = 5
 data = None
+short_fallback = None   # 길이만 짧은 후보 중 가장 긴 것 — 끝내 못 채우면 이걸 발행한다
+long_fallback = None    # 길이만 긴 후보 중 가장 짧은 것 — 짧은 후보도 없으면 잘라서 발행한다
 correction = ""
 for gen_try in range(1, TRIES + 1):
     response = call_gemini(correction)
     try:
         cand = parse_json(response.text or "")
         validate(cand)
-        data = cand
-        break
     except AssertionError as e:
         msg = str(e)
         print(f"  검증 실패({msg}) — 재생성 {gen_try}/{TRIES}", flush=True)
         if "러닝타임" in msg:
-            # 모델이 글자수 지시를 반복적으로 무시한다. 몇 자로 줄여야 하는지 숫자로 지시.
-            budget = int(CHAR_RANGE.split("~")[1].rstrip("자"))
-            budget = max(20, budget - 6 * gen_try)
-            correction = (f"\n\n[매우 중요] 직전 시도가 길이 초과로 거절됐다: {msg}\n"
-                          f"이번에는 각 narration을 **{budget}자 이내**로 훨씬 짧게 써라. "
-                          f"장면 수는 그대로 유지하고 문장만 줄여라.")
+            if long_fallback is None or est_seconds(cand["scenes"]) < est_seconds(long_fallback["scenes"]):
+                long_fallback = cand
+            correction = length_correction(cand, msg)
+        else:
+            correction = (f"\n\n[매우 중요] 직전 응답이 거절됐다: {msg}\n"
+                          "지정한 JSON 형식과 장면 수를 그대로 지켜라.")
         time.sleep(3)
+        continue
     except Exception as e:
         print(f"  응답 형식 오류({e}) — 재생성 {gen_try}/{TRIES}", flush=True)
         correction = ("\n\n[매우 중요] 직전 응답이 형식 오류로 거절됐다. "
                       "지정한 JSON 형식만, 다른 설명 없이 출력해라.")
         time.sleep(3)
+        continue
+    short = length_shortfall(cand)
+    if not short:
+        data = cand
+        break
+    if short_fallback is None or est_seconds(cand["scenes"]) > est_seconds(short_fallback["scenes"]):
+        short_fallback = cand
+    print(f"  길이 부족({short}) — 재생성 {gen_try}/{TRIES}", flush=True)
+    correction = length_correction(cand, short)
+    time.sleep(3)
+if data is None and short_fallback is not None:
+    data = short_fallback
+    print(f"  [경고] {TRIES}회 안에 {MID_MIN_SEC:.0f}초를 못 채워 가장 긴 후보"
+          f"({est_seconds(data['scenes']):.0f}초 예상)로 발행합니다.", flush=True)
+if data is None and long_fallback is not None:
+    # 아래 trim_to_budget이 중간 장면을 덜어 60초에 맞춘다. 발행 중단보다 낫다.
+    data = long_fallback
+    print(f"  [경고] {TRIES}회 연속 길이 초과 — 가장 짧은 후보"
+          f"({est_seconds(data['scenes']):.0f}초 예상)를 잘라서 발행합니다.", flush=True)
 if data is None:
     print(f"[중단] Gemini가 {TRIES}회 연속 조건을 만족하지 못했어요.")
     sys.exit(1)
+print(f"  [길이] 예상 {est_seconds(data['scenes']):.0f}초", flush=True)
 
 
-def est_seconds(scenes):
-    """러닝타임 추정 (실측 회귀: 글자수 x 0.124 + 0.5초 패딩) + 로고 장면 6초"""
-    return sum(len(re.sub(r'<[^>]+>', '', sc.get("narration", ""))) * 0.124 + 0.5
-               for sc in scenes) + 6.0
-
-
-def trim_to_budget(scenes, limit=59.0):
+def trim_to_budget(scenes, limit=MID_MAX_SEC):
     """마지막 방어선 — 그래도 길면 중간 장면을 덜어내 60초에 맞춘다.
 
     후킹(첫 장면)과 결론(마지막 장면)은 구조의 핵심이라 절대 건드리지 않고,
@@ -334,7 +396,7 @@ def trim_to_budget(scenes, limit=59.0):
     return scenes
 
 
-if LENGTH_VARIANT == "mid" and est_seconds(data["scenes"]) > 59.0:
+if LENGTH_VARIANT == "mid" and est_seconds(data["scenes"]) > MID_MAX_SEC:
     before = est_seconds(data["scenes"])
     data["scenes"] = trim_to_budget(data["scenes"])
     print(f"  [길이 조정] {before:.0f}초 -> {est_seconds(data['scenes']):.0f}초 "
