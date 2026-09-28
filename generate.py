@@ -10,7 +10,7 @@ import requests
 import feedparser
 from dotenv import load_dotenv
 from google import genai
-from recent_topics import avoid_line
+from recent_topics import avoid_line, get_recent_topics, find_duplicate, dup_correction
 
 load_dotenv()
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip())
@@ -93,7 +93,8 @@ else:
     QUERY_EXAMPLE = '정부지원금은 "korean won bills", "korean won calculator desk"; 부동산은 "apartment korea", "real estate contract"; 금융상품은 "bankbook desk", "korean won cash"'
     LAST_LINE_EXAMPLE = '"<b>12월 31일</b>까지 신청하세요", "<b>정부24</b>에서 바로 확인하세요"'
 
-AVOID = avoid_line()
+RECENT_TOPICS = get_recent_topics()
+AVOID = avoid_line(RECENT_TOPICS)
 
 # 오늘 날짜(KST)와 계절 — 프롬프트에 날짜가 없어서 모델이 계절을 짐작으로 썼다.
 # 2026-09-26 릴스가 9월에 "봄철 영농기"라고 쓴 게 실제로 나갔다(수확기가 맞다).
@@ -306,6 +307,15 @@ for gen_try in range(1, TRIES + 1):
                       "지정한 JSON 형식만, 다른 설명 없이 출력해라.")
         time.sleep(5)
         continue
+
+    dup = find_duplicate(cand.get("topic", ""), RECENT_TOPICS)
+    if dup and gen_try < TRIES:
+        print(f"  주제 중복 — 재생성 {gen_try}/{TRIES}: '{cand.get('topic')}' ≈ 최근 '{dup}'")
+        correction = dup_correction(cand.get("topic"), dup)
+        time.sleep(3)
+        continue
+    if dup:
+        print(f"  [경고] 주제 중복('{dup}')이지만 마지막 시도라 그대로 진행")
 
     issues = save_value_issues(cand)
     if not issues:

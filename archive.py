@@ -59,6 +59,11 @@ def save(kind, index, content, extra=None):
         d = ARCHIVE_DIR / f"{now:%Y-%m}"
         d.mkdir(parents=True, exist_ok=True)
         path = d / f"{now:%Y-%m-%d}-{kind}{index}-{slugify(topic)}.json"
+        # 같은 날 같은 주제가 두 번 나가면 먼저 것을 덮어써 기록이 사라졌다(9/20 추석 교통사고 릴스 2편 → 파일 1개).
+        n = 2
+        while path.exists():
+            path = d / f"{now:%Y-%m-%d}-{kind}{index}-{slugify(topic)}-{n}.json"
+            n += 1
         path.write_text(json.dumps(rec, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"[archive] 저장: {path.relative_to(BASE)}", flush=True)
         return path
