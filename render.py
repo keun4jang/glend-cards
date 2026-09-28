@@ -176,7 +176,7 @@ async def render():
             # 사람 검수가 없으니 여기서 재지 않으면 발견 경로가 아예 없다.
             over = await page.evaluate("""() => {
                 const bad = [];
-                document.querySelectorAll('.line, .ana-subtitle, .ins-title, .sub1, .sub2').forEach(el => {
+                document.querySelectorAll('.line, .ana-subtitle, .ins-title, .sub1, .sub2, .sum-headline, .sum-text, .sum-closing, .sum-box').forEach(el => {
                     const r = el.getBoundingClientRect();
                     if (el.scrollWidth > el.clientWidth + 1 || r.right > 1080 || r.bottom > 1350) {
                         bad.push({
