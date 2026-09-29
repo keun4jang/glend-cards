@@ -147,6 +147,11 @@ PROMPT = f"""
 릴스는 {TOTAL_SCENES}개 장면(scene)으로 구성돼. 각 장면은 성우가 말하는 동시에 화면 중앙에 그대로 뜨는 자막 문장(narration)과 배경 사진 검색어(query)로 이뤄져.
 {AVOID}
 
+주제 고르는 기준(공유 설계): 인스타는 '보내기(DM으로 친구에게 공유)'가 비팔로워에게 퍼지는 가장 강한 신호다.
+시청자가 "이거 OO한테 보내야겠다" 하고 **특정한 한 사람**을 떠올릴 주제를 우선 골라라
+(예: 전세 계약 앞둔 친구, 시골 계신 부모님, 가게 하는 친구, 운전하는 부모님).
+시청자 본인이 대상이 아니어도 된다 — 보내줄 사람이 떠오르면 된다. 누구에게도 보낼 이유가 없는 단순 시사 뉴스는 피해라.
+
 규칙:
 - scene 1 = 후킹. **공백 포함 12~18자.** 아래 본문 글자수 규칙은 scene 1에 적용하지 마라.
   이건 제목이지 문장이 아니다. 숨 한 번에 읽히는 길이여야 한다. {HOOK}
@@ -163,6 +168,7 @@ PROMPT = f"""
    표본이 작아 계속 지켜봐야 하지만, 지금까지 측정된 형식 중 가장 나쁘다. 실제 온스크린 훅에서도 같은 방향.)
 - 대신 이런 형식을 우선 써 — 숫자 제시형("300만원, 신청 안 하면 사라집니다"), 반전형("다들 아는 그 방법, 사실 손해입니다"),
   대상 지목형(단, 명령형으로 끝내지 말 것 — "만 34세 이하라면 손해" O, "만 34세 이하라면 지금 확인하세요" X).
+  대상 지목형은 시청자 대신 **보내줄 사람**을 지목해도 좋다 — "시골 부모님 농기계, 보험 없으면 손해"처럼.
 - scene 2~{TOTAL_SCENES} = 본문 {BODY_COUNT}개. 아래 흐름을 따라 각 장면이 서로 다른 알맹이를 담아:
 {FLOW}
 - 마지막 본문 장면(scene {TOTAL_SCENES})은 반드시 **결론**이다. 앞 내용을 요약 나열하지 말고,
@@ -189,7 +195,11 @@ PROMPT = f"""
   - 좋은 예: "이런 <b>전세사기</b> 예방법, 매일 올려요. 당하기 전에 @glend_kr 팔로우하세요!"
   - 나쁜 예: "이런 정보 매일 받아보고 싶다면 팔로우 눌러주세요" (분야도 약속도 없음)
   - 공백 포함 40~60자. 핵심 명사 1개만 <b>단어</b>로 감싸 강조.
-- 인스타 캡션: 첫 줄 후킹 + 핵심 5~6줄(영상 내용을 글로도 충실히) + 저장/팔로우 유도 + 마지막에 주제와 관련된 댓글 유도 질문 한 줄(예: "여러분이라면 신청하실 건가요? 댓글로 알려주세요 👇") + 해시태그 5개(대형 1 + 중형 2 + 니치 2로 믹스).
+- 공유 대상(share_target)도 만들어줘 — 이 영상을 보고 떠올릴, 보내줄 **한 사람**. 결론 장면 자막 아래에 "→ OO에게 공유"로 뜬다.
+  - 관계 + 상황, 공백 포함 4~16자 (좋은 예: "전세 사는 친구", "시골 계신 부모님", "이번에 결혼하는 친구", "가게 하는 친구", "운전하는 부모님").
+  - 나쁜 예: "주변 사람", "필요한 지인", "여러분" — 막연하면 아무도 떠오르지 않아 아무도 안 보낸다.
+- 인스타 캡션: 첫 줄 후킹 + 핵심 5~6줄(영상 내용을 글로도 충실히) + 저장/팔로우 유도 + 공유 대상을 지목하는 한 줄(예: "📤 전세 사는 친구에게 보내주세요") + 해시태그 5개(대형 1 + 중형 2 + 니치 2로 믹스).
+  "주변에 ~한 분이 있다면 공유해 주세요"처럼 막연하게 쓰지 마라 — share_target과 같은 사람을 그대로 지목해라.
 - 캡션의 팔로우 유도도 마찬가지로 "무엇을 계속 주는 계정인지"를 구체적으로 밝혀야 해 (예: "📌 매일 놓치기 쉬운 정부지원금·정책만 골라 올립니다 → @glend_kr").
 - 캡션과 자막 모두에 마크다운 문법(**별표**, ##, - 목록 등)을 절대 쓰지 마. 인스타는 마크다운을 표시하지 못해서 별표가 그대로 노출돼. 강조는 이모지나 줄바꿈으로만.
 
@@ -202,6 +212,7 @@ PROMPT = f"""
 {SCENE_JSON}
   ],
   "follow_cta": "분야 + 앞으로 줄 것 + @glend_kr 팔로우 (<b>포인트</b> 1개 포함)",
+  "share_target": "보내줄 한 사람(관계 + 상황, 4~16자)",
   "caption": "인스타 캡션 전체 텍스트"
 }}
 """
@@ -288,7 +299,7 @@ _BODY_LO, _BODY_HI = (int(x) for x in CHAR_RANGE.rstrip("자").split("~"))
 
 
 def validate(d):
-    """구조 검증 — 깨진 응답이 렌더/조립 단계로 흘러가지 않게"""
+    """구조 검증 — 깨진 응답이 렌더/조립 단계로 흘러가지 않게. 길이·주제·공유는 따로 본다."""
     assert isinstance(d.get("caption"), str) and d["caption"].strip(), "caption 누락"
     assert isinstance(d.get("title"), str) and d["title"].strip(), "title 누락"
     scenes = d.get("scenes")
@@ -296,18 +307,41 @@ def validate(d):
     for i, s in enumerate(scenes, 1):
         assert isinstance(s.get("narration"), str) and s["narration"].strip(), f"scene{i} narration 누락"
         assert isinstance(s.get("query"), str) and s["query"].strip(), f"scene{i} query 누락"
-    # 러닝타임 — mid는 '60초 안에'가 요구사항이라, 넘칠 대본은 만들기 전에 걸러 재생성한다.
-    if LENGTH_VARIANT == "mid":
-        est = est_seconds(scenes)
-        assert est <= MID_MAX_SEC, f"예상 러닝타임 {est:.0f}초 — {MID_MAX_SEC:.0f}초 초과"
 
 
-def length_shortfall(d):
-    """너무 짧은 대본의 사유 — 재생성 사유지만, 끝내 못 채우면 발행은 한다(구조 오류와 다르게)."""
+def trim_to_budget(scenes, limit=MID_MAX_SEC, max_drop=None, quiet=False):
+    """긴 대본은 재생성 대신 중간 장면을 덜어 60초에 맞춘다.
+
+    후킹(첫 장면)과 결론(마지막 장면)은 구조의 핵심이라 절대 건드리지 않고,
+    결론 바로 앞(추가 꿀팁·흔한 실수)부터 덜어낸다.
+    2026-09-29: flash-lite가 62~66초 대본을 반복해서 써서 재생성을 다 태우고,
+    결국 47초짜리가 나갔다. 한두 장면만 빼면 57초가 되는 대본을 버린 셈이라,
+    이제 초과는 먼저 잘라 보고 구간에 들어오면 그대로 쓴다.
+    """
+    scenes = list(scenes)
+    dropped = 0
+    while len(scenes) > 4 and est_seconds(scenes) > limit and (max_drop is None or dropped < max_drop):
+        drop = len(scenes) - 2          # 결론 바로 앞 장면
+        removed = scenes.pop(drop)
+        dropped += 1
+        if not quiet:
+            print(f"  [길이 조정] 장면 {drop + 1} 제거: {removed.get('narration','')[:24]}...",
+                  flush=True)
+    return scenes
+
+
+def length_issue(d):
+    """길이 사유(없으면 빈 문자열). 초과는 2장면 이내로 잘라서 구간에 들어오면 문제로 보지 않는다."""
     if LENGTH_VARIANT != "mid":
         return ""
     est = est_seconds(d["scenes"])
-    return f"예상 러닝타임 {est:.0f}초 — {MID_MIN_SEC:.0f}초 미만" if est < MID_MIN_SEC else ""
+    if est > MID_MAX_SEC:
+        if MID_MIN_SEC <= est_seconds(trim_to_budget(d["scenes"], max_drop=2, quiet=True)) <= MID_MAX_SEC:
+            return ""
+        return f"예상 러닝타임 {est:.1f}초 — {MID_MAX_SEC:.0f}초 초과"
+    if est < MID_MIN_SEC:
+        return f"예상 러닝타임 {est:.1f}초 — {MID_MIN_SEC:.0f}초 미만"
+    return ""
 
 
 def length_correction(d, msg):
@@ -328,12 +362,67 @@ def length_correction(d, msg):
             f"{lo}자 미만도, {hi}자 초과도 안 된다. 장면 수는 그대로 유지해라.")
 
 
+# 공유 설계 — "이 영상을 누구에게 보낼지"를 콘텐츠가 대신 정해 준다.
+# 시청자 본인이 대상이 아니어도 "이거 OO한테 보내야겠다"가 떠오르면 보내기(DM)가 생긴다.
+# 인스타는 보내기를 비팔로워 도달의 가장 강한 신호로 쓴다고 밝혀 왔다.
+# 2026-09: 릴스 49편 중 공유 1건(1,000도달당 0.27) — 8월 3.29에서 사실상 0이 됐다.
+# 기존 캡션의 "주변에 고민하는 분이 있다면 공유해 주세요"는 아무도 떠올리게 하지 못한다.
+SHARE_RELATIONS = ("친구", "부모님", "엄마", "아빠", "어머니", "아버지", "동생", "언니", "오빠",
+                   "누나", "형", "남편", "아내", "배우자", "동료", "사장님", "자녀", "아들", "딸",
+                   "가족", "할머니", "할아버지", "조부모", "선배", "후배", "룸메", "이웃", "애인",
+                   "남친", "여친", "신랑", "신부", "시부모", "장인", "장모", "처가", "시댁", "팀장")
+SHARE_GENERIC = ("주변", "여러분", "지인", "필요한", "누구나", "모두", "모든", "분들", "사람들")
+
+
+def share_target(d):
+    return re.sub(r"<[^>]+>", "", d.get("share_target") or "").strip()
+
+
+def share_issues(d):
+    t = share_target(d)
+    if not t:
+        return ["share_target 누락"]
+    issues = []
+    if not (4 <= len(t) <= 16):
+        issues.append(f"share_target '{t}': {len(t)}자 — 4~16자로")
+    if any(g in t for g in SHARE_GENERIC):
+        issues.append(f"share_target '{t}': 막연하다 — '주변·지인·필요한 분' 대신 떠오르는 한 사람")
+    if not any(r in t for r in SHARE_RELATIONS):
+        issues.append(f"share_target '{t}': 관계가 없다 — 친구·부모님·동생·동료처럼 관계 + 상황")
+    return issues
+
+
+def share_correction(issues):
+    return ("\n\n[매우 중요] 직전 응답의 share_target이 거절됐다:\n- " + "\n- ".join(issues) +
+            "\nshare_target은 이 영상을 보고 '이거 OO한테 보내야겠다' 하고 떠올릴 **한 사람**이다. "
+            "관계 + 상황으로 써라 (예: \"전세 사는 친구\", \"시골 계신 부모님\", \"운전하는 부모님\", "
+            "\"가게 하는 친구\", \"이번에 결혼하는 친구\").")
+
+
+def add_share_line(d):
+    """캡션 해시태그 바로 위에 공유 대상 지목 한 줄을 보장한다(모델이 빠뜨려도)."""
+    t = share_target(d)
+    cap = d.get("caption", "")
+    if not t or t in cap:
+        return
+    line = f"📤 {t}에게 보내주세요"
+    lines = cap.rstrip().split("\n")
+    for i in range(len(lines) - 1, -1, -1):
+        if lines[i].lstrip().startswith("#"):
+            lines[i:i] = [line, ""]
+            break
+    else:
+        lines += ["", line]
+    d["caption"] = "\n".join(lines)
+
+
 # 재생성할 때 같은 프롬프트를 그대로 보내면 모델은 왜 거절당했는지 모른다.
-# 실제로 러닝타임 초과로 3연속 실패해 발행이 중단된 적이 있어, 실패 사유를 되먹인다.
+# 사유별로 되먹이되, 순서는 주제 → 길이 → 공유. 주제가 바뀌면 나머지는 다 새로 쓰이기 때문이다.
+# 2026-09-29: 중복 검사가 길이 검사 뒤에 있어서, 길이로 세 번 탈락하는 동안 모델은
+# 매번 같은 DMZ 주제를 골랐고 마지막 시도라 중복인 채로 발행됐다.
 TRIES = 5
 data = None
-short_fallback = None   # 길이만 짧은 후보 중 가장 긴 것 — 끝내 못 채우면 이걸 발행한다
-long_fallback = None    # 길이만 긴 후보 중 가장 짧은 것 — 짧은 후보도 없으면 잘라서 발행한다
+best = None          # (점수, 후보) — 끝내 전부 통과하지 못하면 가장 나은 후보로 발행
 correction = ""
 for gen_try in range(1, TRIES + 1):
     response = call_gemini(correction)
@@ -343,13 +432,8 @@ for gen_try in range(1, TRIES + 1):
     except AssertionError as e:
         msg = str(e)
         print(f"  검증 실패({msg}) — 재생성 {gen_try}/{TRIES}", flush=True)
-        if "러닝타임" in msg:
-            if long_fallback is None or est_seconds(cand["scenes"]) < est_seconds(long_fallback["scenes"]):
-                long_fallback = cand
-            correction = length_correction(cand, msg)
-        else:
-            correction = (f"\n\n[매우 중요] 직전 응답이 거절됐다: {msg}\n"
-                          "지정한 JSON 형식과 장면 수를 그대로 지켜라.")
+        correction = (f"\n\n[매우 중요] 직전 응답이 거절됐다: {msg}\n"
+                      "지정한 JSON 형식과 장면 수를 그대로 지켜라.")
         time.sleep(3)
         continue
     except Exception as e:
@@ -358,58 +442,56 @@ for gen_try in range(1, TRIES + 1):
                       "지정한 JSON 형식만, 다른 설명 없이 출력해라.")
         time.sleep(3)
         continue
+
     dup = find_duplicate(cand.get("topic", ""), RECENT_TOPICS)
-    if dup and gen_try < TRIES:
-        print(f"  주제 중복 — 재생성 {gen_try}/{TRIES}: '{cand.get('topic')}' ≈ 최근 '{dup}'", flush=True)
-        correction = dup_correction(cand.get("topic"), dup)
-        time.sleep(3)
-        continue
-    if dup:
-        print(f"  [경고] 주제 중복('{dup}')이지만 마지막 시도라 그대로 진행", flush=True)
-    short = length_shortfall(cand)
-    if not short:
+    length = length_issue(cand)
+    share = share_issues(cand)
+    if not (dup or length or share):
         data = cand
         break
-    if short_fallback is None or est_seconds(cand["scenes"]) > est_seconds(short_fallback["scenes"]):
-        short_fallback = cand
-    print(f"  길이 부족({short}) — 재생성 {gen_try}/{TRIES}", flush=True)
-    correction = length_correction(cand, short)
+
+    # 점수: 중복 > 길이 > 공유 순으로 나쁘다. 길이는 잘라 본 뒤 구간에서 벗어난 초 +
+    # 3장면 이상 잘라야 하면 한 장면당 3초 감점(내용이 비는 것도 짧은 것만큼 나쁘다).
+    trimmed = trim_to_budget(cand["scenes"], quiet=True)
+    est = est_seconds(trimmed)
+    off = (max(0.0, MID_MIN_SEC - est, est - MID_MAX_SEC)
+           + 3.0 * max(0, len(cand["scenes"]) - len(trimmed) - 2)) if LENGTH_VARIANT == "mid" else 0.0
+    score = (bool(dup), off, len(share))
+    if best is None or score < best[0]:
+        best = (score, cand)
+
+    if dup:
+        print(f"  주제 중복 — 재생성 {gen_try}/{TRIES}: '{cand.get('topic')}' ≈ 최근 '{dup}'", flush=True)
+        correction = dup_correction(cand.get("topic"), dup)
+    elif length:
+        print(f"  길이 문제({length}) — 재생성 {gen_try}/{TRIES}", flush=True)
+        correction = length_correction(cand, length)
+    else:
+        print(f"  공유 대상 부족 — 재생성 {gen_try}/{TRIES}: {share}", flush=True)
+        correction = share_correction(share)
     time.sleep(3)
-if data is None and short_fallback is not None:
-    data = short_fallback
-    print(f"  [경고] {TRIES}회 안에 {MID_MIN_SEC:.0f}초를 못 채워 가장 긴 후보"
-          f"({est_seconds(data['scenes']):.0f}초 예상)로 발행합니다.", flush=True)
-if data is None and long_fallback is not None:
-    # 아래 trim_to_budget이 중간 장면을 덜어 60초에 맞춘다. 발행 중단보다 낫다.
-    data = long_fallback
-    print(f"  [경고] {TRIES}회 연속 길이 초과 — 가장 짧은 후보"
-          f"({est_seconds(data['scenes']):.0f}초 예상)를 잘라서 발행합니다.", flush=True)
+
+if data is None and best is not None:
+    (was_dup, off, n_share), data = best
+    print(f"  [경고] {TRIES}회 안에 모든 조건을 못 채워 가장 나은 후보로 발행합니다 "
+          f"(주제 중복={'예' if was_dup else '아니오'}, 길이 이탈 {off:.1f}초, 공유 문제 {n_share}건).",
+          flush=True)
 if data is None:
     print(f"[중단] Gemini가 {TRIES}회 연속 조건을 만족하지 못했어요.")
     sys.exit(1)
-print(f"  [길이] 예상 {est_seconds(data['scenes']):.0f}초", flush=True)
-
-
-def trim_to_budget(scenes, limit=MID_MAX_SEC):
-    """마지막 방어선 — 그래도 길면 중간 장면을 덜어내 60초에 맞춘다.
-
-    후킹(첫 장면)과 결론(마지막 장면)은 구조의 핵심이라 절대 건드리지 않고,
-    뒤쪽 중간 장면부터 덜어낸다. 발행이 통째로 무산되는 것보다 낫다.
-    """
-    scenes = list(scenes)
-    while len(scenes) > 4 and est_seconds(scenes) > limit:
-        drop = len(scenes) - 2          # 결론 바로 앞 장면
-        removed = scenes.pop(drop)
-        print(f"  [길이 조정] 장면 {drop + 1} 제거: {removed.get('narration','')[:24]}...",
-              flush=True)
-    return scenes
-
 
 if LENGTH_VARIANT == "mid" and est_seconds(data["scenes"]) > MID_MAX_SEC:
     before = est_seconds(data["scenes"])
     data["scenes"] = trim_to_budget(data["scenes"])
-    print(f"  [길이 조정] {before:.0f}초 -> {est_seconds(data['scenes']):.0f}초 "
+    print(f"  [길이 조정] {before:.1f}초 -> {est_seconds(data['scenes']):.1f}초 "
           f"(장면 {len(data['scenes'])}개)", flush=True)
+print(f"  [길이] 예상 {est_seconds(data['scenes']):.1f}초", flush=True)
+
+# 결론 장면(마지막 본문) 자막 아래에 "→ OO에게 공유"를 띄우고, 캡션에도 같은 대상을 지목한다.
+if share_target(data) and not share_issues(data):
+    data["scenes"][-1]["share"] = f"→ {share_target(data)}에게 공유"
+    add_share_line(data)
+    print(f"  [공유] {share_target(data)}", flush=True)
 
 
 def get_photo(query):

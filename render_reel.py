@@ -138,16 +138,24 @@ async def render():
 
             # 2) 전경(옅은 그라데이션 + 로고 + 자막) — 투명 배경
             await page.goto(TEMPLATE)
-            await page.evaluate("""([logo, sub, title]) => {
+            # 결론 장면에는 자막 아래 "→ OO에게 공유"가 붙는다(generate_reel.py의 공유 설계)
+            share = strip_notes(scene.get("share", ""))
+            await page.evaluate("""([logo, sub, title, share]) => {
                 for (const id of ['bg','hook','outro'])
                     document.getElementById(id).style.display = 'none';
                 document.getElementById('brand-logo').src = logo;
                 document.getElementById('subtitle').innerHTML = sub;
+                if (share) {
+                    const s = document.createElement('div');
+                    s.className = 'share-cta';
+                    s.textContent = share;
+                    document.getElementById('subtitle').appendChild(s);
+                }
                 if (title) {
                     document.getElementById('reel-title').style.display = 'flex';
                     document.getElementById('reel-title-text').textContent = title;
                 }
-            }""", [LOGO, subtitle, TITLE])
+            }""", [LOGO, subtitle, TITLE, share])
             await page.wait_for_timeout(500)
             await page.evaluate("document.fonts.ready")
             await page.wait_for_timeout(300)
