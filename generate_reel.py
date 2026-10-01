@@ -181,7 +181,10 @@ PROMPT = f"""
 - 자막에 글자수 메모("(16자)" 등)를 절대 쓰지 마. 최종 문장만.
 - query는 각 장면 분위기에 맞는 영어 사진 검색어 2~3단어 (예: {QEX}).
 - query 중요 규칙: 한국에서 벌어진 일을 다루므로 배경에 외국 요소가 보이면 어색해. 두 가지를 반드시 지켜:
-  (가) 돈이 나오는 장면은 반드시 "korean won"을 넣어 검색해 (예: "korean won bills", "korean won cash desk"). 그냥 "money", "cash", "banknotes"로 검색하면 달러·유로·외국 지폐가 나와서 한국 소식에 안 맞아. 외국 지폐·동전·신용카드 로고가 보이면 안 돼. 검색어에 "money"라는 단어 자체를 쓰지 마 — 반드시 "korean won"으로 대체할 것.
+  (가) 돈이 나오는 장면은 반드시 "korean won"을 넣어 검색해 (예: "korean won bills", "korean won cash desk").
+      단 "korean won"은 그 장면 자막이 **금액·지원금·이자처럼 돈 자체를 말할 때만** 써라. 신청 절차·대상 조건·주의점·건강 정보처럼
+      돈 이야기가 없는 장면은 그 내용에 맞는 사물·장소로 검색해 (예: 서류 → "application form desk", 병원 → "hospital corridor",
+      음식 → "grilled fish plate"). 돈 사진이 장면마다 반복되면 영상이 단조로워진다(9월 실측: 돈 사진 103장 중 33장이 돈 얘기 없는 장면). 그냥 "money", "cash", "banknotes"로 검색하면 달러·유로·외국 지폐가 나와서 한국 소식에 안 맞아. 외국 지폐·동전·신용카드 로고가 보이면 안 돼. 검색어에 "money"라는 단어 자체를 쓰지 마 — 반드시 "korean won"으로 대체할 것.
   (나) 반드시 **사람 얼굴이 안 나오는 사진**으로 검색해 — 사물(돈, 계산기, 서류, 도구), 풍경(도시, 거리, 건물, 자연), 손·뒷모습 클로즈업 위주. "person", "man", "woman", "people" 같은 단어는 쓰지 마. 꼭 사람이 필요하면 "hands closeup"이나 "silhouette"처럼 얼굴 없는 형태로.
 - scene {SAVE_SCENE} 중 하나의 narration 끝에 "저장해두고 다시 보세요" 같은 저장 유도를 자연스럽게 한 번 넣어. (저장 유도는 전체에서 딱 한 번만)
 - 화면 상단에 영상 내내 고정으로 뜰 짧은 제목(title)도 만들어줘. 주제를 한눈에 보여주는 8자 이내의 간결한 키워드 (예: "운전면허 지원금", "청년 청약통장", "전기요금 절약"). 이모지 1개 붙여도 좋음.
@@ -486,6 +489,42 @@ if LENGTH_VARIANT == "mid" and est_seconds(data["scenes"]) > MID_MAX_SEC:
     print(f"  [길이 조정] {before:.1f}초 -> {est_seconds(data['scenes']):.1f}초 "
           f"(장면 {len(data['scenes'])}개)", flush=True)
 print(f"  [길이] 예상 {est_seconds(data['scenes']):.1f}초", flush=True)
+
+# 노란 강조(<b>) 보정 — 프롬프트는 "장면당 정보 명사 1개"를 요구하지만,
+# 9월 릴스 본문 477장면 중 34%(162장면)에 강조가 아예 없었고 14건은 동사·부사를 칠했다
+# ("저장해두고" 8건, "기다려요", "확인" 등). 재생성 없이 코드로 바로잡는다:
+#  1) 서술어·부사를 감싼 <b>는 벗긴다
+#  2) 강조가 없으면 첫 수치(금액·날짜·비율 등)를, 수치도 없으면 첫 기관·제도 이름을 감싼다.
+_BAD_BOLD_END = re.compile(r"(요|다|세요|해|하기|하고|해두고|하자|니다)$")
+_BAD_BOLD_WORD = {"지금", "꼭", "바로", "확인", "미리", "반드시", "당장", "절대", "조치", "파악", "금물", "안전"}
+_NUM = re.compile(r"\d[\d,.]*\s*(?:만|억|천|백)?\s*(?:원|%|퍼센트|명|개|년|개월|월|일|시|세|살|배|회|건|호|곳|kg|g|kcal|칼로리|분|시간|주|평|mg|잔|번|종|대|차|단계|가지|등급|층|박)?")
+# 수치가 없으면 기관·제도·상품 이름(정보 명사)을 칠한다.
+_ENTITY = re.compile(r"[가-힣A-Za-z0-9]*(?:공단|공사|센터|포털|보험|지원금|장려금|수당|대출|적금|예금|통장|급여|연금|정부24|홈택스|복지로|국세청|보건소|은행|카드|바우처|공제|감면|환급금|제도|사업|청약|검진|접종)")
+
+
+def fix_emphasis(text):
+    def unwrap(m):
+        inner = m.group(1).strip()
+        return m.group(1) if (_BAD_BOLD_END.search(inner) or inner in _BAD_BOLD_WORD) else m.group(0)
+    text = re.sub(r"<b>(.*?)</b>", unwrap, text)
+    if "<b>" not in text:
+        m = _NUM.search(text)
+        if not (m and m.group(0).strip()):
+            m = _ENTITY.search(text)
+        if m and m.group(0).strip():
+            tok = m.group(0).rstrip()
+            text = text[:m.start()] + f"<b>{tok}</b>" + text[m.start() + len(tok):]
+    return text
+
+
+_fixed = 0
+for _sc in data["scenes"][1:]:
+    _new = fix_emphasis(_sc.get("narration", ""))
+    if _new != _sc.get("narration"):
+        _sc["narration"] = _new
+        _fixed += 1
+_nob = sum(1 for _sc in data["scenes"][1:] if "<b>" not in _sc.get("narration", ""))
+print(f"  [강조] 보정 {_fixed}장면 / 강조 없는 장면 {_nob}개", flush=True)
 
 # 결론 장면(마지막 본문) 자막 아래에 "→ OO에게 공유"를 띄우고, 캡션에도 같은 대상을 지목한다.
 if share_target(data) and not share_issues(data):
