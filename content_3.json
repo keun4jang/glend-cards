@@ -1,0 +1,41 @@
+{
+  "topic": "눕자마자 잠드는 현상의 진실과 수면 빚 해결법",
+  "card1": {
+    "title": "눕자마자\n기절 잠",
+    "sub1": "머리 대고 <b>5분</b> 만에 잠들면",
+    "sub2": "<b>만성피로</b> 신호입니다",
+    "query": "cozy dark bedroom",
+    "bg": "https://images.pexels.com/photos/9911439/pexels-photo-9911439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card2": {
+    "subtitle": "꿀잠 아닌\n기절 상태",
+    "lines": [
+      "정상 수면은 <b>15분</b> 정도 걸려요",
+      "<b>8분 미만</b>은 극심한 피로 신호죠",
+      "뇌가 강제로 <b>전원</b>을 끈 셈입니다"
+    ],
+    "query": "alarm clock bedside",
+    "bg": "https://images.pexels.com/photos/5490735/pexels-photo-5490735.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card3": {
+    "subtitle": "수면 빚\n해결 기준",
+    "lines": [
+      "<b>수면앱</b>으로 입면시간 측정하세요",
+      "주말엔 평소보다 <b>2시간</b>만 더 자요",
+      "<b>취침 1시간</b> 전 스마트폰 끄세요"
+    ],
+    "query": "glass water nightstand",
+    "bg": "https://images.pexels.com/photos/7113508/pexels-photo-7113508.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card4": {
+    "headline": "수면잠복기 기준표",
+    "items": [
+      "기준 · 정상 입면 <b>10~20분</b>",
+      "경고 · 기절 수면 <b>8분 미만</b>",
+      "준비 · <b>암막커튼</b>+온도 20도",
+      "규칙 · 주말 보충 <b>최대 2시간</b>"
+    ],
+    "closing": "오늘 밤 침대 눕기 전에 꺼내보세요"
+  },
+  "caption": "머리 대자마자 5분 컷, 꿀잠이 아니라 뇌에 빚이 쌓였다는 경고입니다.\n\n눕자마자 기절하듯 잠드는 건 수면의 질이 좋은 게 아니라, 극심한 수면 부족으로 뇌가 강제로 셧다운된 상태입니다.\n\n건강한 사람의 정상 입면 시간은 10~20분 사이예요. 8분 이내로 잠든다면 만성 수면 박탈을 의심해야 합니다.\n\n부족한 잠을 채우겠다고 주말에 몰아서 종일 자면 생체리듬이 망가지니, 딱 2시간 안쪽으로만 보충해주세요.\n\n💾 정상 입면 시간과 수면 환경 기준은 마지막 장에 정리해뒀어요\n\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_kr 팔로우!\n\n여러분은 눕고 나서 잠들 때까지 보통 몇 분 걸리시나요? 댓글로 알려주세요 👇\n\n#건강관리 #수면건강 #만성피로 #수면부족 #수면잠복기"
+}

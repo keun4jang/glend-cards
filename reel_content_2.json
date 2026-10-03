@@ -1,0 +1,63 @@
+{
+  "topic": "정보유출 12개월 내 처리 및 개인정보위 대형 사건 집중 조사",
+  "title": "정보유출 🚨",
+  "cover": {
+    "title": "내 정보 털렸다면\n<b>12개월</b> 내 해결"
+  },
+  "scenes": [
+    {
+      "narration": "내 개인정보가 털렸습니다",
+      "query": "digital hacking screen",
+      "bg": "https://images.pexels.com/photos/5240548/pexels-photo-5240548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "최근 <b>100만 명</b> 이상 대형 정보유출 사건이 잇따르면서 정부가 강력한 대책을 마련했어요",
+      "query": "cyber security warning",
+      "bg": "https://images.pexels.com/photos/2036656/pexels-photo-2036656.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "앞으로는 100만 명 이상 유출된 대형 사건을 전담 조사단이 맡아 <b>12개월</b> 내로 처리한대요",
+      "query": "korean data center room",
+      "bg": "https://images.pexels.com/photos/5203849/pexels-photo-5203849.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "대상은 대기업부터 금융사, 공공기관까지 대규모 유출 피해가 발생한 모든 곳이에요",
+      "query": "office computer monitor",
+      "bg": "https://images.pexels.com/photos/6804606/pexels-photo-6804606.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "일반적인 유출 사건도 <b>6개</b>월 안에는 조사가 마무리되도록 처리 기간이 대폭 단축됐어요",
+      "query": "desk calendar closeup",
+      "bg": "https://images.pexels.com/photos/29509484/pexels-photo-29509484.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "개인정보보호위원회 누리집이나 공식 채널을 통해 내 정보 피해 여부를 직접 확인할 수 있어요",
+      "query": "application form desk",
+      "bg": "https://images.pexels.com/photos/9870155/pexels-photo-9870155.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "조사 기간이 빨라져도 피해 신고는 사고 발생 즉시 해야 보상받기 유리하다는 점 잊지 마세요",
+      "query": "digital clock closeup",
+      "bg": "https://images.pexels.com/photos/6940357/pexels-photo-6940357.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "문자가 와도 대기업이나 <b>은행</b> 사칭 링크를 무심코 누르다가 추가 피해를 보는 실수가 많아요",
+      "query": "smartphone screen warning",
+      "bg": "https://images.pexels.com/photos/4033701/pexels-photo-4033701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "내 정보 유출 불안하다면 <b>12개</b>월 전담 조사 제도를 꼭 기억하고 미리 점검하세요",
+      "query": "secure padlock metal",
+      "share": "→ 아이디 자주 털리는 친구에게 공유",
+      "bg": "https://images.pexels.com/photos/10805427/pexels-photo-10805427.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "outro": true,
+      "narration": "매일 터지는 <b>개인정보</b> 이슈, 가장 빠른 해결법. @glend_kr 팔로우하세요!"
+    }
+  ],
+  "follow_cta": "매일 터지는 <b>개인정보</b> 이슈, 가장 빠른 해결법. @glend_kr 팔로우하세요!",
+  "share_target": "아이디 자주 털리는 친구",
+  "caption": "내 개인정보, 어디선가 줄줄 새고 있었다면 주목하세요\n\n최근 100만 명 이상 대형 정보유출 사건이 잇따르면서 개인정보위원회가 칼을 빼들었습니다 앞으로 대형 사건은 12개월, 일반 사건은 6개월 내에 조사가 마무리되는 집중 처리 체제로 전환돼요\n\n금융권부터 통신사까지 잇따른 해킹 사고에 불안하셨던 분들, 명의도용방지서비스로 내 명의 가입 현황 꼭 먼저 확인해보세요\n\n📌 매일 놓치기 쉬운 보안·생활정보만 골라 올립니다 → @glend_kr\n\n📤 아이디 자주 털리는 친구에게 보내주세요\n\n#개인정보유출 #해킹사고 #금융보안 #개인정보보호위원회 #정보보호\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "length_variant": "mid"
+}

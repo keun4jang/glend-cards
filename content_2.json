@@ -1,0 +1,41 @@
+{
+  "topic": "식당 음식 이물질 발견 시 대처법 및 피해 보상 신고 절차",
+  "card1": {
+    "title": "굴 요리 속\n칼날 발견",
+    "sub1": "음식에 <b>이물질</b> 나왔을 때",
+    "sub2": "<b>대처법</b> 모르면 손해",
+    "query": "restaurant food plate",
+    "bg": "https://images.pexels.com/photos/22994309/pexels-photo-22994309.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card2": {
+    "subtitle": "식당 음식\n칼날 나와",
+    "lines": [
+      "외식 중 <b>음식물</b>에서 칼날 등",
+      "위험한 이물질이 발견되는 <b>사고</b>",
+      "매년 <b>3천 건</b> 넘게 발생합니다"
+    ],
+    "query": "cooking kitchen knife",
+    "bg": "https://images.pexels.com/photos/4253295/pexels-photo-4253295.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card3": {
+    "subtitle": "피해 보상\n신고 요령",
+    "lines": [
+      "<b>식품안전나라</b> 누리집 접속해",
+      "사진과 영수증 등 <b>증거물</b> 보관",
+      "<b>피해 신고</b>는 국번없이 1399"
+    ],
+    "query": "receipt smartphone photo",
+    "bg": "https://images.pexels.com/photos/9461316/pexels-photo-9461316.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card4": {
+    "headline": "이물 발견 대처법",
+    "items": [
+      "신고처 · <b>식약처</b> 1399 또는 앱",
+      "준비물 · <b>영수증</b>+사진+이물원형",
+      "배상액 · 치료비+<b>1일</b> 휴업손해액",
+      "보상처 · 식당 <b>영업배상책임보험</b>"
+    ],
+    "closing": "외식 중 이물질 발견 시 바로 꺼내보세요"
+  },
+  "caption": "음식에서 칼날 나왔을 때, 음식값 환불만 받으면 손해입니다.\n\n식당 음식에서 유리조각이나 칼날 같은 위험 이물질을 발견했을 때 당황해서 음식만 바꾸거나 결제 취소로 끝내는 경우가 많습니다.\n\n하지만 이물질을 버리지 않고 지퍼백에 밀봉해 현장 사진, 결제 영수증과 함께 보관해야 정식 조사가 진행됩니다.\n\n치료가 필요한 경우 식당의 영업배상책임보험을 통해 치료비와 위자료까지 전액 보상받을 수 있으니 절차를 기억해두세요.\n\n💾 신고 절차·보상 기준은 마지막 장에 정리해뒀어요\n📌 매일 화제의 이슈 카드 받고 싶다면 @glend_kr 팔로우!\n\n식당 음식에서 이물질을 발견해본 적이 있나요? 댓글로 알려주세요 👇\n\n#생활정보 #소비자권리 #식품위생 #식당이물질 #1399신고"
+}
