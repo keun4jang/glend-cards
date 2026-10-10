@@ -1,0 +1,63 @@
+{
+  "topic": "교대근무자 수면무호흡증과 암 발생 위험",
+  "title": "수면무호흡 🚨",
+  "cover": {
+    "title": "교대근무자라면\n암 위험 <b>급증</b>"
+  },
+  "scenes": [
+    {
+      "narration": "교대근무자 암 발병률 3배 뛴다",
+      "query": "night shift clock silhouette",
+      "bg": "https://images.pexels.com/photos/9023277/pexels-photo-9023277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "밤낮 바뀐 생활이 몸을 망치는데, 여기에 <b>수면무호흡</b>까지 겹치면 문제가 훨씬 심각해져요.",
+      "query": "dark bedroom clock",
+      "bg": "https://images.pexels.com/photos/18325167/pexels-photo-18325167.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "최근 연구에 따르면 불면증보다 <b>수면무호흡</b>이 있는 교대근무자일수록 암 발생 가능성이 훨씬 높대요.",
+      "query": "medical research desk",
+      "bg": "https://images.pexels.com/photos/9574515/pexels-photo-9574515.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "밤낮으로 교대 근무를 하면서 자는 동안 숨이 자주 멈추는 분들이 바로 <b>대상자</b>예요.",
+      "query": "hospital corridor night",
+      "bg": "https://images.pexels.com/photos/10450996/pexels-photo-10450996.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "수면 중 저산소증이 지속되면 세포가 손상되면서 <b>면역력</b>이 치명적으로 무너지게 돼요.",
+      "query": "medical chart pills",
+      "bg": "https://images.pexels.com/photos/8965128/pexels-photo-8965128.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "수면클리닉을 방문해 <b>다원검사</b>를 받고 내원 치료를 시작하는 게 가장 확실한 방법이에요.",
+      "query": "hospital sleep clinic",
+      "bg": "https://images.pexels.com/photos/6129490/pexels-photo-6129490.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "증상을 방치하다가 <b>심혈관질환</b>까지 올 수 있으니 올해가 가기 전에 꼭 검사받으세요.",
+      "query": "calendar desk closeup",
+      "bg": "https://images.pexels.com/photos/6823398/pexels-photo-6823398.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "단순 피로겠거니 하고 코골이를 넘기는 게 <b>가장 큰 실수</b>니 절대 가볍게 보지 마세요.",
+      "query": "sofa tired night",
+      "bg": "https://images.pexels.com/photos/6603399/pexels-photo-6603399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "교대근무자라면 <b>수면무호흡</b> 치료를 오늘부터 바로 시작하세요.",
+      "query": "alarm clock morning",
+      "share": "→ 교대근무하는 친구에게 공유",
+      "bg": "https://images.pexels.com/photos/11162426/pexels-photo-11162426.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "outro": true,
+      "narration": "놓치기 쉬운 <b>건강정보</b>, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!"
+    }
+  ],
+  "follow_cta": "놓치기 쉬운 <b>건강정보</b>, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!",
+  "share_target": "교대근무하는 친구",
+  "caption": "밤낮 바뀌는 교대근무 하시는 분들, 혹시 자다 가 코를 심하게 골거나 숨이 멈추진 않으시나요?\n\n최근 연구에 따르면 단순 불면증보다 수면무호흡증이 있는 교대근무자들의 암 발생 가능성이 훨씬 높다고 합니다.\n\n밤낮 바뀐 생활에 저산소증까지 겹치면 면역력이 순식간에 무너지기 때문인데요. 단순한 피로로 넘기지 말고 꼭 수면클리닉 검사를 받아보셔야 합니다.\n\n📌 매일 놓치기 쉬운 건강정보·꿀팁만 골라 올립니다 → @glend_kr\n\n📤 교대근무하는 친구에게 보내주세요\n\n#수면무호흡증 #교대근무 #건강정보 #불면증 #건강관리\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "length_variant": "mid"
+}

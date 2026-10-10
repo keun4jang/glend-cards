@@ -1,0 +1,41 @@
+{
+  "topic": "해킹사고 2차 피해 소비자경보 발령",
+  "card1": {
+    "title": "털린 내 정보\n2차 폭탄",
+    "sub1": "스미싱 <b>공격</b> 한 달간 특별 대응",
+    "sub2": "<b>금융사고</b> 비상",
+    "query": "smartphone hack alert screen",
+    "bg": "https://images.pexels.com/photos/5935791/pexels-photo-5935791.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card2": {
+    "subtitle": "해킹 유출\n소비자경보",
+    "lines": [
+      "개인정보 <b>유출</b> 틈탄 2차 피해",
+      "지인 사칭 <b>스미싱</b> 급증하는 추세",
+      "금융당국 <b>특별</b> 대응 돌입한 상태"
+    ],
+    "query": "cyber security warning screen",
+    "bg": "https://images.pexels.com/photos/7172786/pexels-photo-7172786.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card3": {
+    "subtitle": "피해 방지\n행동 요령",
+    "lines": [
+      "출처 없는 <b>문자</b> 링크 절대 클릭 금지",
+      "금융결제원 <b>계좌</b> 일괄지급정지 활용",
+      "피해 발생 즉시 <b>1332</b> 신고 접수"
+    ],
+    "query": "smartphone lock security",
+    "bg": "https://images.pexels.com/photos/37095097/pexels-photo-37095097.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card4": {
+    "headline": "대응 가이드",
+    "items": [
+      "신고처 · <b>금융감독원</b> 콜센터 1332",
+      "대응기한 · <b>한 달간</b> 특별 대응 기간",
+      "조치법 · <b>계좌정보</b> 통합관리서비스",
+      "확인처 · <b>카카오톡</b> 보이스피싱 경보"
+    ],
+    "closing": "스미싱 문자를 받았을 때 이 카드를 꺼내보세요"
+  },
+  "caption": "개인정보 유출 사고 이후 터지는 2차 피해, 그냥 넘기면 큰일 납니다\n\n최근 해킹 사태로 유출된 개인정보를 악용해 지인을 사칭하거나 금융기관을 속이는 스미싱 공격이 빠르게 늘고 있습니다.\n\n당국이 한 달간 특별 대응에 나섰지만 내 지갑을 지키려면 직접 방어막을 쳐야 합니다.\n\n출처가 불분명한 링크는 절대 누르지 말고 수상한 문자라면 즉시 차단하세요.\n\n💾 2차 피해 예방 행동 요령은 마지막 장에 정리해뒀어요.\n📌 매일 화제의 이슈 카드 받고 싶다면 @glend_kr 팔로우!\n\n여러분은 최근에 스미싱 문자 받아보신 적 있나요? 댓글로 알려주세요 👇\n\n#이슈 #금융사고 #스미싱 #개인정보유출 #소비자경보"
+}

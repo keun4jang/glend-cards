@@ -1,0 +1,68 @@
+{
+  "topic": "전세보증보험 미가입 시 보증금 보호 불가 및 기한 주의사항",
+  "title": "전세보증보험 🚨",
+  "cover": {
+    "title": "기한 놓치면\n<b>보증금</b> 날린다"
+  },
+  "scenes": [
+    {
+      "narration": "전세보증금 못 받습니다",
+      "query": "korean won bills",
+      "bg": "https://images.pexels.com/photos/5909792/pexels-photo-5909792.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "가입 기한을 놓치면 전세금을 전부 날릴 수 있어요",
+      "query": "apartment building exterior",
+      "bg": "https://images.pexels.com/photos/14846410/pexels-photo-14846410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "수도권은 보증금 <b>7억 원</b> 이하일 때만 가입할 수 있어요",
+      "query": "korean won calculator",
+      "bg": "https://images.pexels.com/photos/6266276/pexels-photo-6266276.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "계약 기간이 전체의 <b>2분</b>의 1이 지나기 전에 신청해야 해요",
+      "query": "calendar desk schedule",
+      "bg": "https://images.pexels.com/photos/29509474/pexels-photo-29509474.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "최대 수억 원의 소중한 전세보증금을 안전하게 지켜줘요",
+      "query": "korean won stack",
+      "bg": "https://images.pexels.com/photos/6684896/pexels-photo-6684896.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "<b>HUG</b> 주택도시보증공사나 네이버페이 앱에서 바로 가입하세요",
+      "query": "smartphone screen app",
+      "bg": "https://images.pexels.com/photos/7151031/pexels-photo-7151031.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "갱신 계약이라면 최초 계약일로부터 <b>2분</b>의 1 경과 전이 기준이에요",
+      "query": "signing document hand",
+      "bg": "https://images.pexels.com/photos/5387261/pexels-photo-5387261.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "나중에 하면 되겠지 미루다가 가입 거절당하는 경우가 정말 많아요",
+      "query": "warning sign red",
+      "bg": "https://images.pexels.com/photos/13991935/pexels-photo-13991935.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "임대인 동의가 없어도 혼자서 가입할 수 있으니 저장해두고 꼭 확인하세요",
+      "query": "application form desk",
+      "bg": "https://images.pexels.com/photos/9870155/pexels-photo-9870155.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "계약 기간 절반이 지나기 전에 반드시 <b>보증보험</b>을 신청하세요",
+      "query": "korean won contract",
+      "share": "→ 전세 사는 친구에게 공유",
+      "bg": "https://images.pexels.com/photos/7644145/pexels-photo-7644145.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "outro": true,
+      "narration": "놓치면 거지 되는 <b>부동산사기</b> 예방법, 매일 올려요. 당하기 전에 @glend_kr 팔로우하세요!"
+    }
+  ],
+  "follow_cta": "놓치면 거지 되는 <b>부동산사기</b> 예방법, 매일 올려요. 당하기 전에 @glend_kr 팔로우하세요!",
+  "share_target": "전세 사는 친구",
+  "caption": "전세보증보험, 나중에 가입하면 되겠지 하고 미루다가 기한 놓치면 보증금을 단 한 푼도 보호받지 못합니다.\n\n수도권 기준 보증금 7억 원 이하 주택만 가입할 수 있으며, 전세 계약 기간의 2분의 1이 지나기 전에 반드시 신청해야 합니다.\n\n임대인 동의 없이도 혼자서 HUG 주택도시보증공사나 네이버페이 등을 통해 가입할 수 있으니, 갱신 계약이라면 최초 계약일 기준으로 서둘러 확인해 보세요.\n\n📌 매일 놓치기 쉬운 부동산 정책과 지원금만 골라 올립니다 → @glend_kr\n\n📤 전세 사는 친구에게 보내주세요\n\n#전세보증보험 #전세사기 #부동산정보 #전세금반환 #주택도시보증공사\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "length_variant": "mid"
+}
