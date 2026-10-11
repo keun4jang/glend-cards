@@ -79,30 +79,57 @@ async def render():
             is_hook = (i == 1) and not is_outro
 
             if is_outro:
+                # 성우가 읽는 팔로우 멘트를 화면에도 띄우고 저장·공유·팔로우 버튼을 붙인다.
+                # (예전엔 검정 바탕에 로고만 약 7초 — 영상 끝이 빈 화면이었다)
+                msg = strip_notes(scene.get("narration", ""))
                 await page.goto(TEMPLATE)
-                await page.evaluate("""(logo) => {
+                await page.evaluate("""([logo, msg]) => {
                     for (const id of ['bg','overlay','brand-top','subtitle-wrap','hook'])
                         document.getElementById(id).style.display = 'none';
                     const o = document.getElementById('outro');
                     o.style.display = 'flex';
                     document.getElementById('outro-logo').src = logo;
-                }""", LOGO)
+                    if (msg) {
+                        o.classList.add('cta');
+                        const m = document.getElementById('outro-msg');
+                        m.innerHTML = msg;
+                        m.style.display = 'block';
+                        document.getElementById('outro-cta').style.display = 'flex';
+                    }
+                }""", [LOGO, msg])
                 await page.wait_for_timeout(500)
+                await page.evaluate("document.fonts.ready")
+                await page.wait_for_timeout(300)
                 out = OUTPUT / f"scene{i}_full.png"
                 await page.screenshot(path=str(out))
                 print(f"saved: {out} (아웃트로)")
                 continue
 
             if is_hook:
+                # 첫 3초 — 1번 장면 사진을 어둡게 깔고 그 위에 후킹 문구.
+                # 회색 단색 배경은 피드에서 로딩 화면처럼 보였다. 사진이 없으면 예전 회색으로 둔다.
                 text = strip_notes(scene.get("narration", ""))
                 await page.goto(TEMPLATE)
-                await page.evaluate("""([logo, txt]) => {
-                    for (const id of ['bg','overlay','subtitle-wrap','outro'])
+                await page.evaluate("""([logo, txt, bg]) => new Promise((resolve) => {
+                    for (const id of ['overlay','subtitle-wrap','outro'])
                         document.getElementById(id).style.display = 'none';
-                    document.getElementById('hook').style.display = 'flex';
+                    const h = document.getElementById('hook');
+                    h.style.display = 'flex';
                     document.getElementById('hook-text').innerHTML = txt;
                     document.getElementById('brand-logo').src = logo;
-                }""", [LOGO, text])
+                    const b = document.getElementById('bg');
+                    if (!bg) { b.style.display = 'none'; resolve(); return; }
+                    h.classList.add('photo');
+                    b.style.opacity = '1';
+                    b.style.backgroundImage = `url(${bg})`;
+                    const img = new Image();
+                    let done = false;
+                    const finish = () => { if (!done) { done = true; resolve(); } };
+                    img.onload = finish;
+                    img.onerror = finish;
+                    img.src = bg;
+                    setTimeout(finish, 12000);
+                })""", [LOGO, text, scene.get("bg", "")])
                 await page.wait_for_timeout(500)
                 await page.evaluate("document.fonts.ready")
                 await page.wait_for_timeout(300)

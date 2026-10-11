@@ -57,6 +57,11 @@
     text-shadow: 0 6px 26px rgba(0,0,0,0.55);
   }
   .hook-text b { color: #CFFF04; }
+  /* 후킹에 장면 사진을 깔 때 — 회색 단색은 첫 3초가 로딩 화면처럼 보였다(2026-10-11 점검).
+     사진은 1번 장면 것을 쓰고, 글씨가 묻히지 않게 위에서 아래로 짙어지는 막을 덮는다. */
+  .hook.photo {
+    background: linear-gradient(180deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.58) 45%, rgba(0,0,0,0.80) 100%);
+  }
 
   /* 고정 제목(주제) — 자막 바로 위, 밑줄 강조 헤드라인 */
   .reel-title {
@@ -109,6 +114,19 @@
     display: flex; align-items: center; justify-content: center;
   }
   .outro img { width: 780px; height: 780px; }
+  /* 아웃트로 — 로고만 7초 띄우던 빈 화면을 행동 유도 화면으로(성우의 팔로우 멘트를 글로도 보여준다) */
+  .outro.cta { flex-direction: column; gap: 36px; padding: 0 110px; }
+  .outro.cta img { width: 640px; height: 640px; margin: -120px 0; }
+  .outro-msg {
+    color: #FFFFFF; font-size: 58px; font-weight: 800; line-height: 1.45; text-align: center;
+    letter-spacing: -0.02em; word-break: keep-all; text-wrap: balance;
+  }
+  .outro-msg b { color: #CFFF04; font-weight: 900; }
+  .outro-cta { display: flex; gap: 22px; }
+  .outro-cta span {
+    font-size: 44px; font-weight: 800; color: #0A0C0D; background: #CFFF04;
+    padding: 18px 30px; border-radius: 999px; letter-spacing: -0.02em;
+  }
 </style>
 </head>
 <body>
@@ -133,6 +151,10 @@
     </div>
     <div class="outro" id="outro" style="display:none;">
       <img id="outro-logo" src="">
+      <div class="outro-msg" id="outro-msg" style="display:none;"></div>
+      <div class="outro-cta" id="outro-cta" style="display:none;">
+        <span>💾 저장</span><span>📤 공유</span><span>➕ 팔로우</span>
+      </div>
     </div>
   </div>
 </body>
