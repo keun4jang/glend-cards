@@ -30,3 +30,16 @@ jobs:
           git add reports/
           git commit -m "report: weekly insights $(date +%F)" || echo "no changes"
           git push
+
+      # 실패·취소(시간 초과 포함) 즉시 텔레그램 알림 — 10/12~13 릴스 3편이 조용히 실패한 뒤 추가.
+      # 체크아웃 실패에도 동작하도록 저장소 파일에 의존하지 않고 curl로 보낸다. 시크릿이 없으면 건너뛴다.
+      - name: Notify failure (Telegram)
+        if: failure() || cancelled()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MSG: "🚨 GLEND ${{ github.workflow }} — ${{ job.status }}\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then echo "텔레그램 미설정 — 알림 생략"; exit 0; fi
+          curl -s -o /dev/null -w "telegram %{http_code}\n" "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" --data-urlencode "text=$(printf '%b' "$MSG")" || true
