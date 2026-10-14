@@ -29,6 +29,10 @@ permissions:
 jobs:
   reel:
     runs-on: ubuntu-latest
+    # 정상 실행은 길어야 1시간 남짓(랜덤 지연 50분 포함). 멈추면 6시간 기본 제한까지 붙잡지 않게.
+    timeout-minutes: 150
+    env:
+      PYTHONUNBUFFERED: "1"   # print가 버퍼에 쌓여 멈춘 위치를 로그로 알 수 없었다(10/12 취소 건)
     steps:
       - name: Checkout
         uses: actions/checkout@v5

@@ -24,7 +24,9 @@ from dotenv import load_dotenv
 from google import genai
 
 load_dotenv()
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip())
+# 요청당 3분 제한(밀리초) — 응답이 안 오면 무한정 기다리지 않고 재시도 로직으로 넘어간다.
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip(),
+                      http_options=genai.types.HttpOptions(timeout=180_000))
 
 _models_env = (os.getenv("GEMINI_MODELS") or "").strip()
 MODEL_CHAIN = ([m.strip() for m in _models_env.split(",") if m.strip()] if _models_env else [
@@ -34,7 +36,7 @@ MODEL_CHAIN = ([m.strip() for m in _models_env.split(",") if m.strip()] if _mode
 ])
 
 TRANSIENT = ("503", "unavailable", "429", "resource_exhausted",
-             "high demand", "overloaded", "deadline", "timeout", "internal")
+             "high demand", "overloaded", "deadline", "timeout", "timed out", "internal")
 UNAVAILABLE = ("not found", "404", "not supported", "does not exist",
                "permission", "not available")
 

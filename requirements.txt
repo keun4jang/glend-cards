@@ -3,4 +3,5 @@ google-genai
 requests
 feedparser
 python-dotenv
-edge-tts
+# 7.2.8은 2026-10-12경부터 403으로 막혔다(MS 쪽 변경). 7.3.0(10/13)에서 해결.
+edge-tts>=7.3.0

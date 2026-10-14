@@ -13,7 +13,9 @@ from google import genai
 from recent_topics import avoid_line, get_recent_topics, find_duplicate, dup_correction
 
 load_dotenv()
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip())
+# 요청당 3분 제한(밀리초) — 응답이 안 오면 무한정 기다리지 않고 재시도 로직으로 넘어간다.
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip(),
+                      http_options=genai.types.HttpOptions(timeout=180_000))
 PEXELS_KEY = os.getenv("PEXELS_API_KEY", "").strip()
 # 모델 후보 목록 (앞에서부터 시도).
 # 한 모델이 503("high demand")으로 포화되면 같은 모델을 더 두드려도 소용없어서,
@@ -52,7 +54,14 @@ else:
 
 url = "https://news.google.com/rss/search?q=" + urllib.parse.quote(QUERY) + "&hl=ko&gl=KR&ceid=KR:ko"
 print(f"[릴스 {POST_INDEX}/{CATEGORY}] 뉴스 수집 중... (카테고리: {QUERY[:20]})")
-feed = feedparser.parse(url)
+# feedparser.parse(url)는 시간제한이 없어 서버가 응답을 안 주면 무한정 기다린다.
+# 2026-10-12 릴스 실행 하나가 대본 생성 단계에서 5시간 멈춰 6시간 제한으로 취소됐다.
+try:
+    _rss = requests.get(url, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
+    feed = feedparser.parse(_rss.content)
+except Exception as _e:
+    print(f"  (뉴스 RSS 수집 실패: {_e})", flush=True)
+    feed = feedparser.parse(b"")
 headlines = [e.title for e in feed.entries[:25]]
 print(f"  뉴스 {len(headlines)}개 확보\n")
 
@@ -228,7 +237,7 @@ print("Gemini가 릴스 대본을 만드는 중...\n")
 # 무인 운영이므로 사람이 다시 돌려줄 수 없다 → 총 대기 시간을 넉넉히 잡는다.
 # (퍼블릭 저장소 GitHub Actions는 실행 시간이 무료라 대기 비용은 0)
 TRANSIENT = ("503", "unavailable", "429", "resource_exhausted",
-             "high demand", "overloaded", "deadline", "timeout", "internal")
+             "high demand", "overloaded", "deadline", "timeout", "timed out", "internal")
 
 
 # 계정에서 아예 못 쓰는 모델(404/not found)은 재시도해도 소용없으니 목록에서 뺀다.
