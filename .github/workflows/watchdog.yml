@@ -1,0 +1,39 @@
+name: Watchdog (Telegram)
+
+# 발행 감시 — 인스타에 실제로 글이 올라가고 있는지 보고, 이상하면 텔레그램으로 알린다.
+# 각 워크플로의 "실패 즉시 알림" 단계와 짝이다: 그쪽은 실패를, 이쪽은 "조용히 안 올라감"을 잡는다.
+# 시크릿 TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID가 없으면 로그에만 찍고 넘어간다.
+on:
+  schedule:
+    - cron: "23 */6 * * *"   # 6시간마다 점검(이상할 때만 알림)
+    - cron: "7 0 * * *"      # 매일 UTC 00:07 = KST 09:07 요약(실제로는 지연돼 오전 중)
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "check | summary | test"
+        required: false
+        default: "test"
+
+permissions:
+  contents: read
+  actions: read   # 일일 요약에서 지난 24시간 실패한 실행을 센다
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Watch
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_GRAPH_BASE: ${{ vars.IG_GRAPH_BASE }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WATCH_MODE: ${{ github.event.inputs.mode || (github.event.schedule == '7 0 * * *' && 'summary') || 'check' }}
+        run: python watchdog.py

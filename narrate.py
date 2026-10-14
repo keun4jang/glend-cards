@@ -21,13 +21,27 @@ KOKORO_VOICE = os.getenv("KOKORO_VOICE", "kf_default")
 
 
 def _synth_edge(text, out_path):
+    import time
     import edge_tts
 
     async def _run():
         comm = edge_tts.Communicate(text, EDGE_VOICE, rate=EDGE_RATE, pitch=EDGE_PITCH)
         await comm.save(out_path)
 
-    asyncio.run(_run())
+    # 403·연결 끊김은 몇 분 뒤 풀리는 경우가 있어 간격을 두고 다시 시도한다.
+    # (2026-10-12~13 릴스 2편이 첫 장면 403 한 번에 통째로 실패했다 — 그땐 라이브러리 버전 문제였지만,
+    #  데이터센터 IP 일시 차단도 같은 403으로 보인다)
+    waits = [20, 60, 120]
+    for attempt in range(len(waits) + 1):
+        try:
+            asyncio.run(_run())
+            break
+        except Exception as e:
+            if attempt == len(waits):
+                raise
+            print(f"  edge-tts 실패({e.__class__.__name__}: {str(e)[:60]}) — {waits[attempt]}초 후 재시도 "
+                  f"{attempt + 1}/{len(waits)}", flush=True)
+            time.sleep(waits[attempt])
     # edge-tts는 차단 시 0바이트 파일을 남기기도 함 → 크기 검증
     if not os.path.exists(out_path) or os.path.getsize(out_path) < 1024:
         raise RuntimeError("edge-tts가 오디오를 반환하지 않음(차단 가능성). TTS_ENGINE=kokoro 권장.")

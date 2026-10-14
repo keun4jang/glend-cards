@@ -10,10 +10,13 @@ import requests
 import feedparser
 from dotenv import load_dotenv
 from google import genai
-from recent_topics import avoid_line, get_recent_topics, find_duplicate, dup_correction
+from recent_topics import (avoid_line, get_recent_topics, find_duplicate, dup_correction,
+                           political_hit, political_correction)
 
 load_dotenv()
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip())
+# 요청당 3분 제한(밀리초) — 응답이 안 오면 무한정 기다리지 않고 재시도 로직으로 넘어간다.
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip(),
+                      http_options=genai.types.HttpOptions(timeout=180_000))
 PEXELS_KEY = os.getenv("PEXELS_API_KEY", "").strip()
 # 모델 후보 목록 (앞에서부터 시도).
 # 한 모델이 503("high demand")으로 포화되면 같은 모델을 더 두드려도 소용없어서,
@@ -52,7 +55,14 @@ else:
 
 url = "https://news.google.com/rss/search?q=" + urllib.parse.quote(QUERY) + "&hl=ko&gl=KR&ceid=KR:ko"
 print(f"[{POST_INDEX}번째 게시물/{CATEGORY}] 뉴스 수집 중... (카테고리: {QUERY[:20]})")
-feed = feedparser.parse(url)
+# feedparser.parse(url)는 시간제한이 없어 서버가 응답을 안 주면 무한정 기다린다.
+# 2026-10-12 릴스 실행 하나가 대본 생성 단계에서 5시간 멈춰 6시간 제한으로 취소됐다.
+try:
+    _rss = requests.get(url, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
+    feed = feedparser.parse(_rss.content)
+except Exception as _e:
+    print(f"  (뉴스 RSS 수집 실패: {_e})", flush=True)
+    feed = feedparser.parse(b"")
 headlines = [e.title for e in feed.entries[:25]]
 print(f"  뉴스 {len(headlines)}개 확보\n")
 
@@ -114,6 +124,7 @@ PROMPT = f"""
 
 이 중에서 {PICK_DESC}
 {AVOID}
+- 정당·선거·정치인 관련 뉴스는 절대 고르지 마. 이 채널은 정치 중립 생활정보 채널이다(정부 정책·지원금 소식은 괜찮다).
 
 주제 선정의 최우선 기준 — **저장 가치**:
 카드뉴스는 팔로워에게만 노출되기 때문에, 널리 퍼지려면 '저장'이 일어나야 한다.
@@ -191,7 +202,7 @@ print("Gemini가 주제를 고르고 카드 내용을 만드는 중...\n")
 # 무인 운영이므로 사람이 다시 돌려줄 수 없다 → 총 대기 시간을 넉넉히 잡는다.
 # (퍼블릭 저장소 GitHub Actions는 실행 시간이 무료라 대기 비용은 0)
 TRANSIENT = ("503", "unavailable", "429", "resource_exhausted",
-             "high demand", "overloaded", "deadline", "timeout", "internal")
+             "high demand", "overloaded", "deadline", "timeout", "timed out", "internal")
 
 
 # 계정에서 아예 못 쓰는 모델(404/not found)은 재시도해도 소용없으니 목록에서 뺀다.
@@ -310,6 +321,15 @@ for gen_try in range(1, TRIES + 1):
                       "지정한 JSON 형식만, 다른 설명 없이 출력해라.")
         time.sleep(5)
         continue
+
+    pol = political_hit(cand)
+    if pol and gen_try < TRIES:
+        print(f"  정치 주제('{pol}') — 재생성 {gen_try}/{TRIES}: '{cand.get('topic')}'")
+        correction = political_correction(pol)
+        time.sleep(3)
+        continue
+    if pol:
+        print(f"  [경고] 정치 주제('{pol}')지만 마지막 시도라 그대로 진행")
 
     dup = find_duplicate(cand.get("topic", ""), RECENT_TOPICS)
     if dup and gen_try < TRIES:

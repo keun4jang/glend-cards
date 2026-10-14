@@ -10,10 +10,13 @@ import requests
 import feedparser
 from dotenv import load_dotenv
 from google import genai
-from recent_topics import avoid_line, get_recent_topics, find_duplicate, dup_correction
+from recent_topics import (avoid_line, get_recent_topics, find_duplicate, dup_correction,
+                           political_hit, political_correction)
 
 load_dotenv()
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip())
+# 요청당 3분 제한(밀리초) — 응답이 안 오면 무한정 기다리지 않고 재시도 로직으로 넘어간다.
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip(),
+                      http_options=genai.types.HttpOptions(timeout=180_000))
 PEXELS_KEY = os.getenv("PEXELS_API_KEY", "").strip()
 # 모델 후보 목록 (앞에서부터 시도).
 # 한 모델이 503("high demand")으로 포화되면 같은 모델을 더 두드려도 소용없어서,
@@ -52,7 +55,14 @@ else:
 
 url = "https://news.google.com/rss/search?q=" + urllib.parse.quote(QUERY) + "&hl=ko&gl=KR&ceid=KR:ko"
 print(f"[릴스 {POST_INDEX}/{CATEGORY}] 뉴스 수집 중... (카테고리: {QUERY[:20]})")
-feed = feedparser.parse(url)
+# feedparser.parse(url)는 시간제한이 없어 서버가 응답을 안 주면 무한정 기다린다.
+# 2026-10-12 릴스 실행 하나가 대본 생성 단계에서 5시간 멈춰 6시간 제한으로 취소됐다.
+try:
+    _rss = requests.get(url, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
+    feed = feedparser.parse(_rss.content)
+except Exception as _e:
+    print(f"  (뉴스 RSS 수집 실패: {_e})", flush=True)
+    feed = feedparser.parse(b"")
 headlines = [e.title for e in feed.entries[:25]]
 print(f"  뉴스 {len(headlines)}개 확보\n")
 
@@ -151,6 +161,7 @@ PROMPT = f"""
 시청자가 "이거 OO한테 보내야겠다" 하고 **특정한 한 사람**을 떠올릴 주제를 우선 골라라
 (예: 전세 계약 앞둔 친구, 시골 계신 부모님, 가게 하는 친구, 운전하는 부모님).
 시청자 본인이 대상이 아니어도 된다 — 보내줄 사람이 떠오르면 된다. 누구에게도 보낼 이유가 없는 단순 시사 뉴스는 피해라.
+정당·선거·정치인 관련 뉴스는 절대 고르지 마라 — 이 채널은 정치 중립 생활정보 채널이다(정부 정책·지원금 소식은 괜찮다).
 
 규칙:
 - scene 1 = 후킹. **공백 포함 12~18자.** 아래 본문 글자수 규칙은 scene 1에 적용하지 마라.
@@ -228,7 +239,7 @@ print("Gemini가 릴스 대본을 만드는 중...\n")
 # 무인 운영이므로 사람이 다시 돌려줄 수 없다 → 총 대기 시간을 넉넉히 잡는다.
 # (퍼블릭 저장소 GitHub Actions는 실행 시간이 무료라 대기 비용은 0)
 TRANSIENT = ("503", "unavailable", "429", "resource_exhausted",
-             "high demand", "overloaded", "deadline", "timeout", "internal")
+             "high demand", "overloaded", "deadline", "timeout", "timed out", "internal")
 
 
 # 계정에서 아예 못 쓰는 모델(404/not found)은 재시도해도 소용없으니 목록에서 뺀다.
@@ -447,9 +458,10 @@ for gen_try in range(1, TRIES + 1):
         continue
 
     dup = find_duplicate(cand.get("topic", ""), RECENT_TOPICS)
+    pol = political_hit(cand)
     length = length_issue(cand)
     share = share_issues(cand)
-    if not (dup or length or share):
+    if not (dup or pol or length or share):
         data = cand
         break
 
@@ -459,11 +471,14 @@ for gen_try in range(1, TRIES + 1):
     est = est_seconds(trimmed)
     off = (max(0.0, MID_MIN_SEC - est, est - MID_MAX_SEC)
            + 3.0 * max(0, len(cand["scenes"]) - len(trimmed) - 2)) if LENGTH_VARIANT == "mid" else 0.0
-    score = (bool(dup), off, len(share))
+    score = (bool(dup or pol), off, len(share))
     if best is None or score < best[0]:
         best = (score, cand)
 
-    if dup:
+    if pol:
+        print(f"  정치 주제('{pol}') — 재생성 {gen_try}/{TRIES}: '{cand.get('topic')}'", flush=True)
+        correction = political_correction(pol)
+    elif dup:
         print(f"  주제 중복 — 재생성 {gen_try}/{TRIES}: '{cand.get('topic')}' ≈ 최근 '{dup}'", flush=True)
         correction = dup_correction(cand.get("topic"), dup)
     elif length:
@@ -477,7 +492,7 @@ for gen_try in range(1, TRIES + 1):
 if data is None and best is not None:
     (was_dup, off, n_share), data = best
     print(f"  [경고] {TRIES}회 안에 모든 조건을 못 채워 가장 나은 후보로 발행합니다 "
-          f"(주제 중복={'예' if was_dup else '아니오'}, 길이 이탈 {off:.1f}초, 공유 문제 {n_share}건).",
+          f"(주제 중복·정치={'예' if was_dup else '아니오'}, 길이 이탈 {off:.1f}초, 공유 문제 {n_share}건).",
           flush=True)
 if data is None:
     print(f"[중단] Gemini가 {TRIES}회 연속 조건을 만족하지 못했어요.")

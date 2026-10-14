@@ -115,6 +115,16 @@ Images are served via `https://raw.githubusercontent.com/keun4jang/glend-cards/m
 Secrets required: `GEMINI_API_KEY`, `PEXELS_API_KEY`, `IG_TOKEN`, `IG_USER_ID`
 (토큰 자동 갱신에는 `GH_PAT`도 필요).
 
+#### 감시·알림 (텔레그램) — 2026-10-14 추가
+
+10/12~13에 릴스 3편이 조용히 실패했는데 이틀 뒤 수동 점검에서야 알았다. 그래서 두 겹으로 지킨다.
+- **즉시 알림**: 6개 워크플로 마지막 단계 `Notify failure (Telegram)`가 실패·취소(시간 초과 포함) 시 링크와 함께 보낸다.
+- **감시 에이전트** `watchdog.yml` → `watchdog.py`(읽기 전용):
+  6시간마다 인스타 최근 게시물을 보고 릴스 26시간·카드 80시간 넘게 발행이 없으면 알린다(워크플로가 아예 안 돈 경우까지).
+  매일 UTC 00:07(KST 09시대)에 지난 24시간 요약(발행 수·실패 수·팔로워)을 보낸다 — 이 요약이 안 오면 감시 자체가 죽은 것.
+- 시크릿 `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`가 없으면 알림만 건너뛰고 파이프라인은 그대로 돈다.
+  연결 확인: Actions → Watchdog (Telegram) → Run workflow(mode=test).
+
 #### ⚠️ 크론 시각 ≠ 실제 발행 시각 (2026-09-15 실측)
 
 **GitHub Actions 예약 실행은 크론 시각에 시작하지 않는다.** 무료 러너 혼잡 때문에
