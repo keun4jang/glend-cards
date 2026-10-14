@@ -10,7 +10,8 @@ import requests
 import feedparser
 from dotenv import load_dotenv
 from google import genai
-from recent_topics import avoid_line, get_recent_topics, find_duplicate, dup_correction
+from recent_topics import (avoid_line, get_recent_topics, find_duplicate, dup_correction,
+                           political_hit, political_correction)
 
 load_dotenv()
 # 요청당 3분 제한(밀리초) — 응답이 안 오면 무한정 기다리지 않고 재시도 로직으로 넘어간다.
@@ -123,6 +124,7 @@ PROMPT = f"""
 
 이 중에서 {PICK_DESC}
 {AVOID}
+- 정당·선거·정치인 관련 뉴스는 절대 고르지 마. 이 채널은 정치 중립 생활정보 채널이다(정부 정책·지원금 소식은 괜찮다).
 
 주제 선정의 최우선 기준 — **저장 가치**:
 카드뉴스는 팔로워에게만 노출되기 때문에, 널리 퍼지려면 '저장'이 일어나야 한다.
@@ -319,6 +321,15 @@ for gen_try in range(1, TRIES + 1):
                       "지정한 JSON 형식만, 다른 설명 없이 출력해라.")
         time.sleep(5)
         continue
+
+    pol = political_hit(cand)
+    if pol and gen_try < TRIES:
+        print(f"  정치 주제('{pol}') — 재생성 {gen_try}/{TRIES}: '{cand.get('topic')}'")
+        correction = political_correction(pol)
+        time.sleep(3)
+        continue
+    if pol:
+        print(f"  [경고] 정치 주제('{pol}')지만 마지막 시도라 그대로 진행")
 
     dup = find_duplicate(cand.get("topic", ""), RECENT_TOPICS)
     if dup and gen_try < TRIES:

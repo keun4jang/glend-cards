@@ -10,7 +10,8 @@ import requests
 import feedparser
 from dotenv import load_dotenv
 from google import genai
-from recent_topics import avoid_line, get_recent_topics, find_duplicate, dup_correction
+from recent_topics import (avoid_line, get_recent_topics, find_duplicate, dup_correction,
+                           political_hit, political_correction)
 
 load_dotenv()
 # 요청당 3분 제한(밀리초) — 응답이 안 오면 무한정 기다리지 않고 재시도 로직으로 넘어간다.
@@ -160,6 +161,7 @@ PROMPT = f"""
 시청자가 "이거 OO한테 보내야겠다" 하고 **특정한 한 사람**을 떠올릴 주제를 우선 골라라
 (예: 전세 계약 앞둔 친구, 시골 계신 부모님, 가게 하는 친구, 운전하는 부모님).
 시청자 본인이 대상이 아니어도 된다 — 보내줄 사람이 떠오르면 된다. 누구에게도 보낼 이유가 없는 단순 시사 뉴스는 피해라.
+정당·선거·정치인 관련 뉴스는 절대 고르지 마라 — 이 채널은 정치 중립 생활정보 채널이다(정부 정책·지원금 소식은 괜찮다).
 
 규칙:
 - scene 1 = 후킹. **공백 포함 12~18자.** 아래 본문 글자수 규칙은 scene 1에 적용하지 마라.
@@ -456,9 +458,10 @@ for gen_try in range(1, TRIES + 1):
         continue
 
     dup = find_duplicate(cand.get("topic", ""), RECENT_TOPICS)
+    pol = political_hit(cand)
     length = length_issue(cand)
     share = share_issues(cand)
-    if not (dup or length or share):
+    if not (dup or pol or length or share):
         data = cand
         break
 
@@ -468,11 +471,14 @@ for gen_try in range(1, TRIES + 1):
     est = est_seconds(trimmed)
     off = (max(0.0, MID_MIN_SEC - est, est - MID_MAX_SEC)
            + 3.0 * max(0, len(cand["scenes"]) - len(trimmed) - 2)) if LENGTH_VARIANT == "mid" else 0.0
-    score = (bool(dup), off, len(share))
+    score = (bool(dup or pol), off, len(share))
     if best is None or score < best[0]:
         best = (score, cand)
 
-    if dup:
+    if pol:
+        print(f"  정치 주제('{pol}') — 재생성 {gen_try}/{TRIES}: '{cand.get('topic')}'", flush=True)
+        correction = political_correction(pol)
+    elif dup:
         print(f"  주제 중복 — 재생성 {gen_try}/{TRIES}: '{cand.get('topic')}' ≈ 최근 '{dup}'", flush=True)
         correction = dup_correction(cand.get("topic"), dup)
     elif length:
@@ -486,7 +492,7 @@ for gen_try in range(1, TRIES + 1):
 if data is None and best is not None:
     (was_dup, off, n_share), data = best
     print(f"  [경고] {TRIES}회 안에 모든 조건을 못 채워 가장 나은 후보로 발행합니다 "
-          f"(주제 중복={'예' if was_dup else '아니오'}, 길이 이탈 {off:.1f}초, 공유 문제 {n_share}건).",
+          f"(주제 중복·정치={'예' if was_dup else '아니오'}, 길이 이탈 {off:.1f}초, 공유 문제 {n_share}건).",
           flush=True)
 if data is None:
     print(f"[중단] Gemini가 {TRIES}회 연속 조건을 만족하지 못했어요.")
