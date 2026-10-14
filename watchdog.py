@@ -21,6 +21,7 @@ import datetime as dt
 import json
 import os
 import sys
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -52,6 +53,18 @@ def send(text):
         urllib.request.urlopen(f"https://api.telegram.org/bot{token}/sendMessage",
                                data=data, timeout=20)
         return True
+    except urllib.error.HTTPError as e:
+        # 텔레그램이 돌려준 사유만 남긴다(URL에 토큰이 있어 예외 전체를 찍지 않는다).
+        try:
+            desc = json.loads(e.read().decode("utf-8")).get("description", "")
+        except Exception:
+            desc = ""
+        hint = {401: "토큰이 틀림 — @BotFather가 준 값 그대로(앞에 'bot' 붙이지 않기)",
+                404: "토큰 형식이 틀림 — 공백·줄바꿈·'bot' 접두어 확인",
+                400: "채팅 ID가 틀렸거나, 봇에게 먼저 아무 메시지를 보내 대화를 시작하지 않음",
+                403: "봇이 차단됐거나 그룹에서 내보내짐"}.get(e.code, "")
+        print(f"[watchdog] 텔레그램 전송 실패: HTTP {e.code} {desc} {('— ' + hint) if hint else ''}")
+        return False
     except Exception as e:                       # 토큰이 메시지에 섞이지 않게 종류만 남긴다
         print(f"[watchdog] 텔레그램 전송 실패: {e.__class__.__name__}")
         return False
