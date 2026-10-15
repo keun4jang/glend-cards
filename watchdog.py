@@ -87,16 +87,31 @@ def ig_followers():
     return _get_json(f"{GRAPH}/{IG_USER_ID}?{q}").get("followers_count")
 
 
+def split_failures(runs):
+    """실패·취소 실행을 (아직 문제, 이미 해결됨)으로 나눈다.
+
+    같은 워크플로가 그 뒤에 성공했다면 이미 해결된 것으로 본다. 첫 요약(10/15)이
+    연결 테스트 실패 2건과 Pages의 자동 취소(10초 뒤 새 배포가 성공) 1건으로 ⚠️를 띄웠다 —
+    전부 해결된 것이었다. 겁주는 요약은 진짜 알림을 무시하게 만든다.
+    """
+    open_, resolved = [], []
+    for r in runs:
+        if r.get("conclusion") not in ("failure", "cancelled", "timed_out"):
+            continue
+        later_ok = any(o["name"] == r["name"] and o.get("conclusion") == "success"
+                       and o["created_at"] > r["created_at"] for o in runs)
+        (resolved if later_ok else open_).append((r["name"], r.get("conclusion"), r["html_url"]))
+    return open_, resolved
+
+
 def gh_runs_since(since):
-    """지난 기간 GitHub Actions 실행 중 실패·취소된 것 — (워크플로 이름, 결과, 링크) 목록."""
+    """지난 기간 GitHub Actions 실행 목록(없으면 None)."""
     if not GH_TOKEN:
         return None
     q = urllib.parse.urlencode({"per_page": 100, "created": f">={since:%Y-%m-%dT%H:%M:%SZ}"})
     data = _get_json(f"https://api.github.com/repos/{REPO}/actions/runs?{q}",
                      {"Authorization": f"Bearer {GH_TOKEN}", "Accept": "application/vnd.github+json"})
-    return [(r["name"], r.get("conclusion"), r["html_url"])
-            for r in data.get("workflow_runs", [])
-            if r.get("conclusion") in ("failure", "cancelled", "timed_out")]
+    return data.get("workflow_runs", [])
 
 
 def _ts(m):
@@ -146,16 +161,19 @@ def main():
         n_reel = sum(1 for m in recent if m.get("media_product_type") == "REELS")
         n_card = len(recent) - n_reel
         try:
-            fails = gh_runs_since(since)
+            runs = gh_runs_since(since)
         except Exception as e:
-            fails = None
+            runs = None
             print(f"[watchdog] GitHub 실행 기록 조회 실패: {e.__class__.__name__}")
+        fails, resolved = split_failures(runs) if runs is not None else (None, [])
         try:
             followers = ig_followers()
         except Exception:
             followers = None
         lines = [f"{'⚠️' if (problems or fails) else '☀️'} GLEND 일일 요약 ({now.astimezone(KST):%m/%d})",
-                 f"지난 24시간 발행: 릴스 {n_reel} · 카드 {n_card}"]
+                 f"지난 24시간 발행: 릴스 {n_reel} · 카드 {n_card}"
+                 + ("" if n_card or now.astimezone(KST).weekday() in (0, 2, 4)
+                    else " (카드는 월·수·금 발행)")]
         if followers is not None:
             lines.append(f"팔로워 {followers}")
         if fails is None:
@@ -165,6 +183,8 @@ def main():
             lines += [f"- {name}: {concl}\n  {url}" for name, concl, url in fails[:5]]
         else:
             lines.append("실행 실패: 0건")
+        if resolved:
+            lines.append(f"(이후 정상화된 실패·취소 {len(resolved)}건은 제외)")
         if problems:
             lines.append("이상 징후:")
             lines += [f"- {p}" for p in problems]
