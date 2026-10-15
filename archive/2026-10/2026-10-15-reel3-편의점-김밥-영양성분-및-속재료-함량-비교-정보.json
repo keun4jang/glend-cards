@@ -1,0 +1,86 @@
+{
+  "kind": "reel",
+  "index": "3",
+  "published_kst": "2026-10-15T17:43:42+09:00",
+  "topic": "편의점 김밥 영양성분 및 속재료 함량 비교 정보",
+  "content": {
+    "topic": "편의점 김밥 영양성분 및 속재료 함량 비교 정보",
+    "title": "편의점 김밥 🍙",
+    "cover": {
+      "title": "한 끼 떼운 김밥\n나트륨 <b>폭탄</b>"
+    },
+    "scenes": [
+      {
+        "narration": "싸다고 집은 편의점 김밥, 몸 망친다",
+        "query": "korean convenience store food aisle",
+        "bg": "https://images.pexels.com/photos/40248680/pexels-photo-40248680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "고물가에 편의점 김밥 찾는 분들 많은데요, 실제 <b>영양성분</b>을 따져보면 생각이 달라져요.",
+        "query": "korean triangle gimbap shelf",
+        "bg": "https://images.pexels.com/photos/12288357/pexels-photo-12288357.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "한국소비자원이 <b>12개</b> 제품을 조사했더니, 한 줄 평균 나트륨이 일일 권장량의 절반을 넘어요.",
+        "query": "nutrition label macro view",
+        "bg": "https://images.pexels.com/photos/14433535/pexels-photo-14433535.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "특히 단백질은 하루 기준치의 <b>20프로</b> 수준으로 턱없이 부족해서 한 끼 식사로는 영양이 불균형해요.",
+        "query": "korean convenience store counter",
+        "bg": "https://images.pexels.com/photos/20157487/pexels-photo-20157487.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "제품별로 단백질 함량이 <b>두 배</b>까지 차이가 나니까 구매 전에 반드시 성분표를 비교해봐야 해요.",
+        "query": "product ingredients label close",
+        "bg": "https://images.pexels.com/photos/17260159/pexels-photo-17260159.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "뒷면의 영양성분 표시에서 나트륨과 단백질 함량을 꼼꼼히 확인하고 고르는 게 가장 확실해요.",
+        "query": "reading food label hand",
+        "bg": "https://images.pexels.com/photos/11256796/pexels-photo-11256796.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "단백질이 부족하다면 삶은 달걀이나 <b>우유</b>를 곁들여서 영양 균형을 꼭 채워줘야 해요.",
+        "query": "boiled egg and milk bottle",
+        "bg": "https://images.pexels.com/photos/10994351/pexels-photo-10994351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "narration": "편의점 김밥을 먹을 때는 반드시 단백질 성분을 확인하고 다른 식품과 함께 드세요.",
+        "query": "healthy meal combination",
+        "share": "→ 편의점 자주 가는 친구에게 공유",
+        "bg": "https://images.pexels.com/photos/34902493/pexels-photo-34902493.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "outro": true,
+        "narration": "놓치기 쉬운 <b>건강상식</b>, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!"
+      }
+    ],
+    "follow_cta": "놓치기 쉬운 <b>건강상식</b>, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!",
+    "share_target": "편의점 자주 가는 친구",
+    "caption": "고물가 때문에 한 끼로 편의점 김밥 자주 드시죠? 한국소비자원이 인기 제품 12개를 조사했더니 충격적인 결과가 나왔어요. 나트륨은 하루 권장량의 절반이 넘는 반면, 단백질은 턱없이 부족해서 한 끼 식사로는 영양 불균형이 오기 쉬워요. 제품마다 단백질 함량이 두 배까지 차이 나니 구매 전 영양성분표를 꼭 확인하세요. 부족한 단백질은 삶은 달걀이나 우유로 채워주는 게 좋아요. 📌 매일 놓치기 쉬운 건강 꿀팁만 골라 올립니다 → @glend_kr\n\n📤 편의점 자주 가는 친구에게 보내주세요\n\n#편의점김밥 #영양성분 #건강상식 #식습관 #직장인점심\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+    "length_variant": "mid"
+  },
+  "length_variant": "mid",
+  "article": {
+    "title": "편의점 김밥 영양성분 비교, 나트륨과 단백질 함량 확인법",
+    "description": "한국소비자원이 조사한 편의점 김밥 12개 제품의 영양성분 비교 결과와 올바른 한 끼 조합 방법을 안내합니다.",
+    "keywords": [
+      "편의점 김밥 영양성분",
+      "편의점 김밥 나트륨",
+      "편의점 김밥 단백질",
+      "편의점 김밥 칼로리"
+    ],
+    "body_markdown": "고물가 시대에 가볍게 한 끼를 해결하기 위해 편의점 김밥을 찾는 분들이 많습니다. 하지만 한국소비자원이 인기 제품 12개를 조사한 결과에 따르면, 편의점 김밥만으로는 영양 균형을 맞추기 어렵다는 점에 주의해야 합니다. 구매 전 반드시 영양성분표를 확인하고 부족한 영양소를 다른 식품으로 보충하는 것이 좋습니다.\n\n## 편의점 김밥, 왜 영양 불균형이 생길까요?\n\n바쁜 일상 속에서 간편하게 먹기 좋은 편의점 김밥은 밥과 여러 가지 속재료가 어우러져 한 끼 식사로 손색이 없어 보입니다. 하지만 실제 영양성분을 자세히 들여다보면 특정 영양소에 편중되어 있는 경우가 많습니다. 특히 탄수화물 위주의 구성에 비해 신체 유지에 필수적인 단백질 함량이 상대적으로 낮아, 오직 김밥 한 줄만으로 하루 영양소를 골고루 섭취하기는 벅찬 구조입니다. 매일 식사를 이런 식으로 대체할 경우 장기적인 영양 불균형으로 이어질 수 있어 주의가 필요합니다.\n\n## 나트륨 함량, 하루 권장량의 절반 수준\n\n한국소비자원의 조사 결과에 따르면, 편의점 김밥 한 줄에 포함된 평균 나트륨 함량은 일일 영양성분 기준치의 절반을 훌쩍 넘는 수준으로 나타났습니다. 짭조름한 단무지,햄, 맛살 등 간이 된 속재료가 많이 들어가기 때문입니다. 나트륨을 과다 섭취하면 건강에 부담을 줄 수 있으므로, 평소 짜게 먹는 식습관이 있는 분들이라면 편의점 김밥을 고를 때 나트륨 함량 표시를 더욱 꼼꼼히 살펴보아야 합니다.\n\n## 제품별 단백질 함량 비교, 왜 중요할까?\n\n같은 편의점 김밥이라도 어떤 속재료가 얼마나 들어갔느냐에 따라 영양성분은 큰 차이를 보입니다. 실제로 제품별 단백질 함량은 최대 두 배까지 차이가 나는 것으로 확인되었습니다. 단백질은 하루 기준치에 비해 턱없이 부족한 경우가 많으며, 특히 20% 수준에 머무는 제품들이 많습니다. 따라서 단순히 가격이나 맛만 보고 고르기보다는, 제품 뒷면의 영양성분 표시를 확인하여 단백질이 조금이라도 더 알차게 들어간 제품을 선택하는 것이 현명한 방법입니다.\n\n## 편의점 김밥과 함께 먹으면 좋은 영양 보충 식품\n\n편의점 김밥의 부족한 영양을 채우기 위해서는 다른 식품을 곁들이는 것이 가장 확실한 방법입니다. 특히 김밥에 부족한 단백질과 비타민 등의 영양소를 보완해 주는 조합을 선택해야 합니다.\n\n* 삶은 달걀: 양질의 단백질을 간편하게 추가할 수 있는 가장 좋은 조합입니다.\n* 우유: 부족한 단백질뿐만 아니라 칼슘까지 함께 보충할 수 있습니다.\n* 신선한 샐러드나 채소 음료: 나트륨 배출을 돕고 비타민과 무기질을 보충합니다.\n\n## 자주 묻는 질문\n\nQ. 편의점 김밥만 먹으면 왜 건강에 안 좋다고 하나요?\nA. 나트륨 함량은 하루 권장량의 절반을 넘는 반면, 단백질 등 필수 영양소는 기준치의 20프로 수준으로 턱없이 부족해 영양 불균형을 초래하기 쉽기 때문입니다.\n\nQ. 제품별로 영양성분이 다 다른데 어떻게 골라야 하나요?\nA. 제품 뒷면에 표기된 영양성분 표시를 확인하여 나트륨은 낮고 단백질 함량이 상대적으로 높은 제품을 비교해 선택하는 것이 좋습니다.\n\nQ. 부족한 영양은 어떻게 채우는 것이 좋나요?\nA. 단백질이 부족하므로 식사를 할 때 삶은 달걀이나 우유 같은 단백질 식품을 곁들여 영양 균형을 맞추는 것을 권장합니다.",
+    "chars": 1599
+  },
+  "meta": {
+    "hook_clip_sec": 4.58,
+    "total_sec": 53.5,
+    "scene_count": 9,
+    "length_variant": "mid",
+    "hook_text": "싸다고 집은 편의점 김밥, 몸 망친다",
+    "ig_media_id": "18114635690603120"
+  },
+  "published": true
+}
