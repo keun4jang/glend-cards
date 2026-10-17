@@ -11,38 +11,76 @@
 <meta property="og:title" content="지하철 폭행 사건 경찰 핑퐁과 직접 CCTV 증거 확보하는 법 | GLEND 생활정보">
 <meta property="og:description" content="지하철에서 폭행을 당했을 때 CCTV 영상 삭제를 막고 개인이 직접 증거를 확보하는 방법을 안내합니다.">
 <meta property="og:url" content="https://keun4jang.github.io/glend-cards/%EC%A7%80%ED%95%98%EC%B2%A0-%ED%8F%AD%ED%96%89-%EC%82%AC%EA%B1%B4-%EA%B2%BD%EC%B0%B0-%ED%95%91%ED%90%81%EA%B3%BC-%EC%A7%81%EC%A0%91-CCTV-%EC%A6%9D%EA%B1%B0-%ED%99%95%EB%B3%B4%ED%95%98%EB%8A%94-%EB%B2%95/">
+<meta property="og:site_name" content="GLEND 생활정보">
+<meta name="theme-color" content="#cfff04">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23cfff04'/%3E%3Ctext x='32' y='46' font-family='Arial,sans-serif' font-size='42' font-weight='900' text-anchor='middle' fill='%231b1e22'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#fff;--fg:#16191c;--muted:#5b6470;--line:#e5e8ec;--accent:#3d7a2f;--card:#fafbfc}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#111417;--fg:#e8eaed;--muted:#9aa4b0;--line:#262b31;--accent:#a3d977;--card:#171b1f}}
-body{background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.75;-webkit-text-size-adjust:100%}
-.wrap{max-width:720px;margin:0 auto;padding:24px 20px 72px}
-header{border-bottom:1px solid var(--line);margin-bottom:32px;padding-bottom:16px}
-header a{color:var(--fg);text-decoration:none;font-weight:800;font-size:19px;letter-spacing:-.02em}
-header p{color:var(--muted);font-size:13px;margin-top:4px}
-h1{font-size:29px;line-height:1.35;letter-spacing:-.03em;margin:8px 0 14px;word-break:keep-all}
-h2{font-size:20px;letter-spacing:-.02em;margin:34px 0 12px;padding-top:14px;border-top:1px solid var(--line);word-break:keep-all}
-h3{font-size:17px;margin:22px 0 8px}
-p{margin:0 0 14px;word-break:keep-all}
-ul,ol{margin:0 0 16px 20px}li{margin-bottom:7px;word-break:keep-all}
-table{width:100%;border-collapse:collapse;margin:0 0 18px;font-size:15px;display:block;overflow-x:auto}
-th,td{border:1px solid var(--line);padding:9px 11px;text-align:left}
-th{background:var(--card);font-weight:700}
-.meta{color:var(--muted);font-size:13px;margin-bottom:24px}
+:root{--bg:#fff;--fg:#1b1e22;--muted:#5f6670;--line:#e4e6e9;--soft:#f5f6f7;--mark:#cfff04;--mark-ink:#1b1e22;--link:#2f6b12}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#16191c;--fg:#e9ebee;--muted:#9ba3ad;--line:#2a2f35;--soft:#1d2125;--mark:rgba(207,255,4,.28);--mark-ink:#f2ffb8;--link:#c6f04a}}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:17px;line-height:1.8;font-feature-settings:"tnum" 0}
+.skip{position:absolute;left:-999px;top:8px;background:var(--fg);color:var(--bg);padding:8px 12px;border-radius:6px;z-index:10}
+.skip:focus{left:12px}
+:focus-visible{outline:3px solid var(--fg);outline-offset:3px;border-radius:3px}
+.wrap{max-width:680px;margin:0 auto;padding:20px 20px 88px}
+header{display:flex;align-items:baseline;gap:10px;padding-bottom:18px;margin-bottom:40px;border-bottom:2px solid var(--fg)}
+header a{color:var(--fg);text-decoration:none;font-weight:800;font-size:20px;letter-spacing:-.03em}
+header a b{background:#cfff04;color:#1b1e22;padding:0 .18em;border-radius:2px}
+header span{color:var(--muted);font-size:14px}
+h1{font-size:clamp(28px,6.4vw,38px);line-height:1.28;font-weight:800;letter-spacing:-.035em;margin:0 0 14px;word-break:keep-all;text-wrap:balance}
+h2{font-size:22px;line-height:1.4;font-weight:700;letter-spacing:-.025em;margin:48px 0 14px;word-break:keep-all;text-wrap:balance}
+h3{font-size:18px;font-weight:700;letter-spacing:-.02em;margin:28px 0 8px;word-break:keep-all}
+p{margin:0 0 16px;word-break:keep-all;text-wrap:pretty}
+article p,article li{max-width:38em}
+ul,ol{margin:0 0 18px 1.2em}li{margin-bottom:8px;word-break:keep-all;padding-left:2px}
+li::marker{color:var(--muted)}
+strong{font-weight:700;background:linear-gradient(transparent 58%,var(--mark) 58%,var(--mark) 92%,transparent 92%);color:var(--mark-ink);padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+table{width:100%;border-collapse:collapse;margin:4px 0 22px;font-size:15px;line-height:1.6;display:block;overflow-x:auto;font-variant-numeric:tabular-nums}
+th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);word-break:keep-all}
+thead th{border-bottom:2px solid var(--fg);font-weight:700;white-space:nowrap}
+td strong{background:none;padding:0}
+.meta{color:var(--muted);font-size:14px;margin-bottom:32px;font-variant-numeric:tabular-nums}
+.meta span+span::before{content:"";display:inline-block;width:3px;height:3px;border-radius:50%;background:currentColor;vertical-align:middle;margin:0 8px}
+.back{display:inline-block;margin-bottom:22px;color:var(--muted);font-size:14px;text-decoration:underline;text-underline-offset:3px}
+.back:hover{color:var(--fg)}
+.lead{color:var(--muted);font-size:16px;max-width:30em;margin-bottom:28px}
+.tools{margin:0 0 8px}
+.tools input{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg)}
+.tools input:focus{outline:none;border-color:var(--fg)}
+.cats{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
+.cats button{font:inherit;font-size:14px;padding:6px 13px;border-radius:6px;border:1.5px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer;min-height:36px}
+.cats button[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.cats button:active{transform:translateY(1px)}
+#count{color:var(--muted);font-size:14px;margin:18px 0 0;font-variant-numeric:tabular-nums}
+.month h2{font-size:15px;color:var(--muted);font-weight:600;letter-spacing:0;margin:36px 0 0;padding-bottom:8px;border-bottom:1px solid var(--line)}
 .list{list-style:none;margin:0}
-.list li{border-bottom:1px solid var(--line);margin:0}
-.list a{display:block;padding:16px 0;text-decoration:none;color:var(--fg)}
-.list strong{display:block;font-size:17px;letter-spacing:-.02em;margin-bottom:4px;word-break:keep-all}
-.list span{color:var(--muted);font-size:14px;word-break:keep-all}
-.tag{display:inline-block;font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:2px 9px;margin:0 5px 5px 0}
-footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
-footer a{color:var(--accent)}
-.back{display:inline-block;margin-bottom:18px;color:var(--accent);text-decoration:none;font-size:14px}
+.list li{margin:0;padding:0;border-bottom:1px solid var(--line)}
+.list a{display:block;padding:18px 0 20px;text-decoration:none;color:var(--fg)}
+.list small{display:block;color:var(--muted);font-size:13px;margin-bottom:4px;font-variant-numeric:tabular-nums}
+.list strong{display:block;background:none;padding:0;font-size:18px;line-height:1.45;letter-spacing:-.025em;margin-bottom:6px;word-break:keep-all;text-wrap:balance}
+.list span{color:var(--muted);font-size:15px;line-height:1.65;word-break:keep-all;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.list a:hover strong{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.tags{margin-top:36px;color:var(--muted);font-size:14px}
+.tags span{display:inline-block;margin:0 12px 4px 0}
+.follow{margin:48px 0 0;padding:22px 22px 24px;background:var(--soft);border-left:6px solid var(--mark);border-radius:4px}
+.follow p{margin:0 0 6px;font-weight:700;font-size:18px;letter-spacing:-.02em}
+.follow span{display:block;color:var(--muted);font-size:15px;margin-bottom:12px}
+.follow a{color:var(--link);font-weight:700}
+.more h2{font-size:18px;margin:48px 0 4px}
+footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;line-height:1.7}
+footer p{margin:0 0 6px}
+footer a{color:inherit}
+a{color:var(--link)}
+@media(max-width:480px){body{font-size:16.5px}.wrap{padding:16px 16px 72px}header{margin-bottom:28px}h2{font-size:20px;margin-top:40px}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "지하철 폭행 사건 경찰 핑퐁과 직접 CCTV 증거 확보하는 법", "description": "지하철에서 폭행을 당했을 때 CCTV 영상 삭제를 막고 개인이 직접 증거를 확보하는 방법을 안내합니다.", "datePublished": "2026-09-07", "inLanguage": "ko", "publisher": {"@type": "Organization", "name": "GLEND 생활정보"}}</script>
 </head>
-<body><div class="wrap">
-<header><a href="https://keun4jang.github.io/glend-cards/">GLEND 생활정보</a><p>정부지원금·생활경제·건강 정보를 신청 방법과 조건 중심으로 정리합니다.</p></header>
-<a class="back" href="https://keun4jang.github.io/glend-cards/">← 목록</a><h1>지하철 폭행 사건 경찰 핑퐁과 직접 CCTV 증거 확보하는 법</h1><p class="meta">2026-09-07 · 사건사고</p><p>지하철에서 시비나 폭행 등 억울한 사건을 당했을 때 경찰의 수사만 믿고 기다리면 증거를 잃을 위험이 큽니다. 최근 경찰 간 관할 다툼으로 수사가 지연되는 사이 CCTV 보관 기간이 지나 영상이 자동 삭제되는 사례가 발생하고 있습니다. 가해자를 제대로 처벌하고 피해를 구제받기 위해서는 개인이 직접 정보공개포털을 통해 CCTV 영상 보존과 열람을 신속하게 신청해야 합니다.</p>
+<body><a class="skip" href="#main">본문 바로가기</a><div class="wrap">
+<header><a href="https://keun4jang.github.io/glend-cards/"><b>GLEND</b> 생활정보</a><span>신청 방법부터 정리합니다</span></header>
+<main id="main">
+<a class="back" href="https://keun4jang.github.io/glend-cards/">전체 글 목록</a><article><h1>지하철 폭행 사건 경찰 핑퐁과 직접 CCTV 증거 확보하는 법</h1><p class="meta"><span>2026년 9월 7일</span><span>사건사고</span></p><p>지하철에서 시비나 폭행 등 억울한 사건을 당했을 때 경찰의 수사만 믿고 기다리면 증거를 잃을 위험이 큽니다. 최근 경찰 간 관할 다툼으로 수사가 지연되는 사이 CCTV 보관 기간이 지나 영상이 자동 삭제되는 사례가 발생하고 있습니다. 가해자를 제대로 처벌하고 피해를 구제받기 위해서는 개인이 직접 정보공개포털을 통해 CCTV 영상 보존과 열람을 신속하게 신청해야 합니다.</p>
 <h2>지하철 폭행 사건에서 경찰 수사가 지연되는 이유</h2>
 <p>지하철 범죄는 열차가 여러 지역의 경찰 관할 구역을 빠르게 이동하며 지나치기 때문에 사건 발생 장소를 정확히 특정하기 모호할 때가 있습니다. 이 과정에서 각 경찰서가 관할 구역을 따지며 책임을 미루는 이른바 &#x27;핑퐁&#x27; 현상이 발생하기도 합니다. 수사 기관이 서로 사건을 미루는 사이 시간은 속절없이 흘러가며, 범죄 현장이 담긴 핵심 증거인 CCTV 영상은 정해진 보존 기한을 향해 다가가게 됩니다. 공권력의 대응을 마냥 기다리다가는 골든타임을 놓치기 쉽습니다.</p>
 <h2>지하철 CCTV 보존 기한과 자동 삭제 문제</h2>
@@ -56,9 +94,10 @@ footer a{color:var(--accent)}
 <p>정보공개 청구를 진행할 때는 최대한 신속하게 움직여야 합니다. CCTV 자동 삭제 기한인 최소 14일이라는 시간은 생각보다 빠르게 지나갑니다. 청구 내용이 모호할 경우 담당 부서를 찾는 데 시간이 걸릴 수 있으므로, 사건 당시의 정황을 구체적이고 명확하게 기재해야 합니다. 또한 개인정보 보호법에 따라 타인의 얼굴이나 신상정보가 포함된 영상은 모자이크 처리 등 비공개 조치가 이루어질 수 있다는 점을 유념해야 합니다.</p>
 <h2>자주 묻는 질문</h2>
 <p>Q. 지하철 칸 번호를 기억하지 못하면 CCTV를 확인할 수 없나요? A. 칸 번호를 정확히 모르면 해당 시간대에 운행된 열차 전체를 특정하기 어려워 영상 확보가 지연될 수 있습니다. 다만 승하차 시간과 출입문 위치, 대략의 위치 정보를 바탕으로 역무실이나 수사 기관의 협조를 받아 추적할 수 있으나 시간이 더 소요될 수 있으므로 반드시 칸 번호를 확인하는 것이 좋습니다.</p>
-<p>Q. 정보공개포털을 통한 CCTV 청구는 누구나 할 수 있나요? A. 해당 사건의 당사자나 이해관계인이라면 누구나 정보공개를 청구할 수 있습니다. 다만 타인의 개인정보 보호를 위해 열람 범위나 제공 방식에 제한이 있을 수 있으므로 관련 규정을 미리 확인하는 것을 권장합니다.</p><p style="margin-top:28px"><span class="tag">지하철 폭행</span><span class="tag">CCTV 정보공개청구</span><span class="tag">증거보전 신청</span><span class="tag">지하철 범죄 대처</span><span class="tag">경찰 핑퐁</span></p>
+<p>Q. 정보공개포털을 통한 CCTV 청구는 누구나 할 수 있나요? A. 해당 사건의 당사자나 이해관계인이라면 누구나 정보공개를 청구할 수 있습니다. 다만 타인의 개인정보 보호를 위해 열람 범위나 제공 방식에 제한이 있을 수 있으므로 관련 규정을 미리 확인하는 것을 권장합니다.</p><p class="tags"><span>#지하철폭행</span><span>#CCTV정보공개청구</span><span>#증거보전신청</span><span>#지하철범죄대처</span><span>#경찰핑퐁</span></p></article><aside class="follow"><p>이런 정보, 매일 받아보세요</p><span>신청 기한이 짧은 지원금은 인스타그램에 먼저 올립니다.</span><a href="https://instagram.com/glend_kr">인스타그램 @glend_kr 팔로우</a></aside><section class="more"><h2>같은 분야 다른 글</h2><ul class="list"><li data-cat="사건사고"><a href="https://keun4jang.github.io/glend-cards/%EC%95%BC%EC%83%9D-%EB%8F%85%EB%B2%84%EC%84%AF-%EC%A4%91%EB%8F%85-%EC%9D%91%EA%B8%89-%EB%8C%80%EC%B2%98%EB%B2%95-%EC%B9%98%EB%A3%8C%EB%B9%84-%EC%A7%80%EC%9B%90-%EC%8B%A0%EC%B2%AD-%EB%B0%A9%EB%B2%95/"><small>10월 16일, 사건사고</small><strong>야생 독버섯 중독 응급 대처법 및 치료비 지원 신청 방법</strong><span>가을철 야생 독버섯 섭취 시 119 신고와 응급 대처 요령, 남은 버섯 보관법, 관할 보건소를 통한 응급치료비 본인부담금 지원 신청 기준을 안내합니다.</span></a></li><li data-cat="사건사고"><a href="https://keun4jang.github.io/glend-cards/%EA%B5%AD%EB%AF%BC%EC%9D%98%ED%9E%98-%EC%84%A0%EA%B1%B0%EB%B2%95-%EC%9C%84%EB%B0%98-397%EC%96%B5-%EB%B0%98%ED%99%98-%EC%9C%84%EA%B8%B0-%EC%82%AC%ED%83%9C/"><small>10월 14일, 사건사고</small><strong>국민의힘 선거법 위반 397억 반환 위기 사태 정리</strong><span>선거법 위반 재판 결과에 따른 국민의힘 397억 원 선거비용 반환 위기 사태의 배경과 진행 절차를 정리합니다.</span></a></li><li data-cat="사건사고"><a href="https://keun4jang.github.io/glend-cards/%EA%B8%88%EC%9C%B5%EC%82%AC-%EC%B9%A8%ED%95%B4%EC%82%AC%EA%B3%A0-%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4-10%EB%A7%8C%EA%B1%B4-%EC%9C%A0%EC%B6%9C-%ED%99%95%EC%9D%B8-%EB%B0%A9%EB%B2%95/"><small>10월 14일, 사건사고</small><strong>금융사 침해사고 개인정보 10만건 유출 확인 방법</strong><span>최근 금융사 침해사고로 유출된 개인정보 10만 건의 확인 방법과 추가 피해 예방 수칙을 안내합니다.</span></a></li></ul></section>
+</main>
 <footer>
-<p>GLEND 생활정보 · 인스타그램 <a href="https://instagram.com/glend_kr">@glend_kr</a></p>
-<p>제도·금액·기한은 변경될 수 있습니다. 신청 전 반드시 공식 기관 안내를 확인하세요.</p>
+<p>GLEND 생활정보. 매일 새 글은 인스타그램 <a href="https://instagram.com/glend_kr">@glend_kr</a>에 먼저 올라옵니다.</p>
+<p>제도·금액·기한은 바뀔 수 있습니다. 신청 전에 공식 기관 안내를 꼭 확인하세요.</p>
 </footer>
 </div></body></html>
