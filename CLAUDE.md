@@ -24,6 +24,9 @@ Instagram channel "GLEND"(@glend_kr). 사람이 손대지 않고 GitHub Actions�
 **3. 검색 자산(정적 사이트) — 매일 KST 05:40** (`site.yml`)
 `article.py`가 쓴 글을 `build_site.py`가 `docs/`(GitHub Pages)로 빌드하고
 `indexnow.py`로 색인을 요청한다.
+사이트 디자인(2026-10-17)은 `.claude/skills/frontend-design`·`redesign-existing-projects` 기준으로 손봤다 —
+카드4의 연두(#CFFF04)를 본문 굵은 글씨의 형광펜으로만 쓰고, 글꼴은 카드와 같은 Pretendard(jsDelivr CDN).
+목록엔 검색·분야 필터·월별 묶음, 글 끝엔 인스타 팔로우 안내와 같은 분야 글 3개. 디자인은 `build_site.py`의 `CSS`에 있다.
 
 **계측**: `insights.yml`(주간 리포트 → `reports/`), `harvest.yml`(전량 성과 회수 →
 `archive/instagram_posts.csv`). 발행 원문은 `archive.py`가 `archive/YYYY-MM/`에 영구 보관한다
