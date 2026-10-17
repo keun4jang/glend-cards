@@ -124,7 +124,7 @@ Secrets required: `GEMINI_API_KEY`, `PEXELS_API_KEY`, `IG_TOKEN`, `IG_USER_ID`
 - **즉시 알림**: 6개 워크플로 마지막 단계 `Notify failure (Telegram)`가 실패·취소(시간 초과 포함) 시 링크와 함께 보낸다.
 - **감시 에이전트** `watchdog.yml` → `watchdog.py`(읽기 전용):
   6시간마다 인스타 최근 게시물을 보고 릴스 26시간·카드 80시간 넘게 발행이 없으면 알린다(워크플로가 아예 안 돈 경우까지).
-  매일 UTC 00:07(KST 09시대)에 지난 24시간 요약(발행 수·실패 수·팔로워)을 보낸다 — 이 요약이 안 오면 감시 자체가 죽은 것.
+  매일 UTC 00:07 크론으로 지난 24시간 요약(발행 수·실패 수·팔로워)을 보낸다 — 크론 지연 때문에 실제 도착은 KST 13시 전후(10/16·17 실측). 이 요약이 안 오면 감시 자체가 죽은 것.
 - 시크릿 `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`가 없으면 알림만 건너뛰고 파이프라인은 그대로 돈다.
   연결 확인: Actions → Watchdog (Telegram) → Run workflow(mode=test).
 
