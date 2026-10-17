@@ -8,6 +8,7 @@ import random
 import urllib.parse
 import requests
 import feedparser
+import factcheck
 from dotenv import load_dotenv
 from google import genai
 from recent_topics import (avoid_line, get_recent_topics, find_duplicate, dup_correction,
@@ -438,6 +439,7 @@ TRIES = 5
 data = None
 best = None          # (점수, 후보) — 끝내 전부 통과하지 못하면 가장 나은 후보로 발행
 correction = ""
+fc_rejects = 0
 for gen_try in range(1, TRIES + 1):
     response = call_gemini(correction)
     try:
@@ -462,6 +464,14 @@ for gen_try in range(1, TRIES + 1):
     length = length_issue(cand)
     share = share_issues(cand)
     if not (dup or pol or length or share):
+        # 사실 확인 — 틀린 수치·단정은 제자리에서 고치고, 핵심 전제가 거짓이면 한 번만 다른 주제로 재생성
+        fc = factcheck.check(cand, "reel", headlines)
+        if fc["verdict"] == "reject" and fc_rejects == 0 and gen_try < TRIES:
+            fc_rejects += 1
+            print(f"  사실 확인 거절 — 재생성 {gen_try}/{TRIES}: {fc['reason']}", flush=True)
+            correction = factcheck.reject_correction(fc["reason"])
+            time.sleep(3)
+            continue
         data = cand
         break
 
@@ -497,6 +507,8 @@ if data is None and best is not None:
 if data is None:
     print(f"[중단] Gemini가 {TRIES}회 연속 조건을 만족하지 못했어요.")
     sys.exit(1)
+if "factcheck" not in data:   # 조건 미달 후보로 발행할 때도 사실 확인은 한다
+    factcheck.check(data, "reel", headlines)
 
 if LENGTH_VARIANT == "mid" and est_seconds(data["scenes"]) > MID_MAX_SEC:
     before = est_seconds(data["scenes"])

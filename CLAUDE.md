@@ -150,6 +150,18 @@ Secrets required: `GEMINI_API_KEY`, `PEXELS_API_KEY`, `IG_TOKEN`, `IG_USER_ID`
   흔들려서 정밀 조준은 어렵다. 시간대를 바꾸기 전에 지연을 다시 측정할 것.
 - 발행 시각이 도달에 영향을 주는지는 **아직 측정한 적 없다.** 바꾸기 전에 근거부터 만들 것.
 
+### 사실 확인 (`factcheck.py`) — 2026-10-18 추가
+
+대본·카드는 뉴스 **제목만** 보고 쓰여서, 제목에 없는 금액·기한·처벌·판결·통계를 모델이 지어낼 수 있다
+(예: 10/16 카드4 "기한 · 사고 후 7일이내 청구", 10/17 릴스 "노란불 통과 사고 = 과실 100%").
+그래서 생성 루프의 다른 검사를 통과한 후보를 한 번 더 Gemini에 보내 **Google 검색 근거**로 확인한다.
+- 틀린 부분만 원문 부분 문자열로 바꾼다(릴스 장면 +20자, 캡션 +150자까지, 카드 문구는 글자 수가 늘면 버림).
+- 핵심 전제가 거짓이면 `reject` → 다른 주제로 **한 번만** 재생성.
+- 검색 근거를 못 쓰면(무료 한도·미지원) 검색 없이 확인, 그것도 실패하면 건너뛴다 — 발행은 절대 막지 않는다.
+- 결과는 `content["factcheck"]`(mode·verdict·applied·sources)로 아카이브에 남는다. 로그는 `[사실확인]`.
+- 시험: Actions → Factcheck test(수동) — 최근 발행분을 다시 확인해 출력만 한다. `factcheck.py`를 바꾸는 PR에서도 자동 실행.
+- 아직 남은 빈틈: 검색 근거도 틀릴 수 있고, 모델이 "ok"라고 놓치는 것도 있다. 정기적으로 `applied`를 훑어볼 것.
+
 ## Key constraints
 - Gemini prompt enforces strict character limits: card titles ≤6 chars/line, body lines 13–16 chars. Violating these causes visual overflow.
 - Instagram requires images to be publicly accessible URLs before the carousel can be published — hence the GitHub raw CDN approach.
