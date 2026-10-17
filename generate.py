@@ -8,6 +8,7 @@ import random
 import urllib.parse
 import requests
 import feedparser
+import factcheck
 from dotenv import load_dotenv
 from google import genai
 from recent_topics import (avoid_line, get_recent_topics, find_duplicate, dup_correction,
@@ -310,6 +311,7 @@ def save_value_issues(d):
 TRIES = 4
 data = None
 correction = ""
+fc_rejects = 0
 for gen_try in range(1, TRIES + 1):
     response = call_gemini(correction)
     try:
@@ -342,6 +344,14 @@ for gen_try in range(1, TRIES + 1):
 
     issues = save_value_issues(cand)
     if not issues:
+        # 사실 확인 — 카드4는 저장되는 카드라 틀린 기한·금액이 가장 오래 남는다
+        fc = factcheck.check(cand, "card", headlines)
+        if fc["verdict"] == "reject" and fc_rejects == 0 and gen_try < TRIES:
+            fc_rejects += 1
+            print(f"  사실 확인 거절 — 재생성 {gen_try}/{TRIES}: {fc['reason']}")
+            correction = factcheck.reject_correction(fc["reason"])
+            time.sleep(3)
+            continue
         data = cand
         break
     if gen_try == TRIES:
@@ -362,6 +372,8 @@ for gen_try in range(1, TRIES + 1):
 if data is None:
     print(f"[중단] Gemini가 {TRIES}회 연속 올바른 형식을 주지 않았어요.")
     sys.exit(1)
+if "factcheck" not in data:
+    factcheck.check(data, "card", headlines)
 
 # 3) Pexels에서 검색어로 사진 가져오는 함수
 def get_photo(query):

@@ -1,0 +1,35 @@
+name: Factcheck test
+
+# 사실 확인(factcheck.py)을 실제 Gemini로 시험한다 — 최근 발행분을 다시 확인해 결과만 출력(읽기 전용).
+# factcheck.py를 바꾸는 PR에서 자동으로 돌고, 수동 실행도 된다. 아무것도 발행·커밋하지 않는다.
+on:
+  pull_request:
+    paths: ["factcheck.py", ".github/workflows/factcheck-test.yml"]
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "최근 몇 개를 확인할지"
+        required: false
+        default: "4"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install google-genai python-dotenv
+      - name: Recheck recent posts
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PYTHONUNBUFFERED: "1"
+        run: |
+          N=${{ github.event.inputs.count || '4' }}
+          FILES=$(ls archive/*/*.json | sort | tail -n "$N")
+          python factcheck.py $FILES
