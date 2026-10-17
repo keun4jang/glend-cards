@@ -165,7 +165,7 @@ def _sources(resp):
 
 
 def _call(prompt, grounded):
-    """(응답 텍스트, 출처 제목들) 또는 예외. 검색 근거가 막히면 GroundingUnavailable."""
+    """(응답 텍스트, 출처 제목들, 모델) 또는 예외."""
     from google.genai import types
     cfg = types.GenerateContentConfig(
         temperature=0,
@@ -183,18 +183,18 @@ def _call(prompt, grounded):
                     print(f"  [사실확인] {model}: 일시 과부하 — 다음 모델", flush=True)
                     continue
                 if grounded:
-                    # 무료 한도 초과(429)·검색 도구 미지원(400) 등 — 검색 없이 확인으로 넘어간다.
-                    raise GroundingUnavailable(f"{e.__class__.__name__}: {str(e)[:160]}")
+                    # 무료 한도 초과(429)·검색 도구 미지원(400)은 모델마다 다르다(10/18 시험: flash-latest는
+                    # 검색 한도 0으로 429). 다른 무료 모델로 넘어가 보고, 전부 막히면 검색 없이 확인한다.
+                    print(f"  [사실확인] {model}: 검색 근거 불가({str(e)[:60]}) — 다음 모델", flush=True)
+                    continue
                 if "not found" in msg or "404" in msg:
                     continue
                 raise
+        if grounded and last is not None and not any(t in str(last).lower() for t in TRANSIENT):
+            break                       # 과부하가 아니라 한도·미지원이면 기다려도 소용없다
         if rnd == 0:
             time.sleep(30)
     raise last or RuntimeError("Gemini 호출 실패")
-
-
-class GroundingUnavailable(Exception):
-    pass
 
 
 def apply_fixes(content, kind, fixes):
