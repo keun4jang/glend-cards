@@ -24,10 +24,30 @@ _BLOCK = re.compile(
     r"dollars?|euros?|pounds? sterling|us currency|yuan|rupees?)\b", re.I)
 
 
+# 목록에 없는 은행·가게도 많다(10/19 실측: RHB·BBVA·Caixa Bank가 그대로 통과). 그래서 모양으로도 거른다.
+# 은행 건물 외관·입구는 거의 항상 간판이 보인다.
+_BANKFRONT = re.compile(r"\bbank(?:'s)? (?:branch|building|facade|entrance|exterior|headquarters|office|tower|sign)|"
+                        r"\b(?:facade|entrance|exterior|branch|headquarters|front) of (?:the |a |an )?[\w' ]{0,30}\bbank\b", re.I)
+_NAMED_BANK = re.compile(r"\b[A-Z][a-z]+ (?:National |Islamic |Savings |Central )?Bank\b")   # "Caixa Bank" 등 고유명사
+_ACRONYM = re.compile(r"\b[A-Z]{2,6}\b")                                                     # "RHB", "BBVA", "CIBC" 등
+_ACRONYM_OK = {"ATM", "TV", "LED", "PC", "ID", "QR", "ER", "ICU", "IV", "CPR", "DNA", "GPS", "SUV", "EV",
+               "MRI", "CT", "AI", "OK", "UV", "USB", "PDF", "DIY", "BBQ", "SOS", "KTX", "KRW"}
+
+
 def blocked(photo):
-    text = " ".join([photo.get("alt") or "", photo.get("url") or ""]).replace("-", " ")
-    m = _BLOCK.search(text)
-    return m.group(0) if m else ""
+    alt = photo.get("alt") or ""
+    text = " ".join([alt, photo.get("url") or ""]).replace("-", " ")
+    for rx in (_BLOCK, _BANKFRONT):
+        m = rx.search(text)
+        if m:
+            return m.group(0)
+    m = _NAMED_BANK.search(alt)
+    if m:
+        return m.group(0)
+    for m in _ACRONYM.finditer(alt):
+        if m.group(0) not in _ACRONYM_OK:
+            return m.group(0)
+    return ""
 
 
 def get_photo(query):
