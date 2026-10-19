@@ -31,7 +31,6 @@ else:
     MODEL_CHAIN = [
         (os.getenv("GEMINI_MODEL") or "models/gemini-flash-latest").strip(),
         "models/gemini-flash-lite-latest",
-        "models/gemini-2.0-flash",
     ]
 GEMINI_MODEL = MODEL_CHAIN[0]
 
