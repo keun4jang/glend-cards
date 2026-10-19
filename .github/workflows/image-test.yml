@@ -27,6 +27,7 @@ jobs:
           mkdir -p out
           python - <<'EOF'
           import cf_image, struct
+          ok = True
           for name, q in [("ai_apartment", "Seoul high-rise apartment complex at dusk"),
                           ("ai_hospital", "hospital emergency room entrance at night")]:
               url = cf_image.ai_photo(q, f"out/{name}.jpg")
@@ -39,6 +40,8 @@ jobs:
                       h, w = struct.unpack(">HH", data[i+5:i+9]); size = (w, h); break
                   i += 2 + struct.unpack(">H", data[i+2:i+4])[0]
               print(name, "OK" if url else "FAIL", size)
+              ok = ok and bool(url)
+          raise SystemExit(0 if ok else 1)
           EOF
       - name: Push images to image-test branch
         run: |
