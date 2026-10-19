@@ -9,6 +9,7 @@ import urllib.parse
 import requests
 import feedparser
 import factcheck
+import cf_image
 from dotenv import load_dotenv
 from google import genai
 from recent_topics import (avoid_line, get_recent_topics, find_duplicate, dup_correction,
@@ -183,6 +184,8 @@ PROMPT = f"""
   단 "korean won"은 그 카드 문장이 금액·지원금·이자처럼 돈 자체를 말할 때만. 신청 절차·대상·건강 정보 카드는 그 문장 내용을 그대로 보여주는 사물·장소로
   검색해 (예: 서류 → "application form desk", 병원 → "hospital corridor", 물 마시기 → "glass of water on table").
   술잔·칵테일처럼 내용과 반대로 읽힐 사진이 나올 단어("drink", "cocktail", "glass" 단독)는 피해라. 그리고 반드시 사람 얼굴이 안 나오는 사진으로 — 사물(돈, 계산기, 서류), 풍경(도시, 건물, 자연), 손 클로즈업 위주. "person", "man", "woman", "people" 단어 금지.
+  간판·로고·상호가 크게 보이는 사진도 금지 — "bank building", "bank exterior", "storefront", "shop sign", "logo", 회사·브랜드 이름은 쓰지 마
+  (외국 은행·가게 간판이 나온다). 은행·금융은 "bankbook and calculator", "atm keypad closeup", "online banking phone screen"처럼 사물로.
 
 반드시 아래 JSON 형식으로만 답해. 다른 설명 금지.
 {{
@@ -376,21 +379,7 @@ if "factcheck" not in data:
     factcheck.check(data, "card", headlines)
 
 # 3) Pexels에서 검색어로 사진 가져오는 함수
-def get_photo(query):
-    try:
-        res = requests.get(
-            "https://api.pexels.com/v1/search",
-            headers={"Authorization": PEXELS_KEY},
-            params={"query": query, "per_page": 1, "orientation": "portrait"},
-            timeout=30,
-        )
-        if res.status_code == 200:
-            photos = res.json().get("photos", [])
-            if photos:
-                return photos[0]["src"]["large2x"]
-    except Exception as e:
-        print("  (사진 검색 실패:", query, "->", e, ")")
-    return None
+from pexels import get_photo   # 간판·로고 거르기 포함(pexels.py)
 
 if True:
     print("=== Gemini가 고른 주제 ===")
@@ -402,9 +391,13 @@ if True:
     for cardkey in ["card1", "card2", "card3"]:
         q = data[cardkey].get("query", "finance")
         photo = get_photo(q)
+        src = "사진 OK"
+        if not photo:   # Pexels 장애·한도·결과 없음 → 무료 AI 이미지로 대체
+            photo = cf_image.ai_photo(q, f"output/ai_bg/post{POST_INDEX}_{cardkey}.jpg")
+            src = "Pexels 없음 → AI 이미지"
         if photo:
             data[cardkey]["bg"] = photo
-            print(f"  {cardkey}: '{q}' -> 사진 OK")
+            print(f"  {cardkey}: '{q}' -> {src}")
         else:
             data[cardkey]["bg"] = "https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg"
             print(f"  {cardkey}: '{q}' -> 실패, 기본 사진 사용")

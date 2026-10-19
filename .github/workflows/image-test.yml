@@ -1,0 +1,90 @@
+name: Image test (Cloudflare)
+
+# 클라우드플레어 Workers AI 무료 이미지 생성 시험 — 파이프라인 대체 함수(ai_photo)로 2장을 만들어 image-test 브랜치에 올린다.
+# 발행 파이프라인과 무관하다(인스타·main에 아무것도 올리지 않음).
+on:
+  pull_request:
+    paths: ["cf_image.py", "pexels.py", ".github/workflows/image-test.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Generate with the pipeline fallback (ai_photo)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          mkdir -p out
+          python - <<'EOF'
+          import cf_image, struct
+          ok = True
+          for name, q in [("ai_apartment", "Seoul high-rise apartment complex at dusk"),
+                          ("ai_hospital", "hospital emergency room entrance at night")]:
+              url = cf_image.ai_photo(q, f"out/{name}.jpg")
+              data = open(f"out/{name}.jpg", "rb").read() if url else b""
+              # JPEG 크기 읽기
+              size = None
+              i = 2
+              while url and i < len(data):
+                  if data[i] == 0xFF and data[i+1] in (0xC0, 0xC2):
+                      h, w = struct.unpack(">HH", data[i+5:i+9]); size = (w, h); break
+                  i += 2 + struct.unpack(">H", data[i+2:i+4])[0]
+              print(name, "OK" if url else "FAIL", size)
+              ok = ok and bool(url)
+          raise SystemExit(0 if ok else 1)
+          EOF
+      - name: Push images to image-test branch
+        run: |
+          cd out
+          git init -q && git checkout -q -b image-test
+          git config user.name github-actions && git config user.email actions@github.com
+          git add . && git commit -qm "image test $(date -u +%FT%TZ)"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" image-test
+
+  pexels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Check signboard/logo filter on real Pexels results
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: |
+          python - <<'EOF'
+          import os, json, glob, requests, pexels
+          # 최근 발행분의 실제 검색어 + HSBC가 나왔던 검색어
+          qs = ["bank building exterior modern"]
+          for f in sorted(glob.glob("archive/*/*.json"))[-12:]:
+              c = json.load(open(f))["content"]
+              for x in c.get("scenes", []) + [c.get(k) for k in ("card1", "card2", "card3") if c.get(k)]:
+                  if x.get("query") and x["query"] not in qs:
+                      qs.append(x["query"])
+          qs = qs[:60]
+          changed = none = 0
+          for q in qs:
+              r = requests.get("https://api.pexels.com/v1/search", headers={"Authorization": os.environ["PEXELS_API_KEY"]},
+                               params={"query": q, "per_page": 10, "orientation": "portrait"}, timeout=30).json()
+              ph = r.get("photos", [])
+              first = next((i for i, p in enumerate(ph) if not pexels.blocked(p, q)), None)
+              if first is None:
+                  none += 1
+                  print(f"  전부 걸림: {q}")
+              elif first > 0:
+                  changed += 1
+                  print(f"  1순위 교체: {q} | 버린 것: {[pexels.blocked(p, q) for p in ph[:first]]} | 1순위 설명: {(ph[0].get('alt') or '')[:60]}")
+          print(f"\n검색어 {len(qs)}개 중 1순위가 걸러진 것 {changed}개, 후보 전부 걸린 것 {none}개")
+          EOF
