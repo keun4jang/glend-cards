@@ -9,6 +9,7 @@ import urllib.parse
 import requests
 import feedparser
 import factcheck
+import cf_image
 from dotenv import load_dotenv
 from google import genai
 from recent_topics import (avoid_line, get_recent_topics, find_duplicate, dup_correction,
@@ -402,9 +403,13 @@ if True:
     for cardkey in ["card1", "card2", "card3"]:
         q = data[cardkey].get("query", "finance")
         photo = get_photo(q)
+        src = "사진 OK"
+        if not photo:   # Pexels 장애·한도·결과 없음 → 무료 AI 이미지로 대체
+            photo = cf_image.ai_photo(q, f"output/ai_bg/post{POST_INDEX}_{cardkey}.jpg")
+            src = "Pexels 없음 → AI 이미지"
         if photo:
             data[cardkey]["bg"] = photo
-            print(f"  {cardkey}: '{q}' -> 사진 OK")
+            print(f"  {cardkey}: '{q}' -> {src}")
         else:
             data[cardkey]["bg"] = "https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg"
             print(f"  {cardkey}: '{q}' -> 실패, 기본 사진 사용")

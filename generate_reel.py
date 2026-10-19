@@ -9,6 +9,7 @@ import urllib.parse
 import requests
 import feedparser
 import factcheck
+import cf_image
 from dotenv import load_dotenv
 from google import genai
 from recent_topics import (avoid_line, get_recent_topics, find_duplicate, dup_correction,
@@ -608,8 +609,12 @@ if True:
     for i, scene in enumerate(data["scenes"], start=1):
         q = scene.get("query", "background")
         photo = get_photo(q)
+        src = "OK"
+        if not photo:   # Pexels 장애·한도·결과 없음 → 무료 AI 이미지로 대체
+            photo = cf_image.ai_photo(q, f"output/ai_bg/reel{POST_INDEX}_s{i}.jpg")
+            src = "Pexels 없음 → AI 이미지" if photo else "실패(기본사진)"
         scene["bg"] = photo or "https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg"
-        print(f"  scene{i}: '{q}' -> {'OK' if photo else '실패(기본사진)'} | 자막: {scene['narration']}")
+        print(f"  scene{i}: '{q}' -> {src} | 자막: {scene['narration']}")
 
     # 마지막은 '결론(본문 마지막 장면) -> 로고' 순서.
     # 팔로우 멘트는 별도 장면을 만들지 않고 로고 화면 위에 음성으로만 얹는다.
