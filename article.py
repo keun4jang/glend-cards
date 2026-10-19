@@ -32,7 +32,6 @@ _models_env = (os.getenv("GEMINI_MODELS") or "").strip()
 MODEL_CHAIN = ([m.strip() for m in _models_env.split(",") if m.strip()] if _models_env else [
     (os.getenv("GEMINI_MODEL") or "models/gemini-flash-latest").strip(),
     "models/gemini-flash-lite-latest",
-    "models/gemini-2.0-flash",
 ])
 
 TRANSIENT = ("503", "unavailable", "429", "resource_exhausted",
