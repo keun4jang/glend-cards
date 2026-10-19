@@ -111,7 +111,8 @@ def gh_runs_since(since):
     q = urllib.parse.urlencode({"per_page": 100, "created": f">={since:%Y-%m-%dT%H:%M:%SZ}"})
     data = _get_json(f"https://api.github.com/repos/{REPO}/actions/runs?{q}",
                      {"Authorization": f"Bearer {GH_TOKEN}", "Accept": "application/vnd.github+json"})
-    return data.get("workflow_runs", [])
+    # PR에서 도는 시험 실행(Factcheck test·Image test 등)은 발행과 무관하다 — 요약의 실패 수에서 뺀다.
+    return [r for r in data.get("workflow_runs", []) if r.get("event") != "pull_request"]
 
 
 def _ts(m):
