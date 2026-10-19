@@ -34,7 +34,16 @@ _ACRONYM_OK = {"ATM", "TV", "LED", "PC", "ID", "QR", "ER", "ICU", "IV", "CPR", "
                "MRI", "CT", "AI", "OK", "UV", "USB", "PDF", "DIY", "BBQ", "SOS", "KTX", "KRW"}
 
 
-def blocked(photo):
+def blocked(photo, query=""):
+    """걸린 단어(없으면 빈 문자열). 검색어에 있는 일반 단어는 봐준다 — "warning sign street"는 표지판을 찾는 것이다."""
+    allowed = {w.lower() for w in re.findall(r"[A-Za-z]+", query or "")}
+    hit = _blocked(photo)
+    if hit and all(w.lower() in allowed or w.lower().rstrip("s") in allowed for w in re.findall(r"[A-Za-z]+", hit)):
+        return ""
+    return hit
+
+
+def _blocked(photo):
     alt = photo.get("alt") or ""
     text = " ".join([alt, photo.get("url") or ""]).replace("-", " ")
     for rx in (_BLOCK, _BANKFRONT):
@@ -64,7 +73,7 @@ def get_photo(query):
             return None
         photos = res.json().get("photos", [])
         for i, p in enumerate(photos):
-            why = blocked(p)
+            why = blocked(p, query)
             if why:
                 print(f"    - 후보 {i + 1} 건너뜀('{why}'): {(p.get('alt') or '')[:60]}")
                 continue

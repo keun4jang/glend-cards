@@ -79,12 +79,12 @@ jobs:
               r = requests.get("https://api.pexels.com/v1/search", headers={"Authorization": os.environ["PEXELS_API_KEY"]},
                                params={"query": q, "per_page": 10, "orientation": "portrait"}, timeout=30).json()
               ph = r.get("photos", [])
-              first = next((i for i, p in enumerate(ph) if not pexels.blocked(p)), None)
+              first = next((i for i, p in enumerate(ph) if not pexels.blocked(p, q)), None)
               if first is None:
                   none += 1
                   print(f"  전부 걸림: {q}")
               elif first > 0:
                   changed += 1
-                  print(f"  1순위 교체: {q} | 버린 것: {[pexels.blocked(p) for p in ph[:first]]} | 1순위 설명: {(ph[0].get('alt') or '')[:60]}")
+                  print(f"  1순위 교체: {q} | 버린 것: {[pexels.blocked(p, q) for p in ph[:first]]} | 1순위 설명: {(ph[0].get('alt') or '')[:60]}")
           print(f"\n검색어 {len(qs)}개 중 1순위가 걸러진 것 {changed}개, 후보 전부 걸린 것 {none}개")
           EOF
