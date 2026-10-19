@@ -19,14 +19,25 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - name: Generate
+      - name: Generate (every text-to-image model, same prompts)
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           mkdir -p out
-          python cf_image.py "Photorealistic Korean apartment complex at dusk, warm window lights, autumn trees, vertical composition, no text" out/apartment.jpg
-          python cf_image.py "Close-up of a Korean convenience store gimbap triangle on a table, soft natural light, food photography, no text" out/gimbap.jpg
+          python cf_image.py list | tee out/models.txt
+          declare -A P
+          P[apartment]="Photorealistic Seoul high-rise apartment complex (Korean apartment towers with large building numbers) at dusk, warm window lights, autumn ginkgo trees, vertical composition, no text"
+          P[gimbap]="Food photography of sliced Korean gimbap rolls (thin seaweed rice rolls cut into round pieces) on a plate, soft natural light, no text"
+          P[money]="Close-up of a calculator, coins and paper documents on a wooden desk, soft daylight, shallow depth of field, no text"
+          while read -r M; do
+            [ -z "$M" ] && continue
+            S=$(echo "$M" | sed 's#.*/##')
+            for k in apartment gimbap money; do
+              python cf_image.py "${P[$k]}" "out/${S}__${k}.jpg" "$M" 2>&1 | tail -1 | tee -a out/log.txt || true
+            done
+          done < out/models.txt
+          ls -la out
       - name: Push images to image-test branch
         run: |
           cd out
