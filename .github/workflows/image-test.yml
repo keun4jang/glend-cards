@@ -1,0 +1,36 @@
+name: Image test (Cloudflare)
+
+# 클라우드플레어 Workers AI 무료 이미지 생성 시험 — 이미지 1~2장을 만들어 image-test 브랜치에 올린다.
+# 발행 파이프라인과 무관하다(인스타·main에 아무것도 올리지 않음).
+on:
+  pull_request:
+    paths: ["cf_image.py", ".github/workflows/image-test.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Generate
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          mkdir -p out
+          python cf_image.py "Photorealistic Korean apartment complex at dusk, warm window lights, autumn trees, vertical composition, no text" out/apartment.jpg
+          python cf_image.py "Close-up of a Korean convenience store gimbap triangle on a table, soft natural light, food photography, no text" out/gimbap.jpg
+      - name: Push images to image-test branch
+        run: |
+          cd out
+          git init -q && git checkout -q -b image-test
+          git config user.name github-actions && git config user.email actions@github.com
+          git add . && git commit -qm "image test $(date -u +%FT%TZ)"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" image-test
