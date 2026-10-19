@@ -199,6 +199,8 @@ PROMPT = f"""
       돈 이야기가 없는 장면은 그 내용에 맞는 사물·장소로 검색해 (예: 서류 → "application form desk", 병원 → "hospital corridor",
       음식 → "grilled fish plate"). 돈 사진이 장면마다 반복되면 영상이 단조로워진다(9월 실측: 돈 사진 103장 중 33장이 돈 얘기 없는 장면). 그냥 "money", "cash", "banknotes"로 검색하면 달러·유로·외국 지폐가 나와서 한국 소식에 안 맞아. 외국 지폐·동전·신용카드 로고가 보이면 안 돼. 검색어에 "money"라는 단어 자체를 쓰지 마 — 반드시 "korean won"으로 대체할 것.
   (나) 반드시 **사람 얼굴이 안 나오는 사진**으로 검색해 — 사물(돈, 계산기, 서류, 도구), 풍경(도시, 거리, 건물, 자연), 손·뒷모습 클로즈업 위주. "person", "man", "woman", "people" 같은 단어는 쓰지 마. 꼭 사람이 필요하면 "hands closeup"이나 "silhouette"처럼 얼굴 없는 형태로.
+  (다) 간판·로고·상호가 크게 보이는 사진 금지 — "bank building", "bank exterior", "storefront", "shop sign", "logo", 회사·브랜드 이름은 쓰지 마
+      (외국 은행·가게 간판이 나온다). 은행·금융은 "bankbook and calculator", "atm keypad closeup", "online banking phone screen"처럼 사물로.
 - scene {SAVE_SCENE} 중 하나의 narration 끝에 "저장해두고 다시 보세요" 같은 저장 유도를 자연스럽게 한 번 넣어. (저장 유도는 전체에서 딱 한 번만)
 - 화면 상단에 영상 내내 고정으로 뜰 짧은 제목(title)도 만들어줘. 주제를 한눈에 보여주는 8자 이내의 간결한 키워드 (예: "운전면허 지원금", "청년 청약통장", "전기요금 절약"). 이모지 1개 붙여도 좋음.
 - 썸네일 커버(cover)도 만들어줘 — 피드에서 클릭을 부르는 카드뉴스식 후킹:
@@ -564,21 +566,7 @@ if share_target(data) and not share_issues(data):
     print(f"  [공유] {share_target(data)}", flush=True)
 
 
-def get_photo(query):
-    try:
-        res = requests.get(
-            "https://api.pexels.com/v1/search",
-            headers={"Authorization": PEXELS_KEY},
-            params={"query": query, "per_page": 1, "orientation": "portrait"},
-            timeout=30,
-        )
-        if res.status_code == 200:
-            photos = res.json().get("photos", [])
-            if photos:
-                return photos[0]["src"]["large2x"]
-    except Exception as e:
-        print("  (사진 검색 실패:", query, "->", e, ")")
-    return None
+from pexels import get_photo   # 간판·로고 거르기 포함(pexels.py)
 
 
 # 로고 직전 팔로우 유도 장면 (배경 사진 + 자막 있음)

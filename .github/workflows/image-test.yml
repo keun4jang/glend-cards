@@ -4,7 +4,7 @@ name: Image test (Cloudflare)
 # 발행 파이프라인과 무관하다(인스타·main에 아무것도 올리지 않음).
 on:
   pull_request:
-    paths: ["cf_image.py", ".github/workflows/image-test.yml"]
+    paths: ["cf_image.py", "pexels.py", ".github/workflows/image-test.yml"]
   workflow_dispatch:
 
 permissions:
@@ -50,3 +50,27 @@ jobs:
           git config user.name github-actions && git config user.email actions@github.com
           git add . && git commit -qm "image test $(date -u +%FT%TZ)"
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" image-test
+
+  pexels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Check signboard/logo filter on real Pexels results
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: |
+          python - <<'EOF'
+          import os, requests, pexels
+          for q in ["bank building exterior modern", "storefront night", "korean won calculator desk"]:
+              r = requests.get("https://api.pexels.com/v1/search", headers={"Authorization": os.environ["PEXELS_API_KEY"]},
+                               params={"query": q, "per_page": 10, "orientation": "portrait"}, timeout=30).json()
+              print(f"\n== {q}")
+              for i, p in enumerate(r.get("photos", []), 1):
+                  print(f"  {i:2d} {'X ' + pexels.blocked(p) if pexels.blocked(p) else 'ok':12s} {(p.get('alt') or '')[:70]}")
+              print("  → 선택:", pexels.get_photo(q))
+          EOF
