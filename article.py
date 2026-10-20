@@ -144,8 +144,15 @@ def write(content, topic=None):
         if not art.get("title") or len(body) < 600:
             print(f"[article] 결과가 부실해 건너뜀 (본문 {len(body)}자)", flush=True)
             return None
-        art["chars"] = len(body)
-        print(f"[article] 생성: {art['title']} ({len(body)}자)", flush=True)
+        # 글은 대본보다 4배 길고 배경 설명을 "보충"하라고 시켜서 새 수치가 끼어든다
+        # (10/17 농·축협 글 "예금자보호 1인당 5,000만 원" — 2025-09부터 1억 원). 대본처럼 한 번 더 확인한다.
+        try:
+            import factcheck
+            factcheck.check(art, "article", None)
+        except Exception as e:
+            print(f"[article] 사실 확인 건너뜀: {e}", flush=True)
+        art["chars"] = len(art.get("body_markdown", body))
+        print(f"[article] 생성: {art['title']} ({art['chars']}자)", flush=True)
         return art
     except Exception as e:
         print(f"[article] 생성 실패(무시하고 계속): {e}", flush=True)
