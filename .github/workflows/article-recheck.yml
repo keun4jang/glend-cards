@@ -1,14 +1,16 @@
 name: Article recheck
 
 # 이미 올라간 검색용 사이트 글을 사실 확인으로 다시 보고, 고친 글을 archive에 커밋한다(수동 실행 전용).
-# 사이트는 다음 Build Site(매일 KST 05:40)에 반영된다. Gemini 무료 호출이 글 수만큼 든다 — 한 번에 20~30개 권장.
+# 사이트는 다음 Build Site(매일 KST 05:40)에 반영된다. Gemini 무료 호출이 글 수만큼 든다.
+# ⚠️ 발행(릴스·카드)과 같은 하루 무료 한도를 쓴다 — 2026-10-20 20개를 돌리다 7개째에 한도가 소진됐다.
+#    한 번에 5개 이하, 발행이 끝난 늦은 밤(KST 01시 이후)에 돌릴 것. 한도가 차면 스스로 멈춘다.
 on:
   workflow_dispatch:
     inputs:
       count:
         description: "최근 몇 개 글을 다시 확인할지"
         required: false
-        default: "20"
+        default: "5"
       offset:
         description: "최근 몇 개를 건너뛸지(나눠서 돌릴 때)"
         required: false
@@ -32,7 +34,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PYTHONUNBUFFERED: "1"
         run: |
-          N=${{ github.event.inputs.count || '20' }}
+          N=${{ github.event.inputs.count || '5' }}
           O=${{ github.event.inputs.offset || '0' }}
           FILES=$(ls archive/*/*.json | sort | head -n -"$O" | tail -n "$N")
           python factcheck.py --article --apply $FILES
