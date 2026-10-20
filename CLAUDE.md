@@ -165,6 +165,16 @@ Secrets required: `GEMINI_API_KEY`, `PEXELS_API_KEY`, `IG_TOKEN`, `IG_USER_ID`
 - 시험: Actions → Factcheck test(수동) — 최근 발행분을 다시 확인해 출력만 한다. `factcheck.py`를 바꾸는 PR에서도 자동 실행.
 - 아직 남은 빈틈: 검색 근거도 틀릴 수 있고, 모델이 "ok"라고 놓치는 것도 있다. 정기적으로 `applied`를 훑어볼 것.
 
+### 배경 사진 (`pexels.py`, `cf_image.py`) — 2026-10-19 추가
+
+- `pexels.py`(카드·릴스 공용): 후보 10장 중 사진 설명에 간판·로고·외국 은행·외국 화폐가 있으면 건너뛴다
+  (10/19 카드에 HSBC 간판, "korean won bills desk" 1순위가 유로 지폐였다). 검색어에 있는 일반 단어는 봐준다.
+- `cf_image.py`: Pexels가 못 줄 때만 클라우드플레어 Workers AI(flux-2-klein-9b, 세로 768×1024)로 대체.
+  1,145장면 중 Pexels 실패 0건이라 평소엔 안 쓰인다. 무료 하루 10,000 Neurons — 넘으면 과금 없이 429.
+  **한도는 UTC 자정 초기화가 아니라 사용 시점 기준(약 24시간 롤링)으로 풀리는 것으로 보인다**
+  (10/19 00:36 UTC 대량 시험 → 10/20 00:21엔 여전히 429, 01:46엔 성공). 시험으로 한도를 다 쓰지 말 것.
+  시크릿: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`. 시험: Actions → Image test (Cloudflare).
+
 ## Key constraints
 - Gemini prompt enforces strict character limits: card titles ≤6 chars/line, body lines 13–16 chars. Violating these causes visual overflow.
 - Instagram requires images to be publicly accessible URLs before the carousel can be published — hence the GitHub raw CDN approach.
