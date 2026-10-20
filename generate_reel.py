@@ -338,7 +338,10 @@ def trim_to_budget(scenes, limit=MID_MAX_SEC, max_drop=None, quiet=False):
     scenes = list(scenes)
     dropped = 0
     while len(scenes) > 4 and est_seconds(scenes) > limit and (max_drop is None or dropped < max_drop):
-        drop = len(scenes) - 2          # 결론 바로 앞 장면
+        # 결론 바로 앞 장면부터 — 단, 저장 유도("저장해두고")가 든 장면은 건너뛴다.
+        # 2026-10-19 릴스에서 저장 유도 장면이 잘려 그 편엔 저장 권유가 아예 없었다(저장은 도달을 여는 지표).
+        drop = next((i for i in range(len(scenes) - 2, 0, -1)
+                     if "저장" not in scenes[i].get("narration", "")), len(scenes) - 2)
         removed = scenes.pop(drop)
         dropped += 1
         if not quiet:
