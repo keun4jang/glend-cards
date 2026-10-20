@@ -61,6 +61,12 @@ def strip_tags(t):
 # 값: (id, 원문, 최대 증가 글자수). 카드 문구는 글자 수 제한(줄당 13~16자 등) 때문에 늘리지 않는다.
 def fields_of(content, kind):
     out = []
+    if kind == "article":   # 검색용 사이트 글(article.py) — 길어서 본문 수정 여유를 넉넉히 준다
+        if content.get("description"):
+            out.append(("desc", content["description"], 30))
+        if content.get("body_markdown"):
+            out.append(("body", content["body_markdown"], 300))
+        return out
     if kind == "reel":
         for i, sc in enumerate(content.get("scenes", []), 1):
             t = sc.get("narration", "")
@@ -87,6 +93,10 @@ def fields_of(content, kind):
 def _set(content, fid, text):
     if fid == "caption":
         content["caption"] = text
+    elif fid == "desc":
+        content["description"] = text
+    elif fid == "body":
+        content["body_markdown"] = text
     elif fid.startswith("s"):
         content["scenes"][int(fid[1:]) - 1]["narration"] = text
     else:
@@ -114,7 +124,8 @@ def build_prompt(content, kind, news, grounded):
         t = _caption_body(text) if fid == "caption" else text
         t = re.sub(r"\s*\n\s*", " / ", strip_tags(t).strip())
         lines.append(f"[{fid}] {t}")
-    what = "인스타그램 릴스 대본" if kind == "reel" else "인스타그램 카드뉴스 문구"
+    what = {"reel": "인스타그램 릴스 대본", "card": "인스타그램 카드뉴스 문구",
+            "article": "검색용 웹 문서(마크다운)"}[kind]
     how = ("Google 검색으로 공식 기관·언론 보도를 찾아 확인하라."
            if grounded else "네가 아는 사실과 상식으로 확인하라. 확신이 없으면 단정만 완화하라.")
     news_block = "\n".join(f"- {h}" for h in (news or [])[:25]) or "(없음)"
@@ -210,6 +221,11 @@ def apply_fixes(content, kind, fixes):
         if len(strip_tags(fix)) > len(wrong) + grow:
             skipped.append({**f, "skip": f"너무 길어짐(+{len(fix) - len(wrong)}자)"})
             continue
+        if wrong not in text and " / " in wrong:      # 프롬프트에서 줄바꿈을 " / "로 보여 줬다
+            for sep in ("\n", "\n\n"):
+                if wrong.replace(" / ", sep) in text:
+                    wrong, fix = wrong.replace(" / ", sep), fix.replace(" / ", sep)
+                    break
         if wrong in text:
             new = text.replace(wrong, fix, 1)
         elif wrong in strip_tags(text):
@@ -276,17 +292,36 @@ def reject_correction(reason):
 
 
 if __name__ == "__main__":
-    # 확인만 하고 파일은 바꾸지 않는다 — 고친 결과를 화면에 보여 준다. 여러 파일을 줄 수 있다.
-    for path in sys.argv[1:]:
+    # 기본: 릴스·카드 원고를 확인만 한다(파일은 안 바꿈).
+    # --article        : 아카이브의 검색용 사이트 글을 확인한다.
+    # --article --apply: 고친 글을 아카이브 파일에 저장한다(사이트는 다음 빌드에 반영).
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    as_article, apply = "--article" in sys.argv, "--apply" in sys.argv
+    changed = 0
+    for path in args:
         rec = json.load(open(path, encoding="utf-8"))
-        content = rec.get("content", rec)
-        kind = "reel" if content.get("scenes") else "card"
+        if as_article:
+            content, kind = rec.get("article"), "article"
+            if not content or not content.get("body_markdown"):
+                continue
+        else:
+            content = rec.get("content", rec)
+            kind = "reel" if content.get("scenes") else "card"
         content.pop("factcheck", None)
         before = {fid: t for fid, t, _ in fields_of(content, kind)}
-        print(f"\n=== [{kind}] {rec.get('topic') or content.get('topic')}", flush=True)
+        print(f"\n=== [{kind}] {rec.get('topic') or content.get('topic') or content.get('title')}", flush=True)
         r = check(content, kind, news=None)
-        for fid, t, _ in fields_of(content, kind):
-            if before.get(fid) != t and fid != "caption":
-                print(f"  {fid} 전: {strip_tags(before[fid])}\n  {fid} 후: {strip_tags(t)}")
+        if kind != "article":
+            for fid, t, _ in fields_of(content, kind):
+                if before.get(fid) != t and fid != "caption":
+                    print(f"  {fid} 전: {strip_tags(before[fid])}\n  {fid} 후: {strip_tags(t)}")
         if r["sources"]:
             print("  출처:", " / ".join(r["sources"]))
+        if apply and as_article and r["applied"]:
+            content["body_markdown"] = content.get("body_markdown", "")
+            content["chars"] = len(content["body_markdown"])
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(rec, f, ensure_ascii=False, indent=2)
+            changed += 1
+    if apply:
+        print(f"\n[factcheck] 고쳐서 저장한 글 {changed}개")
