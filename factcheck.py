@@ -311,6 +311,10 @@ if __name__ == "__main__":
         before = {fid: t for fid, t, _ in fields_of(content, kind)}
         print(f"\n=== [{kind}] {rec.get('topic') or content.get('topic') or content.get('title')}", flush=True)
         r = check(content, kind, news=None)
+        if "exceeded your current quota" in (r.get("reason") or ""):
+            # 무료 하루 한도 소진 — 발행과 같은 한도를 쓰므로 더 두드리지 않는다(2026-10-20 재확인 20개 중 7개째에 소진)
+            print("\n[factcheck] Gemini 무료 한도 소진 — 여기서 멈춤. 다음 날 offset을 늘려 이어서 돌릴 것.", flush=True)
+            break
         if kind != "article":
             for fid, t, _ in fields_of(content, kind):
                 if before.get(fid) != t and fid != "caption":
