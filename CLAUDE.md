@@ -183,6 +183,15 @@ Secrets required: `GEMINI_API_KEY`, `PEXELS_API_KEY`, `IG_TOKEN`, `IG_USER_ID`
   (10/19 00:36 UTC 대량 시험 → 10/20 00:21엔 여전히 429, 01:46엔 성공). 시험으로 한도를 다 쓰지 말 것.
   시크릿: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`. 시험: Actions → Image test (Cloudflare).
 
+## 작업 방식 (운영자 지시, 2026-10-20)
+
+- 변경은 PR로 올리고, **CI 검사가 통과하면 묻지 않고 바로 머지**한다(운영자: "앞으로 알아서 머지까지 해줘").
+- 단, 아래는 머지 전에 운영자에게 먼저 묻는다:
+  1. 비용이 생길 수 있는 변경(유료 API·결제·저장소 비공개 전환 등 — 아래 비용 정책)
+  2. 발행 시각·발행량 변경
+  3. 진행 중인 실험(아래 A·B·C)을 교락시킬 수 있는 변경
+- 운영자에게는 한국어로 답한다.
+
 ## Key constraints
 - Gemini prompt enforces strict character limits: card titles ≤6 chars/line, body lines 13–16 chars. Violating these causes visual overflow.
 - Instagram requires images to be publicly accessible URLs before the carousel can be published — hence the GitHub raw CDN approach.
