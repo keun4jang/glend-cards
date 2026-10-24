@@ -1,0 +1,65 @@
+{
+  "topic": "환경미화원 사망 사고 후 신발장 폐기 지시 전직 공무원 집행유예",
+  "title": "미화원 참사 🦺",
+  "cover": {
+    "title": "참사 숨기려\n<b>신발장</b> 없앴다"
+  },
+  "scenes": [
+    {
+      "narration": "신발장 없애라 숨긴 공무원",
+      "query": "office desk papers closeup",
+      "bg": "https://images.pexels.com/photos/12899103/pexels-photo-12899103.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "환경미화원 부상 사고가 난 뒤에 증거를 은폐하려고 신발장 폐기를 지시한 사건이 있었어요.",
+      "query": "empty corridor building",
+      "bg": "https://images.pexels.com/photos/9358725/pexels-photo-9358725.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "현장을 조작하려던 전직 공무원이 재판에 넘겨져 결국 <b>징역형</b>의 집행유예를 선고받았죠.",
+      "query": "courtroom wooden podium",
+      "bg": "https://images.pexels.com/photos/8730763/pexels-photo-8730763.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "지자체 현업 작업장에서 안전 관리와 사고 은폐 책임을 피하려던 공무원들이 주요 대상이에요.",
+      "query": "municipal building exterior",
+      "bg": "https://images.pexels.com/photos/7312246/pexels-photo-7312246.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "산업안전보건법 위반과 증거인멸 교사 혐의가 적용되면서 무거운 <b>법적 책임</b>을 피하지 못했어요.",
+      "query": "law books and gavel",
+      "bg": "https://images.pexels.com/photos/5668882/pexels-photo-5668882.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "고용노동부와 경찰의 합동 조사를 통해 사고 현장 조작 및 은폐 정황이 낱낱이 드러났습니다.",
+      "query": "police investigation tape",
+      "bg": "https://images.pexels.com/photos/29350311/pexels-photo-29350311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "안전 수칙을 어기는 것도 문제지만 사고 후 은폐는 가중 처벌되는 치명적인 <b>주의점</b>이에요.",
+      "query": "warning sign metal",
+      "bg": "https://images.pexels.com/photos/7839911/pexels-photo-7839911.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "narration": "안전사고 은폐는 더 큰 처벌로 이어지니, <b>증거 은폐</b> 시도 대신 즉시 신고하고 저장해두고 다시 보세요.",
+      "query": "smartphone screen notification",
+      "share": "→ 공공기관 다니는 친구에게 공유",
+      "bg": "https://images.pexels.com/photos/5077054/pexels-photo-5077054.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "outro": true,
+      "narration": "놓치기 쉬운 <b>노동법규</b>와 사건 소식, 매일 알려드려요. @glend_kr 팔로우하세요!"
+    }
+  ],
+  "follow_cta": "놓치기 쉬운 <b>노동법규</b>와 사건 소식, 매일 알려드려요. @glend_kr 팔로우하세요!",
+  "share_target": "공공기관 다니는 친구",
+  "caption": "환경미화원 부상 사고가 발생한 뒤 증거를 없애기 위해 신발장 폐기를 지시한 전직 공무원이 집행유예를 선고받았습니다.\n\n안전사고가 났을 때 책임을 면하려고 현장을 훼손하거나 은폐하면 훨씬 더 무거운 법적 처벌을 받게 됩니다.\n\n지자체와 현업 사업장에서는 안전 수칙을 철저히 지키고, 사고 발생 시 투명하게 대처해야 합니다.\n\n📌 매일 놓치기 쉬운 사회 이슈와 법률 정보만 골라 올립니다 → @glend_kr\n\n📤 공공기관 다니는 친구에게 보내주세요\n\n#사회이슈 #사건사고 #안전관리 #노동법 #지자체\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "ok",
+    "reason": "",
+    "sources": [],
+    "applied": []
+  },
+  "length_variant": "mid"
+}

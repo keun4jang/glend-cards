@@ -1,0 +1,61 @@
+{
+  "topic": "잠들기 전 멜라토닌 섭취의 식욕 호르몬 조절 효과와 올바른 복용 기준",
+  "card1": {
+    "title": "밤마다\n터진 식욕",
+    "sub1": "<b>멜라토닌</b> 부족이 원인일 수도",
+    "sub2": "<b>야식 습관</b> 바뀝니다",
+    "query": "sleeping bedroom night",
+    "bg": "https://images.pexels.com/photos/6753354/pexels-photo-6753354.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card2": {
+    "subtitle": "가짜 허기\n잡는 원리",
+    "lines": [
+      "밤에는 <b>식욕 호르몬</b> 급증해요",
+      "멜라토닌이 <b>렙틴</b> 분비를 돕죠",
+      "잠이 부족하면 <b>폭식 위험</b> 커져"
+    ],
+    "query": "alarm clock bedside table",
+    "bg": "https://images.pexels.com/photos/5490735/pexels-photo-5490735.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card3": {
+    "subtitle": "올바른\n섭취 방법",
+    "lines": [
+      "구입 전 <b>식물성 멜라토닌</b> 확인",
+      "취침 <b>1시간 전</b> 미온수로 섭취",
+      "하루 <b>2mg 이하</b>로 시작하세요"
+    ],
+    "query": "glass of water on table",
+    "bg": "https://images.pexels.com/photos/34199673/pexels-photo-34199673.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card4": {
+    "headline": "야식 끊는 기준",
+    "items": [
+      "원료 · <b>식물성 멜라토닌</b> 제제",
+      "시간 · 취침 <b>1시간 전</b> 물과 섭취",
+      "용량 · 초보자 <b>1~2mg</b> 권장",
+      "주의 · 과다 시 <b>두통과 졸림</b> 유발"
+    ],
+    "closing": "영양제 고르기 전에 이 카드만 꺼내보세요"
+  },
+  "caption": "밤마다 터지는 식욕, 의지 문제가 아닙니다.\n\n수면 호르몬인 멜라토닌 분비가 줄어들면 식욕을 억제하는 호르몬 렙틴이 감소하고 배고픔을 유발하는 그렐린이 치솟습니다.\n\n잠들기 전 안전한 용량의 멜라토닌을 챙기면 수면의 질 개선뿐만 아니라 야간 가짜 배고픔을 가라앉히는 데 도움을 줄 수 있습니다.\n\n처음 시작할 때는 무리하게 고용량을 먹기보다 식물성 원료 여부를 살피고 낮은 용량부터 몸의 반응을 체크하는 것이 안전합니다.\n\n💾 실패 없는 섭취 기준과 용량은 마지막 장에 정리해뒀어요\n\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_kr 팔로우!\n\n요즘 밤마다 자꾸 야식 당기시나요? 댓글로 알려주세요 👇\n\n#건강관리 #수면건강 #식단관리 #멜라토닌 #야식참는법",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "fixed",
+    "reason": "",
+    "sources": [],
+    "applied": [
+      {
+        "id": "c1.sub1",
+        "wrong": "원인입니다",
+        "fix": "원인일 수도",
+        "why": "야간 식욕 증가는 스트레스, 생활습관 등 원인이 다양하므로 멜라토닌 부족으로 단정할 수 없음"
+      },
+      {
+        "id": "caption",
+        "wrong": "실질적인 도움을 줍니다.",
+        "fix": "도움을 줄 수 있습니다.",
+        "why": "멜라토닌의 식욕 호르몬 조절 효과는 임상 연구 단계로 개인차가 크므로 단정 표현 완화(하이닥)"
+      }
+    ]
+  }
+}

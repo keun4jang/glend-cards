@@ -1,0 +1,48 @@
+{
+  "topic": "금융권 전자금융사고 늑장 인지 및 보상 미흡",
+  "card1": {
+    "title": "사고 나도 몰랐다?\n금융권의 <b>충격</b>",
+    "sub1": "내 돈 지키는 <b>전자금융사고</b>",
+    "sub2": "피해 보상률 <b>17%</b>",
+    "query": "digital banking security glitch",
+    "bg": "https://images.pexels.com/photos/9121365/pexels-photo-9121365.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card2": {
+    "subtitle": "사고 나도 몰라\n늑장 인지 실태",
+    "lines": [
+      "최근 5년간 <b>금융권</b> 사고 91건",
+      "<b>롯데손보</b> 902일 만에 인지",
+      "보상 장치 갖춘 곳 <b>10%</b> 불과"
+    ],
+    "query": "bank building exterior modern",
+    "bg": "https://images.pexels.com/photos/8363135/pexels-photo-8363135.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card3": {
+    "subtitle": "보상률 17% 충격\n내 권리 지키기",
+    "lines": [
+      "이상 거래 <b>금융결제원</b> 조회",
+      "보안 점검 <b>보안인증서</b> 확인",
+      "피해 발생 즉시 <b>1332</b> 신고"
+    ],
+    "query": "smartphone security screen lock",
+    "bg": "https://images.pexels.com/photos/37095097/pexels-photo-37095097.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card4": {
+    "headline": "핵심 요약 노트",
+    "items": [
+      "인지기간 · 최대 <b>902일</b> 늑장 발견",
+      "보상률 · 피해액 대비 <b>17.3%</b>",
+      "신고처 · 금융감독원 <b>1332</b> 콜센터",
+      "구비서류 · 거래내역서 및 <b>피해증빙</b>"
+    ],
+    "closing": "금융사고 발생 시 이 카드만 꺼내보세요"
+  },
+  "caption": "사고 액수는 170억 원이 넘는데 보상받은 비율은 단 17%뿐이라는 사실, 알고 계셨나요?\n\n금융권 전자금융사고가 터져도 몇 년 동안 몰랐던 사실이 국정감사에서 드러났습니다.\n내 계좌에 이상이 생겨도 직접 챙기지 않으면 고스란히 내 손해로 남게 됩니다.\n\n피해 발생 시 대처 요령과 신고 기관은 마지막 장에 정리해뒀어요.\n\n📌 매일 화제의 이슈 카드 받고 싶다면 @glend_kr 팔로우!\n\n여러분이라면 이런 상황에서 어떻게 대처하실 건가요? 댓글로 알려주세요 👇\n\n#금융사고 #전자금융사고 #금융감독원 #금융상식 #재테크정보",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "ok",
+    "reason": "",
+    "sources": [],
+    "applied": []
+  }
+}

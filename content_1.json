@@ -1,0 +1,61 @@
+{
+  "topic": "모두의카드 재발급 이용자 교통비 환급 누락 방지 카드정보 현행화 안내",
+  "card1": {
+    "title": "교통비 환급\n날아갑니다",
+    "sub1": "<b>모두의카드</b> 재발급했다면",
+    "sub2": "<b>환급금</b> 날아갑니다",
+    "query": "metro turnstile transit",
+    "bg": "https://images.pexels.com/photos/35844696/pexels-photo-35844696.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card2": {
+    "subtitle": "방치하면\n환급 취소",
+    "lines": [
+      "분실이나 훼손으로 <b>재발급</b>하면",
+      "<b>카드번호</b>가 바뀌어 누락됩니다",
+      "최대 <b>53%</b> 적립금 못 받습니다"
+    ],
+    "query": "credit card plastic closeup",
+    "bg": "https://images.pexels.com/photos/8937443/pexels-photo-8937443.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card3": {
+    "subtitle": "26일까지\n정보 수정",
+    "lines": [
+      "공식 <b>앱</b> 접속 후 로그인하세요",
+      "마이페이지서 <b>새 카드</b> 등록해요",
+      "10월 26일까지 끝내세요"
+    ],
+    "query": "online banking phone screen",
+    "bg": "https://images.pexels.com/photos/7621358/pexels-photo-7621358.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card4": {
+    "headline": "환급 정보 수정",
+    "items": [
+      "확인처 · <b>모두의카드</b> 공식 앱",
+      "기한 · 10월 26일까지 마감",
+      "준비물 · 새로 발급받은 <b>카드번호</b>",
+      "환급액 · 매달 최대 <b>53%</b> 입금"
+    ],
+    "closing": "대중교통 타기 전에 바로 등록하세요"
+  },
+  "caption": "교통비 최대 53% 돌려받는 환급금, 재발급 한 번에 전액 증발할 수 있습니다.\n\n최근 카드를 잃어버렸거나 훼손되어 새로 발급받으셨나요?\n카드번호가 바뀌었는데 시스템에 등록하지 않으면 환급 대상에서 즉시 제외됩니다.\n\n이번 달 대중교통 이용 내역이 통째로 날아가기 전에 반드시 앱에서 번호를 바꿔야 합니다.\n기한을 넘기면 소급 적용도 불가능하니 지금 바로 확인하세요.\n\n💾 신청처·마감일·준비물은 마지막 장에 정리해뒀어요.\n\n📌 매일 놓치기 쉬운 재테크 정보 받고 싶다면 @glend_kr 팔로우!\n\n이번 달 교통비 환급 카드 정보, 다들 제대로 등록하셨나요? 댓글로 알려주세요 👇\n\n#재테크 #교통비절약 #대중교통할인 #모두의카드 #교통비환급",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "fixed",
+    "reason": "",
+    "sources": [],
+    "applied": [
+      {
+        "id": "c3.l3",
+        "wrong": "10월 26일 전까지",
+        "fix": "10월 26일까지",
+        "why": "기사 제목에 따르면 마감 기한은 26일 당일까지이므로 '전까지(25일까지)' 표현을 바로잡음(임순남타임즈)."
+      },
+      {
+        "id": "c4.i2",
+        "wrong": "10월 26일 자정 마감",
+        "fix": "10월 26일까지 마감",
+        "why": "기사 제목에는 '26일까지'로만 명시되어 있어 자정 마감 여부가 불확실하므로 임의의 시간 단정을 완화함(임순남타임즈)."
+      }
+    ]
+  }
+}
