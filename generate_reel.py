@@ -191,6 +191,7 @@ PROMPT = f"""
   강조는 반드시 **정보를 담은 명사**만 — 금액·기한·대상·제도명·기관명 (예: <b>40만원</b>, <b>12월 31일</b>, <b>서울청년포털</b>).
   동사·부사·서술어는 절대 강조하지 마 (나쁜 예: <b>저장해두고</b>, <b>지금</b>, <b>꼭</b>, <b>바로</b>).
 - 자막에 글자수 메모("(16자)" 등)를 절대 쓰지 마. 최종 문장만.
+- 숫자는 반드시 아라비아 숫자로 써 (예: 69건, 3년, 1만 2000원, 10%). "예순아홉 건", "삼 년"처럼 한글로 풀어 쓰지 마 — narration이 그대로 자막에 나가고, 성우는 숫자도 알아서 읽는다.
 - query는 각 장면 분위기에 맞는 영어 사진 검색어 2~3단어 (예: {QEX}).
 - query 중요 규칙: 한국에서 벌어진 일을 다루므로 배경에 외국 요소가 보이면 어색해. 두 가지를 반드시 지켜:
   (가) 돈이 나오는 장면은 반드시 "korean won"을 넣어 검색해 (예: "korean won bills", "korean won cash desk").
@@ -539,10 +540,15 @@ _ENTITY = re.compile(r"[가-힣A-Za-z0-9]*(?:공단|공사|센터|포털|보험|
                      r"콜레스테롤|비밀번호|인증서|영양성분|계약서|확정일자|전입신고)")
 
 
+# 정보가 없는 일반 명사 — 10/24~26 릴스에서 "예상치", "도움", "운행"이 칠해졌다.
+_VAGUE_BOLD = {"도움", "예상치", "운행", "혜택", "주의", "문제", "방법", "이유", "사실", "정보", "상황", "경우", "부분", "내용", "관리", "대처", "준비"}
+
+
 def fix_emphasis(text):
     def unwrap(m):
         inner = m.group(1).strip()
-        return m.group(1) if (_BAD_BOLD_END.search(inner) or inner in _BAD_BOLD_WORD) else m.group(0)
+        bad = _BAD_BOLD_END.search(inner) or inner in _BAD_BOLD_WORD or inner in _VAGUE_BOLD
+        return m.group(1) if bad else m.group(0)
     text = re.sub(r"<b>(.*?)</b>", unwrap, text)
     if "<b>" not in text:
         m = _NUM.search(text)

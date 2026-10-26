@@ -72,9 +72,16 @@ def fields_of(content, kind):
             t = sc.get("narration", "")
             if t and "@glend" not in t and "팔로우" not in t:
                 out.append((f"s{i}", t, 20))
+        # 커버(썸네일)·고정 제목도 확인한다. 10/26 릴스는 1번 장면 "면허 없으면 1000만원 벌금"을 고쳤는데
+        # 커버엔 "천만원 벌금"이 그대로 나갔다 — 피드에서 가장 많이 보이는 글이 확인에서 빠져 있었다.
+        cv = (content.get("cover") or {}).get("title")
+        if cv:
+            out.append(("cover", cv, 3))
+        if content.get("title"):
+            out.append(("title", content["title"], 2))
     else:
         c1 = content.get("card1") or {}
-        for k in ("sub1", "sub2"):
+        for k in ("title", "sub1", "sub2"):
             if c1.get(k):
                 out.append((f"c1.{k}", c1[k], 1))
         for n in (2, 3):
@@ -97,6 +104,10 @@ def _set(content, fid, text):
         content["description"] = text
     elif fid == "body":
         content["body_markdown"] = text
+    elif fid == "cover":
+        content.setdefault("cover", {})["title"] = text
+    elif fid == "title":
+        content["title"] = text
     elif fid.startswith("s"):
         content["scenes"][int(fid[1:]) - 1]["narration"] = text
     else:
@@ -219,6 +230,13 @@ def apply_fixes(content, kind, fixes):
             continue
         text, grow = fields[fid]
         if len(strip_tags(fix)) > len(wrong) + grow:
+            if fid == "cover":
+                # 커버는 글자 수가 빠듯해 고친 문장이 안 들어간다. 틀린 채 두지 않고
+                # 비워서 렌더러가 주제 제목(title)으로 대신 쓰게 한다(render_reel.py).
+                _set(content, "cover", "")
+                fields.pop("cover")
+                applied.append({**f, "fix": "(커버 비움 → 주제 제목 사용)"})
+                continue
             skipped.append({**f, "skip": f"너무 길어짐(+{len(fix) - len(wrong)}자)"})
             continue
         if wrong not in text and " / " in wrong:      # 프롬프트에서 줄바꿈을 " / "로 보여 줬다

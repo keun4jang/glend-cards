@@ -1,4 +1,5 @@
 import asyncio
+import os
 import json
 import re
 import sys
@@ -128,7 +129,8 @@ CARDS = [c for c in CARDS if c]
 
 async def render():
     async with async_playwright() as p:
-        browser = await p.chromium.launch()
+        # CHROMIUM_PATH: 로컬·샌드박스에서 이미 깔린 크롬을 쓸 때(design_preview.py). CI에선 비워 둔다.
+        browser = await p.chromium.launch(executable_path=os.getenv("CHROMIUM_PATH") or None)
         page = await browser.new_page(viewport={"width": 1080, "height": 1350}, device_scale_factor=2)
         for i, c in enumerate(CARDS, start=1):
             await page.goto(TEMPLATE)
