@@ -35,7 +35,15 @@
     position: absolute; top: 150px; left: 90px; z-index: 6;
     display: flex; align-items: center; gap: 20px;
   }
-  .brand-top img { width: 84px; height: 84px; border-radius: 50%; }
+  /* 아바타 — logo.png는 가로로 긴 워드마크라 84px 원에 넣으면 글자가 안 읽혔다(2026-10-26 점검).
+     옆에 GLEND가 이미 있으니 원에는 연두 바탕 G 한 글자만 둔다. */
+  .brand-top img { display: none; }
+  .brand-top .avatar {
+    width: 84px; height: 84px; border-radius: 50%; background: #CFFF04; color: #0A0C0D;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 52px; font-weight: 900; letter-spacing: -0.04em;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
   .brand-top .names { display: flex; flex-direction: column; line-height: 1.15; }
   .brand-top .name { font-size: 42px; font-weight: 800; color: #CFFF04; letter-spacing: 1px; }
   /* 핸들을 영상 내내 노출 — 팔로우하려면 계정 이름이 아니라 핸들을 알아야 한다 */
@@ -77,11 +85,12 @@
   /* 중앙 자막(나레이션) — 박스 없이 글씨만, 강한 그림자로 가독성 */
   .subtitle-wrap {
     position: absolute; left: 0; right: 0; top: 41%; z-index: 5;
-    display: flex; justify-content: center; padding: 0 110px;
+    display: flex; justify-content: center; padding: 0 80px;
   }
+  /* 46px → 56px(2026-10-26): 휴대폰에서 본문 자막이 화면 폭의 4%로 작았다. 평균 시청 3초라 한눈에 읽혀야 한다. */
   .subtitle {
-    max-width: 840px; text-align: center; color: #FFFFFF;
-    font-size: 46px; font-weight: 800; line-height: 1.5; letter-spacing: -0.0217em;
+    max-width: 920px; text-align: center; color: #FFFFFF;
+    font-size: 56px; font-weight: 800; line-height: 1.42; letter-spacing: -0.025em;
     text-wrap: balance; word-break: keep-all;
     text-shadow: 0 3px 12px rgba(0,0,0,0.95), 0 0 8px rgba(0,0,0,0.9), 0 2px 3px rgba(0,0,0,1);
   }
@@ -137,6 +146,7 @@
       <div class="hook-text" id="hook-text"></div>
     </div>
     <div class="brand-top" id="brand-top">
+      <span class="avatar">G</span>
       <img id="brand-logo" src="">
       <span class="names">
         <span class="name">GLEND</span>
