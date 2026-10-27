@@ -1,0 +1,43 @@
+name: Design preview
+
+# 디자인 미리보기 — 최근 발행분을 지금 템플릿으로 다시 렌더해 시트(PNG)로 올린다. 게시·커밋 없음.
+# 템플릿·렌더러를 바꾸는 PR에서 자동으로 돌고, 수동 실행도 된다(아트디렉터: DESIGN.md 5번).
+# 결과: 실행 페이지 아래 Artifacts → design-preview
+on:
+  pull_request:
+    paths: ["templates/**", "render.py", "render_reel.py", "design_preview.py", ".github/workflows/design-preview.yml"]
+  workflow_dispatch:
+    inputs:
+      reels:
+        description: "최근 릴스 몇 편"
+        required: false
+        default: "2"
+      cards:
+        description: "최근 카드 몇 편"
+        required: false
+        default: "1"
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: |
+          pip install playwright requests pillow python-dotenv
+          python -m playwright install --with-deps chromium
+      - name: Render preview
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: python design_preview.py --reels ${{ github.event.inputs.reels || '2' }} --cards ${{ github.event.inputs.cards || '1' }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: design-preview
+          path: output/preview/*.png
+          retention-days: 14

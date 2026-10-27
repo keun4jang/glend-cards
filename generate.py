@@ -389,7 +389,7 @@ if True:
     print("Pexels에서 배경 사진 가져오는 중...")
     for cardkey in ["card1", "card2", "card3"]:
         q = data[cardkey].get("query", "finance")
-        photo = get_photo(q)
+        photo = get_photo(q, 2160, 2700)   # 카드는 1080×1350을 2배로 렌더한다
         src = "사진 OK"
         if not photo:   # Pexels 장애·한도·결과 없음 → 무료 AI 이미지로 대체
             photo = cf_image.ai_photo(q, f"output/ai_bg/post{POST_INDEX}_{cardkey}.jpg")

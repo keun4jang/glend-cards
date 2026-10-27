@@ -59,8 +59,18 @@ def _blocked(photo):
     return ""
 
 
-def get_photo(query):
-    """세로 사진 URL(large2x). 실패하거나 후보가 전부 걸리면 None."""
+def sized_url(photo, w, h):
+    """화면 크기에 맞춰 잘라 받은 주소. large2x는 세로 사진이 약 870×1300이라
+    릴스(1080×1920)는 1.5배, 카드(2160×2700 렌더)는 2.5배 늘어나 흐릿했다(2026-10-26 점검)."""
+    src = photo.get("src") or {}
+    orig = src.get("original")
+    if not orig:
+        return src.get("large2x")
+    return f"{orig.split('?')[0]}?auto=compress&cs=tinysrgb&fit=crop&w={w}&h={h}"
+
+
+def get_photo(query, w=1080, h=1920):
+    """세로 사진 URL(w×h로 잘라 받음). 실패하거나 후보가 전부 걸리면 None."""
     try:
         res = requests.get(
             "https://api.pexels.com/v1/search",
@@ -77,7 +87,7 @@ def get_photo(query):
             if why:
                 print(f"    - 후보 {i + 1} 건너뜀('{why}'): {(p.get('alt') or '')[:60]}")
                 continue
-            return p["src"]["large2x"]
+            return sized_url(p, w, h)
         if photos:
             print(f"  (사진 후보 {len(photos)}장이 모두 간판·로고·외국 화폐: {query})")
     except Exception as e:
