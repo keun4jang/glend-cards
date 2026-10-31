@@ -88,6 +88,47 @@ def find_duplicate(topic, recent):
         b = _bigrams(r)
         if b and len(a & b) / min(len(a), len(b)) >= DUP_THRESHOLD:
             return r
+    return same_subject(topic)
+
+
+# 같은 소재 반복 — 2-gram 비율로는 각도만 바꾼 같은 소재를 못 잡는다.
+# 10/30 하루에 "갤럭시 워치 수면 무호흡 기능"과 "수면무호흡증 방치 시 심근경색" 릴스가 둘 다 나갔다(겹침 비율 낮음).
+# 그래서 최근 SAME_SUBJECT_DAYS일 주제와 군더더기 말을 뺀 뒤 5글자 이상 이어서 같으면 같은 소재로 본다.
+# 2026-02~10 아카이브 164개 백테스트(3일 창): 걸린 6쌍이 전부 사실상 반복
+# (KB쓰담적금·제세동기 미보유·사랑상품권 추가 환급·수면무호흡·영양 불균형·대출이자 지원).
+SAME_SUBJECT_DAYS = 3
+SAME_SUBJECT_LEN = 5
+_FILLER = ["에따른", "따른", "효과와", "올바른", "급증과", "급증", "관리법", "대처법", "방법", "기준", "주의",
+           "안내", "증가", "위험", "필수", "실태와", "실태", "및"]
+
+
+def _core(t):
+    t = re.sub(r"[^가-힣A-Za-z0-9]", "", t or "")
+    for w in sorted(_FILLER, key=len, reverse=True):
+        t = t.replace(w, "|")
+    return t
+
+
+def _common_run(a, b):
+    """a와 b에 공통으로 이어서 나오는 가장 긴 글자열('|'는 넘지 않는다)."""
+    best = ""
+    for i in range(len(a)):
+        j = i + len(best) + 1
+        while j <= len(a) and "|" not in a[i:j] and a[i:j] in b:
+            best = a[i:j]
+            j += 1
+    return best
+
+
+def same_subject(topic):
+    try:
+        recent = _archive_topics(SAME_SUBJECT_DAYS)
+    except Exception:
+        return ""
+    a = _core(topic)
+    for r in recent:
+        if r != topic and len(_common_run(a, _core(r))) >= SAME_SUBJECT_LEN:
+            return r
     return ""
 
 
