@@ -42,17 +42,28 @@ def get_key():
     return k
 
 
-def urls_from_sitemap():
+RECENT_DAYS = 3
+
+
+def urls_from_sitemap(all_urls=False):
+    """기본은 최근 RECENT_DAYS일 안에 바뀐(lastmod) 주소만.
+    예전엔 매일 사이트맵 전체(10/31 기준 158개)를 다시 보냈다. IndexNow는 '새로 생기거나 바뀐 URL'을
+    알리는 규격이라, 바뀌지 않은 URL을 매일 반복해서 보내면 무시되거나 제한될 수 있다(2026-10-31 점검)."""
     p = BASE / "docs" / "sitemap.xml"
     if not p.exists():
         return []
+    import datetime
     import re
-    return re.findall(r"<loc>([^<]+)</loc>", p.read_text(encoding="utf-8"))
+    pairs = re.findall(r"<loc>([^<]+)</loc>(?:<lastmod>([^<]+)</lastmod>)?", p.read_text(encoding="utf-8"))
+    if all_urls:
+        return [u for u, _ in pairs]
+    cutoff = (datetime.date.today() - datetime.timedelta(days=RECENT_DAYS)).isoformat()
+    return [u for u, m in pairs if not m or m[:10] >= cutoff]
 
 
-def submit(urls=None, dry_run=False):
+def submit(urls=None, dry_run=False, all_urls=False):
     key = get_key()
-    urls = urls or urls_from_sitemap()
+    urls = urls or urls_from_sitemap(all_urls)
     if not urls:
         print("[indexnow] 보낼 URL이 없습니다.")
         return True
@@ -88,4 +99,5 @@ def submit(urls=None, dry_run=False):
 
 
 if __name__ == "__main__":
-    submit(dry_run="--dry-run" in sys.argv)
+    # --all: 사이트 구조를 바꿨을 때처럼 전체를 다시 알려야 할 때만
+    submit(dry_run="--dry-run" in sys.argv, all_urls="--all" in sys.argv)
