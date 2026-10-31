@@ -138,7 +138,9 @@ def build_prompt(content, kind, news, grounded):
     what = {"reel": "인스타그램 릴스 대본", "card": "인스타그램 카드뉴스 문구",
             "article": "검색용 웹 문서(마크다운)"}[kind]
     how = ("Google 검색으로 공식 기관·언론 보도를 찾아 확인하라."
-           if grounded else "네가 아는 사실과 상식으로 확인하라. 확신이 없으면 단정만 완화하라.")
+           if grounded else
+           "네가 확실히 아는 사실·법·제도와 비교하라. 틀렸다고 확실히 알 때만 고친다. "
+           "모른다는 이유만으로 구체적 수치·기간·조건을 막연한 말로 바꾸지 마라.")
     news_block = "\n".join(f"- {h}" for h in (news or [])[:25]) or "(없음)"
     card_rule = ("\n- 카드 문구([c…])는 글자 수 제한이 있다. fix는 wrong보다 길면 안 된다."
                  if kind == "card" else "")
@@ -154,7 +156,10 @@ def build_prompt(content, kind, news, grounded):
 
 할 일:
 1. 원고 속 확인 가능한 사실 주장(금액, 비율, 날짜·기한, 대상·자격 조건, 신청처, 법 조항·처벌, 판결, 통계, 건강 효과·수치)을 {how}
-2. 틀렸거나 근거를 찾을 수 없는 주장만 고친다. 맞는 문장은 건드리지 마라. 문체·후킹·재미는 평가하지 마라.
+2. 틀린 주장만 고친다. 맞는 문장은 건드리지 마라. 문체·후킹·재미는 평가하지 마라.
+   뉴스 제목에 있는 수치·기간·조건은 출처가 있는 것이니 고치지 마라.
+   구체적 정보("최대 300만원", "최대 1년", "하루 4시간 이상")를 "일정 금액", "정해진 기간", "기준을 채워야" 같은
+   막연한 말로 바꾸는 것은 고친 게 아니라 정보를 지운 것이다 — 금지. 틀린 수치는 맞는 수치로만 바꾼다.
 3. 사실이 아닌 단정("무조건", "예외 없이", "100%", "절대", "누구나", "전부")은 사실에 맞게 완화한다.
    글자가 빠지거나 틀린 명백한 오타도 고친다(예: "즉시 병부터 가고" → "즉시 병원부터 가고"). 문체는 바꾸지 마라.
 4. 고칠 때는 해당 부분만, 비슷한 길이와 같은 말투(~해요/~합니다)로 바꾼다. 확인된 정확한 수치가 있으면 그 수치로.
@@ -219,7 +224,27 @@ def _call(prompt, grounded):
     raise last or RuntimeError("Gemini 호출 실패")
 
 
-def apply_fixes(content, kind, fixes):
+_NUM = re.compile(r"\d[\d,.]*")
+
+
+def _erases_sourced_number(wrong, fix, news):
+    """뉴스 제목에 나온 수치를 지우고 다른 수치로 바꾸지도 않는 고침인가.
+    10/24~31 '검색 없이' 확인이 맞는 정보를 지웠다 — "최대 300만원"→"일정 금액", "최대 1년"→"정해진 기간",
+    "10일 동안 2번 이상"→"관련 증상이 있는". 제목에 있는 수치는 출처가 있으니 지우지 않는다."""
+    if not news:
+        return ""
+    if _NUM.search(fix):          # 다른 수치로 바꾼 건 정정이다
+        return ""
+    heads = re.sub(r"\s", "", " ".join(news))
+    # 단위까지 붙여 비교한다("1"만 보면 어느 제목에나 있다): "300만원", "1년", "10일"
+    for tok in re.findall(r"\d[\d,.]*\s*[가-힣%]{0,2}", wrong):
+        tok = re.sub(r"\s", "", tok)
+        if len(tok) >= 2 and not tok.isdigit() and tok in heads:
+            return tok
+    return ""
+
+
+def apply_fixes(content, kind, fixes, news=None):
     """원문 부분 문자열 단위로 바꾼다. 돌려주는 값: (적용 목록, 건너뛴 목록)"""
     fields = {fid: (text, grow) for fid, text, grow in fields_of(content, kind)}
     applied, skipped = [], []
@@ -227,6 +252,10 @@ def apply_fixes(content, kind, fixes):
         fid, wrong, fix = f.get("id", ""), (f.get("wrong") or "").strip(), (f.get("fix") or "").strip()
         if fid not in fields or not wrong or wrong == fix:
             skipped.append({**f, "skip": "위치·내용 없음"})
+            continue
+        sourced = _erases_sourced_number(wrong, fix, news)
+        if sourced:
+            skipped.append({**f, "skip": f"뉴스 제목에 있는 수치({sourced})를 지움"})
             continue
         text, grow = fields[fid]
         if len(strip_tags(fix)) > len(wrong) + grow:
@@ -281,7 +310,7 @@ def check(content, kind, news=None):
         report["verdict"] = res.get("verdict", "ok")
         report["reason"] = res.get("reason", "")
         if report["verdict"] != "reject":
-            report["applied"], report["skipped"] = apply_fixes(content, kind, res.get("fixes"))
+            report["applied"], report["skipped"] = apply_fixes(content, kind, res.get("fixes"), news)
             if report["verdict"] == "fixed" and not report["applied"]:
                 report["verdict"] = "unfixed"
         else:
