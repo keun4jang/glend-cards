@@ -19,7 +19,8 @@ content = load_content(f"reel_content_{POST_INDEX}.json")
 
 FALLBACK = "https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg"
 # 화면 상단 고정 제목(짧게). title 없으면 topic 사용.
-TITLE = (content.get("title") or content.get("topic") or "").strip()
+# 고정 제목은 textContent로 넣어서 <b>가 글자 그대로 보인다(10/30 "심장마비 <b>신호</b>") — 태그를 벗긴다.
+TITLE = re.sub(r"<[^>]+>", "", content.get("title") or content.get("topic") or "").strip()
 
 
 def strip_notes(text):

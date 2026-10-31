@@ -569,6 +569,43 @@ for _sc in data["scenes"][1:]:
 _nob = sum(1 for _sc in data["scenes"][1:] if "<b>" not in _sc.get("narration", ""))
 print(f"  [강조] 보정 {_fixed}장면 / 강조 없는 장면 {_nob}개", flush=True)
 
+# 커버(썸네일) 숫자 검사 — 커버는 피드에서 가장 많이 보이는 글인데, 본문·캡션에 없는 금액을 지어낼 때가 있다.
+# 10/30 "코골이 심하면 3천만원 깬다"(본문에 3천만원 없음), 10/25 "1만2천원 준다"(본문은 1만 2000원 — 같은 값).
+# 표기만 다른 건 값으로 맞춰 보고, 본문 어디에도 없는 값이면 커버를 비워 주제 제목으로 대신 쓴다(render_reel.py).
+def _won_values(text):
+    vals = set()
+    for run in re.finditer(r"(?:\d[\d,.]*\s*[억만천백]*\s*)+", re.sub(r"<[^>]+>", "", text or "")):
+        total = section = 0
+        for num, units in re.findall(r"(\d[\d,.]*)\s*([억만천백]*)", run.group(0)):
+            try:
+                n = float(num.replace(",", ""))
+            except ValueError:
+                continue
+            section += n * (1000 if "천" in units else 100 if "백" in units else 1)
+            if "만" in units:
+                total += section * 10000
+                section = 0
+            if "억" in units:
+                total += section * 100000000
+                section = 0
+        v = total + section
+        if v:
+            vals.add(round(v, 2))
+    return vals
+
+
+def cover_unsupported(d):
+    cov = (d.get("cover") or {}).get("title") or ""
+    body = " ".join(sc.get("narration", "") for sc in d.get("scenes", [])) + " " + (d.get("caption") or "")
+    missing = _won_values(cov) - _won_values(body)
+    return sorted(missing)
+
+
+_miss = cover_unsupported(data)
+if _miss:
+    print(f"  [커버] 본문에 없는 숫자 {_miss} → 커버 대신 주제 제목 사용: {data['cover'].get('title')!r}", flush=True)
+    data["cover"]["title"] = ""
+
 # 결론 장면(마지막 본문) 자막 아래에 "→ OO에게 공유"를 띄우고, 캡션에도 같은 대상을 지목한다.
 if share_target(data) and not share_issues(data):
     data["scenes"][-1]["share"] = f"→ {share_target(data)}에게 공유"
