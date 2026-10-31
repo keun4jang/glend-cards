@@ -1,0 +1,61 @@
+{
+  "topic": "영양실조·탈수 환자 급증에 따른 필수 영양 및 수분 섭취 기준",
+  "card1": {
+    "title": "밥 대충\n때우다간",
+    "sub1": "<b>영양실조</b> 진료 급증했습니다",
+    "sub2": "<b>단백질</b> 부족합니다",
+    "query": "boiled egg plate table",
+    "bg": "https://images.pexels.com/photos/37339500/pexels-photo-37339500.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card2": {
+    "subtitle": "식사 거르면\n몸 무너진다",
+    "lines": [
+      "<b>영양결핍</b> 환자 25% 급증했죠",
+      "<b>단백질</b> 부족해 근육이 빠집니다",
+      "<b>탈수증</b> 오면 면역력 무너집니다"
+    ],
+    "query": "measuring tape on wooden table",
+    "bg": "https://images.pexels.com/photos/4061509/pexels-photo-4061509.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card3": {
+    "subtitle": "내 몸 지키는\n필수 기준치",
+    "lines": [
+      "<b>종아리둘레</b> 32cm 미만 주의",
+      "<b>단백질</b>은 체중당 1.2g 필수",
+      "<b>미온수</b> 하루 1.5L를 드세요"
+    ],
+    "query": "glass bottle of water",
+    "bg": "https://images.pexels.com/photos/27146538/pexels-photo-27146538.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "card4": {
+    "headline": "필수 영양 기준표",
+    "items": [
+      "진단 · <b>종아리둘레</b> 32cm 미만",
+      "권장 · <b>단백질</b> 체중 1kg당 1.2g",
+      "준비 · <b>삶은달걀</b> 두 개와 두부 반모",
+      "수분 · <b>미온수</b> 하루 1.5L 이상"
+    ],
+    "closing": "부모님 식사 챙길 때 다시 꺼내보세요"
+  },
+  "caption": "밥 제대로 못 챙겨 먹어 병원 찾는 환자가 4년 새 25%나 늘었습니다.\n\n나이 들수록 입맛이 없다고 물에 밥만 말아 드시거나 끼니를 대충 때우는 분들이 많습니다.\n하지만 단백질과 수분이 동시에 부족해지면 근육이 급격히 빠지고 면역력 저하와 저나트륨혈증으로 이어져 입원 위험이 크게 높아집니다.\n\n줄자로 종아리 가장 굵은 부위를 쟀을 때 32cm 미만이라면 이미 근감소와 영양 불균형이 시작됐다는 강력한 경고 신호입니다.\n\n💾 자가진단 기준과 하루 권장 섭취량은 마지막 장에 정리해뒀어요.\n\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_kr 팔로우!\n\n부모님이나 가족 식단에서 단백질 매일 챙기고 계신가요? 댓글로 나눠주세요 👇\n\n#건강관리 #영양관리 #단백질섭취 #부모님건강 #근감소증",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "fixed",
+    "reason": "",
+    "sources": [],
+    "applied": [
+      {
+        "id": "c1.sub1",
+        "wrong": "입원 급증했습니다",
+        "fix": "진료 급증했습니다",
+        "why": "국민건강보험공단 영양실조 통계는 입원만이 아닌 전체 진료(외래·입원) 환자 수 기준입니다(뉴스1)."
+      },
+      {
+        "id": "caption",
+        "wrong": "병원 입원하는 환자가",
+        "fix": "병원 찾는 환자가",
+        "why": "기사 통계는 영양실조로 병원 진료를 받은 전체 환자 수 통계입니다(뉴스1)."
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "topic": "수면무호흡증 방치 시 심근경색 위험 3배 증가 및 수면 건강 관리법",
+  "title": "심장마비 <b>신호</b> 🫀",
+  "cover": {
+    "title": "코골이 방치하면\n<b>심근경색</b> 3배"
+  },
+  "scenes": [
+    {
+      "narration": "코골이 방치하면 심장 멈춘다",
+      "query": "dark bedroom night",
+      "bg": "https://images.pexels.com/photos/6943425/pexels-photo-6943425.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "잠잘 때 숨이 멈추는 <b>수면무호흡증</b>은 산소 공급을 끊어 혈관에 엄청난 부담을 줘요.",
+      "query": "hospital corridor",
+      "bg": "https://images.pexels.com/photos/36595248/pexels-photo-36595248.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "실제로 코골이를 방치하면 <b>심근경색</b> 위험이 일반인보다 3배나 높다는 연구 결과가 있어요.",
+      "query": "medical monitor screen",
+      "bg": "https://images.pexels.com/photos/8460231/pexels-photo-8460231.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "평소 자고 일어나도 피곤하고 낮에 심하게 졸리다면 반드시 내몸 상태를 점검해야 해요.",
+      "query": "alarm clock morning",
+      "bg": "https://images.pexels.com/photos/11162426/pexels-photo-11162426.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "수면다원검사를 받으면 <b>건강보험</b> 적용으로 본인부담금을 크게 아끼며 정확한 진단이 가능해요.",
+      "query": "bankbook and calculator",
+      "bg": "https://images.pexels.com/photos/7580756/pexels-photo-7580756.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "이비인후과나 수면클리닉을 방문해 전문의 상담을 받고 야간 수면다원검사를 신청하면 돼요.",
+      "query": "application form desk",
+      "bg": "https://images.pexels.com/photos/9870155/pexels-photo-9870155.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "검사 결과 중증으로 나오면 양압기 대여 비용도 <b>건강보험</b> 지원을 받을 수 있으니 꼭 챙기세요.",
+      "query": "medical insurance card",
+      "bg": "https://images.pexels.com/photos/7163947/pexels-photo-7163947.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "단순 피로로 여기고 수면무호흡을 방치하면 뇌졸중이나 <b>고혈압</b> 같은 큰 병으로 이어지기 쉬워요.",
+      "query": "pill box and calendar",
+      "bg": "https://images.pexels.com/photos/27744323/pexels-photo-27744323.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "심장 건강을 지키는 첫걸음이에요. 저장해두고 주변에 알려주세요.",
+      "query": "running shoes closeup",
+      "share": "→ 코 고는 가족에게 공유",
+      "bg": "https://images.pexels.com/photos/1257245/pexels-photo-1257245.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "outro": true,
+      "narration": "놓치기 쉬운 <b>건강정보</b>, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!"
+    }
+  ],
+  "follow_cta": "놓치기 쉬운 <b>건강정보</b>, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!",
+  "share_target": "코 고는 가족",
+  "caption": "잠잘 때 심하게 코를 골거나 숨이 멈춘 적 있으신가요?\n\n수면무호흡증을 단순한 버릇으로 넘기면 심근경색 위험이 최대 3배까지 높아집니다.\n\n산소 공급이 차단되면서 혈관에 치명적인 무리가 가기 때문인데요.\n\n다행히 수면다원검사와 양압기 치료는 건강보험 적용을 받을 수 있어 비용 부담을 크게 덜 수 있습니다.\n\n평소 아침에 일어나도 피곤하거나 두통이 있다면 꼭 검사를 받아보세요.\n\n📌 매일 놓치기 쉬운 건강 관리법만 골라 올립니다 → @glend_kr\n\n📤 코 고는 가족에게 보내주세요\n\n#수면무호흡증 #코골이 #심근경색 #건강검진 #수면건강\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "ok",
+    "reason": "",
+    "sources": [],
+    "applied": []
+  },
+  "length_variant": "mid"
+}

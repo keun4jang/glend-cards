@@ -1,0 +1,84 @@
+{
+  "topic": "수원특례시 무주택 청년·신혼부부 전월세보증금 대출잔액 이자 1% 지원",
+  "title": "주거비 1% 지원 🏡",
+  "cover": {
+    "title": "매달 나가는 이자\n<b>1%</b> 돌려받는다"
+  },
+  "scenes": [
+    {
+      "narration": "전세대출 이자 1% 돌려받습니다",
+      "query": "korean won bankbook and calculator",
+      "bg": "https://images.pexels.com/photos/8962444/pexels-photo-8962444.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "수원시에서 무주택 가구 주거비 부담을 덜어주려고 <b>전월세보증금</b> 대출 이자 지원 사업을 시작했어요.",
+      "query": "modern apartment building exterior",
+      "bg": "https://images.pexels.com/photos/18153132/pexels-photo-18153132.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "전월세보증금 <b>대출잔액</b>의 1%에 해당하는 금액을 정해진 기간 동안 지원해주는 알짜 혜택이에요.",
+      "query": "korean won bills stack",
+      "bg": "https://images.pexels.com/photos/31513716/pexels-photo-31513716.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "수원에 거주하는 무주택 청년과 신혼부부 <b>298</b>가구를 대상으로 진행되는 지원 사업이랍니다.",
+      "query": "living room couch and window",
+      "bg": "https://images.pexels.com/photos/7059907/pexels-photo-7059907.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "조건에 맞으면 조건에 따라 일정 금액을 현금으로 돌려받을 수 있어서 정말 쏠쏠해요.",
+      "query": "korean won cash desk",
+      "bg": "https://images.pexels.com/photos/20157487/pexels-photo-20157487.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "수원시 <b>공식 홈페이지</b>나 관련 청년 포털에서 온라인으로 간단하게 신청할 수 있어요.",
+      "query": "online banking phone screen",
+      "bg": "https://images.pexels.com/photos/7621358/pexels-photo-7621358.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "예산이 소진되면 조기 마감될 수 있으니 지원 대상이라면 서둘러서 확인해보셔야 해요.",
+      "query": "calendar and pen close up",
+      "bg": "https://images.pexels.com/photos/6892908/pexels-photo-6892908.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "조건 맞으면 주거비를 아끼니까 지금 바로 신청하세요. 저장해두고 다시 보세요.",
+      "query": "apartment keys on table",
+      "share": "→ 수원 사는 전세 사는 친구에게 공유",
+      "bg": "https://images.pexels.com/photos/7579206/pexels-photo-7579206.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "outro": true,
+      "narration": "놓치면 아까운 <b>정부지원금</b>, 매일 하나씩 찾아드려요. @glend_kr 팔로우하세요!"
+    }
+  ],
+  "follow_cta": "놓치면 아까운 <b>정부지원금</b>, 매일 하나씩 찾아드려요. @glend_kr 팔로우하세요!",
+  "share_target": "수원 사는 전세 사는 친구",
+  "caption": "매달 나가는 전세대출 이자, 수원시에서 1% 돌려받을 수 있다는 사실 알고 계셨나요?\n\n수원특례시가 무주택 청년과 신혼부부 298가구를 대상으로 전월세보증금 대출잔액의 이자를 지원합니다.\n\n대출잔액의 1%, 최대 300만원까지 지원받을 수 있는 알짜 혜택이에요. 수원시청 홈페이지나 관련 포털에서 신청 가능하며 예산 소진 시 마감됩니다.\n\n주변에 수원 사는 전세 세입자 친구가 있다면 이 정보를 꼭 공유해 주세요!\n\n📌 매일 놓치기 쉬운 정부지원금·정책만 골라 올립니다 → @glend_kr\n\n📤 수원 사는 전세 사는 친구에게 보내주세요\n\n#수원시 #전세대출 #청년지원금 #신혼부부 #정부지원금\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "fixed",
+    "reason": "",
+    "sources": [],
+    "applied": [
+      {
+        "id": "s5",
+        "wrong": "최대 300만원까지",
+        "fix": "조건에 따라 일정 금액을",
+        "why": "뉴스 제목 및 일반적인 지자체 이차보전 사업 기준으로 '300만원'이라는 구체적 최대 금액의 근거를 찾기 어려움"
+      },
+      {
+        "id": "s3",
+        "wrong": "최대 1년 동안",
+        "fix": "정해진 기간 동안",
+        "why": "뉴스 제목('전월세보증금 대출잔액의 이자 1%지원')에 구체적인 지원 기간(1년)이 명시되어 있지 않음"
+      },
+      {
+        "id": "s10",
+        "wrong": "300만원 아끼니까",
+        "fix": "주거비를 아끼니까",
+        "why": "최대 300만원이라는 구체적인 수치의 근거가 명확하지 않음"
+      }
+    ]
+  },
+  "length_variant": "mid"
+}

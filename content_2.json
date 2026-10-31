@@ -1,0 +1,55 @@
+{
+  "topic": "국내 주요 증권사와 금융 플랫폼 잇따른 해킹 사고",
+  "card1": {
+    "title": "내 계좌도\n털렸을까",
+    "sub1": "대신증권·<b>빗썸</b> 해킹 발생",
+    "sub2": "금융권 <b>보안공백</b> 비상",
+    "query": "cyber security warning screen on laptop",
+    "bg": "https://images.pexels.com/photos/7172786/pexels-photo-7172786.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card2": {
+    "subtitle": "금융권\n연쇄해킹",
+    "lines": [
+      "대신증권과 미래에셋",
+      "자산운용 등 대형사",
+      "내부 시스템 침해함"
+    ],
+    "query": "server room with blinking red lights",
+    "bg": "https://images.pexels.com/photos/5203849/pexels-photo-5203849.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card3": {
+    "subtitle": "피해예방\n대응지침",
+    "lines": [
+      "금융감독원 <b>민원센터</b> 신고",
+      "비밀번호 및 인증서 <b>즉시변경</b>",
+      "이상거래 즉시 확인"
+    ],
+    "query": "digital security padlock icon on screen",
+    "bg": "https://images.pexels.com/photos/36750789/pexels-photo-36750789.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card4": {
+    "headline": "해킹 피해 대응법",
+    "items": [
+      "신고처 · 금융감독원 <b>콜센터 1332</b>",
+      "조치일 · 이상발견 즉시 <b>24시간내</b>",
+      "대상사 · <b>대신증권</b> 및 미래에셋",
+      "점검법 · 금융결제원 <b>어카운트인포</b>"
+    ],
+    "closing": "금융사고 의심될 때 이 카드만 꺼내보세요"
+  },
+  "caption": "대신증권에 이어 빗썸과 미래에셋자산운용까지 내부 시스템 침해 사고가 확인되면서 금융권 보안에 빨간불이 켜졌습니다. 나도 모르는 새 개인정보가 유출되었을지 불안감이 커지는 상황입니다. 자산 보호를 위해 지금 바로 계좌 상태를 점검하고 보안을 강화해야 합니다. 💾 피해 신고 절차와 대처법은 마지막 장에 정리해뒀어요. 📌 매일 화제의 이슈 카드 받고 싶다면 @glend_kr 팔로우! 여러분은 이번 금융권 보안 사태에 대해 어떻게 생각하시나요? 댓글로 알려주세요 👇 #금융사고 #해킹피해 #개인정보유출 #증권사 #보안점검",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "fixed",
+    "reason": "",
+    "sources": [],
+    "applied": [
+      {
+        "id": "c3.l3",
+        "wrong": "이상거래 5일내 확인",
+        "fix": "이상거래 즉시 확인",
+        "why": "제공된 뉴스 제목에 5일 이내라는 기한 근거가 없음"
+      }
+    ]
+  }
+}
