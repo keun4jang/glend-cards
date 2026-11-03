@@ -120,26 +120,62 @@ def post_instagram_reel():
     print("[실패] 발행:", pub); return False
 
 
+def _media_sha():
+    """media 브랜치의 현재 커밋 — jsDelivr 주소를 브랜치가 아닌 커밋으로 고정(캐시가 옛 영상을 주지 않게)."""
+    try:
+        r = requests.get(f"https://api.github.com/repos/{GITHUB_USER}/{GITHUB_REPO}/commits/{BRANCH}", timeout=20)
+        if r.status_code == 200:
+            return r.json().get("sha") or BRANCH
+    except Exception:
+        pass
+    return BRANCH
+
+
+def _th_wait(cid, max_wait=300):
+    """Threads 컨테이너 처리 상태를 기다린다 → (status, error_message)."""
+    status, err = "", ""
+    for _ in range(max_wait // 10):
+        time.sleep(10)
+        j = requests.get(f"{TH_GRAPH}/{cid}", params={"fields": "status,error_message", "access_token": TH_TOKEN},
+                         timeout=30).json()
+        status, err = j.get("status", ""), j.get("error_message", "") or json.dumps(j.get("error", ""), ensure_ascii=False)
+        if status in ("FINISHED", "ERROR", "EXPIRED", "PUBLISHED"):
+            break
+        print(f"  상태={status or '?'} …")
+    return status, err
+
+
 def post_threads_video():
-    print("\n[Threads] 영상 컨테이너 생성...")
-    res = requests.post(f"{TH_GRAPH}/{TH_USER}/threads", data={
-        "media_type": "VIDEO", "video_url": VIDEO_URL,
-        "text": threads_text(caption), "access_token": TH_TOKEN,
-    }, timeout=60)
-    j = res.json()
-    if "id" not in j:
-        print("[실패] Threads 컨테이너:", j); return False
-    cid = j["id"]
-    print("  컨테이너 id:", cid, "| 처리 대기 30초")
-    time.sleep(30)
-    for attempt in range(1, 11):
-        pub = requests.post(f"{TH_GRAPH}/{TH_USER}/threads_publish",
-                            data={"creation_id": cid, "access_token": TH_TOKEN}, timeout=60).json()
-        if "id" in pub:
-            print(f"🎉 Threads 영상 발행 성공! id: {pub['id']}"); return True
-        if pub.get("error", {}).get("is_transient"):
-            print(f"  ({attempt}/10) 아직 처리 중... 8초"); time.sleep(8); continue
-        print("[실패] Threads 발행:", pub); return False
+    """11/3 첫 시도: 30초만 기다리고 발행해 'Media Not Found'(처리 실패로 컨테이너가 사라짐).
+    raw.githubusercontent는 mp4를 application/octet-stream으로 준다 — 인스타는 받지만 Threads는 거절할 수 있어
+    처리 상태를 확인하고, 실패하면 video/mp4로 주는 jsDelivr 주소로 한 번 더 시도한다."""
+    urls = [("raw", VIDEO_URL),
+            ("jsdelivr", f"https://cdn.jsdelivr.net/gh/{GITHUB_USER}/{GITHUB_REPO}@{_media_sha()}/output/reel{POST_INDEX}/reel.mp4")]
+    for name, url in urls:
+        print(f"\n[Threads] 영상 컨테이너 생성({name})...")
+        j = requests.post(f"{TH_GRAPH}/{TH_USER}/threads", data={
+            "media_type": "VIDEO", "video_url": url,
+            "text": threads_text(caption), "access_token": TH_TOKEN,
+        }, timeout=60).json()
+        if "id" not in j:
+            print("[실패] Threads 컨테이너:", j)
+            continue
+        cid = j["id"]
+        status, err = _th_wait(cid)
+        print(f"  컨테이너 {cid} 상태={status} {err}")
+        if status != "FINISHED":
+            continue
+        for attempt in range(1, 6):
+            pub = requests.post(f"{TH_GRAPH}/{TH_USER}/threads_publish",
+                                data={"creation_id": cid, "access_token": TH_TOKEN}, timeout=60).json()
+            if "id" in pub:
+                print(f"🎉 Threads 영상 발행 성공({name})! id: {pub['id']}")
+                return True
+            if pub.get("error", {}).get("is_transient"):
+                time.sleep(8)
+                continue
+            print("[실패] Threads 발행:", pub)
+            break
     return False
 
 
