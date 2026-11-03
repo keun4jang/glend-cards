@@ -25,6 +25,9 @@ Instagram channel "GLEND"(@glend_kr). 사람이 손대지 않고 GitHub Actions�
 릴스(영상)와 카드(캐러셀 4장)를 Threads에도 자동으로 올린다. 없으면 건너뛴다. 끄려면 저장소 변수 대신 `REEL_POST_THREADS=false`.
 - Threads 글은 500자 제한 — `content_io.threads_text`가 해시태그 줄을 빼고 음악 출처(🎵, CC BY 의무)를 끝에 남긴다.
 - Threads 실패는 인스타·아카이브를 막지 않는다(경고만). 인스타 토큰은 Threads에 못 쓴다(전용 토큰 필요).
+- **영상 처리 대기(11/3 실측)**: 첫 시도는 30초 고정 대기 후 발행해 `Media Not Found`로 실패했다. Threads 영상 처리는 약 50초 걸린다.
+  지금은 컨테이너 `status`가 FINISHED가 될 때까지 최대 5분 확인 후 발행 → 11/3 두 번째 릴스부터 성공(raw.githubusercontent 주소로 충분,
+  `application/octet-stream`이어도 받아 준다). jsDelivr 주소는 raw가 처리 실패할 때만 쓰는 예비.
 - Threads 장기 토큰도 60일 만료 → `refresh-token.yml`의 "Refresh Threads token" 단계가 매일 갱신(`TOKEN_KIND=threads`).
 - 판정 지표: 인스타 팔로워 주간 순증(기준: 9/14~11/2 주당 +0.3)과 Threads 팔로워. Threads 성과 수집(insights)은 아직 없다.
 
