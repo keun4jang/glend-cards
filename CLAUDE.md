@@ -19,7 +19,14 @@ Instagram channel "GLEND"(@glend_kr). 사람이 손대지 않고 GitHub Actions�
 
 **2. 릴스 — 매일 2회, KST 12:00 / 18:00** (`reel.yml` → `daily_reel_ci.py`)
 `generate_reel.py`(대본) → edge-tts(내레이션) → `render_reel.py`·`build_reel.py`(영상 합성)
-→ `upload_reel.py`. `REEL_POST_THREADS=true`면 Threads에도 함께 올린다.
+→ `upload_reel.py`.
+
+**Threads 동시 발행 (2026-11-03, 실험 A 결론 "유입이 병목"의 첫 조치)** — 시크릿 `THREADS_TOKEN`·`THREADS_USER_ID`가 있으면
+릴스(영상)와 카드(캐러셀 4장)를 Threads에도 자동으로 올린다. 없으면 건너뛴다. 끄려면 저장소 변수 대신 `REEL_POST_THREADS=false`.
+- Threads 글은 500자 제한 — `content_io.threads_text`가 해시태그 줄을 빼고 음악 출처(🎵, CC BY 의무)를 끝에 남긴다.
+- Threads 실패는 인스타·아카이브를 막지 않는다(경고만). 인스타 토큰은 Threads에 못 쓴다(전용 토큰 필요).
+- Threads 장기 토큰도 60일 만료 → `refresh-token.yml`의 "Refresh Threads token" 단계가 매일 갱신(`TOKEN_KIND=threads`).
+- 판정 지표: 인스타 팔로워 주간 순증(기준: 9/14~11/2 주당 +0.3)과 Threads 팔로워. Threads 성과 수집(insights)은 아직 없다.
 
 **3. 검색 자산(정적 사이트) — 매일 KST 05:40** (`site.yml`)
 `article.py`가 쓴 글을 `build_site.py`가 `docs/`(GitHub Pages)로 빌드하고

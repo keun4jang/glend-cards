@@ -4,7 +4,7 @@ import sys
 import time
 import requests
 from dotenv import load_dotenv
-from content_io import load_content, cache_bust
+from content_io import load_content, cache_bust, threads_text
 
 load_dotenv()
 # Threads는 인스타 토큰과 호환되지 않음(검증됨) — 전용 토큰이 없으면 깔끔하게 건너뜀
@@ -31,7 +31,7 @@ print(f"[Threads] 모드: {'실제 업로드' if not DRY_RUN else '드라이런'
 print("=" * 40)
 
 content = load_content(f"content_{POST_INDEX}.json")
-caption = content.get("caption", "").replace("<b>", "").replace("</b>", "").replace("**", "").replace("__", "")[:500]
+caption = threads_text(content.get("caption", "").replace("<b>", "").replace("</b>", "").replace("**", "").replace("__", ""))
 
 print("\n[캡션 미리보기]")
 print(caption[:200], "...\n")

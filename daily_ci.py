@@ -64,8 +64,10 @@ for i in range(1, POSTS_PER_DAY + 1):
     # 인스타 발행
     run(f"인스타 발행 ({idx}번째)", ["upload.py", "go", idx])
 
-    # 스레드 발행
-    run(f"Threads 발행 ({idx}번째)", ["upload_threads.py", "go", idx])
+    # 스레드 발행 — 인스타는 이미 나갔으니 실패해도 멈추지 않는다(멈추면 아래 아카이브·사이트 글이 빠진다)
+    print(f"\n{'='*40}\n[Threads 발행 ({idx}번째)] 실행 중...\n{'='*40}", flush=True)
+    if subprocess.run([sys.executable, "upload_threads.py", "go", idx]).returncode != 0:
+        print("[경고] Threads 발행 실패 — 인스타 발행·아카이브는 계속 진행", flush=True)
 
     # 발행한 텍스트를 main에 영구 보관 (media 브랜치는 매일 덮어써져 사라진다)
     try:

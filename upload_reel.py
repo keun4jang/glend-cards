@@ -11,13 +11,14 @@ import time
 import datetime
 import requests
 from dotenv import load_dotenv
-from content_io import load_content
+from content_io import load_content, threads_text
 
 load_dotenv()
 IG_TOKEN = os.getenv("IG_TOKEN", "").strip()
 IG_USER = os.getenv("IG_USER_ID", "").strip()
-TH_TOKEN = os.getenv("THREADS_TOKEN", os.getenv("IG_TOKEN", "")).strip()
-TH_USER = os.getenv("THREADS_USER_ID", os.getenv("IG_USER_ID", "")).strip()
+# Threads는 인스타 토큰과 호환되지 않는다(upload_threads.py 참고) — 전용 토큰이 있을 때만 쓴다.
+TH_TOKEN = os.getenv("THREADS_TOKEN", "").strip()
+TH_USER = os.getenv("THREADS_USER_ID", "").strip()
 
 POST_INDEX = sys.argv[2] if len(sys.argv) > 2 else "1"
 DRY_RUN = not (len(sys.argv) > 1 and sys.argv[1] == "go")
@@ -123,7 +124,7 @@ def post_threads_video():
     print("\n[Threads] 영상 컨테이너 생성...")
     res = requests.post(f"{TH_GRAPH}/{TH_USER}/threads", data={
         "media_type": "VIDEO", "video_url": VIDEO_URL,
-        "text": caption, "access_token": TH_TOKEN,
+        "text": threads_text(caption), "access_token": TH_TOKEN,
     }, timeout=60)
     j = res.json()
     if "id" not in j:
@@ -144,10 +145,16 @@ def post_threads_video():
 
 ig_ok = post_instagram_reel()
 
-# Threads는 기본 비활성 (REEL_POST_THREADS=true 로 켜기)
+# Threads: 전용 토큰(THREADS_TOKEN·THREADS_USER_ID)이 있으면 자동으로 함께 올린다(2026-11-03 유입 확대).
+# 끄려면 REEL_POST_THREADS=false. 인스타가 성공했으면 Threads 실패로 전체를 실패시키지 않는다.
 th_ok = False
-if os.getenv("REEL_POST_THREADS", "false").strip().lower() == "true":
-    th_ok = post_threads_video()
+if TH_TOKEN and TH_USER and os.getenv("REEL_POST_THREADS", "true").strip().lower() != "false":
+    try:
+        th_ok = post_threads_video()
+    except Exception as e:
+        print(f"[Threads] 예외 — 인스타 발행에는 영향 없음: {e}")
+else:
+    print("[Threads] THREADS_TOKEN/THREADS_USER_ID 미설정 → 건너뜀")
 
 if ig_ok or th_ok:
     with open(LOG_FILE, "a", encoding="utf-8") as f:
