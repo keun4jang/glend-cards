@@ -32,6 +32,15 @@ jobs:
           DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
         run: python refresh_token.py
 
+      # Threads 장기 토큰도 60일 만료 — 같은 방식으로 매일 갱신(2026-11-03). THREADS_TOKEN이 없으면 건너뛴다.
+      - name: Refresh Threads token
+        env:
+          TOKEN_KIND: threads
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+        run: python refresh_token.py
+
       # GitHub은 저장소에 60일간 활동이 없으면 예약 워크플로우를 자동 비활성화한다.
       # 발행이 멈춘 채 방치돼도 갱신은 계속 돌도록 20일 이상 조용하면 커밋을 남긴다.
       - name: Keep repository active

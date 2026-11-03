@@ -48,6 +48,8 @@ jobs:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_GRAPH_BASE: ${{ vars.IG_GRAPH_BASE }}
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
           REUSE_CONTENT: ${{ github.event.inputs.reuse || 'false' }}
           CARD_INDEX: ${{ github.event.inputs.index || '' }}
         run: python daily_ci.py

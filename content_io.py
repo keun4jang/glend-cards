@@ -17,6 +17,19 @@ def cache_bust(url):
     return f"{url}{sep}v={int(time.time())}"
 
 
+def threads_text(caption, limit=500):
+    """Threads 글(최대 500자). 해시태그 줄은 빼고(Threads는 주제 태그 1개만 링크된다),
+    음악 출처(🎵, CC BY 표기 의무) 줄은 잘리지 않게 끝에 붙인다."""
+    lines = [ln for ln in (caption or "").split("\n") if not ln.lstrip().startswith("#")]
+    tail = [ln for ln in lines if ln.lstrip().startswith("🎵")]
+    body = "\n".join(ln for ln in lines if ln not in tail).strip()
+    tail_txt = ("\n\n" + "\n".join(tail)) if tail else ""
+    room = limit - len(tail_txt)
+    if len(body) > room:
+        body = body[:room - 1].rstrip() + "…"
+    return body + tail_txt
+
+
 def load_content(filename):
     if os.path.exists(filename):
         with open(filename, "r", encoding="utf-8") as f:

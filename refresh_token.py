@@ -11,6 +11,8 @@
   - 만료된 토큰은 갱신 불가 → 수동 재인증 필요 (그 경우 크게 실패시켜 알림)
 
 주의: Instagram Login(graph.instagram.com) 경로 전용.
+TOKEN_KIND=threads 로 실행하면 Threads 장기 토큰(THREADS_TOKEN, 역시 60일)을
+graph.threads.net 으로 같은 방식으로 갱신한다(2026-11-03 추가). 토큰이 없으면 조용히 건너뛴다.
 """
 import base64
 import os
@@ -18,13 +20,19 @@ import sys
 
 import requests
 
-IG_REFRESH_URL = "https://graph.instagram.com/refresh_access_token"
 GH_API = "https://api.github.com"
+KIND = os.getenv("TOKEN_KIND", "ig").strip().lower()
+if KIND == "threads":
+    REFRESH_URL, GRANT, LABEL = "https://graph.threads.net/refresh_access_token", "th_refresh_token", "Threads"
+    TOKEN = os.getenv("THREADS_TOKEN", "").strip()
+    SECRET_NAME = "THREADS_TOKEN"
+else:
+    REFRESH_URL, GRANT, LABEL = "https://graph.instagram.com/refresh_access_token", "ig_refresh_token", "인스타"
+    TOKEN = os.getenv("IG_TOKEN", "").strip()
+    SECRET_NAME = os.getenv("IG_TOKEN_SECRET_NAME", "IG_TOKEN").strip()
 
-TOKEN = os.getenv("IG_TOKEN", "").strip()
 PAT = os.getenv("GH_PAT", "").strip()
 REPO = os.getenv("GITHUB_REPOSITORY", "keun4jang/glend-cards").strip()
-SECRET_NAME = os.getenv("IG_TOKEN_SECRET_NAME", "IG_TOKEN").strip()
 DRY_RUN = os.getenv("DRY_RUN", "false").strip().lower() == "true"
 
 
@@ -34,12 +42,15 @@ def fail(msg):
 
 
 if not TOKEN:
+    if KIND == "threads":
+        print("THREADS_TOKEN 미설정 — Threads 토큰 갱신 건너뜀", flush=True)
+        sys.exit(0)
     fail("IG_TOKEN이 비어 있습니다.")
 
 # 1) 토큰 갱신
-print("인스타 토큰 갱신 요청 중...", flush=True)
-r = requests.get(IG_REFRESH_URL,
-                 params={"grant_type": "ig_refresh_token", "access_token": TOKEN},
+print(f"{LABEL} 토큰 갱신 요청 중...", flush=True)
+r = requests.get(REFRESH_URL,
+                 params={"grant_type": GRANT, "access_token": TOKEN},
                  timeout=60)
 data = {}
 try:
@@ -52,12 +63,12 @@ if "access_token" not in data:
     msg = err.get("message", r.text[:300])
     print(f"  응답: {msg}", flush=True)
     if "expired" in msg.lower() or err.get("code") == 190:
-        fail("토큰이 이미 만료되어 자동 갱신이 불가능합니다. "
-             "수동으로 새 장기 토큰을 발급해 IG_TOKEN 시크릿을 교체해야 합니다.")
+        fail(f"{LABEL} 토큰이 이미 만료되어 자동 갱신이 불가능합니다. "
+             f"수동으로 새 장기 토큰을 발급해 {SECRET_NAME} 시크릿을 교체해야 합니다.")
     if "24 hours" in msg or "hours old" in msg:
         print("  아직 24시간이 안 된 토큰이라 갱신을 건너뜁니다(정상).", flush=True)
         sys.exit(0)
-    fail(f"토큰 갱신 실패: {msg}")
+    fail(f"{LABEL} 토큰 갱신 실패: {msg}")
 
 new_token = data["access_token"]
 expires_in = int(data.get("expires_in", 0))
