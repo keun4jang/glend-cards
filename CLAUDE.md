@@ -228,6 +228,10 @@ Secrets required: `GEMINI_API_KEY`, `PEXELS_API_KEY`, `IG_TOKEN`, `IG_USER_ID`
     **전환하거나 크레딧을 구매하면 안 된다.** 무료 티어만 쓰는 한 조치가 필요 없다(구글 공지 명시).
   - 503 "high demand"는 무료 티어의 정상적인 혼잡 신호다. 결제를 붙여 해결하려 하지 말고
     `MODEL_CHAIN`의 다른 무료 모델로 폴백한다(generate.py / generate_reel.py).
+  - **google-genai 3.0(2026-11-06) 장애**: 기본 API가 v1beta → v1로 바뀌어 `gemini-flash-latest`·`-lite-latest`가 404가 됐고,
+    11/6~7 릴스 4편·카드 1편이 생성 단계에서 실패했다. 모든 클라이언트에 `api_version="v1beta"`를 고정하고
+    `requirements.txt`를 `google-genai>=2.31,<3`으로 묶었다. 메이저 버전 올림은 직접 시험한 뒤에만.
+  - 11/5 밤에는 두 모델이 10분 재시도 내내 503이라 실패했다 → 예비 무료 모델 `gemini-2.5-flash`·`-flash-lite`를 체인 뒤에 추가.
 - **GitHub Actions**: 퍼블릭 저장소라 실행 시간이 무료다. 비공개로 전환하면 과금되므로 유지할 것.
 - **그 외**: Pexels(무료 API), edge-tts(무료), Pretendard(OFL) — 모두 무료 범위 안에서만 사용한다.
 

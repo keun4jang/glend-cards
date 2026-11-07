@@ -49,7 +49,7 @@ def _gemini():
     if _client is None:
         from google import genai
         _client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip(),
-                               http_options=genai.types.HttpOptions(timeout=180_000))
+                               http_options=genai.types.HttpOptions(timeout=180_000, api_version="v1beta"))
     return _client
 
 

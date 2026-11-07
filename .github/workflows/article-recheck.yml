@@ -28,7 +28,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - run: pip install google-genai python-dotenv
+      - run: pip install "google-genai>=2.31,<3" python-dotenv
       - name: Recheck and fix articles
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
