@@ -1,0 +1,48 @@
+{
+  "topic": "입동 한파 독감 예방과 면역력 관리",
+  "card1": {
+    "title": "입동 한파\n독감 주의",
+    "sub1": "면역력 무너지면 <b>독감</b> 걸린다",
+    "sub2": "지금 <b>필수</b> 관리",
+    "query": "warm herbal tea cup on wooden table",
+    "bg": "https://images.pexels.com/photos/13431501/pexels-photo-13431501.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card2": {
+    "subtitle": "면역력 지킬\n보양 식단",
+    "lines": [
+      "들깨는 <b>면역력</b> 강화에 도움",
+      "따뜻한 <b>버섯탕</b> 한 그릇 섭취",
+      "환절기 <b>체온</b> 보호 효과 탁월"
+    ],
+    "query": "healthy mushroom soup bowl",
+    "bg": "https://images.pexels.com/photos/16077409/pexels-photo-16077409.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card3": {
+    "subtitle": "생활 속의\n체온 관리",
+    "lines": [
+      "갈매건강센터 <b>면역력</b> 프로그램",
+      "외출 후 <b>30초</b> 손 씻기 실천",
+      "<b>하루 2L</b> 미지근한 물 마시기"
+    ],
+    "query": "glass of warm water on table",
+    "bg": "https://images.pexels.com/photos/6010886/pexels-photo-6010886.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card4": {
+    "headline": "면역력 핵심 체크",
+    "items": [
+      "권장온도 · 실내 <b>22도</b> 유지",
+      "섭취량 · 하루 <b>2리터</b> 수분",
+      "주요재료 · 국산 <b>팽이버섯</b>",
+      "실천기한 · <b>11월</b> 입동 한파"
+    ],
+    "closing": "환절기 독감 유행할 때 이 카드만 꺼내보세요"
+  },
+  "caption": "입동 추위 시작되면서 독감 확산세가 다시 커지고 있습니다.\n\n날씨가 추워지면 우리 몸의 면역력이 급격히 떨어지기 쉬운데요.\n\n따뜻한 국산 버섯 요리와 철저한 수분 섭취로 건강을 지켜야 합니다.\n\n💾 실천 기준과 권장량은 4번째 장에 정리해뒀어요\n\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_kr 팔로우!\n\n여러분은 독감 예방을 위해 어떤 준비를 하고 계시나요? 댓글로 알려주세요 👇\n\n#건강관리 #면역력 #입동한파 #독감예방 #건강식단",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "ok",
+    "reason": "",
+    "sources": [],
+    "applied": []
+  }
+}

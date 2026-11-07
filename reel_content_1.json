@@ -1,0 +1,75 @@
+{
+  "topic": "자동차보험 운전경력 인정",
+  "title": "자동차보험 🚗",
+  "cover": {
+    "title": "보험료 절약\n<b>60만원</b> 아끼기"
+  },
+  "scenes": [
+    {
+      "narration": "자동차보험료 60만원 아끼는 법",
+      "query": "car steering wheel dashboard",
+      "bg": "https://images.pexels.com/photos/39488526/pexels-photo-39488526.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "운전 경력이 있어도 <b>보험료</b>를 비싸게 내는 분들이 많아요.",
+      "query": "car key ignition closeup",
+      "bg": "https://images.pexels.com/photos/14870126/pexels-photo-14870126.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "가족 보험에 <b>가입경력증명서</b>로 등록하면 최대 3년까지 인정돼요.",
+      "query": "insurance document desk",
+      "bg": "https://images.pexels.com/photos/7735624/pexels-photo-7735624.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "군 운전병이나 회사 <b>법인차량</b> 운전 경험도 모두 합산이 가능해요.",
+      "query": "military truck steering wheel",
+      "bg": "https://images.pexels.com/photos/10414794/pexels-photo-10414794.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "이전 경력을 반영하면 <b>60만원</b> 상당의 보험료를 줄일 수 있어요.",
+      "query": "korean won calculator",
+      "bg": "https://images.pexels.com/photos/6266276/pexels-photo-6266276.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "보험사 <b>고객센터</b>에 전화해서 운전경력 사전 등록을 요청하면 돼요.",
+      "query": "smartphone calling screen",
+      "bg": "https://images.pexels.com/photos/8526707/pexels-photo-8526707.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "보험 <b>만기일</b> 전에 미리 등록해야 환급을 받을 수 있으니 서두르세요.",
+      "query": "calendar desk closeup",
+      "bg": "https://images.pexels.com/photos/6823398/pexels-photo-6823398.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "경력 인정을 잊고 <b>갱신</b>을 먼저 해버리면 나중에 환급받기 번거로워요.",
+      "query": "car repair shop tool",
+      "bg": "https://images.pexels.com/photos/8986039/pexels-photo-8986039.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "운전 경력이 <b>3년</b> 이상이라면 무조건 챙겨야 하는 필수 할인 혜택이에요.",
+      "query": "car insurance paper",
+      "bg": "https://images.pexels.com/photos/7736042/pexels-photo-7736042.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "조건 맞으면 5분 통화로 <b>60만원</b> 아끼니, 오늘 바로 신청하세요.",
+      "query": "korean won bills",
+      "share": "→ 자동차보험 갱신하는 친구에게 공유",
+      "bg": "https://images.pexels.com/photos/35029028/pexels-photo-35029028.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "outro": true,
+      "narration": "놓치면 손해 보는 <b>생활재테크</b> 정보, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!"
+    }
+  ],
+  "follow_cta": "놓치면 손해 보는 <b>생활재테크</b> 정보, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!",
+  "share_target": "자동차보험 갱신하는 친구",
+  "caption": "매년 나가는 자동차보험료, 혹시 제값 다 내고 계신가요?\n\n운전 경력을 미리 등록하면 최대 60만 원까지 아낄 수 있습니다!\n\n🚗 대상 조건\n- 군 운전병 복무 경력\n- 회사 법인차량 운전 경력\n- 가족 보험에 지정운전자로 가입했던 경력\n\n💡 신청 방법\n보험사 고객센터에 연락해 운전경력 사전 등록을 요청하면 끝! 갱신 전에 꼭 확인해야 합니다.\n\n저장해두고 다음 보험 갱신 때 꼭 써먹으세요!\n\n📤 자동차보험 갱신하는 친구에게 보내주세요\n\n📌 매일 놓치기 쉬운 생활재테크·지원금만 골라 올립니다 → @glend_kr\n\n#자동차보험 #보험료할인 #운전경력인증 #생활재테크 #환급금\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "ok",
+    "reason": "",
+    "sources": [],
+    "applied": []
+  },
+  "length_variant": "mid"
+}

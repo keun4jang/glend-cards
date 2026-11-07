@@ -1,0 +1,48 @@
+{
+  "topic": "11월 연말정산 미리보기 및 12월 전 카드·연금 절세 전략",
+  "card1": {
+    "title": "13월월급\n놓치면손해",
+    "sub1": "<b>미리보기</b>로 환급액을 점검",
+    "sub2": "<b>12월</b> 전 세팅 끝",
+    "query": "korean won calculator desk",
+    "bg": "https://images.pexels.com/photos/6266276/pexels-photo-6266276.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card2": {
+    "subtitle": "카드비율\n황금법칙",
+    "lines": [
+      "총급여의 <b>25%</b>까지 신용카드",
+      "초과액은 <b>체크카드</b>로 써야 이득",
+      "공제율이 <b>30%</b>로 껑충 뜁니다"
+    ],
+    "query": "credit card payment desk",
+    "bg": "https://images.pexels.com/photos/5239867/pexels-photo-5239867.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card3": {
+    "subtitle": "놓치면끝\n필수행동",
+    "lines": [
+      "<b>홈택스</b> 연말정산 미리보기 조회",
+      "연금계좌로 <b>900만원</b> 채우기",
+      "<b>12월 31일</b>까지 입금하세요"
+    ],
+    "query": "laptop keyboard desk screen",
+    "bg": "https://images.pexels.com/photos/6611936/pexels-photo-6611936.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card4": {
+    "headline": "환급 체크목록",
+    "items": [
+      "조회처 · <b>홈택스</b> 연말정산 미리보기",
+      "카드비 · 총급여 <b>25%</b> 초과분 체크",
+      "준비물 · <b>연금저축</b> 납입확인서 제출",
+      "납입기한 · <b>12월 31일</b> 자정 마감"
+    ],
+    "closing": "소비하기 전에 이 카드만 다시 꺼내보세요"
+  },
+  "caption": "연말정산 환급액, 1월이 아니라 바로 지금 11월에 결정됩니다.\n\n매년 1월 서류 낼 때 후회해도 이미 늦습니다. 국세청 연말정산 미리보기 서비스로 9월까지 쓴 카드값을 조회하고, 남은 11월과 12월 소비 전략을 바꿔야 토해내지 않습니다.\n\n총급여 25%까지는 혜택 좋은 신용카드를 쓰고, 이미 채웠다면 공제율이 2배인 체크카드나 현금영수증으로 갈아타야 공제 한도를 채울 수 있습니다.\n\n여기에 연금저축과 IRP 합산 최대 900만원 납입 한도까지 12월 31일 전에 채우면 최대 148만 5천원을 돌려받습니다.\n\n💾 카드 비율 맞추는 법과 필수 준비물은 4번째 장에 정리해뒀어요.\n\n📌 매일 놓치기 쉬운 재테크 정보 받고 싶다면 @glend_kr 팔로우!\n\n여러분은 올해 신용카드 공제 문턱 채우셨나요? 댓글로 알려주세요 👇\n\n#재테크 #연말정산 #절세꿀팁 #홈택스 #연금저축",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "ok",
+    "reason": "",
+    "sources": [],
+    "applied": []
+  }
+}
