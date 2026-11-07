@@ -18,7 +18,7 @@ from recent_topics import (avoid_line, get_recent_topics, find_duplicate, dup_co
 load_dotenv()
 # 요청당 3분 제한(밀리초) — 응답이 안 오면 무한정 기다리지 않고 재시도 로직으로 넘어간다.
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip(),
-                      http_options=genai.types.HttpOptions(timeout=180_000))
+                      http_options=genai.types.HttpOptions(timeout=180_000, api_version="v1beta"))
 PEXELS_KEY = os.getenv("PEXELS_API_KEY", "").strip()
 # 모델 후보 목록 (앞에서부터 시도).
 # 한 모델이 503("high demand")으로 포화되면 같은 모델을 더 두드려도 소용없어서,
@@ -31,6 +31,10 @@ else:
     MODEL_CHAIN = [
         (os.getenv("GEMINI_MODEL") or "models/gemini-flash-latest").strip(),
         "models/gemini-flash-lite-latest",
+        # 예비(무료): 위 둘이 오래 503(혼잡)이면 넘어간다. 11/5 밤 릴스가 10분 재시도 끝에 503으로 실패했다.
+        # 계정에서 못 쓰는 모델이면 첫 호출에서 404로 빠지니 해가 없다.
+        "models/gemini-2.5-flash",
+        "models/gemini-2.5-flash-lite",
     ]
 GEMINI_MODEL = MODEL_CHAIN[0]
 

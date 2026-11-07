@@ -5,7 +5,7 @@ from google import genai
 load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
 
-client = genai.Client(api_key=api_key)
+client = genai.Client(api_key=api_key, http_options=genai.types.HttpOptions(api_version="v1beta"))
 
 print("Gemini에게 카드뉴스 제목 써달라고 시켜볼게요...\n")
 

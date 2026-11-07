@@ -1,5 +1,7 @@
 playwright
-google-genai
+# 3.0(2026-11-06)부터 기본 API가 v1로 바뀌어 "-latest" 모델 이름이 404가 됐다(11/6~7 릴스·카드 전부 실패).
+# 코드에서 api_version="v1beta"로 고정했고, 메이저 업데이트가 또 깨뜨리지 않게 2.x로 묶는다.
+google-genai>=2.31,<3
 requests
 feedparser
 python-dotenv

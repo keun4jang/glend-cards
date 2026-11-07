@@ -26,7 +26,7 @@ from google import genai
 load_dotenv()
 # 요청당 3분 제한(밀리초) — 응답이 안 오면 무한정 기다리지 않고 재시도 로직으로 넘어간다.
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip(),
-                      http_options=genai.types.HttpOptions(timeout=180_000))
+                      http_options=genai.types.HttpOptions(timeout=180_000, api_version="v1beta"))
 
 _models_env = (os.getenv("GEMINI_MODELS") or "").strip()
 MODEL_CHAIN = ([m.strip() for m in _models_env.split(",") if m.strip()] if _models_env else [
