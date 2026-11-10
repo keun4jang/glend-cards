@@ -1,0 +1,119 @@
+{
+  "kind": "reel",
+  "index": "2",
+  "published_kst": "2026-11-10T20:25:21+09:00",
+  "topic": "경찰서폴리스맵별점테러",
+  "content": {
+    "topic": "경찰서폴리스맵별점테러",
+    "title": "경찰서 별점 🚨",
+    "cover": {
+      "title": "경찰서에도\n<b>별점</b> 준다"
+    },
+    "scenes": [
+      {
+        "narration": "경찰서 별점 1점 테러",
+        "query": "police station exterior building",
+        "bg": "https://images.pexels.com/photos/17180625/pexels-photo-17180625.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "사건과 전혀 무관해도 <b>별점</b>을 남길 수 있어서 문제가 커지고 있어요",
+        "query": "smartphone screen rating app",
+        "bg": "https://images.pexels.com/photos/32764502/pexels-photo-32764502.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "일부 지역 파출소와 경찰서 대상 평점이 낮아지는 사례가 나타나고 있어요",
+        "query": "map application interface closeup",
+        "bg": "https://images.pexels.com/photos/4542998/pexels-photo-4542998.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "민원 처리 결과에 불만을 품은 이들이 <b>온라인 지도</b>에 악의적 평가를 남기는 중이에요",
+        "query": "digital tablet screen closeup",
+        "bg": "https://images.pexels.com/photos/9784245/pexels-photo-9784245.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "실제 치안 업무와 상관없는 <b>별점 테러</b> 때문에 현장 경찰관들이 큰 혼란을 겪고 있어요",
+        "query": "police radio and badge",
+        "bg": "https://images.pexels.com/photos/7714668/pexels-photo-7714668.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "허위 사실이나 악성 리뷰는 포털 사이트 고객센터를 통해 <b>신고 삭제</b> 요청을 할 수 있어요",
+        "query": "computer keyboard typing closeup",
+        "bg": "https://images.pexels.com/photos/28993049/pexels-photo-28993049.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "정당한 사유 없는 명예훼손성 리뷰는 <b>법적 조치</b>까지 이어질 수 있으니 주의해야 해요",
+        "query": "legal document stamp",
+        "bg": "https://images.pexels.com/photos/6358834/pexels-photo-6358834.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "올바른 민원 제어는 정식 절차를 따르고, 저장해두고 주변에 이 사실을 공유해 주세요",
+        "query": "customer service phone call",
+        "bg": "https://images.pexels.com/photos/8682773/pexels-photo-8682773.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "사건과 무관한 <b>별점 테러</b>는 범죄가 되므로 절대 가볍게 넘기면 안 돼요",
+        "query": "police tape line warning",
+        "share": "→ 스마트폰 자주 쓰는 친구에게 공유",
+        "bg": "https://images.pexels.com/photos/29350311/pexels-photo-29350311.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "outro": true,
+        "narration": "놓치기 쉬운 <b>생활법률</b> 소식, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!"
+      }
+    ],
+    "follow_cta": "놓치기 쉬운 <b>생활법률</b> 소식, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!",
+    "share_target": "스마트폰 자주 쓰는 친구",
+    "caption": "경찰서 지도에 별점 1점을 남기는 테러 행위가 논란입니다. 사건 내용과 전혀 상관없이 악의적인 평가를 남기는 사례가 늘고 있는데요. 현장 경찰관들의 업무에 큰 지장을 줄 뿐만 아니라, 허위 사실 유포나 명예훼손에 해당할 경우 법적 처벌까지 받을 수 있는 범죄 행위입니다. 올바른 민원은 정식 절차로 제기해야 합니다. 저장해두고 주변에 알려주세요. 📌 매일 꼭 알아야 할 생활법률 소식만 골라 올립니다 → @glend_kr 📤 스마트폰 자주 쓰는 친구에게 보내주세요 #생활법률 #경찰서 #폴리스맵 #별점테러 #사회이슈\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+    "factcheck": {
+      "mode": "ungrounded",
+      "verdict": "fixed",
+      "reason": "",
+      "sources": [],
+      "applied": [
+        {
+          "id": "s3",
+          "wrong": "현재 전국 파출소와 경찰서 대상 평점이 1점으로 떨어지는 사례가 속출해요",
+          "fix": "일부 지역 파출소와 경찰서 대상 평점이 낮아지는 사례가 나타나고 있어요",
+          "why": "경북일보 뉴스 제목에 따르면 '폴리스맵'은 경북 등 일부 지역 경찰서에 도입된 사안이므로 전국 대상 확정은 사실과 다름"
+        },
+        {
+          "id": "s8",
+          "wrong": "업무방해로 처벌받는 경우가 많으니 조심하세요",
+          "fix": "업무방해 등으로 처벌받을 수 있으니 조심하세요",
+          "why": "실제 처벌 사례가 '많다'는 통계적 근거는 뉴스 제목에서 확인할 수 없음"
+        }
+      ]
+    },
+    "length_variant": "mid"
+  },
+  "length_variant": "mid",
+  "article": {
+    "title": "경찰서 지도 별점 테러 논란과 악성 리뷰 대응 방법",
+    "description": "온라인 지도 내 경찰서 및 파출소 별점 테러의 문제점과 악성 리뷰에 대한 법적 기준 및 대처 방법을 알아봅니다.",
+    "keywords": [
+      "경찰서별점테러",
+      "파출소별점1점",
+      "악성리뷰법적대응",
+      "지도별점테러처벌",
+      "올바른민원제기방법"
+    ],
+    "body_markdown": "최근 온라인 지도 플랫폼에서 일부 민원인들이 경찰서와 파출소를 대상으로 악의적인 별점 1점을 남기는 소위 '별점 테러' 행위가 사회적 문제로 대두되고 있습니다. 이는 실제 치안 업무와 무관하게 개인의 불만을 표출하는 수단으로 악용되고 있으며, 현장 경찰관들의 업무 수행에 큰 지장을 초래합니다. 허위 사실이나 명예훼손성 리뷰는 단순한 불만 표출을 넘어 법적 처벌로 이어질 수 있으므로 주의가 필요합니다.\n\n## 경찰서 별점 테러, 무엇이 문제인가요?\n\n온라인 지도 서비스의 장소 평점 기능은 대중이 시설을 이용한 후 경험을 공유하는 목적으로 만들어졌습니다. 하지만 이를 악용하여 경찰서나 파출소에 무분별한 별점 테러를 가하는 사례가 늘고 있습니다.\n\n* 사건 내용이나 수사 결과와 전혀 무관한 개인적 불만을 평점에 반영합니다.\n* 특정 경찰관을 비방하거나 흠집 내기 위한 목적으로 악성 댓글을 작성합니다.\n* 공공기관의 기본적인 신뢰도를 떨어뜨리고 행정력 낭비를 유발합니다.\n\n이러한 행위는 단순히 의견 표출로 끝나지 않고, 실제 치안 서비스를 이용해야 하는 다른 시민들에게도 혼란을 줄 수 있어 엄격한 인식 전환이 요구됩니다.\n\n## 현장 경찰관과 치안 업무에 미치는 영향\n\n지도의 평점과 리뷰는 일반 상업 시설의 경우 영업에 직접적인 영향을 미치지만, 공공기관인 경찰서에 적용될 때는 전혀 다른 부작용을 낳습니다.\n\n* 현장 경찰관들이 악의적인 평가로 인해 사기가 저하됩니다.\n* 민원 처리 과정에서 발생한 개인적 불만이 전체 치안 서비스 평가로 왜곡됩니다.\n* 긴급한 치안 정보나 정확한 위치 안내를 확인하려는 시민들이 허위 정보로 인해 혼란을 겪을 수 있습니다.\n\n## 악성 리뷰와 허위 사실 유포의 법적 책임\n\n정당한 사유나 사실에 기반하지 않은 악의적 평가와 허위 사실 유포는 명예훼손죄 등에 해당할 수 있는 범죄 행위입니다. 단순히 재미나 일시적인 감정으로 남긴 리뷰라도 법적 조치의 대상이 될 수 있습니다.\n\n| 구분 | 내용 | 관련 법적 조치 검토 |\n| --- | --- | --- |\n| 허위 사실 유포 | 사실이 아닌 내용을 사실인 것처럼 작성하여 기관의 명예를 실추시키는 행위 | 명예훼손 및 업무방해 관련 법적 검토 |\n| 악의적 비방 | 특정 개인이나 기관을 비하할 목적으로 욕설 및 모욕적 표현을 남기는 행위 | 모욕죄 및 관련 규정 적용 가능 |\n\n이처럼 공공기관을 향한 무분별한 평점 테러는 가볍게 넘길 수 없는 사안이며, 법적 책임으로 이어질 수 있음을 인지해야 합니다.\n\n## 포털 사이트 고객센터를 통한 신고 및 삭제 요청 방법\n\n만약 허위 사실이나 악성 리뷰로 인해 피해가 발생한 경우, 방치하지 않고 공식적인 절차를 통해 대응할 수 있습니다.\n\n* 해당 포털 사이트 또는 지도 서비스의 고객센터에 접속합니다.\n* 권리침해 신고 또는 악성 리뷰 신고 메뉴를 선택합니다.\n* 허위 사실 및 명예훼손에 해당하는 사유를 소명하고 삭제를 요청합니다.\n\n포털 사이트의 운영 정책과 관련 법령에 따라 심사 후 조치가 이루어지며, 기관 차원에서도 적절한 대응 절차를 밟게 됩니다.\n\n## 올바른 민원 제기 절차와 대처 방안\n\n경찰 업무나 민원 처리 결과에 불만이 있는 경우, 온라인 지도의 별점을 낮추는 방식은 올바른 해결책이 아닙니다. 정식 절차를 통해 이의를 제기해야 합니다.\n\n* 경찰청 민원 포털이나 국민신문고 등 공식적인 민원 창구를 이용합니다.\n* 담당 부서의 정식 절차에 따라 이의를 신청하고 피드백을 받습니다.\n* 감정적인 대응 대신 객관적인 사실에 근거하여 문제를 제기합니다.\n\n## 자주 묻는 질문\n\nQ. 사건과 무관하게 경찰서에 남긴 별점 1점도 처벌을 받나요?\nA. 정당한 민원 제기 절차가 아닌, 악의적인 목적이나 허위 사실을 바탕으로 기관의 명예를 훼손하거나 업무를 방해한 경우 법적 조치의 대상이 될 수 있습니다.\n\nQ. 포털 지도에 올라간 악성 리뷰는 어떻게 처리해야 하나요?\nA. 해당 포털 사이트 고객센터를 통해 명예훼손이나 허위 사실 유포를 이유로 신고 및 삭제 요청을 진행할 수 있습니다.",
+    "factcheck": {
+      "mode": "ungrounded",
+      "verdict": "ok",
+      "reason": "",
+      "sources": [],
+      "applied": []
+    },
+    "chars": 1989
+  },
+  "meta": {
+    "hook_clip_sec": 3.31,
+    "total_sec": 53.1,
+    "scene_count": 10,
+    "length_variant": "mid",
+    "hook_text": "경찰서 별점 1점 테러",
+    "ig_media_id": "18025863002719055"
+  },
+  "published": true
+}
