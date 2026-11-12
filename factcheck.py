@@ -37,7 +37,9 @@ MODEL_CHAIN = ([m.strip() for m in _models_env.split(",") if m.strip()] if _mode
     "models/gemini-flash-lite-latest",
 ])
 TRANSIENT = ("503", "unavailable", "high demand", "overloaded", "deadline",
-             "timeout", "timed out", "internal")
+             "timeout", "timed out", "internal",
+             # 11/9 릴스: Gemini 서버가 응답 없이 연결을 끊음(httpx RemoteProtocolError) — 재시도하면 된다
+             "disconnected", "connection reset", "connection aborted", "remote protocol", "502", "504", "bad gateway")
 MAX_FIXES = 8
 KST = dt.timezone(dt.timedelta(hours=9))
 

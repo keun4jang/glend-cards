@@ -209,7 +209,9 @@ print("Gemini가 주제를 고르고 카드 내용을 만드는 중...\n")
 # 무인 운영이므로 사람이 다시 돌려줄 수 없다 → 총 대기 시간을 넉넉히 잡는다.
 # (퍼블릭 저장소 GitHub Actions는 실행 시간이 무료라 대기 비용은 0)
 TRANSIENT = ("503", "unavailable", "429", "resource_exhausted",
-             "high demand", "overloaded", "deadline", "timeout", "timed out", "internal")
+             "high demand", "overloaded", "deadline", "timeout", "timed out", "internal",
+             # 11/9 릴스: Gemini 서버가 응답 없이 연결을 끊음(httpx RemoteProtocolError) — 재시도하면 된다
+             "disconnected", "connection reset", "connection aborted", "remote protocol", "502", "504", "bad gateway")
 
 
 # 계정에서 아예 못 쓰는 모델(404/not found)은 재시도해도 소용없으니 목록에서 뺀다.

@@ -35,7 +35,9 @@ MODEL_CHAIN = ([m.strip() for m in _models_env.split(",") if m.strip()] if _mode
 ])
 
 TRANSIENT = ("503", "unavailable", "429", "resource_exhausted",
-             "high demand", "overloaded", "deadline", "timeout", "timed out", "internal")
+             "high demand", "overloaded", "deadline", "timeout", "timed out", "internal",
+             # 11/9 릴스: Gemini 서버가 응답 없이 연결을 끊음(httpx RemoteProtocolError) — 재시도하면 된다
+             "disconnected", "connection reset", "connection aborted", "remote protocol", "502", "504", "bad gateway")
 UNAVAILABLE = ("not found", "404", "not supported", "does not exist",
                "permission", "not available")
 
