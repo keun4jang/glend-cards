@@ -1,0 +1,100 @@
+{
+  "kind": "reel",
+  "index": "2",
+  "published_kst": "2026-11-13T19:54:54+09:00",
+  "topic": "겨울철 블랙아이스 결빙 도로 교통사고 예방",
+  "content": {
+    "topic": "겨울철 블랙아이스 결빙 도로 교통사고 예방",
+    "title": "블랙아이스 ⚠️",
+    "cover": {
+      "title": "겨울철 도로 위\n<b>살인마</b>"
+    },
+    "scenes": [
+      {
+        "narration": "아스팔트 위 투명한 <b>블랙아이스</b>",
+        "query": "icy road surface",
+        "bg": "https://images.pexels.com/photos/10447903/pexels-photo-10447903.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "날씨가 추워지면서 도로 표면에 살얼음이 얼어붙는 블랙아이스 사고 위험이 매년 급증하고 있어요",
+        "query": "frost on road surface",
+        "bg": "https://images.pexels.com/photos/15211442/pexels-photo-15211442.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "실제로 겨울철 결빙 도로에서 발생한 연쇄 추돌 사고는 일반 도로보다 치사율이 <b>2배</b> 이상 높아요",
+        "query": "damaged car bumper",
+        "bg": "https://images.pexels.com/photos/24960483/pexels-photo-24960483.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "특히 새벽이나 아침 시간에 교량 위나 그늘진 커브 길을 자주 지나는 운전자가 대상이에요",
+        "query": "empty bridge road",
+        "bg": "https://images.pexels.com/photos/40293118/pexels-photo-40293118.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "사고를 막으려면 타이어 공기압을 미리 점검하고 겨울철에는 평소보다 <b>50%</b> 이상 감속해야 해요",
+        "query": "car tire pressure gauge",
+        "bg": "https://images.pexels.com/photos/5640678/pexels-photo-5640678.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "지자체에서 지정한 상습 결빙 위험 도로 <b>30곳</b>의 위치를 네비게이션 앱으로 미리 확인해 두세요",
+        "query": "navigation app map screen",
+        "bg": "https://images.pexels.com/photos/6169861/pexels-photo-6169861.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "올해 <b>12월</b>부터 두 달간 집중 점검이 시행되니 블랙아이스 경고 구역에서는 급제동을 절대 하지 마세요",
+        "query": "warning road sign closeup",
+        "bg": "https://images.pexels.com/photos/33421160/pexels-photo-33421160.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "겨울철 아침 운전은 무조건 서행하고 <b>안전거리</b>부터 확보하세요. 저장해두고 다시 보세요",
+        "query": "car dashboard view",
+        "share": "→ 매일 운전하는 부모님에게 공유",
+        "bg": "https://images.pexels.com/photos/34611427/pexels-photo-34611427.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "outro": true,
+        "narration": "놓치기 쉬운 <b>교통안전</b> 정보, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!"
+      }
+    ],
+    "follow_cta": "놓치기 쉬운 <b>교통안전</b> 정보, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!",
+    "share_target": "매일 운전하는 부모님",
+    "caption": "날씨가 쌀쌀해지면서 도로 위 투명한 살인마, 블랙아이스 사고 위험이 급증하고 있어요. \n\n겨울철 결빙 도로는 일반 도로보다 치사율이 2배나 높아서 각별한 주의가 필요합니다. 교량 위나 그늘진 커브 길을 지날 때는 평소보다 50% 이상 감속해야 사고를 막을 수 있어요.\n\n차가 미끄러질 때 브레이크를 밟으면 오히려 위험하니 핸들을 꼭 잡고 대처하셔야 합니다. 지자체 결빙 위험 구간을 미리 확인하고 안전 운전하세요.\n\n📌 매일 놓치기 쉬운 교통안전 정보만 골라 올립니다 → @glend_kr\n\n📤 매일 운전하는 부모님에게 보내주세요\n\n#블랙아이스 #겨울철운전 #교통사고예방 #안전운전 #도로결빙\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+    "factcheck": {
+      "mode": "ungrounded",
+      "verdict": "ok",
+      "reason": "",
+      "sources": [],
+      "applied": []
+    },
+    "length_variant": "mid"
+  },
+  "length_variant": "mid",
+  "article": {
+    "title": "겨울철 블랙아이스 교통사고 예방 운전법과 대처 요령",
+    "description": "겨울철 도로 위 살얼음 블랙아이스 사고 위험과 감속 주행, 미끄러짐 대처 요령을 정리했습니다.",
+    "keywords": [
+      "블랙아이스",
+      "결빙도로교통사고",
+      "겨울철운전요령",
+      "도로살얼음"
+    ],
+    "body_markdown": "겨울철 도로 표면에 눈이나 비가 내린 뒤 기온이 갑자기 내려가면서 아스팔트 위에 얇은 빙판이 생기는 블랙아이스 현상은 매년 운전자들의 안전을 위협합니다. 결빙 도로에서 발생한 사고는 일반 도로 사고보다 치사율이 2배 이상 높기 때문에 새벽이나 아침 시간 운전 시 각별한 주의가 필요합니다. 안전한 운행을 위해서는 평소보다 50% 이상 감속하고 타이어 상태를 미리 점검해야 합니다.\n\n## 블랙아이스란 무엇이며 왜 위험한가요\n\n블랙아이스는 아스팔트 표면의 틈새로 눈과 먼지가 스며든 뒤, 기온이 내려가면서 투명한 얼어붙는 현상을 말합니다. 얼음이 매우 얇고 투명하게 형성되기 때문에 운전자가 멀리서 도로의 결빙 상태를 육안으로 확인하기 어렵습니다. 이로 인해 마찰력이 급격히 떨어져 평소처럼 주행하던 차량이 속도를 줄이지 못하고 미끄러지는 대형 사고로 이어지기 쉽습니다.\n\n## 사고 위험이 특히 높은 장소와 시간대는 언제인가요\n\n겨울철 결빙 사고는 주로 다음과 같은 환경에서 자주 발생합니다.\n\n- 햇볕이 잘 들지 않는 그늘진 커브 길\n- 지면 온도가 빠르게 내려가는 교량 및 고가도로\n- 터널 출구와 입구 구간\n- 산간 도로나 강가 인근 도로\n\n시간대별로는 기온이 가장 낮은 새벽 시간대와 아침 출근길에 위험도가 가장 높습니다. 해당 구간을 지날 때는 가속 페달에서 발을 떼고 방어 운전을 해야 합니다.\n\n## 겨울철 도로 결빙 사고를 예방하는 방법\n\n사고를 예방하기 위해서는 출발 전과 주행 중 철저한 대비가 필요합니다.\n\n- 타이어 공기압 점검: 겨울철에는 기온 하락으로 공기압이 낮아질 수 있으므로 미리 점검합니다.\n- 50% 이상 감속 주행: 상습 결빙 구간이나 위험 도로에서는 평소 규정 속도의 절반 이하로 서행합니다.\n- 안전거리 확보: 제동거리가 평소보다 몇 배 길어지므로 앞차와의 거리를 충분히 유지합니다.\n- 위험 구간 확인: 지자체에서 지정한 상습 결빙 위험 도로의 위치를 내비게이션 앱 등으로 미리 파악해 둡니다.\n\n## 차량이 미끄러질 때 어떻게 대처해야 하나요\n\n주행 중 차가 갑자기 미끄러지기 시작할 때 본능적으로 브레이크를 강하게 밟으면 바퀴가 완전히 잠기면서 제어력을 완전히 잃게 됩니다. 이 경우 오히려 대형 사고로 이어질 수 있으므로 다음 원칙을 지켜야 합니다.\n\n- 급제동 금지: 페달에서 발을 떼고 속도가 자연스럽게 줄어들도록 합니다.\n- 핸들 조작: 미끄러지는 방향으로 핸들을 부드럽게 틀어 차체의 균형을 잡습니다.\n- 엔진브레이크 활용: 저단 기어로 변속하여 서서히 감속을 유도합니다.\n\n## 자주 묻는 질문\n\n### Q. 블랙아이스가 의심되는 도로는 어떻게 구분하나요?\nA. 육안으로는 아스팔트가 단순히 젖어 있는 것처럼 보이거나 반짝거린다면 블랙아이스를 의심해야 합니다. 특히 기온이 영하이고 그늘진 교량 위라면 속도를 즉시 줄여야 합니다.\n\n### Q. 겨울철 집중 점검 기간에는 어떤 조치가 이루어지나요?\nA. 지자체별로 지정된 상습 결빙 위험 구역을 중심으로 집중적인 안전 점검과 관리가 시행됩니다. 운전자는 해당 구역 진입 시 더욱 주의를 기울여야 합니다.",
+    "factcheck": {
+      "mode": "ungrounded",
+      "verdict": "ok",
+      "reason": "",
+      "sources": [],
+      "applied": []
+    },
+    "chars": 1516
+  },
+  "meta": {
+    "hook_clip_sec": 3.33,
+    "total_sec": 53.7,
+    "scene_count": 9,
+    "length_variant": "mid",
+    "hook_text": "아스팔트 위 투명한 블랙아이스",
+    "ig_media_id": "18121588469088065"
+  },
+  "published": true
+}
