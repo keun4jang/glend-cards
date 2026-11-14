@@ -64,7 +64,13 @@
     text-wrap: balance; word-break: keep-all;
     text-shadow: 0 6px 26px rgba(0,0,0,0.55);
   }
-  .hook-text b { color: #CFFF04; }
+  /* 핵심 단어는 연두 블록 위 검은 글씨(2026-11-14) — 사진 위 연두 글씨는 밝은 배경에서 묻혔다.
+     참고: Lemo-Opuscar "Caption News" 스타일의 키워드 블록 문법(MIT/CC 문서는 저장소에 넣지 않음). */
+  .hook-text b, .subtitle b {
+    color: #0A0C0D; background: #CFFF04; font-weight: 900;
+    padding: 0 0.16em; margin: 0 0.04em; border-radius: 0.12em;
+    text-shadow: none; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  }
   /* 후킹에 장면 사진을 깔 때 — 회색 단색은 첫 3초가 로딩 화면처럼 보였다(2026-10-11 점검).
      사진은 1번 장면 것을 쓰고, 글씨가 묻히지 않게 위에서 아래로 짙어지는 막을 덮는다. */
   .hook.photo {
@@ -94,7 +100,7 @@
     text-wrap: balance; word-break: keep-all;
     text-shadow: 0 3px 12px rgba(0,0,0,0.95), 0 0 8px rgba(0,0,0,0.9), 0 2px 3px rgba(0,0,0,1);
   }
-  .subtitle b { color: #CFFF04; font-weight: 900; }
+
   /* 결론 장면의 공유 대상 지목 — "→ 전세 사는 친구에게 공유" */
   .share-cta {
     margin-top: 30px; font-size: 40px; font-weight: 800; color: #FFD84D;
