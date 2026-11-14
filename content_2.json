@@ -1,0 +1,48 @@
+{
+  "topic": "고령 운전자 면허 자진 반납 제도",
+  "card1": {
+    "title": "면허만\n반납해도",
+    "sub1": "사고 비용 <b>33억 원</b> 절감",
+    "sub2": "현실로 닥친 <b>고령 운전</b>",
+    "query": "driver license card on desk",
+    "bg": "https://images.pexels.com/photos/8937444/pexels-photo-8937444.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card2": {
+    "subtitle": "급증하는\n고령 사고",
+    "lines": [
+      "70대 이상 운전자",
+      "교통사고 <b>가파른</b> 증가세",
+      "사회적 <b>손실</b> 키운다"
+    ],
+    "query": "car accident street night",
+    "bg": "https://images.pexels.com/photos/19410362/pexels-photo-19410362.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card3": {
+    "subtitle": "반납 혜택과\n지원 제도",
+    "lines": [
+      "주민센터 방문 <b>신청</b>",
+      "지역별 <b>교통비</b> 지원",
+      "<b>10퍼센트</b> 반납 목표"
+    ],
+    "query": "city hall building exterior",
+    "bg": "https://images.pexels.com/photos/13700143/pexels-photo-13700143.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card4": {
+    "headline": "필수 확인 정보",
+    "items": [
+      "신청처 · <b>주민센터</b> 방문 접수",
+      "대상자 · <b>70세</b> 이상 운전자",
+      "혜택치 · <b>10퍼센트</b> 반납 목표",
+      "절감액 · 사고 비용 <b>33억 원</b>"
+    ],
+    "closing": "고령 운전자 가족이라면 지금 미리 확인해두세요"
+  },
+  "caption": "매년 급증하는 고령 운전자 사고, 사고 비용만 무려 33억 원에 달합니다\n\n면허를 자진 반납하면 지자체별로 교통비와 지역화폐 등을 지원받을 수 있는데요, 고령 운전 가족이 있다면 꼭 챙겨봐야 할 제도입니다\n\n💾 신청 절차와 지원 혜택은 4번째 장에 정리해뒀어요\n\n📌 매일 화제의 이슈 카드 받고 싶다면 @glend_kr 팔로우!\n\n여러분 주변에도 면허 반납을 고민하는 분이 계신가요? 댓글로 알려주세요 👇\n\n#사회이슈 #고령운전자 #교통사고 #면허반납 #안전대책",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "ok",
+    "reason": "",
+    "sources": [],
+    "applied": []
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "topic": "고교생 수면 부족 및 수면 건강 관리법",
+  "card1": {
+    "title": "잠이 부족하면\n내 몸이 망가진다",
+    "sub1": "고교생 4명 중 1명 <b>수면 부족</b>",
+    "sub2": "<b>면역력</b> 비상",
+    "query": "alarm clock on desk dark bedroom",
+    "bg": "https://images.pexels.com/photos/36252245/pexels-photo-36252245.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card2": {
+    "subtitle": "수면 부족이\n부르는 위험",
+    "lines": [
+      "하루 <b>5시간</b> 미만 수면",
+      "학습 능력을 <b>급격히</b> 떨어뜨려",
+      "만성 피로와 <b>면역력</b> 저하 유발"
+    ],
+    "query": "tired student head on desk",
+    "bg": "https://images.pexels.com/photos/7929435/pexels-photo-7929435.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card3": {
+    "subtitle": "지금 당장\n지켜야 할 습관",
+    "lines": [
+      "스마트폰은 <b>침대</b> 밖으로",
+      "취침 전 <b>1시간</b> 전자기기 차단",
+      "<b>7시간</b> 이상 수면 유지하기"
+    ],
+    "query": "smartphone on nightstand at night",
+    "bg": "https://images.pexels.com/photos/6940357/pexels-photo-6940357.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card4": {
+    "headline": "수면 건강 핵심 요약",
+    "items": [
+      "권장시간 · <b>7시간</b> 이상 취침",
+      "제한시간 · 취침 전 <b>1시간</b> 전자기기 금지",
+      "체크포인트 · 주말 <b>기상 시간</b> 일정하게 유지",
+      "주의사항 · 카페인 섭취는 <b>오후 4시</b> 이전"
+    ],
+    "closing": "시험 기간 컨디션 관리가 필요할 때 이 카드를 꺼내보세요"
+  },
+  "caption": "고교생 4명 중 1명은 하루 5시간도 못 자고 있다는 사실, 알고 계셨나요\n\n수면이 부족하면 집중력이 떨어질 뿐만 아니라 면역력까지 크게 무너집니다\n\n특히 성장기 청소년들에게 만성 수면 부족은 뇌 건강과 학습 능력을 해치는 주범입니다\n\n스마트폰을 멀리하고 적정 수면 시간을 확보하는 작은 습관부터 시작해보세요\n\n💾 실천 기준과 권장 수면 습관은 4번째 장에 정리해뒀어요\n\n📌 매일 놓치기 쉬운 건강 정보 받고 싶다면 @glend_kr 팔로우!\n\n여러분은 오늘 몇 시간 동안 주무셨나요? 댓글로 알려주세요 👇\n\n#건강정보 #수면관리 #학생건강 #수면부족 #생활습관",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "ok",
+    "reason": "",
+    "sources": [],
+    "applied": []
+  }
+}

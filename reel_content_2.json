@@ -1,0 +1,65 @@
+{
+  "topic": "겨울철 블랙아이스 결빙 도로 교통사고 예방",
+  "title": "블랙아이스 ⚠️",
+  "cover": {
+    "title": "겨울철 도로 위\n<b>살인마</b>"
+  },
+  "scenes": [
+    {
+      "narration": "아스팔트 위 투명한 <b>블랙아이스</b>",
+      "query": "icy road surface",
+      "bg": "https://images.pexels.com/photos/10447903/pexels-photo-10447903.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "날씨가 추워지면서 도로 표면에 살얼음이 얼어붙는 블랙아이스 사고 위험이 매년 급증하고 있어요",
+      "query": "frost on road surface",
+      "bg": "https://images.pexels.com/photos/15211442/pexels-photo-15211442.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "실제로 겨울철 결빙 도로에서 발생한 연쇄 추돌 사고는 일반 도로보다 치사율이 <b>2배</b> 이상 높아요",
+      "query": "damaged car bumper",
+      "bg": "https://images.pexels.com/photos/24960483/pexels-photo-24960483.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "특히 새벽이나 아침 시간에 교량 위나 그늘진 커브 길을 자주 지나는 운전자가 대상이에요",
+      "query": "empty bridge road",
+      "bg": "https://images.pexels.com/photos/40293118/pexels-photo-40293118.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "사고를 막으려면 타이어 공기압을 미리 점검하고 겨울철에는 평소보다 <b>50%</b> 이상 감속해야 해요",
+      "query": "car tire pressure gauge",
+      "bg": "https://images.pexels.com/photos/5640678/pexels-photo-5640678.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "지자체에서 지정한 상습 결빙 위험 도로 <b>30곳</b>의 위치를 네비게이션 앱으로 미리 확인해 두세요",
+      "query": "navigation app map screen",
+      "bg": "https://images.pexels.com/photos/6169861/pexels-photo-6169861.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "올해 <b>12월</b>부터 두 달간 집중 점검이 시행되니 블랙아이스 경고 구역에서는 급제동을 절대 하지 마세요",
+      "query": "warning road sign closeup",
+      "bg": "https://images.pexels.com/photos/33421160/pexels-photo-33421160.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "겨울철 아침 운전은 무조건 서행하고 <b>안전거리</b>부터 확보하세요. 저장해두고 다시 보세요",
+      "query": "car dashboard view",
+      "share": "→ 매일 운전하는 부모님에게 공유",
+      "bg": "https://images.pexels.com/photos/34611427/pexels-photo-34611427.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "outro": true,
+      "narration": "놓치기 쉬운 <b>교통안전</b> 정보, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!"
+    }
+  ],
+  "follow_cta": "놓치기 쉬운 <b>교통안전</b> 정보, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!",
+  "share_target": "매일 운전하는 부모님",
+  "caption": "날씨가 쌀쌀해지면서 도로 위 투명한 살인마, 블랙아이스 사고 위험이 급증하고 있어요. \n\n겨울철 결빙 도로는 일반 도로보다 치사율이 2배나 높아서 각별한 주의가 필요합니다. 교량 위나 그늘진 커브 길을 지날 때는 평소보다 50% 이상 감속해야 사고를 막을 수 있어요.\n\n차가 미끄러질 때 브레이크를 밟으면 오히려 위험하니 핸들을 꼭 잡고 대처하셔야 합니다. 지자체 결빙 위험 구간을 미리 확인하고 안전 운전하세요.\n\n📌 매일 놓치기 쉬운 교통안전 정보만 골라 올립니다 → @glend_kr\n\n📤 매일 운전하는 부모님에게 보내주세요\n\n#블랙아이스 #겨울철운전 #교통사고예방 #안전운전 #도로결빙\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "ok",
+    "reason": "",
+    "sources": [],
+    "applied": []
+  },
+  "length_variant": "mid"
+}

@@ -1,0 +1,65 @@
+{
+  "topic": "내포신도시 공공임대주택 보증금 대출상품 출시",
+  "title": "임대주택 대출 🏠",
+  "cover": {
+    "title": "보증금 대출\n금리 <b>1%대</b>"
+  },
+  "scenes": [
+    {
+      "narration": "임대주택 보증금 1%대 금리",
+      "query": "korean won cash desk",
+      "bg": "https://images.pexels.com/photos/20157487/pexels-photo-20157487.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "충청남도가 내포 공공임대주택 <b>입주자</b> 지원을 위해 저금리 대출 상품을 드디어 이달에 새로 출시했어요",
+      "query": "apartment building exterior",
+      "bg": "https://images.pexels.com/photos/14846410/pexels-photo-14846410.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "시중 은행의 높은 금리와 달리 이번 상품은 연 <b>1.7%</b>에서 최대 2.6% 수준의 이자만 부담하면 돼요",
+      "query": "bankbook and calculator",
+      "bg": "https://images.pexels.com/photos/8962444/pexels-photo-8962444.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "지원 대상은 내포신도시 내 공공임대주택에 새로 입주하거나 계약을 갱신하는 <b>무주택자</b> 세대예요",
+      "query": "living room interior",
+      "bg": "https://images.pexels.com/photos/20418771/pexels-photo-20418771.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "가구당 최대 <b>5000만원</b> 한도 안에서 계약금과 보증금을 저렴하게 빌릴 수 있는 혜택이 주어져요",
+      "query": "korean won bills",
+      "bg": "https://images.pexels.com/photos/35029028/pexels-photo-35029028.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "신청하려면 입주 지정일이나 계약 갱신일 전에 지정된 협약 <b>금융기관</b> 창구를 직접 방문해 접수하면 돼요",
+      "query": "application form desk",
+      "bg": "https://images.pexels.com/photos/9870155/pexels-photo-9870155.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "예산이 소진되면 조기 마감될 수 있으니 <b>12월</b> 전까지 미리 서류를 준비해서 신청하는 게 안전해요",
+      "query": "calendar and pen",
+      "bg": "https://images.pexels.com/photos/4985336/pexels-photo-4985336.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "조건 맞으면 파격적인 저금리 혜택이니까 <b>임대주택</b> 살고 있다면 오늘 바로 신청 조건을 확인해보세요",
+      "query": "modern apartment exterior",
+      "share": "→ 내포 사는 친구에게 공유",
+      "bg": "https://images.pexels.com/photos/39319453/pexels-photo-39319453.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "outro": true,
+      "narration": "놓치면 아까운 <b>정부지원금</b>, 매일 하나씩 찾아드려요. @glend_kr 팔로우하세요!"
+    }
+  ],
+  "follow_cta": "놓치면 아까운 <b>정부지원금</b>, 매일 하나씩 찾아드려요. @glend_kr 팔로우하세요!",
+  "share_target": "내포 사는 친구",
+  "caption": "내포 공공임대주택 보증금 대출 상품이 이달에 드디어 출시되었습니다.\n\n시중 은행 금리와 비교하면 정말 파격적인 조건인데요, 대상자라면 무조건 챙겨야 할 핵심 내용을 정리해 드립니다.\n\n🏠 지원 내용\n- 금리 연 1.7% ~ 2.6% 수준\n- 가구당 최대 5000만원 한도 지원\n- 내포신도시 공공임대주택 입주 및 갱신 세대 대상\n\n📌 신청 방법\n- 지정 협약 금융기관 창구 방문 접수\n- 예산 소진 전 빠른 신청 필수\n\n조건에 해당되는 분들은 놓치지 말고 꼭 신청하셔서 주거비 부담 줄여보세요.\n\n저장해두고 필요할 때 다시 꺼내보세요.\n📤 내포 사는 친구에게 보내주세요\n\n📌 매일 놓치기 쉬운 정부지원금·주거 정책만 골라 올립니다 → @glend_kr\n\n#내포신도시 #공공임대주택 #임대주택보증금 #정부지원금 #주거지원\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "ok",
+    "reason": "",
+    "sources": [],
+    "applied": []
+  },
+  "length_variant": "mid"
+}

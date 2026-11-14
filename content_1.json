@@ -1,0 +1,48 @@
+{
+  "topic": "카카오뱅크 개인사업자 부동산담보대출 갈아타기",
+  "card1": {
+    "title": "사업자\n대출금리",
+    "sub1": "최저 <b>3퍼센트대</b>로 갈아타기",
+    "sub2": "이자 <b>부담</b> 줄이세요",
+    "query": "korean won calculator desk",
+    "bg": "https://images.pexels.com/photos/6266276/pexels-photo-6266276.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card2": {
+    "subtitle": "금리 부담\n낮추는 법",
+    "lines": [
+      "여러 <b>건의 사업자대출</b>을",
+      "한 번에 <b>최대 5건까지</b>",
+      "낮은 <b>금리로 통합</b>해요"
+    ],
+    "query": "bankbook and calculator",
+    "bg": "https://images.pexels.com/photos/7580756/pexels-photo-7580756.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card3": {
+    "subtitle": "지금 바로\n확인하세요",
+    "lines": [
+      "카카오뱅크 <b>앱을 통해</b>서",
+      "<b>사업자 정보와</b> 담보 확인",
+      "연 <b>3.04퍼센트</b> 최저금리"
+    ],
+    "query": "online banking phone screen",
+    "bg": "https://images.pexels.com/photos/7621358/pexels-photo-7621358.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card4": {
+    "headline": "대출 갈아타기 핵심",
+    "items": [
+      "대상 · 개인사업자 <b>부동산담보대출</b>",
+      "한도 · 최대 <b>5건까지</b> 한 번에",
+      "금리 · 최저 연 <b>3.04퍼센트</b>",
+      "신청처 · 카카오뱅크 <b>모바일 앱</b>"
+    ],
+    "closing": "금리 오를 때 이자 아끼려면 지금 확인하세요"
+  },
+  "caption": "사업자 대출 이자가 부담이라면 오늘 이 소식 꼭 확인해 보세요.\n\n카카오뱅크에서 개인사업자 부동산담보대출 갈아타기 서비스를 시작했습니다.\n\n최저 연 3퍼센트대의 금리로 여러 건의 대출을 한 번에 정리할 수 있습니다.\n\n💾 신청 대상과 금리 조건은 4번째 장에 정리해뒀어요.\n\n📌 매일 놓치기 쉬운 재테크 정보 받고 싶다면 @glend_kr 팔로우!\n\n여러분은 지금 대출 이자가 가장 부담되시나요? 댓글로 알려주세요 👇\n\n#재테크 #카카오뱅크 #사업자대출 #대출갈아타기 #금리인하",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "ok",
+    "reason": "",
+    "sources": [],
+    "applied": []
+  }
+}
