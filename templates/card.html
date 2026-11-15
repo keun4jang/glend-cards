@@ -3,10 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <style>
+  /* 본문용 Medium(2026-11-15) — 전부 굵은 글씨라 제목·본문 위계가 없었다 */
+  @font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/Pretendard-Medium.otf') format('opentype');
+    font-weight: 400 600;
+  }
   @font-face {
     font-family: 'Pretendard';
     src: url('../fonts/Pretendard-Bold.ttf') format('truetype');
-    font-weight: 400 700;
+    font-weight: 700;
   }
   @font-face {
     font-family: 'Pretendard';
@@ -43,9 +49,13 @@
     margin-top: 64px; text-align: left; color: #FFFFFF;
     max-width: 920px; word-break: keep-all;
   }
-  .hook-sub .sub1 { font-weight: 800; line-height: 1.4; letter-spacing: -0.0347em; }
+  .hook-sub .sub1 { font-weight: 500; line-height: 1.4; letter-spacing: -0.0347em; }
   .hook-sub .sub2 { font-weight: 900; line-height: 1.3; margin-top: 10px; letter-spacing: -0.0272em; }
-  .hook-sub b { color: #CFFF04; font-weight: inherit; }
+  /* 강조는 장당 하나, 연두 블록 위 검은 글씨(릴스와 같은 문법) */
+  .hook-sub b, .ana-body b, .ins-body b {
+    color: #0A0C0D; background: #CFFF04; font-weight: 800;
+    padding: 0 0.14em; border-radius: 0.1em; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  }
 
   /* 카드2 분석 & 카드3 통찰 - 제목 스타일 통일 */
   .ana-wrap, .ins-wrap { margin-top: auto; margin-bottom: auto; display: flex; flex-direction: column; justify-content: center; width: 100%; }
@@ -54,9 +64,8 @@
     border-left: 14px solid #CFFF04; padding-left: 34px;
     word-break: keep-all; letter-spacing: -0.0326em;
   }
-  .ana-body, .ins-body { margin-top: 56px; font-size: 64px; font-weight: 700; line-height: 1.6; text-align: left; }
+  .ana-body, .ins-body { margin-top: 56px; font-size: 64px; font-weight: 500; line-height: 1.6; text-align: left; }
   .ana-body .line, .ins-body .line { display: block; white-space: nowrap; margin-bottom: 14px; letter-spacing: -0.0234em; }
-  .ana-body b, .ins-body b { font-weight: 900; color: #CFFF04; }
 
 
   /* 카드4 저장용 요약 — 연두 바탕에 검정 박스. 사진 없이 순수 정보면이라
