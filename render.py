@@ -63,6 +63,7 @@ def build_sub_html(card1):
     구버전(sub 하나)도 호환."""
     sub1 = strip_char_count_notes(card1.get("sub1") or card1.get("sub") or "")
     sub2 = strip_char_count_notes(card1.get("sub2") or "")
+    sub1, sub2 = one_highlight([sub1, sub2])
     html = ""
     if sub1:
         size = sub_font_size(sub1, 72, 16, 52)
@@ -105,6 +106,21 @@ def sized_title(text):
 def clean_lines(lines):
     return [strip_char_count_notes(l) for l in lines]
 
+
+def one_highlight(texts):
+    """카드 한 장에 연두 강조는 하나만(2026-11-15). 줄마다 칠하면 아무것도 강조되지 않는다 —
+    공유 수백 회짜리 참고 카드뉴스는 한 장에 0~1개였다. 숫자가 든 강조를 우선 남기고 나머지는 벗긴다."""
+    found = [(i, m) for i, t in enumerate(texts) for m in re.finditer(r"<b>(.*?)</b>", t)]
+    if len(found) <= 1:
+        return texts
+    keep = next(((i, m) for i, m in found if re.search(r"\d", m.group(1))), found[0])
+    out = []
+    for i, t in enumerate(texts):
+        def strip(m, i=i):
+            return m.group(0) if (i, m.start()) == (keep[0], keep[1].start()) else m.group(1)
+        out.append(re.sub(r"<b>(.*?)</b>", strip, t))
+    return out
+
 def clean_multiline(text):
     return "\n".join(strip_char_count_notes(l) for l in text.split("\n"))
 
@@ -114,10 +130,10 @@ CARDS = [
      "sub_html": build_sub_html(content["card1"])},
     {"type": "analysis", "bg": content["card2"].get("bg", FALLBACK),
      "subtitle": clean_multiline(content["card2"]["subtitle"]),
-     "lines_html": "".join(sized_lines(clean_lines(content["card2"]["lines"])))},
+     "lines_html": "".join(sized_lines(one_highlight(clean_lines(content["card2"]["lines"]))))},
     {"type": "insight", "bg": content["card3"].get("bg", FALLBACK),
      "title": clean_multiline(content["card3"]["subtitle"]),
-     "lines_html": "".join(sized_lines(clean_lines(content["card3"]["lines"])))},
+     "lines_html": "".join(sized_lines(one_highlight(clean_lines(content["card3"]["lines"]))))},
     {"type": "summary",
      "headline": clean_multiline(content["card4"]["headline"]),
      "items_html": summary_items_html(content["card4"]["items"]),
