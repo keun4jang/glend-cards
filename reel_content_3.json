@@ -1,0 +1,75 @@
+{
+  "topic": "수능 끝 한파 속 독감 확산 수험생 건강관리",
+  "title": "독감 예방법 😷",
+  "cover": {
+    "title": "수능 끝나고\n<b>독감</b> 비상"
+  },
+  "scenes": [
+    {
+      "narration": "수능 끝난 수험생들 독감 비상",
+      "query": "cold weather thermometer",
+      "bg": "https://images.pexels.com/photos/10834149/pexels-photo-10834149.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "갑작스러운 한파에 면역력 떨어져서 독감 환자 급증하고 있어요",
+      "query": "winter street thermometer",
+      "bg": "https://images.pexels.com/photos/17979156/pexels-photo-17979156.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "질병관리청 발표에 따르면 외래환자 <b>1천 명</b>당 37.4명 기록했어요",
+      "query": "hospital waiting room",
+      "bg": "https://images.pexels.com/photos/26244207/pexels-photo-26244207.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "면역력이 약해진 수험생과 고령층 어르신들이 주요 대상이에요",
+      "query": "elderly health check",
+      "bg": "https://images.pexels.com/photos/8088857/pexels-photo-8088857.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "치료 지연되면 폐렴으로 악화되어 막대한 의료비 부담 생겨요",
+      "query": "medical insurance bills",
+      "bg": "https://images.pexels.com/photos/7163937/pexels-photo-7163937.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "지정 병의원에서 무료 <b>예방접종</b>과 항바이러스제 처방 받으세요",
+      "query": "pharmacy prescription counter",
+      "bg": "https://images.pexels.com/photos/3873141/pexels-photo-3873141.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "증상 발생 <b>48시</b>간 이내 복용해야 효과 있으니 절대 놓치지 마세요",
+      "query": "clock on wall",
+      "bg": "https://images.pexels.com/photos/38699699/pexels-photo-38699699.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "감기겠거니 방치하다가 폐렴으로 번지는 실수를 가장 많이 해요",
+      "query": "coughing person silhouette",
+      "bg": "https://images.pexels.com/photos/4031627/pexels-photo-4031627.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "외출 후 <b>30</b>초 이상 손 씻고 실내 환기 자주 하면 예방돼요",
+      "query": "washing hands bathroom",
+      "bg": "https://images.pexels.com/photos/8804977/pexels-photo-8804977.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "조금이라도 열이 나면 즉시 <b>병원</b> 가세요 저장해두고 다시 보세요",
+      "query": "stethoscope on desk",
+      "share": "→ 수능 끝난 수험생 자녀에게 공유",
+      "bg": "https://images.pexels.com/photos/5407237/pexels-photo-5407237.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "outro": true,
+      "narration": "놓치면 후회하는 <b>건강상식</b>, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!"
+    }
+  ],
+  "follow_cta": "놓치면 후회하는 <b>건강상식</b>, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!",
+  "share_target": "수능 끝난 수험생 자녀",
+  "caption": "수능 끝나자마자 찾아온 한파에 독감 환자가 급증하고 있습니다! 😷\n\n질병관리청 통계에 따르면 외래환자 1천 명당 37.4명을 기록하며 면역력이 약해진 수험생과 어르신들을 위협하고 있어요. 감기겠거니 하고 방치했다가 폐렴으로 악화되는 경우가 정말 많습니다.\n\n증상 발생 48시간 이내에 항바이러스제를 복용해야 효과가 크니, 열이 나면 미루지 말고 지정 병의원을 방문하세요. 외출 후 손 씻기와 실내 환기만 잘해도 큰 예방이 됩니다.\n\n📌 매일 놓치기 쉬운 건강상식·의료정보만 골라 올립니다 → @glend_kr\n\n📤 수능 끝난 수험생 자녀에게 보내주세요\n\n#독감예방 #수험생건강 #독감증상 #건강관리 #질병관리청\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "ok",
+    "reason": "",
+    "sources": [],
+    "applied": []
+  },
+  "length_variant": "mid"
+}

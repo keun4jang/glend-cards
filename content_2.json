@@ -1,0 +1,48 @@
+{
+  "topic": "중고거래 플랫폼 허위 매물 및 비대면 사기 수법과 환급 대처법",
+  "card1": {
+    "title": "중고거래\n지갑 털린다",
+    "sub1": "안전 거래를 무력화하는 <b>사기</b> 수법",
+    "sub2": "지금 바로 확인하세요",
+    "query": "online shopping scam phone screen",
+    "bg": "https://images.pexels.com/photos/7661069/pexels-photo-7661069.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card2": {
+    "subtitle": "진짜 같은\n가짜 링크",
+    "lines": [
+      "가짜 페이지만 들어",
+      "가도 돈이 순식간",
+      "에 털리는 <b>함정</b>"
+    ],
+    "query": "fake website warning screen",
+    "bg": "https://images.pexels.com/photos/9830823/pexels-photo-9830823.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card3": {
+    "subtitle": "사기 당한\n순간 대처",
+    "lines": [
+      "경찰청 민원 112",
+      "또는 금융감독원",
+      "<b>피해 신고</b> 즉시 접수"
+    ],
+    "query": "police emergency phone closeup",
+    "bg": "https://images.pexels.com/photos/34960817/pexels-photo-34960817.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card4": {
+    "headline": "사기 대응 가이드",
+    "items": [
+      "신고처 · <b>경찰청</b> 민원 112",
+      "상담 · 금융감독원 <b>1332</b>",
+      "증거 · 대화 내역 및 <b>영수증</b>",
+      "기한 · 피해 즉시 <b>당일</b> 접수"
+    ],
+    "closing": "중고거래 전 이 카드만 다시 보면 됩니다"
+  },
+  "caption": "안전하다고 믿었던 중고거래, 순식간에 수백만 원이 사라지는 사기 수법이 기승을 부리고 있습니다\n\n정교하게 위조된 가짜 결제 링크를 보내 피해자를 속이고, 송금하는 순간 연락이 끊기는 수법이 늘고 있습니다\n\n모르는 사람이 보낸 인터넷 주소는 절대 누르지 말고 공식 앱 안에서만 거래를 진행해야 합니다\n\n💾 신고 절차와 긴급 대처법은 4번째 장에 정리해뒀어요\n\n📌 매일 화제의 이슈 카드 받고 싶다면 @glend_kr 팔로우!\n\n여러분도 중고거래 사기 겪어보셨나요? 댓글로 알려주세요 👇\n\n#재테크 #사기예방 #중고거래 #피해대처 #금융사기",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "ok",
+    "reason": "",
+    "sources": [],
+    "applied": []
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "topic": "공기총 오발 사고 예방 및 수칙",
+  "title": "공기총 안전사고 🚨",
+  "cover": {
+    "title": ""
+  },
+  "scenes": [
+    {
+      "narration": "비닐하우스 공기총 오발사고",
+      "query": "greenhouse exterior rural",
+      "bg": "https://images.pexels.com/photos/33184443/pexels-photo-33184443.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "최근 강원과 서산에서 엽총과 공기총 오발 사고로 안타까운 인명 피해가 잇따라 발생했어요.",
+      "query": "police line tape",
+      "bg": "https://images.pexels.com/photos/29350311/pexels-photo-29350311.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "사냥철과 수확기를 맞아 허가받은 총기를 다룰 때 안전수칙을 지키지 않는 경우가 많아요.",
+      "query": "hunting rifle case",
+      "bg": "https://images.pexels.com/photos/18845235/pexels-photo-18845235.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "민가나 비닐하우스 근처처럼 사람이 있는 곳에서는 절대 <b>실탄 장전</b>을 하면 안 돼요.",
+      "query": "agricultural vinyl house",
+      "bg": "https://images.pexels.com/photos/12476169/pexels-photo-12476169.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "총기 안전수칙을 위반하면 최대 <b>3년 이하</b>의 징역형이나 무거운 벌금 처벌을 받아요.",
+      "query": "court gavel scale",
+      "bg": "https://images.pexels.com/photos/5669619/pexels-photo-5669619.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "외출이나 이동할 때는 반드시 총기 총열을 분해해서 전용 <b>안전 케이스</b>에 보관하세요.",
+      "query": "rifle carrying case",
+      "bg": "https://images.pexels.com/photos/18845235/pexels-photo-18845235.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "사격 전에는 주변 반경 <b>1km 이내</b>에 민간인이나 농기계가 없는지 철저히 확인해야 해요.",
+      "query": "rural farmlands view",
+      "bg": "https://images.pexels.com/photos/29365654/pexels-photo-29365654.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "약실에 탄이 남았는지 확인하지 않고 격발하는 실수가 가장 큰 사고로 이어져요.",
+      "query": "old metal tool box",
+      "bg": "https://images.pexels.com/photos/15871987/pexels-photo-15871987.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "사냥철 총기사고 막으려면 지금 바로 <b>안전수칙</b> 확인하세요. 저장해두고 다시 보세요.",
+      "query": "warning sign post",
+      "share": "→ 시골 계신 부모님에게 공유",
+      "bg": "https://images.pexels.com/photos/27152413/pexels-photo-27152413.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "outro": true,
+      "narration": "놓치기 쉬운 <b>사건사고</b> 예방법, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!"
+    }
+  ],
+  "follow_cta": "놓치기 쉬운 <b>사건사고</b> 예방법, 매일 하나씩 알려드려요. @glend_kr 팔로우하세요!",
+  "share_target": "시골 계신 부모님",
+  "caption": "최근 비닐하우스와 농경지 인근에서 공기총 오발 사고가 잇따라 발생하며 큰 인명 피해로 이어지고 있습니다.\n\n허가받은 총기라도 민가 근처나 사람이 있는 장소에서는 절대 실탄을 장전하거나 사격 연습을 해서는 안 됩니다.\n\n이동 시에는 총기 총열을 분해하고 전용 안전 케이스에 담아 보관해야 하며, 사격 전 주변 1km 이내에 사람이 없는지 확인하는 것이 필수적입니다.\n\n총기 안전수칙을 위반할 경우 무거운 형사 처벌과 함께 총기 허가가 취소될 수 있으니 각별한 주의가 필요합니다.\n\n📌 매일 놓치기 쉬운 사건사고 대처법만 골라 올립니다 → @glend_kr\n\n📤 시골 계신 부모님에게 보내주세요\n\n#공기총사고 #총기사고 #안전수칙 #사건사고 #생활정보\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "ok",
+    "reason": "",
+    "sources": [],
+    "applied": []
+  },
+  "length_variant": "mid"
+}
