@@ -100,10 +100,10 @@ IG_USER_ID=...      # Instagram business account numeric ID
   `save_value_issues()`가 숫자·라벨 구조를 기계 검증한다 (아래 "진행 중인 실험 B" 참고)
 - **caption**: 해시태그 포함 인스타 캡션 (`<b>` 태그는 게시 전 제거됨)
 
-카드5는 JSON에 없다 — 렌더러가 항상 브랜드 카드(`assets/logo.png`)로 붙인다.
+카드5는 JSON에 없다 — 렌더러가 항상 행동 유도 카드(저장·공유·팔로우 + @glend_kr, 2026-11-23부터. 그 전엔 `assets/logo.png` 로고만)로 붙인다.
 
 ### Rendering (`render.py` + `templates/card.html`)
-Playwright opens `templates/card.html` as a local file in a 1080×1350 viewport (device_scale_factor=2 → 2160×2700 actual pixels). Card content is injected via `page.evaluate()`. **카드5가 브랜드 카드**다(`assets/logo.png` full-bleed) — 카드4는 저장용 요약 카드다. Font size is scaled once, proportionally to character count (not a measure-and-retry loop), so `render.py` also logs any element that still overflows after rendering (`⚠️ 넘침` 으로 찍힌다 — 프롬프트의 글자수 규칙을 바꿀 땐 이 로그를 반드시 확인할 것).
+Playwright opens `templates/card.html` as a local file in a 1080×1350 viewport (device_scale_factor=2 → 2160×2700 actual pixels). Card content is injected via `page.evaluate()`. **카드5는 행동 유도 카드**다(2026-11-23까지는 `assets/logo.png` full-bleed 로고) — 카드4는 저장용 요약 카드다. Font size is scaled once, proportionally to character count (not a measure-and-retry loop), so `render.py` also logs any element that still overflows after rendering (`⚠️ 넘침` 으로 찍힌다 — 프롬프트의 글자수 규칙을 바꿀 땐 이 로그를 반드시 확인할 것).
 
 ### Upload flow (`upload.py`)
 Images are served via `https://raw.githubusercontent.com/keun4jang/glend-cards/media/output/post{N}/card{M}.png` — **`main`이 아니라 `media` 브랜치다.** (media는 부모 없는 단일 커밋으로 강제 푸시해 저장소 비대화를 막는다 — 47일 만에 446MB가 쌓인 적이 있다. 그 대가로 대본이 매일 사라지므로 텍스트는 `archive.py`가 main에 따로 쌓는다.) Each card is registered as a carousel item via the Instagram Graph API, then published as a single carousel post. A retry loop handles Instagram's async image processing (up to 10 × 8s waits). `upload_log.txt` tracks the last post date to enforce one-post-per-day.
@@ -348,7 +348,7 @@ Secrets required: `GEMINI_API_KEY`, `PEXELS_API_KEY`, `IG_TOKEN`, `IG_USER_ID`
 - 정리: 프로필(바이오·고정 게시물·팔로잉 정리)은 그대로 둔다(해롭다는 근거도 없다). 다음 레버는 **도달 → 프로필 유입** 쪽이다
   (카드 도달 중앙값 15 → 11로 팔로워 수 안에 갇혀 있다).
 
-### B. 카드4 저장 포맷 — 2026-09-14 변경, 3주 뒤 판정
+### B. 카드4 저장 포맷 — 2026-09-14 변경, 2026-11-23 판정 종료
 
 **기준선:** 게시물 338개 중 저장 6개(1.8%). 저장·공유가 붙은 카드는 평균 도달 191,
 없는 카드는 15로 **12.4배** 차이 — 저장이 안 되면 도달이 팔로워 안에 갇힌다.
@@ -376,6 +376,21 @@ Secrets required: `GEMINI_API_KEY`, `PEXELS_API_KEY`, `IG_TOKEN`, `IG_USER_ID`
 **교락 표시(2026-11-15):** 카드1~3 디자인 변경 — 강조는 장당 하나(숫자 우선)·연두 블록 위 검은 글씨, 본문은 Medium(500)으로
 제목과 위계를 나눴다(`render.py one_highlight`, `templates/card.html`, `fonts/Pretendard-Medium.otf`). 카드4·5는 판정 전이라 그대로.
 판정 때 11/15 전·후를 나눠 볼 것. 카드4 글씨 크기·카드5(로고만) 개선은 판정 뒤로 미뤘다.
+
+**최종 판정 (2026-11-23, harvest 11/23 08:41 UTC 기준 CSV) — 결론: 저장 "발생"은 늘었지만 도달로 이어지지 않았다. 포맷은 유지하고 실험은 종료.**
+| 구간 | 카드 | 저장 붙은 카드 | 비율 | 도달 중앙값 |
+|---|---|---|---|---|
+| 변경 전(2~9/13) | 341 | 7 | 2.1% | 15 |
+| 9/14~10/30 | 21 | 3 (9/16·10/12·10/28, 각 1회) | 14.3% | 11 |
+| 10/31~11/14(캡션 "4번째 장") | 6 | 0 | 0% | 7.5 |
+| 11/15~(카드1~3 강조 하나·Medium, 미성숙 포함) | 3 | 0 | 0% | 4 |
+| **변경 후 전체** | 30 | 3 | **10.0%** | 9.5 |
+- 2%가 그대로라면 30편 중 3편 이상 저장될 확률 약 2% → 저장 발생 비율은 기준선보다 높다(구조화된 "라벨 · 값" 요약의 효과로 본다).
+- 그러나 저장은 전부 1회, 저장 카드 도달 9~17 — 변경 전 저장 카드(평균 215, 대부분 2월 신규 부스트기)처럼 도달을 키우지 못했다.
+  "저장이 도달을 연다"는 가설은 이 규모(팔로워 60명대)에선 확인되지 않는다.
+- 10/31 캡션 수정 뒤 9편은 저장 0 — 캡션 문구 효과는 없다(표본 작음). 11/15 디자인 변경은 3편뿐이라 판단 불가.
+- **카드 도달이 계속 줄고 있다**(중앙값 15 → 11 → 7.5 → 4, 11/23 발행분 2). 저장 포맷이 아니라 노출 자체가 병목 — 실험 A 결론("유입이 병목")과 같다.
+- 조치: 카드4 "라벨 · 값" 포맷과 `save_value_issues()`는 유지(비용 0, 저장 발생엔 효과). 실험이 끝났으므로 미뤄둔 카드4 글씨 크기·카드5 행동 유도 개선을 진행한다(2026-11-23).
 
 ### C. 릴스 공유 설계 — 2026-09-29 변경, 3주 뒤(2026-10-20) 판정
 

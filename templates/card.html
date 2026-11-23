@@ -75,30 +75,52 @@
     display: flex; flex-direction: column;
   }
   .sum-headline {
-    font-size: 76px; font-weight: 900; line-height: 1.15;
+    font-size: 92px; font-weight: 900; line-height: 1.12;
     letter-spacing: -0.0326em; color: #0A0C0D; word-break: keep-all;
   }
+  /* 2026-11-23: 라벨(작은 연두)·값(큰 흰 글씨) 두 줄 — 번호 열을 빼고 값에 폭을 몰아줬다 */
   .sum-box {
-    margin-top: 52px; padding: 56px 52px; background: #0A0C0D; color: #F5F7F4;
+    margin-top: 48px; padding: 52px 56px; background: #0A0C0D; color: #F5F7F4;
     clip-path: polygon(30px 0, 100% 0, 100% 100%, 0 100%, 0 30px);
   }
   .sum-item {
-    display: grid; grid-template-columns: 76px 1fr; gap: 18px; align-items: start;
-    margin-bottom: 34px; word-break: keep-all;
+    display: flex; flex-direction: column; gap: 6px;
+    margin-bottom: 36px; word-break: keep-all;
   }
   .sum-item:last-child { margin-bottom: 0; }
-  .sum-num {
-    font-size: 46px; font-weight: 900; color: #CFFF04; line-height: 1.35;
+  .sum-label {
+    font-size: 36px; font-weight: 700; color: #CFFF04; line-height: 1.3; letter-spacing: -0.02em;
   }
-  .sum-text { font-weight: 700; line-height: 1.35; letter-spacing: -0.0234em; }
+  .sum-text { font-weight: 800; line-height: 1.25; letter-spacing: -0.0234em; white-space: nowrap; }
   .sum-text b { color: #CFFF04; font-weight: 900; }
   .sum-closing {
-    margin-top: 46px; font-size: 44px; font-weight: 800; line-height: 1.35;
+    margin-top: 44px; font-size: 50px; font-weight: 800; line-height: 1.3;
     letter-spacing: -0.0234em; color: #0A0C0D; word-break: keep-all;
   }
 
-  /* 카드5 브랜딩 */
-  .brand-logo-full { position: absolute; inset: 0; z-index: 3; width: 1080px; height: 1350px; object-fit: cover; }
+  /* 카드5 행동 유도(2026-11-23) — 로고만 있던 빈 장 대신 저장·공유·팔로우. 강조색은 연두 하나 */
+  .cta-wrap { margin-top: auto; margin-bottom: auto; width: 100%; display: flex; flex-direction: column; }
+  .cta-q {
+    font-size: 96px; font-weight: 900; line-height: 1.15; letter-spacing: -0.0326em;
+    color: #FFFFFF; word-break: keep-all;
+  }
+  .cta-q b { background: #CFFF04; color: #0A0C0D; padding: 0 14px; font-weight: 900; }
+  .cta-list { margin-top: 72px; display: flex; flex-direction: column; gap: 22px; }
+  .cta-row {
+    display: grid; grid-template-columns: 210px 1fr; align-items: center;
+    padding: 34px 40px; border: 3px solid #2A2E30; border-radius: 22px;
+  }
+  .cta-k { font-size: 50px; font-weight: 900; color: #CFFF04; letter-spacing: -0.02em; }
+  .cta-v { font-size: 42px; font-weight: 500; color: #E8EAE6; letter-spacing: -0.02em; white-space: nowrap; }
+  .cta-brand {
+    margin-top: 72px; display: flex; align-items: center; gap: 22px;
+    font-size: 40px; font-weight: 500; color: #9AA09C;
+  }
+  .cta-brand b { color: #FFFFFF; font-weight: 900; margin-right: 10px; }
+  .cta-g {
+    width: 76px; height: 76px; border-radius: 50%; background: #CFFF04; color: #0A0C0D;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 46px; font-weight: 900;
+  }
 </style>
 </head>
 <body>

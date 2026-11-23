@@ -74,18 +74,19 @@ def build_sub_html(card1):
     return html
 
 def summary_items_html(items):
-    """요약 카드 3항목 — ① ② ③ 번호 + 본문, 글자수 비례 축소"""
-    nums = ["①", "②", "③", "④", "⑤"]
+    """카드4 요약 항목 — "라벨 · 값"을 라벨(작은 연두) 위, 값(큰 흰 글씨) 아래 두 줄로.
+    2026-11-23: 한 줄 46px(번호+라벨+값)는 휴대폰에서 안 읽혔다. 값만 크게, 길면 비례 축소."""
     out = []
-    for idx, raw in enumerate(items[:5]):
+    for raw in items[:5]:
         t = strip_char_count_notes(raw)
-        n = char_count(t)
-        size = 46 if n <= 18 else max(34, int(46 * 18 / n))
-        out.append(
-            f'<div class="sum-item">'
-            f'<span class="sum-num">{nums[idx]}</span>'
-            f'<span class="sum-text" style="font-size:{size}px">{t}</span>'
-            f'</div>')
+        label, sep, value = t.partition(" · ")
+        if not sep:
+            label, value = "", t
+        n = char_count(re.sub(r"<[^>]+>", "", value))
+        size = 58 if n <= 13 else max(42, int(58 * 13 / n))
+        lab = f'<span class="sum-label">{label}</span>' if label else ""
+        out.append(f'<div class="sum-item">{lab}'
+                   f'<span class="sum-text" style="font-size:{size}px">{value}</span></div>')
     return "".join(out)
 
 
@@ -176,13 +177,19 @@ async def render():
                         <div class="sum-closing">${c.closing}</div>
                       </div>`;
                 } else if (c.type === 'brand') {
+                    // 2026-11-23: 로고만 있던 빈 장 → 마지막 장에서 저장·공유·팔로우를 권한다(릴스 아웃트로와 같은 문법).
                     bg.style.display = 'none';
                     overlay.style.display = 'none';
-                    content.style.display = 'none';
-                    const img = document.createElement('img');
-                    img.className = 'brand-logo-full';
-                    img.src = logo;
-                    card.appendChild(img);
+                    card.style.background = '#0A0C0D';
+                    area.innerHTML = `<div class="cta-wrap">
+                        <div class="cta-q">도움이 됐다면<br><b>이렇게</b> 써 주세요</div>
+                        <div class="cta-list">
+                          <div class="cta-row"><span class="cta-k">저장</span><span class="cta-v">필요할 때 4번째 장 다시 보기</span></div>
+                          <div class="cta-row"><span class="cta-k">공유</span><span class="cta-v">필요한 사람에게 바로 보내기</span></div>
+                          <div class="cta-row"><span class="cta-k">팔로우</span><span class="cta-v">놓치기 쉬운 생활정보 받기</span></div>
+                        </div>
+                        <div class="cta-brand"><span class="cta-g">G</span><span><b>GLEND</b> @glend_kr</span></div>
+                      </div>`;
                 }
             }""", [c, LOGO])
             await page.wait_for_timeout(800)
@@ -194,7 +201,7 @@ async def render():
             # 사람 검수가 없으니 여기서 재지 않으면 발견 경로가 아예 없다.
             over = await page.evaluate("""() => {
                 const bad = [];
-                document.querySelectorAll('.line, .ana-subtitle, .ins-title, .sub1, .sub2, .sum-headline, .sum-text, .sum-closing, .sum-box').forEach(el => {
+                document.querySelectorAll('.line, .ana-subtitle, .ins-title, .sub1, .sub2, .sum-headline, .sum-text, .sum-label, .sum-closing, .sum-box, .cta-q, .cta-v, .cta-brand').forEach(el => {
                     const r = el.getBoundingClientRect();
                     if (el.scrollWidth > el.clientWidth + 1 || r.right > 1080 || r.bottom > 1350) {
                         bad.push({
