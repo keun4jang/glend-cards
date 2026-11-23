@@ -1,0 +1,101 @@
+{
+  "kind": "reel",
+  "index": "3",
+  "published_kst": "2026-11-23T21:24:53+09:00",
+  "topic": "수면무호흡증 진단 및 검사",
+  "content": {
+    "topic": "수면무호흡증 진단 및 검사",
+    "title": "잠잘 때 컥? 🛏️",
+    "cover": {
+      "title": "코골이 심하면\n<b>뇌졸중</b> 위험"
+    },
+    "scenes": [
+      {
+        "narration": "자다가 숨 멈추면 뇌 손상 온다",
+        "query": "dark bedroom night",
+        "bg": "https://images.pexels.com/photos/6943425/pexels-photo-6943425.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "밤마다 숨이 끊기는 <b>수면무호흡증</b>은 단순한 잠버릇이 아니라 뇌에 산소 공급을 막는 응급 상황이에요.",
+        "query": "hospital corridor",
+        "bg": "https://images.pexels.com/photos/36595248/pexels-photo-36595248.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "실제로 코골이를 방치하면 고혈압 발병 위험이 최대 <b>3배</b>까지 높아진다고 알려져 있어요.",
+        "query": "blood pressure monitor",
+        "bg": "https://images.pexels.com/photos/8088865/pexels-photo-8088865.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "자고 일어났는데도 심한 피로감을 느끼거나 아침마다 두통이 있다면 반드시 진료를 받아보셔야 해요.",
+        "query": "alarm clock morning",
+        "bg": "https://images.pexels.com/photos/11162426/pexels-photo-11162426.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "병원에서 <b>수면다원검사</b>를 받을 때 건강보험 적용을 받으면 본인부담금을 크게 낮출 수 있어요.",
+        "query": "medical equipment clinic",
+        "bg": "https://images.pexels.com/photos/4421486/pexels-photo-4421486.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "이비인후과에 방문해서 야간 수면 중 호흡 패턴을 측정하는 전문 검사 일정을 먼저 예약하세요.",
+        "query": "hospital reception desk",
+        "bg": "https://images.pexels.com/photos/33812025/pexels-photo-33812025.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "무호흡 지수가 시간당 <b>5회</b> 이상이면서 주간 졸음 등의 증상이 있으면 급여 혜택 대상이 돼요.",
+        "query": "application form desk",
+        "bg": "https://images.pexels.com/photos/9870155/pexels-photo-9870155.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "심한 코골이는 방치하면 큰 병 됩니다. <b>수면다원검사</b> 꼭 받아보세요. 저장해두고 다시 보세요.",
+        "query": "dark bedroom night",
+        "share": "→ 코 고는 남편에게 공유",
+        "bg": "https://images.pexels.com/photos/6943425/pexels-photo-6943425.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "outro": true,
+        "narration": "놓치기 쉬운 <b>건강정보</b>, 매일 하나씩 찾아드려요. @glend_kr 팔로우하세요!"
+      }
+    ],
+    "follow_cta": "놓치기 쉬운 <b>건강정보</b>, 매일 하나씩 찾아드려요. @glend_kr 팔로우하세요!",
+    "share_target": "코 고는 남편",
+    "caption": "자다가 숨이 컥 하고 막히는 코골이, 단순한 잠버릇으로 넘기면 절대 안 됩니다.\n\n밤마다 호흡이 끊기는 수면무호흡증은 뇌에 산소 공급을 차단해 고혈압과 뇌졸중 위험을 무려 3배까지 높이는 위험한 질환이에요.\n\n다행히 병원에서 진행하는 수면다원검사는 건강보험 적용을 받을 수 있어 비용 부담을 크게 덜 수 있습니다.\n\n아침에 일어나도 피로가 안 풀리고 두통이 있다면 이번 기회에 꼭 검사를 받아보세요.\n\n📌 매일 놓치기 쉬운 건강·의료 꿀팁만 골라 올립니다 → @glend_kr\n\n📤 코 고는 남편에게 보내주세요\n\n#수면무호흡증 #코골이 #수면다원검사 #건강관리 #건강정보\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0",
+    "factcheck": {
+      "mode": "ungrounded",
+      "verdict": "ok",
+      "reason": "",
+      "sources": [],
+      "applied": []
+    },
+    "length_variant": "mid"
+  },
+  "length_variant": "mid",
+  "article": {
+    "title": "수면무호흡증 진단 및 수면다원검사 건강보험 적용 기준",
+    "description": "밤마다 숨이 멈추는 수면무호흡증의 위험성과 건강보험이 적용되는 수면다원검사 대상 및 절차를 안내합니다.",
+    "keywords": [
+      "수면무호흡증",
+      "수면다원검사",
+      "코골이증상",
+      "수면다원검사비용",
+      "이비인후과수면검사"
+    ],
+    "body_markdown": "자다가 숨이 컥 하고 막히는 증상은 단순한 잠버릇이 아니라 뇌에 산소 공급을 차단하는 위험한 신호입니다. 수면무호흡증을 방치할 경우 고혈압이나 뇌졸중 같은 심혈관 질환의 위험이 크게 높아질 수 있어 주의가 필요합니다. 아침에 일어나도 심한 피로감이 느껴지거나 두통이 지속된다면 병원을 방문해 정확한 진단을 받아야 합니다. 다행히 이비인후과 등에서 시행하는 수면다원검사는 건강보험 적용을 받을 수 있어 비용 부담을 덜 수 있습니다.\n\n## 수면무호흡증이란 무엇인가\n\n수면무호흡증은 수면 중 상기도가 좁아지면서 호흡이 일시적으로 멈추거나 얕아지는 질환입니다. 자는 동안 뇌에 산소 공급이 원활하지 않게 되며, 이는 신체 전반에 큰 부담을 줍니다. 흔히 심한 코골이를 동반하는 경우가 많아 이를 단순한 소음이나 피로의 결과로 여기기 쉽습니다. 하지만 호흡 정지가 반복되면 신체는 응급 상황으로 인식하여 스트레스 호르몬을 분비하고, 혈압과 맥박이 상승하게 됩니다.\n\n## 방치하면 위험한 이유와 주요 증상\n\n코골이와 수면무호흡증을 방치하면 고혈압 발병 위험이 최대 3배까지 높아진다는 연구 결과가 있습니다. 산소 부족 상태가 지속되면서 뇌혈관 질환이나 심장 질환으로 이어질 가능성도 커집니다. 다음과 같은 증상이 있다면 단순한 피로로 넘기지 말고 의료기관의 진료를 고려해야 합니다.\n\n* 자는 동안 숨이 멈췄다가 컥 하는 소리와 함께 깨어나는 경우\n* 충분히 잔 것 같은데도 아침에 심한 두통이 있는 경우\n* 낮에도 참기 힘든 졸음이 쏟아져 일상생활에 지장이 있는 경우\n* 자고 일어났을 때 극심한 피로감과 무기력함이 느껴지는 경우\n\n## 수면다원검사 건강보험 적용 대상\n\n수면무호흡증을 진단하기 위해서는 수면 중 뇌파, 호흡, 산소포화도 등을 측정하는 '수면다원검사'를 진행합니다. 해당 검사는 건강보험 급여 혜택을 받을 수 있으며, 구체적인 기준에 부합해야 합니다.\n\n* 시간당 무호흡 또는 저호흡 지수가 일정 기준(5회 이상)을 넘는 경우\n* 주간 졸음 등 관련 임상 증상이 동반되어 의사가 필요하다고 판단한 경우\n\n정확한 급여 적용 대상 여부와 본인부담금 비율은 환자의 증상과 진료 과정에 따라 달라질 수 있으므로, 방문하려는 의료기관을 통해 확인하는 것이 가장 정확합니다.\n\n## 병원 방문 및 검사 진행 절차\n\n수면무호흡증 의심 증상이 있다면 먼저 이비인후과나 수면클리닉을 방문하여 전문의 상담을 받아야 합니다. 상담을 통해 검사 필요성이 인정되면 야간 수면 중 호흡 패턴을 측정하기 위한 수면다원검사 일정을 예약하게 됩니다. 검사는 병원에 마련된 수면실에서 하룻밤 자면서 진행되며, 통증이나 큰 불편함 없이 신체에 센서를 부착하고 잠을 자는 방식으로 이루어집니다. 결과는 보통 일주일 내외로 나오며, 이를 바탕으로 양압기 치료나 생활습관 개선 등 맞춤형 치료 계획을 세우게 됩니다.\n\n## 자주 묻는 질문\n\nQ. 코골이가 심하기만 해도 건강보험으로 검사를 받을 수 있나요?\nA. 단순 코골이만으로는 건강보험 급여 적용이 어려울 수 있습니다. 주간 졸음, 수면 중 호흡 정지 등 수면무호흡증을 의심할 만한 임상 증상이 동반되고 의사의 소견이 있어야 급여 혜택을 받을 수 있습니다.\n\nQ. 검사 비용은 얼마나 나오나요?\nA. 건강보험 적용 여부와 본인부담금은 개인의 가입 보험 및 진료 내역에 따라 차이가 있습니다. 정확한 비용은 국민건강보험공단 지침 및 해당 의료기관의 안내를 따르는 것이 안전합니다.",
+    "factcheck": {
+      "mode": "ungrounded",
+      "verdict": "ok",
+      "reason": "",
+      "sources": [],
+      "applied": []
+    },
+    "chars": 1682
+  },
+  "meta": {
+    "hook_clip_sec": 3.57,
+    "total_sec": 55.1,
+    "scene_count": 9,
+    "length_variant": "mid",
+    "hook_text": "자다가 숨 멈추면 뇌 손상 온다",
+    "ig_media_id": "18149005135574337"
+  },
+  "published": true
+}
