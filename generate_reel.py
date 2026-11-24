@@ -182,6 +182,10 @@ PROMPT = f"""
 - 후킹을 "~하세요", "~보세요" 같은 명령형으로 끝내지도 마라.
   (실측: 명령형 훅 5건 평균시청 2.52초 vs 나머지 73건 5.38초, p=0.002로 가장 강하게 유의미했다.
    표본이 작아 계속 지켜봐야 하지만, 지금까지 측정된 형식 중 가장 나쁘다. 실제 온스크린 훅에서도 같은 방향.)
+- 끝까지 본 후킹(평균 시청 7초 이상)은 전부 **시청자 본인에게 닥칠 결과를 단정**했다 — "다이어트약 먹다 심장 멈춥니다",
+  "삼성전자 배당금 안 받으면 손해", "노령연금 신청 안 하면 못 받습니다", "수면내시경 받다 심정지 옵니다".
+  2초 만에 넘긴 후킹은 남의 일 소식("스쿨존 사고 반으로 뚝", "비닐하우스 공기총 오발사고")이거나 방법 소개("~아끼는 법")였다.
+  뉴스가 사건·통계여도 후킹은 "그래서 시청자에게 무슨 일이 생기는가"로 바꿔 써라.
 - 대신 이런 형식을 우선 써 — 숫자 제시형("300만원, 신청 안 하면 사라집니다"), 반전형("다들 아는 그 방법, 사실 손해입니다"),
   대상 지목형(단, 명령형으로 끝내지 말 것 — "만 34세 이하라면 손해" O, "만 34세 이하라면 지금 확인하세요" X).
   대상 지목형은 시청자 대신 **보내줄 사람**을 지목해도 좋다 — "시골 부모님 농기계, 보험 없으면 손해"처럼.
@@ -445,6 +449,45 @@ def add_share_line(d):
     d["caption"] = "\n".join(lines)
 
 
+# 첫 3초 — 프롬프트에 금지 형식을 적어 뒀지만 지켜지지 않았다(11월 릴스 39편 중 7편이 "~하는 법"·"필독"·"~보세요").
+# 2026-11-24 아카이브 172편 실측: 금지 형식 후킹 28편 평균시청 중앙값 2.43초·도달150+ 2편 vs 나머지 144편 3.44초·15편.
+# 도달이 터진 릴스(200+)의 평균시청 중앙값은 7.1초, 나머지는 3.0초 — 첫 3초가 확산의 문이다. 그래서 기계로 센다.
+_HOOK_BAN_WORDS = ("꿀팁", "총정리", "비밀", "필독", "주목", "분만")
+_HOOK_HOWTO = re.compile(r"[가-힣]+는 ?법$")
+_HOOK_COMMAND = re.compile(r"(세요|하자|해라|해요|봐요)$")
+
+
+def _plain_hook(t):
+    return re.sub(r"<[^>]+>", "", t or "").strip().rstrip(".!~… ")
+
+
+def hook_issues(d):
+    scenes = d.get("scenes") or [{}]
+    h = _plain_hook(scenes[0].get("narration", ""))
+    cv = _plain_hook((d.get("cover") or {}).get("title", "")).replace("\n", " ")
+    issues = []
+    for label, t in (("후킹(scene 1)", h), ("커버", cv)):
+        if not t:
+            continue
+        if t.endswith("?"):
+            issues.append(f"{label} '{t}': 질문형 — 물음표로 끝내지 마라")
+        if _HOOK_COMMAND.search(t):
+            issues.append(f"{label} '{t}': 명령·권유형 어미 — 결과를 단정하는 문장으로")
+        if _HOOK_HOWTO.search(t):
+            issues.append(f"{label} '{t}': '~하는 법' 형식 — 방법이 아니라 결과·손해를 앞세워라")
+        bad = [w for w in _HOOK_BAN_WORDS if w in t]
+        if bad:
+            issues.append(f"{label} '{t}': 광고성 표현({', '.join(bad)})")
+    return issues
+
+
+def hook_correction(issues):
+    return ("\n\n[매우 중요] 직전 응답의 첫 화면(후킹·커버)이 거절됐다:\n- " + "\n- ".join(issues) +
+            "\n이 채널에서 끝까지 본 후킹은 전부 '시청자에게 닥칠 결과'를 단정했다 — "
+            "\"다이어트약 먹다 심장 멈춥니다\", \"삼성전자 배당금 안 받으면 손해\", \"노령연금 신청 안 하면 못 받습니다\", "
+            "\"수면내시경 받다 심정지 옵니다\". 이런 식으로 숫자·대상·결과를 앞세워 다시 써라. 다른 부분은 그대로 둬도 된다.")
+
+
 # 재생성할 때 같은 프롬프트를 그대로 보내면 모델은 왜 거절당했는지 모른다.
 # 사유별로 되먹이되, 순서는 주제 → 길이 → 공유. 주제가 바뀌면 나머지는 다 새로 쓰이기 때문이다.
 # 2026-09-29: 중복 검사가 길이 검사 뒤에 있어서, 길이로 세 번 탈락하는 동안 모델은
@@ -477,7 +520,8 @@ for gen_try in range(1, TRIES + 1):
     pol = political_hit(cand)
     length = length_issue(cand)
     share = share_issues(cand)
-    if not (dup or pol or length or share):
+    hook = hook_issues(cand)
+    if not (dup or pol or length or share or hook):
         # 사실 확인 — 틀린 수치·단정은 제자리에서 고치고, 핵심 전제가 거짓이면 한 번만 다른 주제로 재생성
         fc = factcheck.check(cand, "reel", headlines)
         if fc["verdict"] == "reject" and fc_rejects == 0 and gen_try < TRIES:
@@ -495,7 +539,7 @@ for gen_try in range(1, TRIES + 1):
     est = est_seconds(trimmed)
     off = (max(0.0, MID_MIN_SEC - est, est - MID_MAX_SEC)
            + 3.0 * max(0, len(cand["scenes"]) - len(trimmed) - 2)) if LENGTH_VARIANT == "mid" else 0.0
-    score = (bool(dup or pol), off, len(share))
+    score = (bool(dup or pol), off, len(hook), len(share))
     if best is None or score < best[0]:
         best = (score, cand)
 
@@ -508,15 +552,18 @@ for gen_try in range(1, TRIES + 1):
     elif length:
         print(f"  길이 문제({length}) — 재생성 {gen_try}/{TRIES}", flush=True)
         correction = length_correction(cand, length)
+    elif hook:
+        print(f"  후킹 형식 문제 — 재생성 {gen_try}/{TRIES}: {hook}", flush=True)
+        correction = hook_correction(hook)
     else:
         print(f"  공유 대상 부족 — 재생성 {gen_try}/{TRIES}: {share}", flush=True)
         correction = share_correction(share)
     time.sleep(3)
 
 if data is None and best is not None:
-    (was_dup, off, n_share), data = best
+    (was_dup, off, n_hook, n_share), data = best
     print(f"  [경고] {TRIES}회 안에 모든 조건을 못 채워 가장 나은 후보로 발행합니다 "
-          f"(주제 중복·정치={'예' if was_dup else '아니오'}, 길이 이탈 {off:.1f}초, 공유 문제 {n_share}건).",
+          f"(주제 중복·정치={'예' if was_dup else '아니오'}, 길이 이탈 {off:.1f}초, 후킹 문제 {n_hook}건, 공유 문제 {n_share}건).",
           flush=True)
 if data is None:
     print(f"[중단] Gemini가 {TRIES}회 연속 조건을 만족하지 못했어요.")
