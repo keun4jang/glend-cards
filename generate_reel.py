@@ -666,7 +666,7 @@ if True:
 
     # 배경음악 크레딧(CC BY 4.0) — 캡션에 자동 표기
     data["caption"] = data.get("caption", "").rstrip() + \
-        "\n\n🎵 Music: Inspired – Kevin MacLeod (incompetech.com), CC BY 4.0"
+        "\n\n🎵 Music: Easy Lemon – Kevin MacLeod (incompetech.com), CC BY 4.0"
 
     print("\n[캡션]\n" + data["caption"])
 
