@@ -1,0 +1,135 @@
+{
+  "kind": "reel",
+  "index": "2",
+  "published_kst": "2026-11-25T21:15:43+09:00",
+  "topic": "주행보조장치 과신 사고",
+  "content": {
+    "topic": "주행보조장치 과신 사고",
+    "title": "주행보조 🚨",
+    "cover": {
+      "title": "운전 믿고 놨다간\n사망사고로 이어집니다"
+    },
+    "scenes": [
+      {
+        "narration": "고속도로 반자율주행 사고 사고 치사율 62.5% 달해",
+        "query": "highway road night",
+        "bg": "https://images.pexels.com/photos/14186205/pexels-photo-14186205.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "첨단 주행보조장치만 믿고 방심하다 대형 추돌사고로 이어지고 있어요",
+        "query": "steering wheel closeup",
+        "bg": "https://images.pexels.com/photos/19142325/pexels-photo-19142325.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "실제 최근 고속도로 사망사고 중 상당수가 운전보조 기능 과신이 원인이에요",
+        "query": "highway traffic blurred",
+        "bg": "https://images.pexels.com/photos/4503846/pexels-photo-4503846.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "스마트 크루즈 컨트롤이나 차선 유지 기능을 자주 쓰는 운전자라면 주의가 필요해요",
+        "query": "dashboard speed indicator",
+        "bg": "https://images.pexels.com/photos/17944652/pexels-photo-17944652.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "자율주행 기능은 완전한 운전 면제가 아니라 단순 보조 수단일 뿐이에요",
+        "query": "car dashboard screen",
+        "bg": "https://images.pexels.com/photos/7856880/pexels-photo-7856880.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "핸들을 잡지 않고 <b>10</b>초 이상 주행하면 경고음이 울리니 즉시 손을 올려야 해요",
+        "query": "hands on steering wheel",
+        "bg": "https://images.pexels.com/photos/3599175/pexels-photo-3599175.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "전방 주시 의무 위반으로 사고가 나면 과실 비율이 훨씬 높게 잡히니 주의하세요",
+        "query": "car mirror reflection",
+        "bg": "https://images.pexels.com/photos/19517993/pexels-photo-19517993.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "터널 출구와 도로 결빙 구간에서는 보조장치가 차선을 인식하지 못해 위험해요",
+        "query": "tunnel exit road",
+        "bg": "https://images.pexels.com/photos/34092553/pexels-photo-34092553.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "운전 중에는 언제든 수동으로 제어할 수 있도록 항상 긴장 상태를 유지해야 해요",
+        "query": "road through windshield",
+        "bg": "https://images.pexels.com/photos/7084300/pexels-photo-7084300.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "narration": "주행보조장치는 보조일 뿐이니 항상 핸들을 잡고 직접 운전하세요",
+        "query": "driving on highway",
+        "share": "→ 운전하는 부모님에게 공유",
+        "bg": "https://images.pexels.com/photos/10649706/pexels-photo-10649706.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+      },
+      {
+        "outro": true,
+        "narration": "놓치면 위험한 <b>교통안전</b> 정보, 매일 알려드려요. @glend_kr 팔로우하세요!"
+      }
+    ],
+    "follow_cta": "놓치면 위험한 <b>교통안전</b> 정보, 매일 알려드려요. @glend_kr 팔로우하세요!",
+    "share_target": "운전하는 부모님",
+    "caption": "고속도로에서 주행보조장치 믿고 방심했다가 치사율 62.5%라는 엄청난 대형 사고로 이어지고 있습니다. 첨단 기능이 알아서 다 해줄 거라는 생각은 주의가 필요합니다. 터널 출구와 커브 길에서는 언제든 시스템 오류가 날 수 있어 각별한 주의가 필요합니다. 저장해두고 운전할 때마다 꼭 되새기세요. 📤 자주 운전하는 부모님에게 보내주세요. \n\n📌 매일 놓치기 쉬운 교통안전·생활정보만 골라 올립니다 → @glend_kr\n\n#고속도로사고 #주행보조장치 #자율주행사고 #운전안전 #교통사고예방\n\n🎵 Music: Easy Lemon – Kevin MacLeod (incompetech.com), CC BY 4.0",
+    "factcheck": {
+      "mode": "ungrounded",
+      "verdict": "fixed",
+      "reason": "",
+      "sources": [],
+      "applied": [
+        {
+          "id": "s1",
+          "wrong": "치사율 62.5% 넘습니다",
+          "fix": "사고 치사율 62.5% 달해",
+          "why": "YTN 뉴스 기사 제목의 '사고 치사율 62.5% 달해' 표현에 맞춤"
+        },
+        {
+          "id": "s4",
+          "wrong": "스마트 크루즈 컨트롤이나 차선 유지 기능을 자주 쓰는 운전자라면 전부 해당돼요",
+          "fix": "스마트 크루즈 컨트롤이나 차선 유지 기능을 자주 쓰는 운전자라면 주의가 필요해요",
+          "why": "사실이 아닌 단정 표현('전부')을 완화"
+        },
+        {
+          "id": "cover",
+          "wrong": "사망사고 납니다",
+          "fix": "사망사고로 이어집니다",
+          "why": "사실이 아닌 단정 표현을 사실에 맞게 완화"
+        },
+        {
+          "id": "caption",
+          "wrong": "절대 금물입니다",
+          "fix": "주의가 필요합니다",
+          "why": "사실이 아닌 단정 표현('절대')을 완화"
+        }
+      ]
+    },
+    "length_variant": "mid"
+  },
+  "length_variant": "mid",
+  "article": {
+    "title": "고속도로 반자율주행 사고 원인과 주행보조장치 안전 수칙",
+    "description": "스마트 크루즈 컨트롤 등 주행보조장치 과신으로 인한 사고 위험성과 올바른 안전 운전 수칙을 안내합니다.",
+    "keywords": [
+      "주행보조장치 사고",
+      "반자율주행 치사율",
+      "스마트 크루즈 컨트롤 주의",
+      "고속도로 운전보조 기능"
+    ],
+    "body_markdown": "고속도로에서 스마트 크루즈 컨트롤이나 차선 유지 보조 등의 첨단 주행보조장치만 믿고 방심하다가 대형 추돌사고로 이어지는 경우가 적지 않습니다. 주행보조장치는 운전을 완전히 대신해 주는 완전 자율주행 기능이 아니며, 사고 발생 시 치사율이 상당히 높게 나타나는 만큼 운전자의 각별한 주의가 필요합니다. 본문에서는 주행보조장치 사용 시 반드시 알아야 할 위험 구간과 올바른 대처 방법을 정리해 드립니다.\n\n## 주행보조장치 과신이 위험한 이유\n\n최근 고속도로에서 발생하는 대형 사망사고 중 상당수는 운전보조 기능을 과신하여 전방 주시를 소홀히 한 것이 주원인으로 지목됩니다. 많은 운전자가 스마트 크루즈 컨트롤이나 차선 유지 기능을 켜둔 채 스마트폰을 보거나 휴식을 취하는 등 방심을 하게 됩니다.\n\n하지만 현재 상용화된 주행보조장치는 어디까지나 운전자의 주행을 돕는 '보조 수단'일 뿐입니다. 시스템이 완벽하게 모든 상황을 제어하지 못하기 때문에, 운전자가 전방을 주시하지 않은 상태에서 갑작스러운 장애물이나 선행 차량의 급제동을 마주하면 대형 사고로 직결됩니다. 실제로 보조장치 의존도가 높을수록 위기 상황에서의 대처 속도가 늦어져 치사율이 급격히 높아지는 경향이 있습니다.\n\n## 사고 발생 시 과실 비율과 법적 책임\n\n주행보조장치를 켜고 주행하다가 사고가 났을 때, 그 책임을 차량 제조사에 돌릴 수 있을까요? 결론부터 말씀드리면, 현재 기술 수준에서 사고의 최종 책임은 운전자에게 있습니다.\n\n- 전방 주시 의무 위반: 보조장치를 믿고 핸들을 잡지 않거나 전방을 보지 않다가 사고가 나면 운전자의 전방 주시 의무 위반으로 판단됩니다.\n- 과실 비율 가중: 운전자가 시스템을 과신하여 적극적으로 제어하지 않은 정황이 드러날 경우, 사고 과실 비율이 훨씬 높게 산정될 수 있습니다.\n- 경고음 무시: 대부분의 차량은 핸들을 잡지 않고 일정 시간이 지나면 경고음을 울리는데, 이를 무시하고 주행한 기록은 사고 조사 시 불리하게 작용할 수 있습니다.\n\n## 시스템 오류가 잦은 위험 구간\n\n첨단 센서와 카메라에 의존하는 주행보조장치는 특정 환경에서 정상적으로 작동하지 않을 수 있습니다. 다음과 같은 구간에서는 보조장치에만 의존하지 말고 즉시 수동 운전으로 전환해야 합니다.\n\n| 구분 | 위험 요인 | 설명 |\n| --- | --- | --- |\n| 터널 출구 | 급격한 명암 변화 | 어두운 터널을 빠져나올 때 일시적인 시야 확보 어려움 및 센서 인식 오류 발생 |\n| 도로 결빙 구간 | 블랙아이스 | 눈에 보이지 않는 도로 살얼음으로 인해 타이어 접지력 상실 및 차선 이탈 가능성 |\n| 커브 길 및 공사 구간 | 차선 인식 불량 | 차선이 지워져 있거나 급격한 곡선 도로에서 시스템이 차선을 놓치기 쉬움 |\n\n## 안전한 주행보조장치 이용 수칙\n\n주행보조장치를 안전하게 활용하기 위해서는 몇 가지 원칙을 몸에 익혀야 합니다.\n\n- 상시 핸들 조작 준비: 언제든 수동으로 제어할 수 있도록 항상 긴장 상태를 유지하고 손은 핸들 위에 올려두어야 합니다.\n- 10초 규정 준수: 핸들을 잡지 않고 일정 시간(약 10초 이상) 주행하면 경고음이 울리므로, 경고가 울리면 즉시 스티어링 휠을 확실히 잡아 주어야 합니다.\n- 보조는 보조일 뿐: 목적지까지 편하게 갈 수 있는 수단이 아니라 피로도를 낮춰주는 보조 기능으로만 생각하고 이용해야 합니다.\n\n## 자주 묻는 질문\n\n**Q. 주행보조장치를 켜고 운전할 때 핸들에서 손을 완전히 놓아도 되나요?**\nA. 절대 안 됩니다. 현재 시판되는 차량의 주행보조 기능은 운전자를 보조하는 역할일 뿐 완전 자율주행이 아닙니다. 핸들을 잡지 않고 주행하면 경고음이 울리며, 위기 상황 시 즉시 대처할 수 없으므로 항상 핸들을 잡고 있어야 합니다.\n\n**Q. 터널이나 커브 길에서 왜 주행보조장치가 위험한가요?**\nA. 터널 출구의 급격한 밝기 변화나 커브 길, 차선이 불명확한 공사 구간에서는 카메라와 센서가 차선이나 전방 장애물을 정확히 인식하지 못하고 갑자기 기능을 해제할 수 있기 때문입니다.",
+    "factcheck": {
+      "mode": "ungrounded",
+      "verdict": "ok",
+      "reason": "",
+      "sources": [],
+      "applied": []
+    },
+    "chars": 1980
+  },
+  "meta": {
+    "hook_clip_sec": 5.25,
+    "total_sec": 58.1,
+    "scene_count": 11,
+    "length_variant": "mid",
+    "hook_text": "고속도로 반자율주행 사고 사고 치사율 62.5% 달해",
+    "ig_media_id": "17944880136377712"
+  },
+  "published": true
+}
