@@ -1,0 +1,82 @@
+{
+  "topic": "수협은행 해킹 금융사고 고객 54명 정보 유출",
+  "title": "금융사고 🚨",
+  "cover": {
+    "title": "내 계좌 털렸다\n<b>정보 유출</b> 54명"
+  },
+  "scenes": [
+    {
+      "narration": "내 계좌 털렸습니다",
+      "query": "online banking phone screen",
+      "bg": "https://images.pexels.com/photos/7621358/pexels-photo-7621358.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "최근 수협은행 <b>해킹</b> 사고로 고객 54명 정보가 유출됐어요.",
+      "query": "bankbook and calculator",
+      "bg": "https://images.pexels.com/photos/7580756/pexels-photo-7580756.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "이름과 연락처 등 핵심 <b>개인정보</b>가 외부로 빠져나간 상태예요.",
+      "query": "application form desk",
+      "bg": "https://images.pexels.com/photos/9870155/pexels-photo-9870155.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "이번 유출 대상에 포함된 <b>고객</b>들은 즉시 개별 통지를 받았어요.",
+      "query": "digital tablet screen closeup",
+      "bg": "https://images.pexels.com/photos/40442459/pexels-photo-40442459.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "금감원에 공식 <b>사고</b> 보고가 접수되면서 진상 조사가 시작됐어요.",
+      "query": "official documents desk",
+      "bg": "https://images.pexels.com/photos/37568245/pexels-photo-37568245.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "유출 여부는 수협은행 공식 <b>홈페이지</b>에서 본인 인증 후 조회할 수 있어요.",
+      "query": "computer keyboard closeup",
+      "bg": "https://images.pexels.com/photos/35322869/pexels-photo-35322869.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "추가 피해를 막으려면 수시로 보안 설정을 강화해야 해요.",
+      "query": "calendar and pen",
+      "bg": "https://images.pexels.com/photos/4985336/pexels-photo-4985336.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "모르는 번호로 온 <b>문자</b> 속 인터넷 주소를 무심코 누르면 절대 안 돼요.",
+      "query": "smartphone screen notification",
+      "bg": "https://images.pexels.com/photos/5077054/pexels-photo-5077054.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "금융결제원 <b>계좌정보통합관리</b> 서비스에서 명의도용을 미리 차단하세요.",
+      "query": "atm keypad closeup",
+      "bg": "https://images.pexels.com/photos/5497952/pexels-photo-5497952.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "정보 유출 여부 지금 확인하고, 저장해두고 주변에 알려주세요.",
+      "query": "security padlock symbol",
+      "share": "→ 은행 쓰는 가족에게 공유",
+      "bg": "https://images.pexels.com/photos/37095097/pexels-photo-37095097.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "outro": true,
+      "narration": "놓치면 당하는 <b>금융사고</b> 예방법, 매일 올려요. 피해 전에 @glend_kr 팔로우하세요!"
+    }
+  ],
+  "follow_cta": "놓치면 당하는 <b>금융사고</b> 예방법, 매일 올려요. 피해 전에 @glend_kr 팔로우하세요!",
+  "share_target": "은행 쓰는 가족",
+  "caption": "최근 수협은행 해킹 사고로 고객 54명의 개인정보가 유출되는 심각한 금융 사고가 발생했습니다.\n\n이름과 연락처 등 민감한 정보가 빠져나가면서 2차 피해 우려가 커지고 있는데요.\n\n대상 고객에게는 개별 통지가 갔으며, 금융감독원에도 공식 사고 보고가 완료된 상태입니다.\n\n내 정보가 안전한지 지금 바로 수협은행 홈페이지에서 조회해 보셔야 합니다.\n\n모르는 번호로 온 문자 링크는 절대 누르지 마시고, 계좌정보통합관리 서비스에서 명의도용 방지 설정을 꼭 잠그세요.\n\n📌 매일 놓치기 쉬운 금융사고·보안 소식만 골라 올립니다 → @glend_kr\n\n📤 은행 쓰는 가족에게 보내주세요\n\n#수협은행 #금융사고 #개인정보유출 #금융사기예방 #보안점검\n\n🎵 Music: Easy Lemon – Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "fixed",
+    "reason": "",
+    "sources": [],
+    "applied": [
+      {
+        "id": "s7",
+        "wrong": "오는 12월 31일까지",
+        "fix": "수시로",
+        "why": "뉴스 제목 및 기사에서 확인되지 않는 임의의 기한(12월 31일)을 지어냄"
+      }
+    ]
+  },
+  "length_variant": "mid"
+}

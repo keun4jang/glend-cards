@@ -1,0 +1,48 @@
+{
+  "topic": "고속도로 2차 사고 치사율 5.7배 및 무료 긴급견인 서비스",
+  "card1": {
+    "title": "사고 났을 땐\n차 밖으로",
+    "sub1": "고속도로 <b>2차사고</b> 치사율 폭증",
+    "sub2": "<b>가드레일</b> 밖 대피",
+    "query": "highway car taillights night",
+    "bg": "https://images.pexels.com/photos/33937234/pexels-photo-33937234.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card2": {
+    "subtitle": "트렁크 열다\n참변 당해",
+    "lines": [
+      "일반 사고보다 <b>치사율</b> 5.7배",
+      "도로 위 서있으면 <b>추돌</b> 위험",
+      "비상등 켜고 바로 대피해야"
+    ],
+    "query": "roadside guardrail asphalt highway",
+    "bg": "https://images.pexels.com/photos/32579169/pexels-photo-32579169.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card3": {
+    "subtitle": "무료 견인\n즉시 호출",
+    "lines": [
+      "한국도로공사 <b>1588-2504</b>",
+      "가장 가까운 <b>안전지대</b>까지 무료",
+      "<b>비용 0원</b>이니 즉시 접수하세요"
+    ],
+    "query": "tow truck yellow emergency light",
+    "bg": "https://images.pexels.com/photos/10061763/pexels-photo-10061763.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2160&h=2700"
+  },
+  "card4": {
+    "headline": "2차사고 생존수칙",
+    "items": [
+      "신고처 · <b>도로공사</b> 1588-2504",
+      "비용 · 휴게소까지 <b>0원</b> 무료견인",
+      "대피처 · <b>가드레일</b> 밖 안전지대",
+      "준비물 · 비상등과 <b>안전삼각대</b>"
+    ],
+    "closing": "고속도로 올리기 전 꼭 저장해두세요"
+  },
+  "caption": "사고 치사율 5.7배, 차 안에 가만히 있으면 정말 위험합니다.\n\n고속도로에서 가벼운 접촉사고나 고장이 났을 때 사진을 찍거나 차 안에 머물다 뒤따라오는 차량에 치이는 2차 사고가 잇따르고 있습니다.\n\n사고 발생 시 비상등을 켠 뒤 트렁크를 열고, 탑승자 전원이 즉시 가드레일 밖 안전지대로 대피하는 것이 가장 먼저입니다.\n\n한국도로공사에서는 가까운 휴게소나 졸음쉼터까지 비용 없이 이동해 주는 무료 긴급견인 서비스를 연중무휴 운영하고 있습니다.\n\n💾 비상 연락처와 무료 견인 정보는 4번째 장에 정리해뒀어요.\n\n📌 매일 화제의 이슈 카드 받고 싶다면 @glend_kr 팔로우!\n\n여러분은 고속도로 무료 견인 제도를 알고 계셨나요? 댓글로 알려주세요 👇\n\n#교통안전 #고속도로사고 #안전운전 #긴급견인서비스 #자동차상식",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "ok",
+    "reason": "",
+    "sources": [],
+    "applied": []
+  }
+}

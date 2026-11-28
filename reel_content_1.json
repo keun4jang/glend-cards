@@ -1,0 +1,70 @@
+{
+  "topic": "주담대 금리 인상에 따른 이자 폭탄 및 대출금리 상승 대응법",
+  "title": "대출이자 폭탄 💣",
+  "cover": {
+    "title": "주담대 5억이면\n연 <b>324만원</b> 더 낸다"
+  },
+  "scenes": [
+    {
+      "narration": "주담대 5억이면 연 324만원 더 낸다",
+      "query": "korean won calculator desk",
+      "bg": "https://images.pexels.com/photos/6266276/pexels-photo-6266276.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "기준금리가 오르면서 시중 은행의 <b>주택담보대출</b> 평균 금리가 5%대를 돌파했어요.",
+      "query": "bankbook and calculator",
+      "bg": "https://images.pexels.com/photos/7580756/pexels-photo-7580756.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "작년 4.2%였던 금리가 5.1%까지 뛰면서 <b>5억 원</b> 대출자의 이자 부담이 커졌어요.",
+      "query": "korean won bills",
+      "bg": "https://images.pexels.com/photos/35029028/pexels-photo-35029028.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "변동금리로 주택을 구입했거나 만기 연장을 앞둔 <b>차주들</b>이 이번 고금리 직격탄을 맞아요.",
+      "query": "apartment buildings skyline",
+      "bg": "https://images.pexels.com/photos/20538974/pexels-photo-20538974.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "원리금 상환액이 급증하면서 가계 경제가 휘청이고 취약계층의 <b>연체 위험</b>도 높아지고 있어요.",
+      "query": "atm keypad closeup",
+      "bg": "https://images.pexels.com/photos/5497952/pexels-photo-5497952.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "금리 변동 주기를 확인하고 유리한 고정금리로 갈아타거나 <b>대환대출</b> 플랫폼을 비교해 보세요.",
+      "query": "online banking phone screen",
+      "bg": "https://images.pexels.com/photos/7621358/pexels-photo-7621358.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "중도상환수수료 면제 기간과 금리인하요구권 행사 조건도 <b>올해 안에</b> 꼭 확인해야 해요.",
+      "query": "application form desk",
+      "bg": "https://images.pexels.com/photos/9870155/pexels-photo-9870155.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "금리가 더 오를 거라며 무작정 대출을 방치하면 매달 나가는 <b>이자 비용</b>만 눈덩이처럼 불어나요.",
+      "query": "credit card calculator",
+      "bg": "https://images.pexels.com/photos/6927372/pexels-photo-6927372.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "대출이자 폭탄 맞기 전에 내 금리 조건부터 점검하고 <b>대환대출</b> 갈아타기를 신청하세요.",
+      "query": "korean won cash desk",
+      "share": "→ 영끌한 친구에게 공유",
+      "bg": "https://images.pexels.com/photos/20157487/pexels-photo-20157487.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "outro": true,
+      "narration": "매일 오르는 <b>대출금리</b> 대응법, 실전 재테크만 알려드려요. @glend_kr 팔로우하세요!"
+    }
+  ],
+  "follow_cta": "매일 오르는 <b>대출금리</b> 대응법, 실전 재테크만 알려드려요. @glend_kr 팔로우하세요!",
+  "share_target": "영끌한 친구",
+  "caption": "기준금리 인상 여파로 주택담보대출 평균 금리가 5%대를 돌파했습니다.\n\n작년 4.2%였던 금리가 5.1%까지 오르면서, 5억 원을 대출받은 차주는 연간 324만 원의 이자를 더 부담해야 하는 상황입니다.\n\n변동금리를 이용 중이거나 만기 연장을 앞두고 있다면 지금 바로 대환대출 플랫폼을 통해 금리를 비교해 보세요.\n\n📌 매일 놓치기 쉬운 금리 인상 대응법과 대출 꿀팁만 골라 올립니다 → @glend_kr\n\n📤 영끌한 친구에게 보내주세요\n\n#주택담보대출 #기준금리 #대출이자 #대환대출 #재테크\n\n🎵 Music: Easy Lemon – Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "ok",
+    "reason": "",
+    "sources": [],
+    "applied": []
+  },
+  "length_variant": "mid"
+}

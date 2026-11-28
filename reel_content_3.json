@@ -1,0 +1,75 @@
+{
+  "topic": "심장병 환자의 과다 수면 사망 위험 증가",
+  "title": "심장 건강 🩺",
+  "cover": {
+    "title": "너무 많이 자면\n<b>사망 위험</b> 51%↑"
+  },
+  "scenes": [
+    {
+      "narration": "과다 수면이 심장병 환자 잡습니다",
+      "query": "sleeping clock dark room",
+      "bg": "https://images.pexels.com/photos/6941127/pexels-photo-6941127.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "잠은 보약이라지만 너무 오래 누워 있으면 오히려 독이 된다고 해요",
+      "query": "bedroom morning sunlight",
+      "bg": "https://images.pexels.com/photos/13009039/pexels-photo-13009039.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "최근 연구 결과 심장병 환자가 <b>9시간 이상</b> 자면 사망 위험이 급증해요",
+      "query": "hospital bed monitor",
+      "bg": "https://images.pexels.com/photos/6129210/pexels-photo-6129210.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "평소 심장 질환을 앓고 있는 분들이라면 특히 수면 시간에 주의해야 해요",
+      "query": "stethoscope on chest",
+      "bg": "https://images.pexels.com/photos/6798766/pexels-photo-6798766.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "과다 수면 시 사망 위험이 무려 <b>51%</b>나 높아진다는 통계가 나왔어요",
+      "query": "medical graph chart",
+      "bg": "https://images.pexels.com/photos/7578815/pexels-photo-7578815.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "무조건 오래 자려고 하기보다 규칙적인 시간에 일어나 활동하는 게 중요해요",
+      "query": "alarm clock on desk",
+      "bg": "https://images.pexels.com/photos/37808313/pexels-photo-37808313.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "주말이라고 몰아서 <b>10시</b>간 이상 자는 습관은 심장에 큰 부담을 준답니다",
+      "query": "bed pillow blanket",
+      "bg": "https://images.pexels.com/photos/16497537/pexels-photo-16497537.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "피곤하다고 무작정 누워만 있으면 오히려 신체 리듬이 완전히 망가져요",
+      "query": "tired person silhouette",
+      "bg": "https://images.pexels.com/photos/5327841/pexels-photo-5327841.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "가벼운 산책으로 신체 리듬을 잡고 저장해두고 주변에도 알려주세요",
+      "query": "walking park path",
+      "bg": "https://images.pexels.com/photos/36532279/pexels-photo-36532279.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "narration": "심장 건강을 지키려면 <b>적정 수면</b>인 7시간에서 8시간만 지키세요",
+      "query": "korean won bills",
+      "share": "→ 잠 많이 자는 심장 약한 가족에게 공유",
+      "bg": "https://images.pexels.com/photos/35029028/pexels-photo-35029028.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+    },
+    {
+      "outro": true,
+      "narration": "놓치면 위험한 <b>건강 정보</b>, 매일 하나씩 찾아드려요. @glend_kr 팔로우하세요!"
+    }
+  ],
+  "follow_cta": "놓치면 위험한 <b>건강 정보</b>, 매일 하나씩 찾아드려요. @glend_kr 팔로우하세요!",
+  "share_target": "잠 많이 자는 심장 약한 가족",
+  "caption": "잠은 많이 잘수록 좋다는 생각, 심장병 환자에게는 절대 금물입니다.\n\n최근 연구에 따르면 심장 질환을 앓고 있는 사람이 하루 9시간 이상 과다 수면을 취할 경우, 사망 위험이 51%나 급증하는 것으로 나타났습니다.\n\n주말에 피로를 푼다고 몰아서 오래 자거나, 피곤하다고 무작정 누워 있는 습관은 오히려 심장에 큰 부담을 줍니다.\n\n심장 건강을 지키고 싶다면 무조건 오래 자기보다 7시간에서 8시간 사이의 규칙적인 적정 수면을 유지하는 것이 가장 안전합니다.\n\n📌 매일 놓치기 쉬운 건강·생활 정보만 골라 올립니다 → @glend_kr\n\n📤 평소 잠을 너무 오래 자는 가족에게 보내주세요\n\n📤 잠 많이 자는 심장 약한 가족에게 보내주세요\n\n#심장건강 #과다수면 #수면시간 #건강관리 #생활정보\n\n🎵 Music: Easy Lemon – Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "factcheck": {
+    "mode": "ungrounded",
+    "verdict": "ok",
+    "reason": "",
+    "sources": [],
+    "applied": []
+  },
+  "length_variant": "mid"
+}
